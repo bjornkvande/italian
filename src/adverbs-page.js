@@ -22,7 +22,9 @@ function adverbTable(rows) {
 
 const INTRO = `<p>Adverbs never change form. Many are made from an adjective with <em>-mente</em>:
   the feminine form + <em>-mente</em> (<em>lenta → lentamente</em>); adjectives ending in
-  <em>-le</em> or <em>-re</em> drop the <em>e</em> (<em>facile → facilmente</em>).</p>`;
+  <em>-le</em> or <em>-re</em> drop the <em>e</em> (<em>facile → facilmente</em>).
+  Place words (<em>qui, sopra, davanti…</em>) are in the
+  <a href="basics.html#prepositions">Basics: Prepositions &amp; place</a>.</p>`;
 
 function render() {
   colours.refresh();

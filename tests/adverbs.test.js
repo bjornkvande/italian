@@ -67,7 +67,8 @@ describe("dictionary/adverbs.csv", () => {
   });
 
   it("doesn't repeat words that are already in the Basics", () => {
-    const words = (s) => s.split(" / ").map((w) => w.trim());
+    // "qui / qua" → qui, qua; "davanti (a)" → davanti
+    const words = (s) => s.split(" / ").map((w) => w.replace(/\(.*?\)/g, "").trim());
     const inBasics = new Set(basicsRows.flatMap((r) => words(r.italian)));
     for (const a of adverbs) {
       for (const w of words(a.adverb)) expect(inBasics.has(w), `"${w}" is already in the Basics`).toBe(false);

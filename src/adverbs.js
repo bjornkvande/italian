@@ -1,6 +1,7 @@
 // Adverbs: from dictionary/adverbs.csv. They never change form, so each adverb
 // is one card. Adverbs that are already in the Basics (oggi, sempre, mai, anche,
-// sì, no, ...) stay there; tests/adverbs.test.js checks there are no duplicates.
+// sì, no, and the place words qui, sopra, davanti, ...) stay there;
+// tests/adverbs.test.js checks there are no duplicates.
 //
 // adverbs.csv columns:
 //   topic    which subpage it's on (see ADVERB_PAGES)
@@ -19,7 +20,6 @@ export const adverbs = parseCSV(adverbsCSV);
 export const ADVERB_PAGES = [
   { id: "manner", label: "How", title: "How: manner" },
   { id: "degree", label: "How much", title: "How much: degree" },
-  { id: "place", label: "Where", title: "Where: place" },
   { id: "when", label: "When", title: "When: time" },
   { id: "opinion", label: "Opinion", title: "Opinion and certainty" },
 ];

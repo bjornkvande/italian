@@ -60,6 +60,27 @@ articulated,sulla,su + la = on the,
 articulated,sui,su + i = on the,
 articulated,sugli,su + gli = on the,
 articulated,sulle,su + le = on the,
+place,qui / qua,here,*Qui* and *qua* mean the same.
+place,lì / là,there,"Note the accent: *lì, là* (there), not *li, la* (them, her)."
+place,sopra (a),"on, above, upstairs",*sopra il tavolo* = on the table. On its own: *abito sopra* = I live upstairs.
+place,sotto (a),"under, below, downstairs",*sotto il letto* = under the bed.
+place,davanti (a),in front (of),*davanti alla stazione* = in front of the station.
+place,dietro (a),behind,*dietro la casa* = behind the house.
+place,dentro (a),"inside, in",*dentro la scatola* = inside the box. On its own: *vieni dentro!* = come in!
+place,fuori (di),"outside, out (of)",*fuori di casa* = outside the house. On its own: *aspetto fuori* = I'll wait outside.
+place,accanto (a),"next to, beside",*accanto a me* = next to me.
+place,vicino (a),"near, close (to)",*vicino al mare* = near the sea.
+place,lontano (da),far (from),*lontano da qui* = far from here.
+place,intorno (a),around,*intorno alla casa* = around the house.
+place,di fronte (a),"opposite, facing",*di fronte alla banca* = opposite the bank.
+place,in cima (a),"on top (of), at the top (of)",*in cima alla collina* = on top of the hill.
+place,in fondo (a),"at the bottom (of), at the end (of)",*in fondo alla strada* = at the end of the street.
+place,su,"up, upstairs",*Vieni su!* = Come up! As a preposition *su* means *on* (see above).
+place,giù,"down, downstairs",*su e giù* = up and down.
+place,oltre,"beyond, past",*oltre il ponte* = past the bridge.
+place,attraverso,"through, across",*attraverso il parco* = through the park.
+place,dappertutto,everywhere,
+place,altrove,elsewhere,
 questions,chi,who,
 questions,che cosa / cosa,what,*Che cosa fai?* · *Cosa vuoi?*
 questions,dove,where,

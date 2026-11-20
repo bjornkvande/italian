@@ -33,6 +33,7 @@ export const TOPICS = [
   { id: "avere", title: "Avere – to have", verb: "avere" },
   { id: "prepositions", title: "Prepositions" },
   { id: "articulated", title: "Prepositions + article" },
+  { id: "place", title: "Place words" },
   { id: "questions", title: "Question words" },
   { id: "possessives", title: "Possessives" },
   { id: "demonstratives", title: "This and that" },
@@ -55,7 +56,7 @@ export const BASICS_PAGES = [
   { id: "greetings", label: "Greetings", topics: ["greetings"] },
   { id: "essere", label: "Essere", topics: ["essere"] },
   { id: "avere", label: "Avere", topics: ["avere"] },
-  { id: "prepositions", label: "Prepositions", topics: ["prepositions", "articulated"] },
+  { id: "prepositions", label: "Prepositions & place", topics: ["prepositions", "articulated", "place"] },
   { id: "questions", label: "Questions", topics: ["questions"] },
   { id: "small-words", label: "Small words", topics: ["demonstratives", "connectors", "time", "time-units"] },
   { id: "numbers", label: "Numbers & dates", topics: ["numbers", "ordinals", "days", "months", "seasons"] },
@@ -66,7 +67,7 @@ const BEGINNER_TOPICS = ["pronouns", "greetings", "essere", "avere", "numbers", 
 export const BASICS_DIFFICULTY_TOPICS = {
   beginner: BEGINNER_TOPICS,
   intermediate: [...BEGINNER_TOPICS, "direct", "indirect", "reflexive", "stressed",
-    "questions", "prepositions", "possessives", "demonstratives", "connectors", "time", "months", "seasons"],
+    "questions", "prepositions", "place", "possessives", "demonstratives", "connectors", "time", "months", "seasons"],
   advanced: null,
 };
 

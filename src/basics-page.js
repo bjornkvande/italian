@@ -75,6 +75,10 @@ function topicSection(topic, withHeading) {
     html += `<p>The prepositions <em>di, a, da, in, su</em> merge with the article that follows: <em>di + il → del</em>.</p>`;
     html += articulatedTable(rows);
   } else if (rows.length) {
+    if (topic.id === "place") {
+      html += `<p>On their own they say where (<em>aspetto fuori</em>); before a noun most of them take
+        <em>a</em>, <em>di</em> or <em>da</em>, shown in brackets (<em>davanti alla stazione</em>).</p>`;
+    }
     html += wordTable(rows);
   }
   return html;

@@ -90,6 +90,13 @@ describe("Basics cards", () => {
     ]);
   });
 
+  it("place words show the small word they take before a noun", () => {
+    expect(pair("place")).toContain("davanti (a) = in front (of)");
+    expect(pair("place")).toContain("lontano (da) = far (from)");
+    expect(pair("place")).toContain("fuori (di) = outside, out (of)");
+    expect(BASICS_PAGES.find((p) => p.id === "prepositions").topics).toEqual(["prepositions", "articulated", "place"]);
+  });
+
   it("numbers have digits on the other side, from zero to a million", () => {
     for (const r of basicsRows.filter((x) => x.topic === "numbers")) expect(r.english).toMatch(/^\d+$/);
     expect(pair("numbers")).toContain("diciassette = 17");

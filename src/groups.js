@@ -39,7 +39,7 @@ export const GROUPS = [
     cards: () => basicsCards(),
     difficulties: {
       beginner: { description: "Pronouns, greetings, essere, avere, numbers, days", include: inTopics("beginner") },
-      intermediate: { description: "+ object pronouns, questions, prepositions, possessives, small words, months", include: inTopics("intermediate") },
+      intermediate: { description: "+ object pronouns, questions, prepositions, place words, possessives, small words, months", include: inTopics("intermediate") },
       advanced: { description: "Everything, + ci, ne and combined pronouns", include: null },
     },
   },
@@ -59,12 +59,12 @@ export const GROUPS = [
   {
     id: "adverbs",
     name: "Adverbs",
-    description: "Common adverbs: how, how much, where, when",
+    description: "Common adverbs: how, how much, when, opinion",
     storageKey: "verbi.adverbsPage",
     pages: ADVERB_PAGES.map((p) => ({ id: p.id, href: `adverbs.html#${p.id}`, label: p.label })),
     cards: () => adverbCards(),
     difficulties: {
-      beginner: { description: "The most common (bene, molto, qui, subito…)", include: formIn(["beginner"]) },
+      beginner: { description: "The most common (bene, molto, subito, forse…)", include: formIn(["beginner"]) },
       intermediate: { description: "+ more common ones (-mente, di solito, purtroppo…)", include: formIn(["beginner", "intermediate"]) },
       advanced: { description: "All of them (ormai, eppure, apposta…)", include: null },
     },
