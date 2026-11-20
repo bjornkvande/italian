@@ -38,8 +38,8 @@ export const GROUPS = [
     cards: () => basicsCards(),
     difficulties: {
       beginner: { description: "Pronouns, greetings, essere, avere, numbers, days", include: inTopics("beginner") },
-      intermediate: { description: "+ questions, prepositions, possessives, small words, months", include: inTopics("intermediate") },
-      advanced: { description: "Everything", include: null },
+      intermediate: { description: "+ object pronouns, questions, prepositions, possessives, small words, months", include: inTopics("intermediate") },
+      advanced: { description: "Everything, + ci, ne and combined pronouns", include: null },
     },
   },
   {

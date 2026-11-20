@@ -1,0 +1,51 @@
+topic,pronoun,meaning,italian,english,note
+direct,mi,me,Marco mi vede,Marco sees me,
+direct,ti,you,ti vedo,I see you,
+direct,lo,"him, it (m.)",lo vedo,I see him,Before a vowel or *h* it becomes *l'*: *l'ho visto* = I saw him/it.
+direct,la,"her, it (f.)",la vedo,I see her,
+direct,La,you (polite),La ringrazio,I thank you (polite),"Polite *you*, often written with a capital L."
+direct,ci,us,Marco ci vede,Marco sees us,
+direct,vi,you all,vi vedo,I see you all,
+direct,li,them (m.),li vedo,I see them (m.),
+direct,le,them (f.),le vedo,I see them (f.),
+indirect,mi,to me,Marco mi scrive,Marco writes to me,
+indirect,ti,to you,ti scrivo,I write to you,
+indirect,gli,to him,gli scrivo,I write to him,
+indirect,le,to her,le scrivo,I write to her,"Same word as the direct *le* (them, f.): the verb tells which."
+indirect,Le,to you (polite),Le scrivo,I write to you (polite),
+indirect,ci,to us,Marco ci scrive,Marco writes to us,
+indirect,vi,to you all,vi scrivo,I write to you all,
+indirect,gli,to them,gli telefono,I phone them,In everyday Italian *gli* also means *to them*; formal: *telefono loro*.
+indirect,mi,to me,mi piace,I like it,*Piacere* works the other way round: *mi piace* = it pleases me.
+indirect,ti,to you,ti piace?,do you like it?,
+indirect,gli,to him,gli piace,he likes it,
+reflexive,mi,myself,mi chiamo,my name is,Literally *I call myself*: *Mi chiamo Bjørn.*
+reflexive,ti,yourself,ti chiami,your name is,
+reflexive,si,"himself, herself",si chiama,his/her name is,
+reflexive,ci,ourselves,ci chiamiamo,our names are,
+reflexive,vi,yourselves,vi chiamate,your names are (you all),
+reflexive,si,themselves,si chiamano,their names are,
+reflexive,mi,myself,mi alzo,I get up,
+reflexive,si,"himself, herself",si sveglia,he/she wakes up,
+stressed,me,me,con me,with me,Used after prepositions and for emphasis: *A me piace!* = *I* like it!
+stressed,te,you,per te,for you,
+stressed,lui,him,da lui,at his place,
+stressed,lei,her,con lei,with her,
+stressed,noi,us,per noi,for us,
+stressed,voi,you all,con voi,with you all,
+stressed,loro,them,da loro,at their place,
+ci-ne,ci,there,ci vado,I go there,"*Ci* replaces a place: *Vai a Roma? Sì, ci vado.*"
+ci-ne,ci,about it,ci penso io,I'll take care of it,
+ci-ne,ci,there,ci sono stato,I've been there,
+ci-ne,ne,"of it, of them",ne voglio due,I want two (of them),*Ne* replaces an amount of something: *Quante mele? Ne voglio due.*
+ci-ne,ne,"of it, of them",ne ho tre,I have three (of them),
+ci-ne,ne,about it,ne parliamo dopo,we'll talk about it later,
+ci-ne,ne,any,non ne ho,I don't have any,
+combined,me lo,it to me,me lo dai?,will you give it to me?,"*mi, ti, ci, vi* become *me, te, ce, ve* before *lo, la, li, le, ne*."
+combined,te lo,it to you,te lo do,I'll give it to you,
+combined,glielo,it to him/her,glielo dico,I'll tell him/her (it),"*gli* and *le* both become *glie-* and join the next pronoun: *glielo, gliela, glieli, gliele, gliene*."
+combined,gliela,it (f.) to him/her,gliela mando,I'll send it (f.) to him/her,
+combined,ce lo,it to us,ce lo dice,he/she tells us (it),
+combined,ve lo,it to you all,ve lo spiego,I'll explain it to you all,
+combined,me ne,myself (from here),me ne vado,I'm leaving,"*Andarsene* = to leave, go away: *me ne vado, te ne vai…*"
+combined,te ne,you some,te ne do uno,I'll give you one (of them),

@@ -129,3 +129,7 @@ td.r5, tr.r5 > td { background: var(--r5); }
 .adjectives td { vertical-align: top; }
 .adjectives td.it { font-weight: 600; }
 .adjectives td.en { white-space: normal; min-width: 180px; }
+
+/* Pronoun tables: four columns that share the width. */
+.pronouns td.it { width: auto; }
+.pronouns td { min-width: 70px; }

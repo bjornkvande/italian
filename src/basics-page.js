@@ -52,11 +52,26 @@ function articulatedTable(rows) {
 
 const topicById = (id) => TOPICS.find((t) => t.id === id);
 
+// Pronoun | meaning | example | English, coloured by the example's card.
+function pronounTable(rows) {
+  return table("words pronouns", ["Pronoun", "Meaning", "Example", "English"], rows.map((r) => ({
+    attrs: colour(basicsCardId(r.topic, r.italian)),
+    cells: [
+      `<td class="it">${escape(r.pronoun)}</td>`,
+      `<td>${escape(r.meaning)}</td>`,
+      `<td class="it">${escape(r.italian)}</td>`,
+      `<td>${escape(r.english)}${r.note ? `<div class="row-note">${md(r.note)}</div>` : ""}</td>`,
+    ],
+  })));
+}
+
 function topicSection(topic, withHeading) {
   const rows = basicsRows.filter((r) => r.topic === topic.id);
   let html = withHeading ? `<h2>${topic.title}</h2>` : "";
   if (topic.verb) html += presenteTable(topic.verb);
-  if (topic.id === "articulated") {
+  if (topic.pronouns) {
+    html += pronounTable(rows);
+  } else if (topic.id === "articulated") {
     html += `<p>The prepositions <em>di, a, da, in, su</em> merge with the article that follows: <em>di + il → del</em>.</p>`;
     html += articulatedTable(rows);
   } else if (rows.length) {

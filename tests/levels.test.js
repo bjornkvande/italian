@@ -55,14 +55,15 @@ describe("basics", () => {
     expect(at("basics", "beginner").map((c) => c.it)).toContain("io sono");
   });
 
-  it("intermediate adds questions, prepositions, possessives, small words, months, seasons", () => {
+  it("intermediate adds object, reflexive and stressed pronouns, questions, prepositions, possessives, small words, months, seasons", () => {
     const added = topicsIn(at("basics", "intermediate")).filter((t) => !topicsIn(at("basics", "beginner")).includes(t));
-    expect(added).toEqual(["connectors", "demonstratives", "months", "possessives", "prepositions", "questions", "seasons", "time"]);
+    expect(added).toEqual(["connectors", "demonstratives", "direct", "indirect", "months", "possessives", "prepositions",
+      "questions", "reflexive", "seasons", "stressed", "time"]);
   });
 
-  it("advanced adds the rest: prepositions + article, ordinals, units of time", () => {
+  it("advanced adds the rest: ci and ne, combined pronouns, prepositions + article, ordinals, units of time", () => {
     const added = topicsIn(at("basics", "advanced")).filter((t) => !topicsIn(at("basics", "intermediate")).includes(t));
-    expect(added).toEqual(["articulated", "ordinals", "time-units"]);
+    expect(added).toEqual(["articulated", "ci-ne", "combined", "ordinals", "time-units"]);
   });
 });
 

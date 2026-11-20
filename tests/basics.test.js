@@ -1,6 +1,6 @@
 // Tests for the Basics (dictionary/basics.csv and src/basics.js).
 import { describe, it, expect } from "vitest";
-import { TOPICS, BASICS_PAGES, BASICS_CSV, basicsRows, basicsCards, topicCards } from "../src/basics.js";
+import { TOPICS, BASICS_PAGES, BASICS_CSV, PRONOUNS_CSV, basicsRows, pronounRows, basicsCards, topicCards } from "../src/basics.js";
 import { parseRows, verbs } from "../src/csv.js";
 import { cardsFor } from "../src/conjugate.js";
 
@@ -24,7 +24,7 @@ describe("dictionary/basics.csv", () => {
     expect(singles % 2, "unbalanced * in note").toBe(0);
   });
 
-  it("has no duplicate Italian words within a topic", () => {
+  it("has no duplicate Italian words or phrases within a topic", () => {
     const keys = basicsRows.map((r) => `${r.topic}.${r.italian}`);
     expect(keys.filter((k, i) => keys.indexOf(k) !== i)).toEqual([]);
   });
@@ -120,5 +120,48 @@ describe("Basics subpages", () => {
       expect(p.id).toMatch(/^[a-z-]+$/);
       expect(p.label).toMatch(/\S/);
     }
+  });
+});
+
+describe("dictionary/pronouns.csv", () => {
+  const COLUMNS = ["topic", "pronoun", "meaning", "italian", "english", "note"];
+
+  it("has the expected columns and one field per column", () => {
+    const [header, ...rows] = parseRows(PRONOUNS_CSV);
+    expect(header).toEqual(COLUMNS);
+    for (const r of rows) expect(r.length, `row "${r[3]}" has ${r.length} fields`).toBe(COLUMNS.length);
+  });
+
+  it("uses only pronoun topics, and every pronoun row has a pronoun and its meaning", () => {
+    const pronounTopics = TOPICS.filter((t) => t.pronouns).map((t) => t.id);
+    for (const r of pronounRows) {
+      expect(pronounTopics, `${r.italian}: topic "${r.topic}"`).toContain(r.topic);
+      expect(r.pronoun.trim(), r.italian).not.toBe("");
+      expect(r.meaning.trim(), r.italian).not.toBe("");
+    }
+    for (const t of pronounTopics) expect(pronounRows.some((r) => r.topic === t), t).toBe(true);
+  });
+
+  it("each example phrase contains its pronoun (glielo, me ne, ... as written)", () => {
+    for (const r of pronounRows) {
+      const words = r.italian.toLowerCase().replace(/[?!.]/g, "").split(/\s+/);
+      const pron = r.pronoun.toLowerCase();
+      expect(words.join(" ").includes(pron), `"${r.italian}" doesn't contain "${r.pronoun}"`).toBe(true);
+    }
+  });
+
+  it("example cards", () => {
+    expect(pair("direct")).toContain("lo vedo = I see him");
+    expect(pair("indirect")).toContain("mi piace = I like it");
+    expect(pair("reflexive")).toContain("mi chiamo = my name is");
+    expect(pair("stressed")).toContain("con me = with me");
+    expect(pair("ci-ne")).toContain("ne voglio due = I want two (of them)");
+    expect(pair("combined")).toContain("te lo do = I'll give it to you");
+  });
+
+  it("the pronouns are on the Pronouns subpage, ci/ne and combined on their own", () => {
+    const page = (id) => BASICS_PAGES.find((p) => p.id === id).topics;
+    expect(page("pronouns")).toEqual(["pronouns", "direct", "indirect", "reflexive", "stressed", "possessives"]);
+    expect(page("ci-ne")).toEqual(["ci-ne", "combined"]);
   });
 });
