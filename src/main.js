@@ -105,15 +105,26 @@ function rate(value) {
 
 // First click flips the card. On the answer side, a rating button rates;
 // clicking anywhere else moves on to the next card.
+// A tap anywhere on the screen: a rating number rates; anything else flips the
+// card (question side) or moves on to the next card (answer side).
 function handleClick(e) {
   if (busy) return;
   const button = e?.target.closest("[data-rating]");
   if (button) return rate(Number(button.dataset.rating));
-  // A near miss between the buttons or on their label shouldn't skip the card.
-  if (isFlipped() && e?.target.closest(".rating")) return;
   if (isFlipped()) nextCard();
   else card.classList.add("flipped");
 }
+
+// Taps on the buttons at the top (word group, level, 📖) or in their menus aren't
+// card taps, and neither is a tap that only closes an open menu.
+let menuWasOpen = false;
+document.addEventListener("pointerdown", () => {
+  menuWasOpen = Boolean(document.querySelector(".menu:not([hidden])"));
+}, true);
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".train-header") || menuWasOpen) return;
+  handleClick(e);
+});
 
 // ---------------------------------------------------------------- what to practise and level
 
@@ -182,7 +193,6 @@ window.addEventListener("hashchange", () => {
 
 // ---------------------------------------------------------------- input
 
-scene.addEventListener("click", handleClick);
 document.addEventListener("keydown", (e) => {
   // Keys on the menu or the 📖 link shouldn't flip the card.
   if (e.target.closest?.(".train-header")) return;

@@ -2,6 +2,9 @@
    middle of the space that's left. */
 html, body { overscroll-behavior: none; }
 
+/* The whole screen is a tap target for the card (see handleClick in main.js). */
+.train { cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+
 .train {
   flex: 1;
   display: flex;
