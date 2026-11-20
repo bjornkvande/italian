@@ -1,5 +1,18 @@
 // The verbs come straight from the dictionary. Vite bundles the CSV as text,
 // and reloads the page when the file changes.
+//
+// dictionary/verbs.csv is the single source of all verbs. Each row has:
+//   infinitive  the verb (parlare)
+//   english     the meaning shown on the reference pages (to speak, to talk)
+//   group       are | ere | ire-dormire | ire-finire
+//   auxiliary   avere | essere | avere/essere
+//   participle  only if it differs from the regular form (insistito), otherwise empty
+//   en_base     English base form for the flash cards (speak, grow up)
+//   en_past     English simple past for the flash cards (spoke, grew up)
+//   impersonal  "yes" for weather verbs used only as "it" (piovere), otherwise empty
+//   note        optional note shown above the verb's table (*italic* and **bold** allowed)
+// Verbs appear on the pages in the same order as in the CSV.
+// tests/dictionary.test.js checks that every row follows these rules.
 import verbsCSV from "../dictionary/verbs.csv?raw";
 
 // Minimal CSV parser: handles quoted fields, commas and "" inside quotes.
