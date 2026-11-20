@@ -1,35 +1,18 @@
-// Renders an -are / -ere / -ire reference page from the CSV files in dictionary/.
-// Which page to build comes from <body data-page="are|ere|ire">.
+// Renders an -are / -ere / -ire / irregular reference page from the CSV files in dictionary/.
+// Which page to build comes from <body data-page="are|ere|ire|irregular">.
 import "./pwa.js";
 import { verbs } from "./csv.js";
 import {
   ENDINGS, PARTICIPLE_ENDING, TENSES, PRONOUNS, AVERE,
   form, participle, gerund, passatoProssimo, spellingNote, cardsFor, verbCardId,
 } from "./conjugate.js";
-import { currentLevels, ratingClass, legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
-
-// Colour level per card id (1–5) from your ratings; refreshed on every render.
-let levels = new Map();
-// ` class="r3"` for a rated card, "" otherwise.
-const colour = (cardId, extra = "") => {
-  const cls = [extra, ratingClass(levels, cardId)].filter(Boolean).join(" ");
-  return cls ? ` class="${cls}"` : "";
-};
+import { legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
+import { escape, md, table, ratingColours } from "./page-helpers.js";
 import { PAGES } from "./pages.js";
 import { renderNav } from "./nav.js";
 
-const escape = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-
-// Inline Markdown: **bold** and *italic*.
-const md = (s) => escape(s)
-  .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-  .replace(/\*(.+?)\*/g, "<em>$1</em>");
-
-const table = (cls, head, rows) => `
-  <div class="table-wrap"><table class="${cls}">
-    <thead><tr>${head.map((h) => `<th>${h}</th>`).join("")}</tr></thead>
-    <tbody>${rows.map((r) => `<tr>${r.join("")}</tr>`).join("")}</tbody>
-  </table></div>`;
+const colours = ratingColours();
+const colour = colours.colour;
 
 const TENSE_HEAD = ["", ...TENSES.map(([, name]) => name)];
 
@@ -87,7 +70,7 @@ function tensesList(e) {
 }
 
 function render(page, firstTime = false) {
-  levels = currentLevels();
+  colours.refresh();
   const groupsOf = (s) => verbs.filter((v) => s.groups.includes(v.group));
   const all = page.sections.flatMap(groupsOf);
   const n = all.length;

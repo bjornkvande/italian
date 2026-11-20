@@ -3,28 +3,12 @@
 import "./pwa.js";
 import { TOPICS, BASICS_PAGES, basicsRows, presenteCards, basicsCardId } from "./basics.js";
 import { renderNav, lastPage } from "./nav.js";
-import { currentLevels, ratingClass, legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
+import { legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
+import { escape, md, table, ratingColours } from "./page-helpers.js";
 
-// Colour level per card id (1–5) from your ratings; refreshed on every render.
-let levels = new Map();
-const colour = (cardId) => {
-  const cls = ratingClass(levels, cardId);
-  return cls ? ` class="${cls}"` : "";
-};
+const colours = ratingColours();
+const colour = colours.colour;
 
-const escape = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-
-// Inline Markdown: **bold** and *italic*.
-const md = (s) => escape(s)
-  .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-  .replace(/\*(.+?)\*/g, "<em>$1</em>");
-
-// rows: arrays of cells, or { attrs, cells } to give the row attributes (a colour).
-const table = (cls, head, rows) => `
-  <div class="table-wrap"><table class="${cls}">
-    ${head ? `<thead><tr>${head.map((h) => `<th>${h}</th>`).join("")}</tr></thead>` : ""}
-    <tbody>${rows.map((r) => (Array.isArray(r) ? `<tr>${r.join("")}</tr>` : `<tr${r.attrs}>${r.cells.join("")}</tr>`)).join("")}</tbody>
-  </table></div>`;
 
 // Italian | English, with the note (if any) in small type under the English.
 function wordTable(rows) {
@@ -79,7 +63,7 @@ function currentPage() {
 }
 
 function render() {
-  levels = currentLevels();
+  colours.refresh();
   const page = currentPage();
   renderNav(document.getElementById("nav"), "basics", page.id);
   // A subpage with one topic uses that topic's title as the page heading

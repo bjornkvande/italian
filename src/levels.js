@@ -1,12 +1,12 @@
 // Levels for the flash cards, and remembering the chosen one.
-// Basics is its own set of cards (src/basics.js); the other levels are verb
-// cards, each including the one before it.
+// Each level practises the cards of one word group (src/groups.js), optionally
+// only some tenses. The verb levels each include the one before.
 
 export const LEVELS = [
-  { id: "basics", name: "Basics", description: "Pronouns, essere, avere, prepositions, numbers…", deck: "basics" },
-  { id: "beginner", name: "Beginner", description: "Infinitives", tenses: ["infinito"] },
-  { id: "intermediate", name: "Intermediate", description: "Infinitives + presente", tenses: ["infinito", "presente"] },
-  { id: "advanced", name: "Advanced", description: "All tenses", tenses: null }, // every card
+  { id: "basics", name: "Basics", description: "Pronouns, essere, avere, prepositions, numbers…", group: "basics" },
+  { id: "beginner", name: "Beginner", description: "Infinitives", group: "verbs", tenses: ["infinito"] },
+  { id: "intermediate", name: "Intermediate", description: "Infinitives + presente", group: "verbs", tenses: ["infinito", "presente"] },
+  { id: "advanced", name: "Advanced", description: "All tenses", group: "verbs" }, // every verb card
 ];
 
 export const DEFAULT_LEVEL = "beginner";
@@ -14,11 +14,11 @@ export const STORAGE_KEY = "verbi.level";
 
 const byId = (id) => LEVELS.find((l) => l.id === id);
 
-/** The cards that belong to a level: verb cards, or the Basics cards for Basics. */
-export function cardsForLevel(verbCards, levelId, basicsCards = []) {
+/** The cards that belong to a level. `decks`: the cards per group, { basics: [...], verbs: [...] }. */
+export function cardsForLevel(decks, levelId) {
   const level = byId(levelId) ?? byId(DEFAULT_LEVEL);
-  if (level.deck === "basics") return basicsCards;
-  return level.tenses ? verbCards.filter((c) => level.tenses.includes(c.tenseKey)) : verbCards;
+  const cards = decks[level.group] ?? [];
+  return level.tenses ? cards.filter((c) => level.tenses.includes(c.tenseKey)) : cards;
 }
 
 /** The level saved in storage, or the default if none (or an unknown one) is saved. */

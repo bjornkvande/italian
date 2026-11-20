@@ -1,3 +1,4 @@
+import { readdirSync } from "node:fs";
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
@@ -11,16 +12,12 @@ export default defineConfig(({ command, isPreview }) => ({
     strictPort: true, // fail instead of silently moving to another port
   },
   build: {
-    // One HTML page per tab: the flash cards, the Basics and the four verb references.
+    // Every *.html file in the project folder is a page (the flash cards, Basics,
+    // the verb pages, ...), so a new page needs no change here.
     rollupOptions: {
-      input: {
-        index: "index.html",
-        basics: "basics.html",
-        are: "are.html",
-        ere: "ere.html",
-        ire: "ire.html",
-        irregular: "irregular.html",
-      },
+      input: Object.fromEntries(
+        readdirSync(".").filter((f) => f.endsWith(".html")).map((f) => [f.replace(/\.html$/, ""), f]),
+      ),
     },
   },
   plugins: [

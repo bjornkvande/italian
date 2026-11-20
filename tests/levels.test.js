@@ -6,6 +6,8 @@ import { cardsFor } from "../src/conjugate.js";
 import { basicsCards } from "../src/basics.js";
 
 const all = verbs.flatMap(cardsFor);
+const basics = basicsCards();
+const decks = { verbs: all, basics };
 const tensesIn = (cards) => [...new Set(cards.map((c) => c.tenseKey))].sort();
 
 function fakeStorage(initial = {}) {
@@ -15,14 +17,14 @@ function fakeStorage(initial = {}) {
 
 describe("cards per level", () => {
   it("beginner: only infinitives, one per verb", () => {
-    const cards = cardsForLevel(all, "beginner");
+    const cards = cardsForLevel(decks, "beginner");
     expect(tensesIn(cards)).toEqual(["infinito"]);
     expect(cards).toHaveLength(verbs.length);
     expect(cards.find((c) => c.it === "parlare").en).toBe("to speak");
   });
 
   it("intermediate: infinitives and presente for every person", () => {
-    const cards = cardsForLevel(all, "intermediate");
+    const cards = cardsForLevel(decks, "intermediate");
     expect(tensesIn(cards)).toEqual(["infinito", "presente"]);
     const parlare = cards.filter((c) => c.id.startsWith("parlare."));
     expect(parlare.map((c) => c.it)).toEqual([
@@ -31,30 +33,27 @@ describe("cards per level", () => {
   });
 
   it("advanced: every card", () => {
-    expect(cardsForLevel(all, "advanced")).toEqual(all);
+    expect(cardsForLevel(decks, "advanced")).toEqual(all);
     expect(tensesIn(all)).toEqual(["condizionale", "futuro", "imperativo", "imperfetto", "infinito", "passato", "presente"]);
   });
 
   it("each verb level includes the one below it", () => {
-    const verbLevels = LEVELS.filter((l) => !l.deck);
+    const verbLevels = LEVELS.filter((l) => l.group === "verbs");
     expect(verbLevels.map((l) => l.id)).toEqual(["beginner", "intermediate", "advanced"]);
     for (let i = 1; i < verbLevels.length; i++) {
-      const lower = new Set(cardsForLevel(all, verbLevels[i - 1].id).map((c) => c.id));
-      const higher = new Set(cardsForLevel(all, verbLevels[i].id).map((c) => c.id));
+      const lower = new Set(cardsForLevel(decks, verbLevels[i - 1].id).map((c) => c.id));
+      const higher = new Set(cardsForLevel(decks, verbLevels[i].id).map((c) => c.id));
       for (const id of lower) expect(higher.has(id), `${id} missing from ${verbLevels[i].id}`).toBe(true);
     }
   });
 
   it("basics: only the Basics cards, and they come first in the menu", () => {
-    const basics = basicsCards();
-    expect(cardsForLevel(all, "basics", basics)).toBe(basics);
+    expect(cardsForLevel(decks, "basics")).toBe(basics);
     expect(LEVELS[0].id).toBe("basics");
-    // The verb levels don't change when Basics cards are passed in.
-    expect(cardsForLevel(all, "beginner", basics)).toEqual(cardsForLevel(all, "beginner"));
   });
 
   it("irregular verbs appear at every level, with the right tenses", () => {
-    const irregular = (level) => cardsForLevel(all, level).filter((c) => c.id.split(".")[0] === "essere" || c.id.startsWith("andare."));
+    const irregular = (level) => cardsForLevel(decks, level).filter((c) => c.id.split(".")[0] === "essere" || c.id.startsWith("andare."));
     expect(irregular("beginner").map((c) => `${c.it} = ${c.en}`)).toEqual(["essere = to be", "andare = to go"]);
     expect(irregular("intermediate").map((c) => c.it)).toEqual([
       "essere", "io sono", "tu sei", "lui/lei è", "noi siamo", "voi siete", "loro sono",
@@ -64,13 +63,13 @@ describe("cards per level", () => {
 
     const irregularVerbs = verbs.filter((v) => v.group === "irregular").map((v) => v.infinitive);
     for (const level of ["beginner", "intermediate", "advanced"]) {
-      const verbsInLevel = new Set(cardsForLevel(all, level).map((c) => c.id.split(".")[0]));
+      const verbsInLevel = new Set(cardsForLevel(decks, level).map((c) => c.id.split(".")[0]));
       for (const v of irregularVerbs) expect(verbsInLevel.has(v), `${v} missing from ${level}`).toBe(true);
     }
   });
 
   it("an unknown level falls back to the default", () => {
-    expect(cardsForLevel(all, "expert")).toEqual(cardsForLevel(all, DEFAULT_LEVEL));
+    expect(cardsForLevel(decks, "expert")).toEqual(cardsForLevel(decks, DEFAULT_LEVEL));
   });
 });
 
