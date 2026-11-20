@@ -29,16 +29,25 @@ function presenteTable(infinitive) {
   })));
 }
 
-// Prepositions + article as a grid: rows di, a, da, in, su; columns il, lo, l', ...
+// Prepositions + article as a grid: rows di, a, da, in, su (with their meaning);
+// columns il, lo, l', ... The english column reads "di + il = of the".
 function articulatedTable(rows) {
-  const parts = rows.map((r) => ({ form: r.italian, prep: r.english.split(" + ")[0], art: r.english.split(" + ")[1] }));
+  const parts = rows.map((r) => {
+    const [build, meaning] = r.english.split(" = ");
+    const [prep, art] = build.split(" + ");
+    return { form: r.italian, prep, art, meaning };
+  });
   const preps = [...new Set(parts.map((p) => p.prep))];
   const arts = [...new Set(parts.map((p) => p.art))];
   const cell = (prep, art) => {
     const form = parts.find((p) => p.prep === prep && p.art === art)?.form;
     return form ? `<td${colour(basicsCardId("articulated", form))}>${escape(form)}</td>` : "<td>—</td>";
   };
-  return table("conj", ["", ...arts], preps.map((prep) => [`<th>${prep}</th>`, ...arts.map((art) => cell(prep, art))]));
+  const meaningOf = (prep) => parts.find((p) => p.prep === prep).meaning;
+  return table("conj", ["", ...arts], preps.map((prep) => [
+    `<th>${prep}<div class="row-note">${escape(meaningOf(prep))}</div></th>`,
+    ...arts.map((art) => cell(prep, art)),
+  ]));
 }
 
 const topicById = (id) => TOPICS.find((t) => t.id === id);

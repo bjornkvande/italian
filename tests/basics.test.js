@@ -67,13 +67,16 @@ describe("Basics cards", () => {
   it("prepositions + article: all five prepositions with all seven articles", () => {
     const rows = basicsRows.filter((r) => r.topic === "articulated");
     expect(rows).toHaveLength(35);
-    const form = (english) => rows.find((r) => r.english === english)?.italian;
+    for (const r of rows) expect(r.english, r.italian).toMatch(/^(di|a|da|in|su) \+ (il|lo|l'|la|i|gli|le) = \S.*$/);
+    const form = (build) => rows.find((r) => r.english.startsWith(`${build} = `))?.italian;
     expect(form("di + il")).toBe("del");
     expect(form("a + lo")).toBe("allo");
     expect(form("da + la")).toBe("dalla");
     expect(form("in + gli")).toBe("negli");
     expect(form("su + l'")).toBe("sull'");
     expect(form("in + le")).toBe("nelle");
+    expect(pair("articulated")).toContain("del = di + il = of the");
+    expect(pair("articulated")).toContain("dalla = da + la = from the");
   });
 
   it("days of the week and months, in order", () => {
