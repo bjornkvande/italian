@@ -68,6 +68,7 @@ function pronounTable(rows) {
 function topicSection(topic, withHeading) {
   const rows = basicsRows.filter((r) => r.topic === topic.id);
   let html = withHeading ? `<h2>${topic.title}</h2>` : "";
+  if (topic.intro) html += `<p>${md(topic.intro)}</p>`;
   if (topic.verb) html += presenteTable(topic.verb);
   if (topic.pronouns) {
     html += pronounTable(rows);

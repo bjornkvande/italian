@@ -39,8 +39,8 @@ export const GROUPS = [
     pages: BASICS_PAGES.map((p) => ({ id: p.id, href: `basics.html#${p.id}`, label: p.label })),
     cards: () => basicsCards(),
     difficulties: {
-      beginner: { description: "Pronouns, greetings, essere, avere, numbers, days", include: inTopics("beginner") },
-      intermediate: { description: "+ object pronouns, questions, prepositions, place words, possessives, some/all/none, months", include: inTopics("intermediate") },
+      beginner: { description: "Pronouns, greetings, articles, essere, avere, numbers, days", include: inTopics("beginner") },
+      intermediate: { description: "+ object pronouns, questions, prepositions, place words, del/della…, possessives, some/all/none, months", include: inTopics("intermediate") },
       advanced: { description: "Everything, + prepositions + article, ordinals, units of time", include: null },
     },
   },

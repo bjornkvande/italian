@@ -7,6 +7,11 @@
 //   english  the other side (I, di + il, I am hungry)
 //   note     optional note on the Basics page (*italic* and **bold** allowed)
 //
+// articles.csv holds the articles with an example noun (lo zaino = the
+// backpack). Columns: topic, italian, english, noun, gender (m/f), number
+// (sg/pl), note. tests/articles.test.js checks each article against the rules
+// in src/articles.js.
+//
 // pronouns.csv holds the object, reflexive and stressed pronouns as example
 // phrases, since a pronoun only makes sense in a sentence. Columns: topic, pronoun (lo), meaning (him, it (m.)), italian
 // (lo vedo), english (I see him), note. Each phrase is a card like the rows above.
@@ -16,6 +21,7 @@
 // and share their ratings with the verb cards.
 import basicsCSV from "../dictionary/basics.csv?raw";
 import pronounsCSV from "../dictionary/pronouns.csv?raw";
+import articlesCSV from "../dictionary/articles.csv?raw";
 import { parseCSV, verbs } from "./csv.js";
 import { cardsFor } from "./conjugate.js";
 
@@ -27,6 +33,12 @@ export const TOPICS = [
   { id: "indirect", title: "Indirect object pronouns", pronouns: true, kind: "Pronoun", heading: "Pronoun · indirect object" },
   { id: "reflexive", title: "Reflexive pronouns", pronouns: true, kind: "Pronoun", heading: "Pronoun · reflexive" },
   { id: "stressed", title: "Stressed pronouns (after prepositions)", pronouns: true, kind: "Pronoun", heading: "Pronoun · stressed" },
+  { id: "definite", title: "The: il, lo, l', la, i, gli, le", kind: "Article", heading: "Article · the",
+    intro: "Masculine: *il*; *lo* before *z*, *s* + consonant, *gn*, *ps*, *y*; *l'* before a vowel. Plural *i* and *gli*. Feminine: *la*, *l'* before a vowel, plural *le*." },
+  { id: "indefinite", title: "A, an: un, uno, una, un'", kind: "Article", heading: "Article · a, an",
+    intro: "Masculine: *un*, and *uno* where *the* would be *lo*. Feminine: *una*, and *un'* before a vowel." },
+  { id: "partitive", title: "Some: del, dello, della, dei…", kind: "Article", heading: "Article · some",
+    intro: "*Some* is *di* + the definite article, merged like the prepositions: *del, dello, dell', della, dei, degli, delle*." },
   { id: "essere", title: "Essere – to be", verb: "essere", kind: "Phrase", heading: "Phrase · with essere" },
   { id: "avere", title: "Avere – to have", verb: "avere", kind: "Phrase", heading: "Phrase · with avere" },
   { id: "prepositions", title: "Prepositions", kind: "Preposition", heading: "Preposition" },
@@ -54,6 +66,7 @@ export const BASICS_PAGES = [
   { id: "greetings", label: "Greetings", topics: ["greetings"] },
   { id: "essere", label: "Essere", topics: ["essere"] },
   { id: "avere", label: "Avere", topics: ["avere"] },
+  { id: "articles", label: "Articles", topics: ["definite", "indefinite", "partitive"] },
   { id: "prepositions", label: "Prepositions & place", topics: ["prepositions", "articulated", "place"] },
   { id: "questions", label: "Questions", topics: ["questions"] },
   { id: "small-words", label: "Small words", topics: ["demonstratives", "indefinites", "connectors", "time", "time-units"] },
@@ -61,11 +74,11 @@ export const BASICS_PAGES = [
 ];
 
 // Which topics each difficulty practises (null = all of them).
-const BEGINNER_TOPICS = ["pronouns", "greetings", "essere", "avere", "numbers", "days"];
+const BEGINNER_TOPICS = ["pronouns", "greetings", "definite", "indefinite", "essere", "avere", "numbers", "days"];
 export const BASICS_DIFFICULTY_TOPICS = {
   beginner: BEGINNER_TOPICS,
   intermediate: [...BEGINNER_TOPICS, "direct", "indirect", "reflexive", "stressed",
-    "questions", "prepositions", "place", "possessives", "demonstratives", "indefinites", "connectors", "time", "months", "seasons"],
+    "questions", "prepositions", "place", "partitive", "possessives", "demonstratives", "indefinites", "connectors", "time", "months", "seasons"],
   advanced: null,
 };
 
@@ -78,8 +91,10 @@ export function basicsTopicOf(card) {
 export const BASICS_CSV = basicsCSV;
 export const PRONOUNS_CSV = pronounsCSV;
 export const pronounRows = parseCSV(pronounsCSV);
-// All Basics rows: the words, then the pronoun phrases. Each row is one card.
-export const basicsRows = [...parseCSV(basicsCSV), ...pronounRows];
+export const ARTICLES_CSV = articlesCSV;
+export const articleRows = parseCSV(articlesCSV);
+// All Basics rows: the words, then the pronoun phrases and the articles. Each row is one card.
+export const basicsRows = [...parseCSV(basicsCSV), ...pronounRows, ...articleRows];
 
 /** The id of a Basics card: "basics.pronouns.io". The Basics page uses it to colour rows. */
 export function basicsCardId(topicId, italian) {

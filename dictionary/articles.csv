@@ -1,0 +1,25 @@
+topic,italian,english,noun,gender,number,note
+definite,il libro,the book,libro,m,sg,"*il*: masculine, before most consonants."
+definite,lo zaino,the backpack,zaino,m,sg,"*lo*: masculine before *z*, *s* + consonant, *gn*, *ps* and *y*: *lo zaino, lo studente, lo gnocco*."
+definite,lo studente,the student,studente,m,sg,
+definite,l'amico,the friend (m.),amico,m,sg,"*l'*: before a vowel or *h*, masculine and feminine: *l'amico, l'amica, l'hotel*."
+definite,la casa,the house,casa,f,sg,"*la*: feminine, before a consonant."
+definite,l'amica,the friend (f.),amica,f,sg,
+definite,i libri,the books,libri,m,pl,*i*: the plural of *il*.
+definite,gli zaini,the backpacks,zaini,m,pl,"*gli*: the plural of *lo* and *l'* (masculine): *gli zaini, gli studenti, gli amici*."
+definite,gli amici,the friends (m.),amici,m,pl,
+definite,le case,the houses,case,f,pl,"*le*: every feminine plural, never with an apostrophe: *le amiche*."
+definite,le amiche,the friends (f.),amiche,f,pl,
+indefinite,un libro,a book,libro,m,sg,"*un*: masculine, also before a vowel, and without an apostrophe: *un amico*."
+indefinite,un amico,a friend (m.),amico,m,sg,
+indefinite,uno studente,a student,studente,m,sg,"*uno*: masculine before *z*, *s* + consonant, *gn*, *ps* and *y*: *uno zio, uno studente*."
+indefinite,uno zio,an uncle,zio,m,sg,
+indefinite,una casa,a house,casa,f,sg,"*una*: feminine, before a consonant."
+indefinite,un'amica,a friend (f.),amica,f,sg,"*un'*: feminine before a vowel, with an apostrophe."
+partitive,del pane,some bread,pane,m,sg,"*Some* is *di* + the article, merged like the prepositions: *di + il → del*."
+partitive,dello zucchero,some sugar,zucchero,m,sg,
+partitive,dell'acqua,some water,acqua,f,sg,
+partitive,della pasta,some pasta,pasta,f,sg,
+partitive,dei biscotti,some biscuits,biscotti,m,pl,
+partitive,degli spaghetti,some spaghetti,spaghetti,m,pl,
+partitive,delle mele,some apples,mele,f,pl,

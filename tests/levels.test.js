@@ -50,15 +50,15 @@ describe("verbs", () => {
 });
 
 describe("basics", () => {
-  it("beginner: pronouns, greetings, essere, avere, numbers, days", () => {
-    expect(topicsIn(at("basics", "beginner"))).toEqual(["avere", "days", "essere", "greetings", "numbers", "pronouns"]);
+  it("beginner: pronouns, greetings, articles (the, a), essere, avere, numbers, days", () => {
+    expect(topicsIn(at("basics", "beginner"))).toEqual(["avere", "days", "definite", "essere", "greetings", "indefinite", "numbers", "pronouns"]);
     expect(at("basics", "beginner").map((c) => c.it)).toContain("io sono");
   });
 
   it("intermediate adds object, reflexive and stressed pronouns, questions, prepositions, place words, possessives, small words, months, seasons", () => {
     const added = topicsIn(at("basics", "intermediate")).filter((t) => !topicsIn(at("basics", "beginner")).includes(t));
-    expect(added).toEqual(["connectors", "demonstratives", "direct", "indefinites", "indirect", "months", "place", "possessives",
-      "prepositions", "questions", "reflexive", "seasons", "stressed", "time"]);
+    expect(added).toEqual(["connectors", "demonstratives", "direct", "indefinites", "indirect", "months", "partitive", "place",
+      "possessives", "prepositions", "questions", "reflexive", "seasons", "stressed", "time"]);
   });
 
   it("advanced adds the rest: prepositions + article, ordinals, units of time", () => {
