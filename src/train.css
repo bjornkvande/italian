@@ -80,6 +80,30 @@ html, body { overscroll-behavior: none; }
   line-height: 1.25;
 }
 
+/* Speaker button in the top corner of the Italian side: reads the word aloud. */
+.speak {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  opacity: 0.55;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.speak:hover { opacity: 1; }
+.speak[hidden] { display: none; }
+/* Only the side facing you can be tapped. */
+.card:not(.flipped) .back .speak, .card.flipped .front .speak { pointer-events: none; }
+
 /* Rating buttons along the bottom of the answer side. */
 .rating {
   position: absolute;

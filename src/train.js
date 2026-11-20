@@ -9,6 +9,7 @@ import { subpageFromHash, rememberPage, grammarHref } from "./nav.js";
 import { GROUPS, cardsByGroup, groupById } from "./groups.js";
 import { dropdown } from "./menu.js";
 import { createBag } from "./bag.js";
+import { canSpeak, speak, onVoice } from "./speech.js";
 
 migrateOldLevel(); // carry over the old single level setting, once
 
@@ -61,6 +62,9 @@ function showRandomCard() {
   el("back-heading").textContent = italianFirst ? current.heading : current.kind;
   el("front-word").textContent = italianFirst ? current.it : current.en;
   el("back-word").textContent = italianFirst ? current.en : current.it;
+  // The speaker button sits on the Italian side.
+  el("front-speak").hidden = !canSpeak || !italianFirst;
+  el("back-speak").hidden = !canSpeak || italianFirst;
 
   // Show the rating this card already has in this direction, if any.
   ratedNow = null;
@@ -91,6 +95,12 @@ function nextCard() {
   }, SLIDE_MS);
 }
 
+// The speaker buttons say which voice reads aloud (hover to see it).
+onVoice((voice) => {
+  const title = voice ? `Say it in Italian (${voice.name})` : "Say it in Italian (no Italian voice found)";
+  for (const id of ["front-speak", "back-speak"]) el(id).title = title;
+});
+
 const isFlipped = () => card.classList.contains("flipped");
 
 // Store how well you knew the card and highlight the choice. The card stays.
@@ -110,6 +120,7 @@ function rate(value) {
 // card (question side) or moves on to the next card (answer side).
 function handleClick(e) {
   if (busy) return;
+  if (e?.target.closest(".speak")) return speak(current.it);
   const button = e?.target.closest("[data-rating]");
   if (button) return rate(Number(button.dataset.rating));
   if (isFlipped()) nextCard();
@@ -195,8 +206,8 @@ window.addEventListener("hashchange", () => {
 // ---------------------------------------------------------------- input
 
 document.addEventListener("keydown", (e) => {
-  // Keys on the menu or the 📖 link shouldn't flip the card.
-  if (e.target.closest?.(".train-header")) return;
+  // Keys on the menu, the 📖 link or the speaker button shouldn't flip the card.
+  if (e.target.closest?.(".train-header, .speak")) return;
   if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); }
   else if (/^[1-5]$/.test(e.key)) rate(Number(e.key));
 });
