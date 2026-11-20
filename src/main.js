@@ -8,6 +8,7 @@ import { DIFFICULTIES, cardsForDifficulty, loadDifficulty, saveDifficulty, migra
 import { subpageFromHash, rememberPage, grammarHref } from "./nav.js";
 import { GROUPS, cardsByGroup, groupById } from "./groups.js";
 import { dropdown } from "./menu.js";
+import { createBag } from "./bag.js";
 
 migrateOldLevel(); // carry over the old single level setting, once
 
@@ -22,8 +23,11 @@ const decks = cardsByGroup();
 let groupId = subpageFromHash("train");
 let difficulty = loadDifficulty(groupId);
 let cards = [];
+// Cards come from a shuffle bag: each card once, in random order, before any repeats.
+let bag = null;
 const pickCards = () => {
   cards = cardsForDifficulty(decks[groupId], groupById(groupId), difficulty);
+  bag = createBag(cards, `${groupId}.${difficulty}`);
 };
 pickCards();
 rememberPage("train", groupId);
@@ -39,13 +43,9 @@ const scene = el("scene");
 const SLIDE_MS = 250; // keep in sync with the .scene transition in style.css
 let busy = false;
 
-// Pick a new random card (never the same twice in a row) and show a random side.
+// Take the next card from the bag and show a random side.
 function showRandomCard() {
-  let next;
-  do {
-    next = cards[Math.floor(Math.random() * cards.length)];
-  } while (cards.length > 1 && next === current);
-  current = next;
+  current = bag.next();
 
   const italianFirst = Math.random() < 0.5;
   direction = italianFirst ? "it-en" : "en-it";
