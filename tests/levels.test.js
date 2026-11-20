@@ -57,21 +57,21 @@ describe("basics", () => {
 
   it("intermediate adds object, reflexive and stressed pronouns, questions, prepositions, place words, possessives, small words, months, seasons", () => {
     const added = topicsIn(at("basics", "intermediate")).filter((t) => !topicsIn(at("basics", "beginner")).includes(t));
-    expect(added).toEqual(["connectors", "demonstratives", "direct", "indirect", "months", "place", "possessives", "prepositions",
-      "questions", "reflexive", "seasons", "stressed", "time"]);
+    expect(added).toEqual(["connectors", "demonstratives", "direct", "indefinites", "indirect", "months", "place", "possessives",
+      "prepositions", "questions", "reflexive", "seasons", "stressed", "time"]);
   });
 
-  it("advanced adds the rest: ci and ne, combined pronouns, prepositions + article, ordinals, units of time", () => {
+  it("advanced adds the rest: prepositions + article, ordinals, units of time", () => {
     const added = topicsIn(at("basics", "advanced")).filter((t) => !topicsIn(at("basics", "intermediate")).includes(t));
-    expect(added).toEqual(["articulated", "ci-ne", "combined", "ordinals", "time-units"]);
+    expect(added).toEqual(["articulated", "ordinals", "time-units"]);
   });
 });
 
 describe("adjectives", () => {
-  it("beginner: base forms; intermediate: + feminine singular; advanced: + plurals", () => {
+  it("beginner: base forms; intermediate: + feminine singular and comparison; advanced: + plurals", () => {
     expect(keysIn(at("adjectives", "beginner"))).toEqual(["base"]);
-    expect(keysIn(at("adjectives", "intermediate"))).toEqual(["base", "fsg"]);
-    expect(keysIn(at("adjectives", "advanced"))).toEqual(["base", "fpl", "fsg", "mpl", "pl"]);
+    expect(keysIn(at("adjectives", "intermediate"))).toEqual(["base", "comparison", "fsg"]);
+    expect(keysIn(at("adjectives", "advanced"))).toEqual(["base", "comparison", "fpl", "fsg", "mpl", "pl"]);
     expect(at("adjectives", "intermediate").map((c) => c.it)).toContain("rossa");
   });
 });

@@ -7,9 +7,8 @@
 //   english  the other side (I, di + il, I am hungry)
 //   note     optional note on the Basics page (*italic* and **bold** allowed)
 //
-// pronouns.csv holds the object, reflexive and stressed pronouns, ci/ne and the
-// combined pronouns as example phrases, since a pronoun only makes sense in a
-// sentence. Columns: topic, pronoun (lo), meaning (him, it (m.)), italian
+// pronouns.csv holds the object, reflexive and stressed pronouns as example
+// phrases, since a pronoun only makes sense in a sentence. Columns: topic, pronoun (lo), meaning (him, it (m.)), italian
 // (lo vedo), english (I see him), note. Each phrase is a card like the rows above.
 //
 // The presente of essere and avere isn't in basics.csv: it comes from
@@ -27,8 +26,6 @@ export const TOPICS = [
   { id: "indirect", title: "Indirect object pronouns", pronouns: true },
   { id: "reflexive", title: "Reflexive pronouns", pronouns: true },
   { id: "stressed", title: "Stressed pronouns (after prepositions)", pronouns: true },
-  { id: "ci-ne", title: "Ci and ne", pronouns: true },
-  { id: "combined", title: "Combined pronouns", pronouns: true },
   { id: "essere", title: "Essere – to be", verb: "essere" },
   { id: "avere", title: "Avere – to have", verb: "avere" },
   { id: "prepositions", title: "Prepositions" },
@@ -37,6 +34,7 @@ export const TOPICS = [
   { id: "questions", title: "Question words" },
   { id: "possessives", title: "Possessives" },
   { id: "demonstratives", title: "This and that" },
+  { id: "indefinites", title: "Some, all and none" },
   { id: "connectors", title: "Small connecting words" },
   { id: "time", title: "Time words" },
   { id: "time-units", title: "Units of time" },
@@ -52,13 +50,12 @@ export const TOPICS = [
 // Every topic belongs to exactly one subpage.
 export const BASICS_PAGES = [
   { id: "pronouns", label: "Pronouns", topics: ["pronouns", "direct", "indirect", "reflexive", "stressed", "possessives"] },
-  { id: "ci-ne", label: "Ci, ne & combined", topics: ["ci-ne", "combined"] },
   { id: "greetings", label: "Greetings", topics: ["greetings"] },
   { id: "essere", label: "Essere", topics: ["essere"] },
   { id: "avere", label: "Avere", topics: ["avere"] },
   { id: "prepositions", label: "Prepositions & place", topics: ["prepositions", "articulated", "place"] },
   { id: "questions", label: "Questions", topics: ["questions"] },
-  { id: "small-words", label: "Small words", topics: ["demonstratives", "connectors", "time", "time-units"] },
+  { id: "small-words", label: "Small words", topics: ["demonstratives", "indefinites", "connectors", "time", "time-units"] },
   { id: "numbers", label: "Numbers & dates", topics: ["numbers", "ordinals", "days", "months", "seasons"] },
 ];
 
@@ -67,7 +64,7 @@ const BEGINNER_TOPICS = ["pronouns", "greetings", "essere", "avere", "numbers", 
 export const BASICS_DIFFICULTY_TOPICS = {
   beginner: BEGINNER_TOPICS,
   intermediate: [...BEGINNER_TOPICS, "direct", "indirect", "reflexive", "stressed",
-    "questions", "prepositions", "place", "possessives", "demonstratives", "connectors", "time", "months", "seasons"],
+    "questions", "prepositions", "place", "possessives", "demonstratives", "indefinites", "connectors", "time", "months", "seasons"],
   advanced: null,
 };
 

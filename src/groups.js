@@ -39,8 +39,8 @@ export const GROUPS = [
     cards: () => basicsCards(),
     difficulties: {
       beginner: { description: "Pronouns, greetings, essere, avere, numbers, days", include: inTopics("beginner") },
-      intermediate: { description: "+ object pronouns, questions, prepositions, place words, possessives, small words, months", include: inTopics("intermediate") },
-      advanced: { description: "Everything, + ci, ne and combined pronouns", include: null },
+      intermediate: { description: "+ object pronouns, questions, prepositions, place words, possessives, some/all/none, months", include: inTopics("intermediate") },
+      advanced: { description: "Everything, + prepositions + article, ordinals, units of time", include: null },
     },
   },
   {
@@ -52,7 +52,7 @@ export const GROUPS = [
     cards: () => allAdjectiveCards(),
     difficulties: {
       beginner: { description: "Base form (rosso)", include: formIn(["base"]) },
-      intermediate: { description: "+ feminine singular (rossa)", include: formIn(["base", "fsg"]) },
+      intermediate: { description: "+ feminine singular (rossa), comparison (più alto di)", include: formIn(["base", "fsg", "comparison"]) },
       advanced: { description: "All forms, + plurals (rossi, rosse)", include: null },
     },
   },

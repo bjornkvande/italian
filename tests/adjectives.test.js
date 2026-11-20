@@ -2,7 +2,8 @@
 // Expected forms are written out from Italian grammar, not copied from the code.
 import { describe, it, expect } from "vitest";
 import {
-  ADJECTIVES_CSV, ADJECTIVE_PAGES, adjectives, adjectiveForms, adjectiveCards, adjectiveCardId, allAdjectiveCards,
+  ADJECTIVES_CSV, ADJECTIVE_PAGES, COMPARISON_CSV, COMPARISON_TOPICS, adjectives, comparisons,
+  adjectiveForms, adjectiveCards, adjectiveCardId, allAdjectiveCards, comparisonCardId, comparisonCards, superlativeOf,
 } from "../src/adjectives.js";
 import { parseRows } from "../src/csv.js";
 
@@ -73,7 +74,10 @@ describe("cards", () => {
   });
 
   it("every card has a cell on the page (the page builds cell ids with adjectiveCardId)", () => {
-    const onPage = new Set(adjectives.flatMap((a) => ["msg", "fsg", "mpl", "fpl"].map((f) => adjectiveCardId(a, f))));
+    const onPage = new Set([
+      ...adjectives.flatMap((a) => ["msg", "fsg", "mpl", "fpl"].map((f) => adjectiveCardId(a, f))),
+      ...comparisons.map(comparisonCardId), // the Comparison subpage
+    ]);
     for (const c of allAdjectiveCards()) expect(onPage.has(c.id), c.id).toBe(true);
   });
 
@@ -111,7 +115,48 @@ describe("dictionary/adjectives.csv", () => {
     }
   });
 
-  it("every subpage has adjectives", () => {
-    for (const p of ADJECTIVE_PAGES) expect(adjectives.some((a) => a.topic === p.id), p.id).toBe(true);
+  it("every subpage has adjectives (Comparison has its own file)", () => {
+    for (const p of ADJECTIVE_PAGES.filter((x) => x.id !== "comparison")) expect(adjectives.some((a) => a.topic === p.id), p.id).toBe(true);
+  });
+});
+
+describe("comparison", () => {
+  it("-issimo: the m. pl. with -i replaced by -issimo (written from the rule)", () => {
+    expect(superlativeOf(adj("bello"))).toBe("bellissimo");
+    expect(superlativeOf(adj("bianco"))).toBe("bianchissimo");
+    expect(superlativeOf(adj("lungo"))).toBe("lunghissimo");
+    expect(superlativeOf(adj("simpatico"))).toBe("simpaticissimo");
+    expect(superlativeOf(adj("vecchio"))).toBe("vecchissimo");
+    expect(superlativeOf(adj("grande"))).toBe("grandissimo");
+    expect(superlativeOf(adj("facile"))).toBe("facilissimo");
+    expect(superlativeOf(adj("blu"))).toBeNull();
+  });
+
+  it("every -issimo row comes from an adjective in the dictionary and follows the rule", () => {
+    const withFrom = comparisons.filter((r) => r.from);
+    expect(withFrom.length).toBeGreaterThan(0);
+    for (const r of withFrom) expect(r.italian, `from ${r.from}`).toBe(superlativeOf(adj(r.from)));
+  });
+
+  it("cards: one per row, in section order, on the Comparison subpage", () => {
+    const cards = comparisonCards();
+    expect(cards).toHaveLength(comparisons.length);
+    expect(cards.map((c) => `${c.it} = ${c.en}`)).toContain("più alto di = taller than");
+    expect(cards.map((c) => `${c.it} = ${c.en}`)).toContain("migliore = better");
+    expect(cards.every((c) => c.tenseKey === "comparison")).toBe(true);
+    expect(ADJECTIVE_PAGES.map((p) => p.id)).toContain("comparison");
+  });
+
+  it("dictionary/comparison.csv has the expected columns, valid topics and no duplicates", () => {
+    const COLUMNS = ["topic", "italian", "english", "from", "note"];
+    const [header, ...rows] = parseRows(COMPARISON_CSV);
+    expect(header).toEqual(COLUMNS);
+    for (const r of rows) expect(r.length, `row "${r[1]}" has ${r.length} fields`).toBe(COLUMNS.length);
+    for (const r of comparisons) expect(COMPARISON_TOPICS.map((t) => t.id), r.italian).toContain(r.topic);
+    for (const t of COMPARISON_TOPICS) expect(comparisons.some((r) => r.topic === t.id), t.id).toBe(true);
+    for (const key of ["italian", "english"]) {
+      const values = comparisons.map((r) => r[key]);
+      expect(values.filter((v, i) => values.indexOf(v) !== i), key).toEqual([]);
+    }
   });
 });

@@ -1,7 +1,9 @@
 // Renders the Adjectives page from dictionary/adjectives.csv: one subpage at a
 // time (adjectives.html#colours), each form coloured by your ratings.
 import "./pwa.js";
-import { adjectives, ADJECTIVE_PAGES, adjectiveForms, adjectiveCardId } from "./adjectives.js";
+import {
+  adjectives, ADJECTIVE_PAGES, COMPARISON_TOPICS, comparisons, adjectiveForms, adjectiveCardId, comparisonCardId,
+} from "./adjectives.js";
 import { renderGrammarNav, subpageFromHash } from "./nav.js";
 import { legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
 import { escape, md, table, ratingColours } from "./page-helpers.js";
@@ -21,6 +23,19 @@ function adjectiveTable(rows) {
   }));
 }
 
+// The Comparison subpage: a table per section, Italian | English.
+function comparisonSection(topic) {
+  const rows = comparisons.filter((r) => r.topic === topic.id);
+  return `<h2>${topic.title}</h2>` + table("words", ["Italian", "English"], rows.map((r) => ({
+    attrs: colour(comparisonCardId(r)),
+    cells: [
+      `<td class="it">${escape(r.italian)}</td>`,
+      `<td>${escape(r.english)}${r.note ? `<div class="row-note">${md(r.note)}</div>` : ""}${
+        r.from ? `<div class="row-note">from <em>${escape(r.from)}</em></div>` : ""}</td>`,
+    ],
+  })));
+}
+
 const INTRO = `<p>Adjectives agree with the noun in gender and number. Most end in <em>-o</em> and have
   four forms (<em>rosso, rossa, rossi, rosse</em>); those ending in <em>-e</em> have two
   (<em>grande, grandi</em>); a few never change (<em>blu, rosa</em>).</p>`;
@@ -29,9 +44,9 @@ function render() {
   colours.refresh();
   const page = ADJECTIVE_PAGES.find((p) => p.id === subpageFromHash("adjectives"));
   renderGrammarNav(document.getElementById("nav"), "adjectives", page.id);
-  document.getElementById("content").innerHTML =
-    `<h1>Adjectives: ${page.title}</h1>${legendHTML()}${INTRO}` +
-    adjectiveTable(adjectives.filter((a) => a.topic === page.id));
+  document.getElementById("content").innerHTML = page.id === "comparison"
+    ? `<h1>Adjectives: ${page.title}</h1>${legendHTML()}` + COMPARISON_TOPICS.map(comparisonSection).join("")
+    : `<h1>Adjectives: ${page.title}</h1>${legendHTML()}${INTRO}` + adjectiveTable(adjectives.filter((a) => a.topic === page.id));
   document.title = `Italiano – ${page.title}`;
 }
 

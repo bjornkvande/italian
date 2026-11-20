@@ -11,7 +11,13 @@
 //   invariable  "yes" if it never changes, otherwise empty
 //   m_pl, f_pl  only when the rules below get a plural wrong (simpatico → simpatici)
 //   note        optional note on the page (*italic* and **bold** allowed)
+//
+// comparison.csv holds comparison as phrases and forms (più alto di = taller
+// than, bellissimo = very beautiful, migliore = better). Columns: topic (see
+// COMPARISON_TOPICS), italian, english, from (for -issimo forms: the adjective,
+// checked against superlativeOf), note. Each row is one card.
 import adjectivesCSV from "../dictionary/adjectives.csv?raw";
+import comparisonCSV from "../dictionary/comparison.csv?raw";
 import { parseCSV } from "./csv.js";
 
 export const ADJECTIVES_CSV = adjectivesCSV;
@@ -23,7 +29,18 @@ export const ADJECTIVE_PAGES = [
   { id: "colours", label: "Colours", title: "Colours" },
   { id: "character", label: "Character", title: "People and character" },
   { id: "feelings", label: "Feelings", title: "Feelings and states" },
+  { id: "comparison", label: "Comparison", title: "Comparison" },
 ];
+
+// The sections of the Comparison subpage.
+export const COMPARISON_TOPICS = [
+  { id: "comparing", title: "More, less, as … as" },
+  { id: "superlative", title: "The most, and -issimo (very)" },
+  { id: "irregular", title: "Better, worse, bigger, smaller" },
+];
+
+export const COMPARISON_CSV = comparisonCSV;
+export const comparisons = parseCSV(comparisonCSV);
 
 const isVowel = (c) => "aeiouàèéìòù".includes(c);
 
@@ -96,7 +113,27 @@ export function adjectiveCards(adj) {
   return cards;
 }
 
-/** All adjective cards, in subpage order. */
+/**
+ * The -issimo form (very …): the masculine plural with -i replaced by -issimo
+ * (belli → bellissimo, bianchi → bianchissimo, grandi → grandissimo).
+ * Invariable adjectives (blu, rosa) have none.
+ */
+export function superlativeOf(adj) {
+  if (adjectiveType(adj) === "one") return null;
+  return adjectiveForms(adj).mpl.slice(0, -1) + "issimo";
+}
+
+/** The card id of a comparison row: "adjectives.comparison.migliore". */
+export const comparisonCardId = (row) => `adjectives.comparison.${row.italian}`;
+
+/** The comparison cards (più alto di = taller than, ...). */
+export function comparisonCards(rows = comparisons) {
+  return COMPARISON_TOPICS.flatMap((t) => rows.filter((r) => r.topic === t.id)).map((r) => ({
+    id: comparisonCardId(r), tenseKey: "comparison", tense: "Comparison", it: r.italian, en: r.english,
+  }));
+}
+
+/** All adjective cards, in subpage order, then the comparison cards. */
 export function allAdjectiveCards(rows = adjectives) {
-  return ADJECTIVE_PAGES.flatMap((p) => rows.filter((a) => a.topic === p.id).flatMap(adjectiveCards));
+  return [...ADJECTIVE_PAGES.flatMap((p) => rows.filter((a) => a.topic === p.id).flatMap(adjectiveCards)), ...comparisonCards()];
 }

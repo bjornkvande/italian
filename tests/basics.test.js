@@ -90,6 +90,12 @@ describe("Basics cards", () => {
     ]);
   });
 
+  it("some, all and none: indefinite words on the Small words subpage", () => {
+    expect(pair("indefinites")).toContain("qualcosa = something, anything");
+    expect(pair("indefinites")).toContain("nessuno = nobody, no one");
+    expect(BASICS_PAGES.find((p) => p.id === "small-words").topics).toContain("indefinites");
+  });
+
   it("place words show the small word they take before a noun", () => {
     expect(pair("place")).toContain("davanti (a) = in front (of)");
     expect(pair("place")).toContain("lontano (da) = far (from)");
@@ -162,13 +168,10 @@ describe("dictionary/pronouns.csv", () => {
     expect(pair("indirect")).toContain("mi piace = I like it");
     expect(pair("reflexive")).toContain("mi chiamo = my name is");
     expect(pair("stressed")).toContain("con me = with me");
-    expect(pair("ci-ne")).toContain("ne voglio due = I want two (of them)");
-    expect(pair("combined")).toContain("te lo do = I'll give it to you");
   });
 
-  it("the pronouns are on the Pronouns subpage, ci/ne and combined on their own", () => {
+  it("the pronouns are on the Pronouns subpage", () => {
     const page = (id) => BASICS_PAGES.find((p) => p.id === id).topics;
     expect(page("pronouns")).toEqual(["pronouns", "direct", "indirect", "reflexive", "stressed", "possessives"]);
-    expect(page("ci-ne")).toEqual(["ci-ne", "combined"]);
   });
 });
