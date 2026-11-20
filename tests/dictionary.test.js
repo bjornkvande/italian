@@ -8,8 +8,14 @@ const COLUMNS_PER_FILE = {
   "verbs-are.csv": COMMON,
   "verbs-ere.csv": COMMON,
   "verbs-ire.csv": ["infinitive", "english", "isc", ...COMMON.slice(2)],
+  "verbs-irregular.csv": [
+    "infinitive", "english", "auxiliary", "participle", "gerund",
+    "presente", "imperfetto", "futuro", "condizionale", "imperativo",
+    "en_base", "en_past", "en_presente", "en_condizionale", "note",
+  ],
 };
-const ENDING_PER_FILE = { "verbs-are.csv": "are", "verbs-ere.csv": "ere", "verbs-ire.csv": "ire" };
+const ENDING_PER_FILE = { "verbs-are.csv": "are", "verbs-ere.csv": "ere", "verbs-ire.csv": "ire", "verbs-irregular.csv": "" };
+const sixForms = (text) => text.split(";").map((f) => f.trim());
 
 describe("parseCSV", () => {
   it("handles quoted commas, escaped quotes, CRLF and a trailing newline", () => {
@@ -45,11 +51,29 @@ describe.each(Object.entries(DICTIONARY_FILES))("dictionary/%s", (file, { text }
     expect(v.infinitive).toMatch(/^[a-z]+$/);
     expect(["avere", "essere", "avere/essere"]).toContain(v.auxiliary);
     expect(v.english).toMatch(/^to /);
-    expect(v.en_base).toMatch(/^[a-z][a-z ]*$/);
+    expect(v.en_base).toMatch(/^[a-z][a-z ()]*$/);
     expect(v.en_base).not.toMatch(/^to /);
-    expect(v.en_past).toMatch(/^[a-z][a-z ]*$/);
-    expect(["", "yes"]).toContain(v.impersonal);
+    expect(v.en_past).toMatch(/^[a-z][a-z ();]*$/);
+    if ("impersonal" in v) expect(["", "yes"]).toContain(v.impersonal);
     if (v.participle) expect(v.participle).toMatch(/^[a-z]+o$/);
+
+    if (file === "verbs-irregular.csv") {
+      expect(v.participle, "irregular verbs need a participle").toMatch(/^[a-z]+o$/);
+      expect(v.gerund).toMatch(/^[a-z]+ndo$/);
+      for (const tense of ["presente", "imperfetto", "futuro", "condizionale"]) {
+        const forms = sixForms(v[tense]);
+        expect(forms, `${v.infinitive} ${tense} needs 6 forms`).toHaveLength(6);
+        for (const f of forms) expect(f, `${v.infinitive} ${tense}`).toMatch(/^[a-zàèéìòù']+$/);
+      }
+      if (v.imperativo) {
+        const imp = sixForms(v.imperativo);
+        expect(imp, `${v.infinitive} imperativo needs ";tu;Lei;noi;voi;Loro"`).toHaveLength(6);
+        expect(imp[0], "imperativo has no io form").toBe("");
+        for (const f of imp.slice(1)) expect(f).toMatch(/^[a-zàèéìòù'/]+$/);
+      }
+      if (v.en_presente) expect(sixForms(v.en_presente)).toHaveLength(6);
+      expect([1, 6]).toContain(sixForms(v.en_past).length);
+    }
 
     // Markdown in notes: ** and * must come in pairs, or the page shows stray asterisks.
     const singles = v.note.replace(/\*\*/g, "").split("*").length - 1;

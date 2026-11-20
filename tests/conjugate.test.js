@@ -165,7 +165,7 @@ describe("passato prossimo: auxiliary and agreement", () => {
 
 describe("flash cards", () => {
   it("every regular verb has 1 infinitive + 5 tenses × 6 persons + 4 imperativo cards", () => {
-    for (const v of verbs.filter((x) => !x.impersonal)) {
+    for (const v of verbs.filter((x) => !x.impersonal && x.group !== "irregular")) {
       expect(cardsFor(v), v.infinitive).toHaveLength(35);
     }
   });
@@ -229,6 +229,63 @@ describe("flash cards", () => {
     ["riflettere", "lui/lei riflette", "he/she thinks it over"],
   ])("English third person: %s → %s", (infinitive, it, en) => {
     expect(card(infinitive, it).en).toBe(en);
+  });
+});
+
+describe("irregular verbs", () => {
+  it("use the forms listed in verbs-irregular.csv", () => {
+    expect(row("essere", "presente")).toEqual(["sono", "sei", "è", "siamo", "siete", "sono"]);
+    expect(row("andare", "presente")).toEqual(["vado", "vai", "va", "andiamo", "andate", "vanno"]);
+    expect(row("fare", "imperfetto")).toEqual(["facevo", "facevi", "faceva", "facevamo", "facevate", "facevano"]);
+    expect(row("venire", "futuro")).toEqual(["verrò", "verrai", "verrà", "verremo", "verrete", "verranno"]);
+    expect(row("volere", "condizionale")[0]).toBe("vorrei");
+    expect(row("dare", "presente")[2]).toBe("dà");
+  });
+
+  it("build the passato prossimo from auxiliary and participle", () => {
+    expect(row("essere", "passato")).toEqual([
+      "sono stato/a", "sei stato/a", "è stato/a", "siamo stati/e", "siete stati/e", "sono stati/e",
+    ]);
+    expect(row("fare", "passato")[0]).toBe("ho fatto");
+    expect(row("dire", "passato")[3]).toBe("abbiamo detto");
+    expect(participle(verb("venire"))).toBe("venuto");
+    expect(gerund(verb("fare"))).toBe("facendo");
+  });
+
+  it("have the imperativo where it's used, and none for potere, volere, dovere, sapere", () => {
+    expect(row("essere", "imperativo")).toEqual([null, "sii", "sia", "siamo", "siate", "siano"]);
+    expect(row("andare", "imperativo")[1]).toBe("va'/vai");
+    expect(row("dire", "imperativo")[1]).toBe("di'");
+    for (const v of ["potere", "volere", "dovere", "sapere"]) {
+      expect(row(v, "imperativo"), v).toEqual([null, null, null, null, null, null]);
+      expect(cardsOf(v).some((c) => c.tense === "Imperativo"), v).toBe(false);
+      expect(cardsOf(v), v).toHaveLength(31);
+    }
+    expect(cardsOf("fare")).toHaveLength(35);
+  });
+
+  it("have irregular English where needed", () => {
+    expect(card("essere", "io sono").en).toBe("I am");
+    expect(card("essere", "lui/lei è").en).toBe("he/she is");
+    expect(card("essere", "noi siamo stati/e").en).toBe("we were");
+    expect(card("essere", "io sono stato/a").en).toBe("I was");
+    expect(card("avere", "lui/lei ha").en).toBe("he/she has");
+    expect(card("potere", "tu puoi").en).toBe("you can");
+    expect(card("potere", "loro potranno").en).toBe("they will be able to");
+    expect(card("dovere", "lui/lei deve").en).toBe("he/she has to");
+    expect(card("dovere", "io dovrei").en).toBe("I should");
+    expect(card("volere", "io vorrei").en).toBe("I would like");
+    expect(card("fare", "lui/lei fa").en).toBe("he/she does");
+    expect(card("andare", "lui/lei va").en).toBe("he/she goes");
+    expect(card("andare", "(tu) va'/vai!").en).toBe("go!");
+    expect(card("essere", "essere").en).toBe("to be");
+  });
+
+  it("no English meaning is shared by two verbs", () => {
+    const owners = {};
+    for (const v of verbs) (owners[v.en_base] ??= []).push(v.infinitive);
+    const shared = Object.entries(owners).filter(([, list]) => list.length > 1);
+    expect(shared).toEqual([]);
   });
 });
 

@@ -607,41 +607,41 @@ Imperfetto: restavo, restavi, restava, restavamo, restavate, restavano
 Futuro: resterò, resterai, resterà, resteremo, resterete, resteranno
 Condizionale: resterei, resteresti, resterebbe, resteremmo, restereste, resterebbero
 Imperativo: —, resta, resti, restiamo, restate, restino
-card [Infinito] restare = to stay
-card [Presente] io resto = I stay
-card [Presente] tu resti = you stay
-card [Presente] lui/lei resta = he/she stays
-card [Presente] noi restiamo = we stay
-card [Presente] voi restate = you all stay
-card [Presente] loro restano = they stay
-card [Passato prossimo] io sono restato/a = I stayed
-card [Passato prossimo] tu sei restato/a = you stayed
-card [Passato prossimo] lui/lei è restato/a = he/she stayed
-card [Passato prossimo] noi siamo restati/e = we stayed
-card [Passato prossimo] voi siete restati/e = you all stayed
-card [Passato prossimo] loro sono restati/e = they stayed
-card [Imperfetto] io restavo = I used to stay
-card [Imperfetto] tu restavi = you used to stay
-card [Imperfetto] lui/lei restava = he/she used to stay
-card [Imperfetto] noi restavamo = we used to stay
-card [Imperfetto] voi restavate = you all used to stay
-card [Imperfetto] loro restavano = they used to stay
-card [Futuro] io resterò = I will stay
-card [Futuro] tu resterai = you will stay
-card [Futuro] lui/lei resterà = he/she will stay
-card [Futuro] noi resteremo = we will stay
-card [Futuro] voi resterete = you all will stay
-card [Futuro] loro resteranno = they will stay
-card [Condizionale] io resterei = I would stay
-card [Condizionale] tu resteresti = you would stay
-card [Condizionale] lui/lei resterebbe = he/she would stay
-card [Condizionale] noi resteremmo = we would stay
-card [Condizionale] voi restereste = you all would stay
-card [Condizionale] loro resterebbero = they would stay
-card [Imperativo] (tu) resta! = stay!
-card [Imperativo] (Lei) resti! = stay! (polite)
-card [Imperativo] (noi) restiamo! = let's stay!
-card [Imperativo] (voi) restate! = stay! (you all)
+card [Infinito] restare = to remain
+card [Presente] io resto = I remain
+card [Presente] tu resti = you remain
+card [Presente] lui/lei resta = he/she remains
+card [Presente] noi restiamo = we remain
+card [Presente] voi restate = you all remain
+card [Presente] loro restano = they remain
+card [Passato prossimo] io sono restato/a = I remained
+card [Passato prossimo] tu sei restato/a = you remained
+card [Passato prossimo] lui/lei è restato/a = he/she remained
+card [Passato prossimo] noi siamo restati/e = we remained
+card [Passato prossimo] voi siete restati/e = you all remained
+card [Passato prossimo] loro sono restati/e = they remained
+card [Imperfetto] io restavo = I used to remain
+card [Imperfetto] tu restavi = you used to remain
+card [Imperfetto] lui/lei restava = he/she used to remain
+card [Imperfetto] noi restavamo = we used to remain
+card [Imperfetto] voi restavate = you all used to remain
+card [Imperfetto] loro restavano = they used to remain
+card [Futuro] io resterò = I will remain
+card [Futuro] tu resterai = you will remain
+card [Futuro] lui/lei resterà = he/she will remain
+card [Futuro] noi resteremo = we will remain
+card [Futuro] voi resterete = you all will remain
+card [Futuro] loro resteranno = they will remain
+card [Condizionale] io resterei = I would remain
+card [Condizionale] tu resteresti = you would remain
+card [Condizionale] lui/lei resterebbe = he/she would remain
+card [Condizionale] noi resteremmo = we would remain
+card [Condizionale] voi restereste = you all would remain
+card [Condizionale] loro resterebbero = they would remain
+card [Imperativo] (tu) resta! = remain!
+card [Imperativo] (Lei) resti! = remain! (polite)
+card [Imperativo] (noi) restiamo! = let's remain!
+card [Imperativo] (voi) restate! = remain! (you all)
 
 ## aspettare (are, avere) — participio aspettato, gerundio aspettando
 Presente: aspetto, aspetti, aspetta, aspettiamo, aspettate, aspettano
@@ -2198,41 +2198,41 @@ Imperfetto: conoscevo, conoscevi, conosceva, conoscevamo, conoscevate, conosceva
 Futuro: conoscerò, conoscerai, conoscerà, conosceremo, conoscerete, conosceranno
 Condizionale: conoscerei, conosceresti, conoscerebbe, conosceremmo, conoscereste, conoscerebbero
 Imperativo: —, conosci, conosca, conosciamo, conoscete, conoscano
-card [Infinito] conoscere = to know
-card [Presente] io conosco = I know
-card [Presente] tu conosci = you know
-card [Presente] lui/lei conosce = he/she knows
-card [Presente] noi conosciamo = we know
-card [Presente] voi conoscete = you all know
-card [Presente] loro conoscono = they know
-card [Passato prossimo] io ho conosciuto = I knew
-card [Passato prossimo] tu hai conosciuto = you knew
-card [Passato prossimo] lui/lei ha conosciuto = he/she knew
-card [Passato prossimo] noi abbiamo conosciuto = we knew
-card [Passato prossimo] voi avete conosciuto = you all knew
-card [Passato prossimo] loro hanno conosciuto = they knew
-card [Imperfetto] io conoscevo = I used to know
-card [Imperfetto] tu conoscevi = you used to know
-card [Imperfetto] lui/lei conosceva = he/she used to know
-card [Imperfetto] noi conoscevamo = we used to know
-card [Imperfetto] voi conoscevate = you all used to know
-card [Imperfetto] loro conoscevano = they used to know
-card [Futuro] io conoscerò = I will know
-card [Futuro] tu conoscerai = you will know
-card [Futuro] lui/lei conoscerà = he/she will know
-card [Futuro] noi conosceremo = we will know
-card [Futuro] voi conoscerete = you all will know
-card [Futuro] loro conosceranno = they will know
-card [Condizionale] io conoscerei = I would know
-card [Condizionale] tu conosceresti = you would know
-card [Condizionale] lui/lei conoscerebbe = he/she would know
-card [Condizionale] noi conosceremmo = we would know
-card [Condizionale] voi conoscereste = you all would know
-card [Condizionale] loro conoscerebbero = they would know
-card [Imperativo] (tu) conosci! = know!
-card [Imperativo] (Lei) conosca! = know! (polite)
-card [Imperativo] (noi) conosciamo! = let's know!
-card [Imperativo] (voi) conoscete! = know! (you all)
+card [Infinito] conoscere = to know (people)
+card [Presente] io conosco = I know (people)
+card [Presente] tu conosci = you know (people)
+card [Presente] lui/lei conosce = he/she knows (people)
+card [Presente] noi conosciamo = we know (people)
+card [Presente] voi conoscete = you all know (people)
+card [Presente] loro conoscono = they know (people)
+card [Passato prossimo] io ho conosciuto = I knew (people)
+card [Passato prossimo] tu hai conosciuto = you knew (people)
+card [Passato prossimo] lui/lei ha conosciuto = he/she knew (people)
+card [Passato prossimo] noi abbiamo conosciuto = we knew (people)
+card [Passato prossimo] voi avete conosciuto = you all knew (people)
+card [Passato prossimo] loro hanno conosciuto = they knew (people)
+card [Imperfetto] io conoscevo = I used to know (people)
+card [Imperfetto] tu conoscevi = you used to know (people)
+card [Imperfetto] lui/lei conosceva = he/she used to know (people)
+card [Imperfetto] noi conoscevamo = we used to know (people)
+card [Imperfetto] voi conoscevate = you all used to know (people)
+card [Imperfetto] loro conoscevano = they used to know (people)
+card [Futuro] io conoscerò = I will know (people)
+card [Futuro] tu conoscerai = you will know (people)
+card [Futuro] lui/lei conoscerà = he/she will know (people)
+card [Futuro] noi conosceremo = we will know (people)
+card [Futuro] voi conoscerete = you all will know (people)
+card [Futuro] loro conosceranno = they will know (people)
+card [Condizionale] io conoscerei = I would know (people)
+card [Condizionale] tu conosceresti = you would know (people)
+card [Condizionale] lui/lei conoscerebbe = he/she would know (people)
+card [Condizionale] noi conosceremmo = we would know (people)
+card [Condizionale] voi conoscereste = you all would know (people)
+card [Condizionale] loro conoscerebbero = they would know (people)
+card [Imperativo] (tu) conosci! = know (people)!
+card [Imperativo] (Lei) conosca! = know (people)! (polite)
+card [Imperativo] (noi) conosciamo! = let's know (people)!
+card [Imperativo] (voi) conoscete! = know (people)! (you all)
 
 ## ricevere (ere, avere) — participio ricevuto, gerundio ricevendo
 Presente: ricevo, ricevi, riceve, riceviamo, ricevete, ricevono
@@ -3838,3 +3838,503 @@ card [Imperativo] (tu) trasferisci! = transfer!
 card [Imperativo] (Lei) trasferisca! = transfer! (polite)
 card [Imperativo] (noi) trasferiamo! = let's transfer!
 card [Imperativo] (voi) trasferite! = transfer! (you all)
+
+## essere (irregular, essere) — participio stato, gerundio essendo
+Presente: sono, sei, è, siamo, siete, sono
+Passato prossimo: sono stato/a, sei stato/a, è stato/a, siamo stati/e, siete stati/e, sono stati/e
+Imperfetto: ero, eri, era, eravamo, eravate, erano
+Futuro: sarò, sarai, sarà, saremo, sarete, saranno
+Condizionale: sarei, saresti, sarebbe, saremmo, sareste, sarebbero
+Imperativo: —, sii, sia, siamo, siate, siano
+card [Infinito] essere = to be
+card [Presente] io sono = I am
+card [Presente] tu sei = you are
+card [Presente] lui/lei è = he/she is
+card [Presente] noi siamo = we are
+card [Presente] voi siete = you all are
+card [Presente] loro sono = they are
+card [Passato prossimo] io sono stato/a = I was
+card [Passato prossimo] tu sei stato/a = you were
+card [Passato prossimo] lui/lei è stato/a = he/she was
+card [Passato prossimo] noi siamo stati/e = we were
+card [Passato prossimo] voi siete stati/e = you all were
+card [Passato prossimo] loro sono stati/e = they were
+card [Imperfetto] io ero = I used to be
+card [Imperfetto] tu eri = you used to be
+card [Imperfetto] lui/lei era = he/she used to be
+card [Imperfetto] noi eravamo = we used to be
+card [Imperfetto] voi eravate = you all used to be
+card [Imperfetto] loro erano = they used to be
+card [Futuro] io sarò = I will be
+card [Futuro] tu sarai = you will be
+card [Futuro] lui/lei sarà = he/she will be
+card [Futuro] noi saremo = we will be
+card [Futuro] voi sarete = you all will be
+card [Futuro] loro saranno = they will be
+card [Condizionale] io sarei = I would be
+card [Condizionale] tu saresti = you would be
+card [Condizionale] lui/lei sarebbe = he/she would be
+card [Condizionale] noi saremmo = we would be
+card [Condizionale] voi sareste = you all would be
+card [Condizionale] loro sarebbero = they would be
+card [Imperativo] (tu) sii! = be!
+card [Imperativo] (Lei) sia! = be! (polite)
+card [Imperativo] (noi) siamo! = let's be!
+card [Imperativo] (voi) siate! = be! (you all)
+
+## stare (irregular, essere) — participio stato, gerundio stando
+Presente: sto, stai, sta, stiamo, state, stanno
+Passato prossimo: sono stato/a, sei stato/a, è stato/a, siamo stati/e, siete stati/e, sono stati/e
+Imperfetto: stavo, stavi, stava, stavamo, stavate, stavano
+Futuro: starò, starai, starà, staremo, starete, staranno
+Condizionale: starei, staresti, starebbe, staremmo, stareste, starebbero
+Imperativo: —, sta'/stai, stia, stiamo, state, stiano
+card [Infinito] stare = to stay
+card [Presente] io sto = I stay
+card [Presente] tu stai = you stay
+card [Presente] lui/lei sta = he/she stays
+card [Presente] noi stiamo = we stay
+card [Presente] voi state = you all stay
+card [Presente] loro stanno = they stay
+card [Passato prossimo] io sono stato/a = I stayed
+card [Passato prossimo] tu sei stato/a = you stayed
+card [Passato prossimo] lui/lei è stato/a = he/she stayed
+card [Passato prossimo] noi siamo stati/e = we stayed
+card [Passato prossimo] voi siete stati/e = you all stayed
+card [Passato prossimo] loro sono stati/e = they stayed
+card [Imperfetto] io stavo = I used to stay
+card [Imperfetto] tu stavi = you used to stay
+card [Imperfetto] lui/lei stava = he/she used to stay
+card [Imperfetto] noi stavamo = we used to stay
+card [Imperfetto] voi stavate = you all used to stay
+card [Imperfetto] loro stavano = they used to stay
+card [Futuro] io starò = I will stay
+card [Futuro] tu starai = you will stay
+card [Futuro] lui/lei starà = he/she will stay
+card [Futuro] noi staremo = we will stay
+card [Futuro] voi starete = you all will stay
+card [Futuro] loro staranno = they will stay
+card [Condizionale] io starei = I would stay
+card [Condizionale] tu staresti = you would stay
+card [Condizionale] lui/lei starebbe = he/she would stay
+card [Condizionale] noi staremmo = we would stay
+card [Condizionale] voi stareste = you all would stay
+card [Condizionale] loro starebbero = they would stay
+card [Imperativo] (tu) sta'/stai! = stay!
+card [Imperativo] (Lei) stia! = stay! (polite)
+card [Imperativo] (noi) stiamo! = let's stay!
+card [Imperativo] (voi) state! = stay! (you all)
+
+## avere (irregular, avere) — participio avuto, gerundio avendo
+Presente: ho, hai, ha, abbiamo, avete, hanno
+Passato prossimo: ho avuto, hai avuto, ha avuto, abbiamo avuto, avete avuto, hanno avuto
+Imperfetto: avevo, avevi, aveva, avevamo, avevate, avevano
+Futuro: avrò, avrai, avrà, avremo, avrete, avranno
+Condizionale: avrei, avresti, avrebbe, avremmo, avreste, avrebbero
+Imperativo: —, abbi, abbia, abbiamo, abbiate, abbiano
+card [Infinito] avere = to have
+card [Presente] io ho = I have
+card [Presente] tu hai = you have
+card [Presente] lui/lei ha = he/she has
+card [Presente] noi abbiamo = we have
+card [Presente] voi avete = you all have
+card [Presente] loro hanno = they have
+card [Passato prossimo] io ho avuto = I had
+card [Passato prossimo] tu hai avuto = you had
+card [Passato prossimo] lui/lei ha avuto = he/she had
+card [Passato prossimo] noi abbiamo avuto = we had
+card [Passato prossimo] voi avete avuto = you all had
+card [Passato prossimo] loro hanno avuto = they had
+card [Imperfetto] io avevo = I used to have
+card [Imperfetto] tu avevi = you used to have
+card [Imperfetto] lui/lei aveva = he/she used to have
+card [Imperfetto] noi avevamo = we used to have
+card [Imperfetto] voi avevate = you all used to have
+card [Imperfetto] loro avevano = they used to have
+card [Futuro] io avrò = I will have
+card [Futuro] tu avrai = you will have
+card [Futuro] lui/lei avrà = he/she will have
+card [Futuro] noi avremo = we will have
+card [Futuro] voi avrete = you all will have
+card [Futuro] loro avranno = they will have
+card [Condizionale] io avrei = I would have
+card [Condizionale] tu avresti = you would have
+card [Condizionale] lui/lei avrebbe = he/she would have
+card [Condizionale] noi avremmo = we would have
+card [Condizionale] voi avreste = you all would have
+card [Condizionale] loro avrebbero = they would have
+card [Imperativo] (tu) abbi! = have!
+card [Imperativo] (Lei) abbia! = have! (polite)
+card [Imperativo] (noi) abbiamo! = let's have!
+card [Imperativo] (voi) abbiate! = have! (you all)
+
+## potere (irregular, avere) — participio potuto, gerundio potendo
+Presente: posso, puoi, può, possiamo, potete, possono
+Passato prossimo: ho potuto, hai potuto, ha potuto, abbiamo potuto, avete potuto, hanno potuto
+Imperfetto: potevo, potevi, poteva, potevamo, potevate, potevano
+Futuro: potrò, potrai, potrà, potremo, potrete, potranno
+Condizionale: potrei, potresti, potrebbe, potremmo, potreste, potrebbero
+Imperativo: —, —, —, —, —, —
+card [Infinito] potere = to be able to
+card [Presente] io posso = I can
+card [Presente] tu puoi = you can
+card [Presente] lui/lei può = he/she can
+card [Presente] noi possiamo = we can
+card [Presente] voi potete = you all can
+card [Presente] loro possono = they can
+card [Passato prossimo] io ho potuto = I could
+card [Passato prossimo] tu hai potuto = you could
+card [Passato prossimo] lui/lei ha potuto = he/she could
+card [Passato prossimo] noi abbiamo potuto = we could
+card [Passato prossimo] voi avete potuto = you all could
+card [Passato prossimo] loro hanno potuto = they could
+card [Imperfetto] io potevo = I used to be able to
+card [Imperfetto] tu potevi = you used to be able to
+card [Imperfetto] lui/lei poteva = he/she used to be able to
+card [Imperfetto] noi potevamo = we used to be able to
+card [Imperfetto] voi potevate = you all used to be able to
+card [Imperfetto] loro potevano = they used to be able to
+card [Futuro] io potrò = I will be able to
+card [Futuro] tu potrai = you will be able to
+card [Futuro] lui/lei potrà = he/she will be able to
+card [Futuro] noi potremo = we will be able to
+card [Futuro] voi potrete = you all will be able to
+card [Futuro] loro potranno = they will be able to
+card [Condizionale] io potrei = I could
+card [Condizionale] tu potresti = you could
+card [Condizionale] lui/lei potrebbe = he/she could
+card [Condizionale] noi potremmo = we could
+card [Condizionale] voi potreste = you all could
+card [Condizionale] loro potrebbero = they could
+
+## volere (irregular, avere) — participio voluto, gerundio volendo
+Presente: voglio, vuoi, vuole, vogliamo, volete, vogliono
+Passato prossimo: ho voluto, hai voluto, ha voluto, abbiamo voluto, avete voluto, hanno voluto
+Imperfetto: volevo, volevi, voleva, volevamo, volevate, volevano
+Futuro: vorrò, vorrai, vorrà, vorremo, vorrete, vorranno
+Condizionale: vorrei, vorresti, vorrebbe, vorremmo, vorreste, vorrebbero
+Imperativo: —, —, —, —, —, —
+card [Infinito] volere = to want
+card [Presente] io voglio = I want
+card [Presente] tu vuoi = you want
+card [Presente] lui/lei vuole = he/she wants
+card [Presente] noi vogliamo = we want
+card [Presente] voi volete = you all want
+card [Presente] loro vogliono = they want
+card [Passato prossimo] io ho voluto = I wanted
+card [Passato prossimo] tu hai voluto = you wanted
+card [Passato prossimo] lui/lei ha voluto = he/she wanted
+card [Passato prossimo] noi abbiamo voluto = we wanted
+card [Passato prossimo] voi avete voluto = you all wanted
+card [Passato prossimo] loro hanno voluto = they wanted
+card [Imperfetto] io volevo = I used to want
+card [Imperfetto] tu volevi = you used to want
+card [Imperfetto] lui/lei voleva = he/she used to want
+card [Imperfetto] noi volevamo = we used to want
+card [Imperfetto] voi volevate = you all used to want
+card [Imperfetto] loro volevano = they used to want
+card [Futuro] io vorrò = I will want
+card [Futuro] tu vorrai = you will want
+card [Futuro] lui/lei vorrà = he/she will want
+card [Futuro] noi vorremo = we will want
+card [Futuro] voi vorrete = you all will want
+card [Futuro] loro vorranno = they will want
+card [Condizionale] io vorrei = I would like
+card [Condizionale] tu vorresti = you would like
+card [Condizionale] lui/lei vorrebbe = he/she would like
+card [Condizionale] noi vorremmo = we would like
+card [Condizionale] voi vorreste = you all would like
+card [Condizionale] loro vorrebbero = they would like
+
+## dovere (irregular, avere) — participio dovuto, gerundio dovendo
+Presente: devo, devi, deve, dobbiamo, dovete, devono
+Passato prossimo: ho dovuto, hai dovuto, ha dovuto, abbiamo dovuto, avete dovuto, hanno dovuto
+Imperfetto: dovevo, dovevi, doveva, dovevamo, dovevate, dovevano
+Futuro: dovrò, dovrai, dovrà, dovremo, dovrete, dovranno
+Condizionale: dovrei, dovresti, dovrebbe, dovremmo, dovreste, dovrebbero
+Imperativo: —, —, —, —, —, —
+card [Infinito] dovere = to have to
+card [Presente] io devo = I have to
+card [Presente] tu devi = you have to
+card [Presente] lui/lei deve = he/she has to
+card [Presente] noi dobbiamo = we have to
+card [Presente] voi dovete = you all have to
+card [Presente] loro devono = they have to
+card [Passato prossimo] io ho dovuto = I had to
+card [Passato prossimo] tu hai dovuto = you had to
+card [Passato prossimo] lui/lei ha dovuto = he/she had to
+card [Passato prossimo] noi abbiamo dovuto = we had to
+card [Passato prossimo] voi avete dovuto = you all had to
+card [Passato prossimo] loro hanno dovuto = they had to
+card [Imperfetto] io dovevo = I used to have to
+card [Imperfetto] tu dovevi = you used to have to
+card [Imperfetto] lui/lei doveva = he/she used to have to
+card [Imperfetto] noi dovevamo = we used to have to
+card [Imperfetto] voi dovevate = you all used to have to
+card [Imperfetto] loro dovevano = they used to have to
+card [Futuro] io dovrò = I will have to
+card [Futuro] tu dovrai = you will have to
+card [Futuro] lui/lei dovrà = he/she will have to
+card [Futuro] noi dovremo = we will have to
+card [Futuro] voi dovrete = you all will have to
+card [Futuro] loro dovranno = they will have to
+card [Condizionale] io dovrei = I should
+card [Condizionale] tu dovresti = you should
+card [Condizionale] lui/lei dovrebbe = he/she should
+card [Condizionale] noi dovremmo = we should
+card [Condizionale] voi dovreste = you all should
+card [Condizionale] loro dovrebbero = they should
+
+## andare (irregular, essere) — participio andato, gerundio andando
+Presente: vado, vai, va, andiamo, andate, vanno
+Passato prossimo: sono andato/a, sei andato/a, è andato/a, siamo andati/e, siete andati/e, sono andati/e
+Imperfetto: andavo, andavi, andava, andavamo, andavate, andavano
+Futuro: andrò, andrai, andrà, andremo, andrete, andranno
+Condizionale: andrei, andresti, andrebbe, andremmo, andreste, andrebbero
+Imperativo: —, va'/vai, vada, andiamo, andate, vadano
+card [Infinito] andare = to go
+card [Presente] io vado = I go
+card [Presente] tu vai = you go
+card [Presente] lui/lei va = he/she goes
+card [Presente] noi andiamo = we go
+card [Presente] voi andate = you all go
+card [Presente] loro vanno = they go
+card [Passato prossimo] io sono andato/a = I went
+card [Passato prossimo] tu sei andato/a = you went
+card [Passato prossimo] lui/lei è andato/a = he/she went
+card [Passato prossimo] noi siamo andati/e = we went
+card [Passato prossimo] voi siete andati/e = you all went
+card [Passato prossimo] loro sono andati/e = they went
+card [Imperfetto] io andavo = I used to go
+card [Imperfetto] tu andavi = you used to go
+card [Imperfetto] lui/lei andava = he/she used to go
+card [Imperfetto] noi andavamo = we used to go
+card [Imperfetto] voi andavate = you all used to go
+card [Imperfetto] loro andavano = they used to go
+card [Futuro] io andrò = I will go
+card [Futuro] tu andrai = you will go
+card [Futuro] lui/lei andrà = he/she will go
+card [Futuro] noi andremo = we will go
+card [Futuro] voi andrete = you all will go
+card [Futuro] loro andranno = they will go
+card [Condizionale] io andrei = I would go
+card [Condizionale] tu andresti = you would go
+card [Condizionale] lui/lei andrebbe = he/she would go
+card [Condizionale] noi andremmo = we would go
+card [Condizionale] voi andreste = you all would go
+card [Condizionale] loro andrebbero = they would go
+card [Imperativo] (tu) va'/vai! = go!
+card [Imperativo] (Lei) vada! = go! (polite)
+card [Imperativo] (noi) andiamo! = let's go!
+card [Imperativo] (voi) andate! = go! (you all)
+
+## venire (irregular, essere) — participio venuto, gerundio venendo
+Presente: vengo, vieni, viene, veniamo, venite, vengono
+Passato prossimo: sono venuto/a, sei venuto/a, è venuto/a, siamo venuti/e, siete venuti/e, sono venuti/e
+Imperfetto: venivo, venivi, veniva, venivamo, venivate, venivano
+Futuro: verrò, verrai, verrà, verremo, verrete, verranno
+Condizionale: verrei, verresti, verrebbe, verremmo, verreste, verrebbero
+Imperativo: —, vieni, venga, veniamo, venite, vengano
+card [Infinito] venire = to come
+card [Presente] io vengo = I come
+card [Presente] tu vieni = you come
+card [Presente] lui/lei viene = he/she comes
+card [Presente] noi veniamo = we come
+card [Presente] voi venite = you all come
+card [Presente] loro vengono = they come
+card [Passato prossimo] io sono venuto/a = I came
+card [Passato prossimo] tu sei venuto/a = you came
+card [Passato prossimo] lui/lei è venuto/a = he/she came
+card [Passato prossimo] noi siamo venuti/e = we came
+card [Passato prossimo] voi siete venuti/e = you all came
+card [Passato prossimo] loro sono venuti/e = they came
+card [Imperfetto] io venivo = I used to come
+card [Imperfetto] tu venivi = you used to come
+card [Imperfetto] lui/lei veniva = he/she used to come
+card [Imperfetto] noi venivamo = we used to come
+card [Imperfetto] voi venivate = you all used to come
+card [Imperfetto] loro venivano = they used to come
+card [Futuro] io verrò = I will come
+card [Futuro] tu verrai = you will come
+card [Futuro] lui/lei verrà = he/she will come
+card [Futuro] noi verremo = we will come
+card [Futuro] voi verrete = you all will come
+card [Futuro] loro verranno = they will come
+card [Condizionale] io verrei = I would come
+card [Condizionale] tu verresti = you would come
+card [Condizionale] lui/lei verrebbe = he/she would come
+card [Condizionale] noi verremmo = we would come
+card [Condizionale] voi verreste = you all would come
+card [Condizionale] loro verrebbero = they would come
+card [Imperativo] (tu) vieni! = come!
+card [Imperativo] (Lei) venga! = come! (polite)
+card [Imperativo] (noi) veniamo! = let's come!
+card [Imperativo] (voi) venite! = come! (you all)
+
+## fare (irregular, avere) — participio fatto, gerundio facendo
+Presente: faccio, fai, fa, facciamo, fate, fanno
+Passato prossimo: ho fatto, hai fatto, ha fatto, abbiamo fatto, avete fatto, hanno fatto
+Imperfetto: facevo, facevi, faceva, facevamo, facevate, facevano
+Futuro: farò, farai, farà, faremo, farete, faranno
+Condizionale: farei, faresti, farebbe, faremmo, fareste, farebbero
+Imperativo: —, fa'/fai, faccia, facciamo, fate, facciano
+card [Infinito] fare = to do
+card [Presente] io faccio = I do
+card [Presente] tu fai = you do
+card [Presente] lui/lei fa = he/she does
+card [Presente] noi facciamo = we do
+card [Presente] voi fate = you all do
+card [Presente] loro fanno = they do
+card [Passato prossimo] io ho fatto = I did
+card [Passato prossimo] tu hai fatto = you did
+card [Passato prossimo] lui/lei ha fatto = he/she did
+card [Passato prossimo] noi abbiamo fatto = we did
+card [Passato prossimo] voi avete fatto = you all did
+card [Passato prossimo] loro hanno fatto = they did
+card [Imperfetto] io facevo = I used to do
+card [Imperfetto] tu facevi = you used to do
+card [Imperfetto] lui/lei faceva = he/she used to do
+card [Imperfetto] noi facevamo = we used to do
+card [Imperfetto] voi facevate = you all used to do
+card [Imperfetto] loro facevano = they used to do
+card [Futuro] io farò = I will do
+card [Futuro] tu farai = you will do
+card [Futuro] lui/lei farà = he/she will do
+card [Futuro] noi faremo = we will do
+card [Futuro] voi farete = you all will do
+card [Futuro] loro faranno = they will do
+card [Condizionale] io farei = I would do
+card [Condizionale] tu faresti = you would do
+card [Condizionale] lui/lei farebbe = he/she would do
+card [Condizionale] noi faremmo = we would do
+card [Condizionale] voi fareste = you all would do
+card [Condizionale] loro farebbero = they would do
+card [Imperativo] (tu) fa'/fai! = do!
+card [Imperativo] (Lei) faccia! = do! (polite)
+card [Imperativo] (noi) facciamo! = let's do!
+card [Imperativo] (voi) fate! = do! (you all)
+
+## dire (irregular, avere) — participio detto, gerundio dicendo
+Presente: dico, dici, dice, diciamo, dite, dicono
+Passato prossimo: ho detto, hai detto, ha detto, abbiamo detto, avete detto, hanno detto
+Imperfetto: dicevo, dicevi, diceva, dicevamo, dicevate, dicevano
+Futuro: dirò, dirai, dirà, diremo, direte, diranno
+Condizionale: direi, diresti, direbbe, diremmo, direste, direbbero
+Imperativo: —, di', dica, diciamo, dite, dicano
+card [Infinito] dire = to say
+card [Presente] io dico = I say
+card [Presente] tu dici = you say
+card [Presente] lui/lei dice = he/she says
+card [Presente] noi diciamo = we say
+card [Presente] voi dite = you all say
+card [Presente] loro dicono = they say
+card [Passato prossimo] io ho detto = I said
+card [Passato prossimo] tu hai detto = you said
+card [Passato prossimo] lui/lei ha detto = he/she said
+card [Passato prossimo] noi abbiamo detto = we said
+card [Passato prossimo] voi avete detto = you all said
+card [Passato prossimo] loro hanno detto = they said
+card [Imperfetto] io dicevo = I used to say
+card [Imperfetto] tu dicevi = you used to say
+card [Imperfetto] lui/lei diceva = he/she used to say
+card [Imperfetto] noi dicevamo = we used to say
+card [Imperfetto] voi dicevate = you all used to say
+card [Imperfetto] loro dicevano = they used to say
+card [Futuro] io dirò = I will say
+card [Futuro] tu dirai = you will say
+card [Futuro] lui/lei dirà = he/she will say
+card [Futuro] noi diremo = we will say
+card [Futuro] voi direte = you all will say
+card [Futuro] loro diranno = they will say
+card [Condizionale] io direi = I would say
+card [Condizionale] tu diresti = you would say
+card [Condizionale] lui/lei direbbe = he/she would say
+card [Condizionale] noi diremmo = we would say
+card [Condizionale] voi direste = you all would say
+card [Condizionale] loro direbbero = they would say
+card [Imperativo] (tu) di'! = say!
+card [Imperativo] (Lei) dica! = say! (polite)
+card [Imperativo] (noi) diciamo! = let's say!
+card [Imperativo] (voi) dite! = say! (you all)
+
+## dare (irregular, avere) — participio dato, gerundio dando
+Presente: do, dai, dà, diamo, date, danno
+Passato prossimo: ho dato, hai dato, ha dato, abbiamo dato, avete dato, hanno dato
+Imperfetto: davo, davi, dava, davamo, davate, davano
+Futuro: darò, darai, darà, daremo, darete, daranno
+Condizionale: darei, daresti, darebbe, daremmo, dareste, darebbero
+Imperativo: —, da'/dai, dia, diamo, date, diano
+card [Infinito] dare = to give
+card [Presente] io do = I give
+card [Presente] tu dai = you give
+card [Presente] lui/lei dà = he/she gives
+card [Presente] noi diamo = we give
+card [Presente] voi date = you all give
+card [Presente] loro danno = they give
+card [Passato prossimo] io ho dato = I gave
+card [Passato prossimo] tu hai dato = you gave
+card [Passato prossimo] lui/lei ha dato = he/she gave
+card [Passato prossimo] noi abbiamo dato = we gave
+card [Passato prossimo] voi avete dato = you all gave
+card [Passato prossimo] loro hanno dato = they gave
+card [Imperfetto] io davo = I used to give
+card [Imperfetto] tu davi = you used to give
+card [Imperfetto] lui/lei dava = he/she used to give
+card [Imperfetto] noi davamo = we used to give
+card [Imperfetto] voi davate = you all used to give
+card [Imperfetto] loro davano = they used to give
+card [Futuro] io darò = I will give
+card [Futuro] tu darai = you will give
+card [Futuro] lui/lei darà = he/she will give
+card [Futuro] noi daremo = we will give
+card [Futuro] voi darete = you all will give
+card [Futuro] loro daranno = they will give
+card [Condizionale] io darei = I would give
+card [Condizionale] tu daresti = you would give
+card [Condizionale] lui/lei darebbe = he/she would give
+card [Condizionale] noi daremmo = we would give
+card [Condizionale] voi dareste = you all would give
+card [Condizionale] loro darebbero = they would give
+card [Imperativo] (tu) da'/dai! = give!
+card [Imperativo] (Lei) dia! = give! (polite)
+card [Imperativo] (noi) diamo! = let's give!
+card [Imperativo] (voi) date! = give! (you all)
+
+## sapere (irregular, avere) — participio saputo, gerundio sapendo
+Presente: so, sai, sa, sappiamo, sapete, sanno
+Passato prossimo: ho saputo, hai saputo, ha saputo, abbiamo saputo, avete saputo, hanno saputo
+Imperfetto: sapevo, sapevi, sapeva, sapevamo, sapevate, sapevano
+Futuro: saprò, saprai, saprà, sapremo, saprete, sapranno
+Condizionale: saprei, sapresti, saprebbe, sapremmo, sapreste, saprebbero
+Imperativo: —, —, —, —, —, —
+card [Infinito] sapere = to know (facts)
+card [Presente] io so = I know (facts)
+card [Presente] tu sai = you know (facts)
+card [Presente] lui/lei sa = he/she knows (facts)
+card [Presente] noi sappiamo = we know (facts)
+card [Presente] voi sapete = you all know (facts)
+card [Presente] loro sanno = they know (facts)
+card [Passato prossimo] io ho saputo = I found out
+card [Passato prossimo] tu hai saputo = you found out
+card [Passato prossimo] lui/lei ha saputo = he/she found out
+card [Passato prossimo] noi abbiamo saputo = we found out
+card [Passato prossimo] voi avete saputo = you all found out
+card [Passato prossimo] loro hanno saputo = they found out
+card [Imperfetto] io sapevo = I used to know (facts)
+card [Imperfetto] tu sapevi = you used to know (facts)
+card [Imperfetto] lui/lei sapeva = he/she used to know (facts)
+card [Imperfetto] noi sapevamo = we used to know (facts)
+card [Imperfetto] voi sapevate = you all used to know (facts)
+card [Imperfetto] loro sapevano = they used to know (facts)
+card [Futuro] io saprò = I will know (facts)
+card [Futuro] tu saprai = you will know (facts)
+card [Futuro] lui/lei saprà = he/she will know (facts)
+card [Futuro] noi sapremo = we will know (facts)
+card [Futuro] voi saprete = you all will know (facts)
+card [Futuro] loro sapranno = they will know (facts)
+card [Condizionale] io saprei = I would know (facts)
+card [Condizionale] tu sapresti = you would know (facts)
+card [Condizionale] lui/lei saprebbe = he/she would know (facts)
+card [Condizionale] noi sapremmo = we would know (facts)
+card [Condizionale] voi sapreste = you all would know (facts)
+card [Condizionale] loro saprebbero = they would know (facts)

@@ -66,6 +66,9 @@ export function join(verb, ending) {
   return s + ending;
 }
 
+// The six forms of a tense listed in verbs-irregular.csv ("sono;sei;è;..."), or null.
+const listed = (text) => (text ? text.split(";").map((f) => f.trim() || null) : null);
+
 export function participle(verb) {
   if (verb.participle) return verb.participle;
   const s = stem(verb.infinitive);
@@ -74,6 +77,7 @@ export function participle(verb) {
 }
 
 export function gerund(verb) {
+  if (verb.gerund) return verb.gerund;
   return stem(verb.infinitive) + GERUND_ENDING[verb.group];
 }
 
@@ -92,6 +96,7 @@ export function passatoProssimo(verb, person, separator = " · ") {
 // One form; null where it doesn't exist (imperativo io).
 export function form(verb, tense, person) {
   if (tense === "passato") return passatoProssimo(verb, person);
+  if (verb.group === "irregular") return listed(verb[tense])?.[person] ?? null;
   const ending = ENDINGS[verb.group][tense][person];
   return ending === null ? null : join(verb, ending);
 }
@@ -130,16 +135,20 @@ function english(verb, tense, person) {
   const base = verb.en_base;
   const subject = verb.impersonal ? "it" : EN_PRONOUNS[person];
   switch (tense) {
-    case "presente":
-      return `${subject} ${verb.impersonal || person === 2 ? thirdPerson(base) : base}`;
-    case "passato":
-      return `${subject} ${verb.en_past}`;
+    case "presente": {
+      const irregular = listed(verb.en_presente)?.[person]; // am / is / can / has to
+      return `${subject} ${irregular ?? (verb.impersonal || person === 2 ? thirdPerson(base) : base)}`;
+    }
+    case "passato": {
+      const past = listed(verb.en_past); // one form, or six (was;were;...)
+      return `${subject} ${past.length === 6 ? past[person] : past[0]}`;
+    }
     case "imperfetto":
       return `${subject} used to ${base}`;
     case "futuro":
       return `${subject} will ${base}`;
     case "condizionale":
-      return `${subject} would ${base}`;
+      return `${subject} ${verb.en_condizionale || `would ${base}`}`;
   }
 }
 
@@ -164,7 +173,9 @@ export function cardsFor(verb) {
     }
   }
 
-  if (!verb.impersonal) {
+  // Verbs without an imperativo in use (potere, volere, dovere, sapere) leave it out.
+  const hasImperativo = verb.group !== "irregular" || verb.imperativo;
+  if (!verb.impersonal && hasImperativo) {
     for (const { index, it, en } of IMPERATIVO_PERSONS) {
       add(`imperativo.${index}`, "imperativo", `${it} ${form(verb, "imperativo", index)}!`, en(verb.en_base));
     }

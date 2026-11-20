@@ -42,6 +42,22 @@ describe("cards per level", () => {
     }
   });
 
+  it("irregular verbs appear at every level, with the right tenses", () => {
+    const irregular = (level) => cardsForLevel(all, level).filter((c) => c.id.split(".")[0] === "essere" || c.id.startsWith("andare."));
+    expect(irregular("beginner").map((c) => `${c.it} = ${c.en}`)).toEqual(["essere = to be", "andare = to go"]);
+    expect(irregular("intermediate").map((c) => c.it)).toEqual([
+      "essere", "io sono", "tu sei", "lui/lei è", "noi siamo", "voi siete", "loro sono",
+      "andare", "io vado", "tu vai", "lui/lei va", "noi andiamo", "voi andate", "loro vanno",
+    ]);
+    expect(tensesIn(irregular("advanced"))).toEqual(tensesIn(all));
+
+    const irregularVerbs = verbs.filter((v) => v.group === "irregular").map((v) => v.infinitive);
+    for (const level of ["beginner", "intermediate", "advanced"]) {
+      const verbsInLevel = new Set(cardsForLevel(all, level).map((c) => c.id.split(".")[0]));
+      for (const v of irregularVerbs) expect(verbsInLevel.has(v), `${v} missing from ${level}`).toBe(true);
+    }
+  });
+
   it("an unknown level falls back to the default", () => {
     expect(cardsForLevel(all, "expert")).toEqual(cardsForLevel(all, DEFAULT_LEVEL));
   });
