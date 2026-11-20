@@ -1,7 +1,10 @@
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
-export default defineConfig({
+// GitHub Pages serves the app from https://bjornkvande.github.io/italian/,
+// so production builds live under /italian/. The dev server stays at /.
+export default defineConfig(({ command }) => ({
+  base: command === "build" ? "/italian/" : "/",
   server: {
     port: 5173,
     strictPort: true, // fail instead of silently moving to another port
@@ -22,8 +25,7 @@ export default defineConfig({
         short_name: "Verbi",
         description: "Flash cards for Italian verbs in every tense and person.",
         lang: "it",
-        start_url: "/",
-        scope: "/",
+        // start_url and scope default to the base path (/italian/).
         display: "standalone",
         orientation: "portrait",
         background_color: "#ececec",
@@ -37,4 +39,4 @@ export default defineConfig({
       },
     }),
   ],
-});
+}));
