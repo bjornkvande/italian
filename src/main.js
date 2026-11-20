@@ -1,35 +1,12 @@
-// The verbs come straight from the dictionary. Vite bundles the CSV as text,
-// and reloads the page when the file changes.
-import verbsCSV from "../dictionary/verbs.csv?raw";
+// Flash cards: every verb in every tense and person, Italian <-> English.
+import { verbs } from "./csv.js";
 import { cardsFor } from "./conjugate.js";
 
 const card = document.getElementById("card");
 const el = (id) => document.getElementById(id);
 
-// Minimal CSV parser: handles quoted fields, commas and "" inside quotes.
-function parseCSV(text) {
-  const rows = [];
-  let row = [], field = "", inQuotes = false;
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (inQuotes) {
-      if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
-      else if (c === '"') inQuotes = false;
-      else field += c;
-    } else if (c === '"') inQuotes = true;
-    else if (c === ",") { row.push(field); field = ""; }
-    else if (c === "\n" || c === "\r") {
-      if (c === "\r" && text[i + 1] === "\n") i++;
-      row.push(field); rows.push(row); row = []; field = "";
-    } else field += c;
-  }
-  if (field || row.length) { row.push(field); rows.push(row); }
-  const [header, ...data] = rows.filter(r => r.some(f => f.trim()));
-  return data.map(r => Object.fromEntries(header.map((h, i) => [h, r[i] ?? ""])));
-}
-
 // Every verb in every tense and person, as { tense, it, en }.
-const cards = parseCSV(verbsCSV).flatMap(cardsFor);
+const cards = verbs.flatMap(cardsFor);
 let current = null;
 
 const scene = el("scene");

@@ -1,0 +1,85 @@
+/* The -are / -ere / -ire reference pages. */
+.page {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 8px 16px 48px;
+  padding-bottom: max(48px, env(safe-area-inset-bottom));
+  line-height: 1.5;
+}
+
+h1 { font-size: 1.8rem; line-height: 1.2; margin: 16px 0 12px; }
+h2 { font-size: 1.35rem; margin: 40px 0 12px; }
+h3 { font-size: 1.1rem; margin: 28px 0 8px; }
+
+/* Verb headings get a little room above them when jumped to from the index. */
+h3[id] { scroll-margin-top: 16px; }
+
+p { margin: 0 0 12px; }
+
+.tenses { padding-left: 20px; margin: 0; }
+.tenses li { margin-bottom: 12px; }
+.tenses .examples { display: block; opacity: 0.7; }
+
+.info { margin: 0 0 10px; font-size: 0.95rem; }
+
+.note {
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border-left: 3px solid #000;
+  background: #fff;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.95rem;
+}
+
+/* Tables scroll sideways on narrow screens instead of squeezing. */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 0 8px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.92rem;
+}
+
+th, td {
+  padding: 7px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid #eee;
+}
+
+tr:last-child td { border-bottom: 0; }
+
+thead th {
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+}
+
+tbody th { font-weight: 600; }
+
+/* Keep the pronoun column visible while scrolling a wide table. */
+.conj th:first-child {
+  position: sticky;
+  left: 0;
+  background: #fff;
+}
+.conj thead th:first-child { background: #000; }
+
+.index td:first-child { opacity: 0.5; width: 2em; }
+.index a { color: #000; font-weight: 600; }
+
+.back-to-top {
+  display: inline-block;
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: #000;
+  opacity: 0.5;
+}

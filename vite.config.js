@@ -9,6 +9,17 @@ export default defineConfig(({ command }) => ({
     port: 5173,
     strictPort: true, // fail instead of silently moving to another port
   },
+  build: {
+    // One HTML page per tab: the flash cards and the three verb references.
+    rollupOptions: {
+      input: {
+        index: "index.html",
+        are: "are.html",
+        ere: "ere.html",
+        ire: "ire.html",
+      },
+    },
+  },
   plugins: [
     VitePWA({
       // Install a new version automatically when the app is rebuilt and redeployed.
