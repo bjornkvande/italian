@@ -31,7 +31,9 @@ describe("word groups", () => {
     const cards = decks[id];
     expect(cards.length).toBeGreaterThan(0);
     for (const c of cards) {
-      for (const key of ["id", "tenseKey", "tense", "it", "en"]) expect(c[key], `${c.id}.${key}`).toMatch(/\S/);
+      for (const key of ["id", "tenseKey", "kind", "tense", "it", "en"]) expect(c[key], `${c.id}.${key}`).toMatch(/\S/);
+      // The English-side heading starts with the word class shown on the Italian side.
+      expect(c.tense.startsWith(c.kind), `${c.id}: "${c.tense}" vs "${c.kind}"`).toBe(true);
     }
     const ids = cards.map((c) => c.id);
     expect(ids.filter((x, i) => ids.indexOf(x) !== i)).toEqual([]);

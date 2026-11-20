@@ -183,7 +183,7 @@ describe("flash cards", () => {
 
   it("no card has empty, undefined or null text", () => {
     for (const c of verbs.flatMap(cardsFor)) {
-      for (const text of [c.tense, c.it, c.en]) {
+      for (const text of [c.kind, c.tense, c.it, c.en]) {
         expect(text).toBeTruthy();
         expect(text).not.toMatch(/undefined|null|NaN/);
       }
@@ -191,7 +191,7 @@ describe("flash cards", () => {
   });
 
   it("Italian side has the pronoun, English side the translation, per tense", () => {
-    expect(card("parlare", "io parlo")).toEqual({ id: "parlare.presente.0", tenseKey: "presente", tense: "Presente", it: "io parlo", en: "I speak" });
+    expect(card("parlare", "io parlo")).toEqual({ id: "parlare.presente.0", tenseKey: "presente", kind: "Verb", tense: "Verb · Presente", it: "io parlo", en: "I speak" });
     expect(card("parlare", "noi abbiamo parlato").en).toBe("we spoke");
     expect(card("parlare", "loro parlavano").en).toBe("they used to speak");
     expect(card("parlare", "voi parlerete").en).toBe("you all will speak");
@@ -201,13 +201,13 @@ describe("flash cards", () => {
   });
 
   it("infinitive cards pair the verb with 'to' + its English base", () => {
-    expect(card("parlare", "parlare")).toEqual({ id: "parlare.infinito", tenseKey: "infinito", tense: "Infinito", it: "parlare", en: "to speak" });
+    expect(card("parlare", "parlare")).toEqual({ id: "parlare.infinito", tenseKey: "infinito", kind: "Verb", tense: "Verb · Infinito", it: "parlare", en: "to speak" });
     expect(card("crescere", "crescere").en).toBe("to grow up");
     expect(card("capire", "capire").en).toBe("to understand");
   });
 
   it("imperativo cards cover tu, Lei, noi and voi", () => {
-    const imp = cardsOf("parlare").filter((c) => c.tense === "Imperativo").map((c) => [c.it, c.en]);
+    const imp = cardsOf("parlare").filter((c) => c.tenseKey === "imperativo").map((c) => [c.it, c.en]);
     expect(imp).toEqual([
       ["(tu) parla!", "speak!"],
       ["(Lei) parli!", "speak! (polite)"],
@@ -258,7 +258,7 @@ describe("irregular verbs", () => {
     expect(row("dire", "imperativo")[1]).toBe("di'");
     for (const v of ["potere", "volere", "dovere", "sapere"]) {
       expect(row(v, "imperativo"), v).toEqual([null, null, null, null, null, null]);
-      expect(cardsOf(v).some((c) => c.tense === "Imperativo"), v).toBe(false);
+      expect(cardsOf(v).some((c) => c.tenseKey === "imperativo"), v).toBe(false);
       expect(cardsOf(v), v).toHaveLength(31);
     }
     expect(cardsOf("fare")).toHaveLength(35);

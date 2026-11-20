@@ -17,7 +17,7 @@ const el = (id) => document.getElementById(id);
 const ratingButtons = [...document.querySelectorAll("[data-rating]")];
 
 // The cards of every word group ({ basics: [...], verbs: [...] }), all as
-// { id, tenseKey, tense, it, en }.
+// { id, tenseKey, kind, tense, it, en }.
 const decks = cardsByGroup();
 // What you practise and how hard; `cards` are the cards in play.
 let groupId = subpageFromHash("train");
@@ -55,9 +55,10 @@ function showRandomCard() {
   void card.offsetWidth;
   card.style.transition = "";
 
-  // The tense name is only shown on the English side.
-  el("front-tense").textContent = italianFirst ? "" : current.tense;
-  el("back-tense").textContent = italianFirst ? current.tense : "";
+  // Italian side: the word class ("Verb"); English side: the word class and
+  // the detail needed to answer ("Verb · Presente").
+  el("front-tense").textContent = italianFirst ? current.kind : current.tense;
+  el("back-tense").textContent = italianFirst ? current.tense : current.kind;
   el("front-word").textContent = italianFirst ? current.it : current.en;
   el("back-word").textContent = italianFirst ? current.en : current.it;
 

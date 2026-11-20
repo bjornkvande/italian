@@ -7,7 +7,8 @@
 //   description one line for the "what to practise" menu on the Train screen
 //   storageKey  where the subpage you used last is remembered
 //   pages       its subpages: { id, href, label } (label = tab in the second row)
-//   cards()     all its flash cards, as { id, tenseKey, tense, it, en }
+//   cards()     all its flash cards, as { id, tenseKey, kind, tense, it, en }
+//               (kind: heading on the Italian side, tense: on the English side)
 //   difficulties  for beginner / intermediate / advanced: a description for the
 //               level menu and which cards it includes (include: null = all)
 //

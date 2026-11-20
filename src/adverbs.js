@@ -42,10 +42,12 @@ export const adverbCardId = (adv) => `adverbs.${adv.adverb}`;
 
 /** All adverb cards, in subpage order. tenseKey is the level it belongs to. */
 export function adverbCards(rows = adverbs) {
+  const label = (a) => ADVERB_PAGES.find((p) => p.id === a.topic).label.toLowerCase();
   return ADVERB_PAGES.flatMap((p) => rows.filter((a) => a.topic === p.id)).map((a) => ({
     id: adverbCardId(a),
     tenseKey: a.level,
-    tense: "Adverb",
+    kind: "Adverb",
+    tense: `Adverb · ${label(a)}`,
     it: a.adverb,
     en: a.english,
   }));

@@ -58,6 +58,17 @@ describe("Basics cards", () => {
     expect(essereVerbCards.find((c) => c.id === fromBasics.id)).toEqual(fromBasics);
   });
 
+  it("every topic has a word class and a heading for the cards", () => {
+    for (const t of TOPICS) {
+      expect(t.kind, t.id).toMatch(/\S/);
+      expect(t.heading.startsWith(t.kind), t.id).toBe(true);
+    }
+    const lunedi = topicCards(topic("days"))[0];
+    expect([lunedi.kind, lunedi.tense]).toEqual(["Day", "Day of the week"]);
+    const loVedo = topicCards(topic("direct")).find((c) => c.it === "lo vedo");
+    expect([loVedo.kind, loVedo.tense]).toEqual(["Pronoun", "Pronoun · direct object"]);
+  });
+
   it("pronouns", () => {
     expect(pair("pronouns")).toEqual([
       "io = I", "tu = you", "lui = he", "lei = she", "Lei = you (polite)", "noi = we", "voi = you all", "loro = they",

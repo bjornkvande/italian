@@ -161,12 +161,14 @@ export function verbCardId(infinitive, tenseKey, person = null) {
   return person === null ? `${infinitive}.${tenseKey}` : `${infinitive}.${tenseKey}.${person}`;
 }
 
-// Every card for one verb: { id, tenseKey, tense, it, en }.
+// Every card for one verb: { id, tenseKey, kind, tense, it, en }.
+// kind is the heading on the Italian side ("Verb"), tense the heading on the
+// English side ("Verb · Presente"), so you know which form to answer with.
 // tenseKey (infinito, presente, passato, ...) is what the difficulty levels filter on.
 export function cardsFor(verb) {
   const cards = [];
   const add = (tenseKey, person, it, en) =>
-    cards.push({ id: verbCardId(verb.infinitive, tenseKey, person), tenseKey, tense: TENSE_NAME[tenseKey], it, en });
+    cards.push({ id: verbCardId(verb.infinitive, tenseKey, person), tenseKey, kind: "Verb", tense: `Verb · ${TENSE_NAME[tenseKey]}`, it, en });
 
   add("infinito", null, verb.infinitive, `to ${verb.en_base}`);
 

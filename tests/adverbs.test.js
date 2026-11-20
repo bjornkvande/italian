@@ -29,7 +29,7 @@ describe("cards", () => {
   it("one card per adverb, Italian ↔ English, in subpage order", () => {
     const cards = adverbCards();
     expect(cards).toHaveLength(adverbs.length);
-    expect(cards[0]).toEqual({ id: "adverbs.bene", tenseKey: "beginner", tense: "Adverb", it: "bene", en: "well" });
+    expect(cards[0]).toEqual({ id: "adverbs.bene", tenseKey: "beginner", kind: "Adverb", tense: "Adverb · how", it: "bene", en: "well" });
     const ids = cards.map((c) => c.id);
     expect(ids.filter((x, i) => ids.indexOf(x) !== i)).toEqual([]);
   });
