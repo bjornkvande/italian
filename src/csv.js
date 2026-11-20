@@ -1,19 +1,32 @@
 // The verbs come straight from the dictionary. Vite bundles the CSV as text,
 // and reloads the page when the file changes.
 //
-// dictionary/verbs.csv is the single source of all verbs. Each row has:
+// The dictionary folder is the single source of all verbs, one file per group:
+// verbs-are.csv, verbs-ere.csv and verbs-ire.csv. The file decides the group.
+// Columns:
 //   infinitive  the verb (parlare)
 //   english     the meaning shown on the reference pages (to speak, to talk)
-//   group       are | ere | ire-dormire | ire-finire
+//   isc         only in verbs-ire.csv: "yes" for the finire type (capisco),
+//               empty for the dormire type (dormo)
 //   auxiliary   avere | essere | avere/essere
 //   participle  only if it differs from the regular form (insistito), otherwise empty
 //   en_base     English base form for the flash cards (speak, grow up)
 //   en_past     English simple past for the flash cards (spoke, grew up)
 //   impersonal  "yes" for weather verbs used only as "it" (piovere), otherwise empty
 //   note        optional note shown above the verb's table (*italic* and **bold** allowed)
-// Verbs appear on the pages in the same order as in the CSV.
+// Verbs appear on the pages in the same order as in their file.
 // tests/dictionary.test.js checks that every row follows these rules.
-import verbsCSV from "../dictionary/verbs.csv?raw";
+import areCSV from "../dictionary/verbs-are.csv?raw";
+import ereCSV from "../dictionary/verbs-ere.csv?raw";
+import ireCSV from "../dictionary/verbs-ire.csv?raw";
+
+// Each file and how its rows get their group. The group is what the
+// conjugation rules use: are | ere | ire-dormire | ire-finire.
+export const DICTIONARY_FILES = {
+  "verbs-are.csv": { text: areCSV, group: () => "are" },
+  "verbs-ere.csv": { text: ereCSV, group: () => "ere" },
+  "verbs-ire.csv": { text: ireCSV, group: (row) => (row.isc === "yes" ? "ire-finire" : "ire-dormire") },
+};
 
 // Minimal CSV parser: handles quoted fields, commas and "" inside quotes.
 // Returns the rows as arrays of fields, skipping empty lines.
@@ -43,4 +56,7 @@ export function parseCSV(text) {
   return data.map(r => Object.fromEntries(header.map((h, i) => [h, r[i] ?? ""])));
 }
 
-export const verbs = parseCSV(verbsCSV);
+// All verbs, -are first, then -ere, then -ire, each with its group.
+export const verbs = Object.values(DICTIONARY_FILES).flatMap(({ text, group }) =>
+  parseCSV(text).map((row) => ({ ...row, group: group(row) })),
+);

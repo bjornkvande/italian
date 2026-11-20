@@ -1,11 +1,15 @@
-// Checks that dictionary/verbs.csv is well-formed, so a typo in a new row
+// Checks that the dictionary files are well-formed, so a typo in a new row
 // fails here instead of producing wrong forms in the app.
 import { describe, it, expect } from "vitest";
-import verbsCSV from "../dictionary/verbs.csv?raw";
-import { parseCSV, parseRows, verbs } from "../src/csv.js";
+import { DICTIONARY_FILES, parseCSV, parseRows, verbs } from "../src/csv.js";
 
-const COLUMNS = ["infinitive", "english", "group", "auxiliary", "participle", "en_base", "en_past", "impersonal", "note"];
-const GROUP_ENDING = { "are": "are", "ere": "ere", "ire-dormire": "ire", "ire-finire": "ire" };
+const COMMON = ["infinitive", "english", "auxiliary", "participle", "en_base", "en_past", "impersonal", "note"];
+const COLUMNS_PER_FILE = {
+  "verbs-are.csv": COMMON,
+  "verbs-ere.csv": COMMON,
+  "verbs-ire.csv": ["infinitive", "english", "isc", ...COMMON.slice(2)],
+};
+const ENDING_PER_FILE = { "verbs-are.csv": "are", "verbs-ere.csv": "ere", "verbs-ire.csv": "ire" };
 
 describe("parseCSV", () => {
   it("handles quoted commas, escaped quotes, CRLF and a trailing newline", () => {
@@ -17,25 +21,27 @@ describe("parseCSV", () => {
   });
 });
 
-describe("dictionary/verbs.csv", () => {
+describe.each(Object.entries(DICTIONARY_FILES))("dictionary/%s", (file, { text }) => {
+  const rows = parseCSV(text);
+  const COLUMNS = COLUMNS_PER_FILE[file];
+
   it("has the expected columns", () => {
-    expect(verbsCSV.split(/\r?\n/)[0].split(",")).toEqual(COLUMNS);
+    expect(parseRows(text)[0]).toEqual(COLUMNS);
   });
 
   it("every row has exactly one field per column", () => {
-    for (const r of parseRows(verbsCSV)) {
+    for (const r of parseRows(text)) {
       expect(r.length, `row "${r[0]}" has ${r.length} fields`).toBe(COLUMNS.length);
     }
   });
 
-  it("has no duplicate verbs", () => {
-    const names = verbs.map((v) => v.infinitive);
-    expect(names.length).toBe(new Set(names).size);
+  it("is not empty", () => {
+    expect(rows.length).toBeGreaterThan(0);
   });
 
-  it.each(verbs.map((v) => [v.infinitive, v]))("%s is valid", (_, v) => {
-    expect(Object.keys(GROUP_ENDING)).toContain(v.group);
-    expect(v.infinitive.endsWith(GROUP_ENDING[v.group])).toBe(true);
+  it.each(rows.map((v) => [v.infinitive, v]))("%s is valid", (_, v) => {
+    expect(v.infinitive.endsWith(ENDING_PER_FILE[file]), `${v.infinitive} doesn't belong in ${file}`).toBe(true);
+    if ("isc" in v) expect(["", "yes"]).toContain(v.isc);
     expect(v.infinitive).toMatch(/^[a-z]+$/);
     expect(["avere", "essere", "avere/essere"]).toContain(v.auxiliary);
     expect(v.english).toMatch(/^to /);
@@ -50,5 +56,12 @@ describe("dictionary/verbs.csv", () => {
     expect(v.note.split("**").length % 2, "unbalanced ** in note").toBe(1);
     expect(singles % 2, "unbalanced * in note").toBe(0);
   });
+});
 
+describe("all dictionary files together", () => {
+  it("have no duplicate verbs, also across files", () => {
+    const names = verbs.map((v) => v.infinitive);
+    const dupes = names.filter((n, i) => names.indexOf(n) !== i);
+    expect(dupes).toEqual([]);
+  });
 });
