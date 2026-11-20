@@ -5,6 +5,7 @@ import { cardsFor } from "./conjugate.js";
 import { createRatings } from "./ratings.js";
 import { LEVELS, cardsForLevel, loadLevel, saveLevel } from "./levels.js";
 import { renderNav } from "./nav.js";
+import { basicsCards } from "./basics.js";
 import { dropdown } from "./menu.js";
 
 renderNav(document.getElementById("nav"), "train");
@@ -13,11 +14,13 @@ const card = document.getElementById("card");
 const el = (id) => document.getElementById(id);
 const ratingButtons = [...document.querySelectorAll("[data-rating]")];
 
-// Every verb in every tense and person, as { id, tenseKey, tense, it, en }.
+// Every verb in every tense and person, as { id, tenseKey, tense, it, en },
+// and the Basics cards in the same shape.
 const allCards = verbs.flatMap(cardsFor);
-// The cards for the chosen difficulty level.
+const basics = basicsCards();
+// The cards for the chosen level.
 let level = loadLevel();
-let cards = cardsForLevel(allCards, level);
+let cards = cardsForLevel(allCards, level, basics);
 const ratings = createRatings();
 let current = null;
 let direction = "it-en"; // it-en: Italian shown first, en-it: English shown first
@@ -133,7 +136,7 @@ levelMenu.addEventListener("click", (e) => {
   if (choice.dataset.level === level) return;
   level = choice.dataset.level;
   saveLevel(level);
-  cards = cardsForLevel(allCards, level);
+  cards = cardsForLevel(allCards, level, basics);
   showLevel();
   if (!busy) nextCard(); // straight to a card from the new level
 });

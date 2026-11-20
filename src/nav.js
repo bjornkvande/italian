@@ -1,4 +1,4 @@
-// The navigation at the top of every page: "Train" and "Verbs" tabs. "Verbs"
+// The navigation at the top of every page: "Train", "Basics" and "Verbs" tabs. "Verbs"
 // opens the verb page you used last; on the verb pages a second row of tabs
 // links to all of them. Add new word groups (or tabs) here.
 
@@ -33,7 +33,7 @@ export function rememberVerbPage(id, storage = globalThis.localStorage) {
 }
 
 /**
- * Fill <nav id="nav"> for the current page: "train" or a verb page id.
+ * Fill <nav id="nav"> for the current page: "train", "basics" or a verb page id.
  * On a verb page, that page is remembered as the one "Verbs" opens next time.
  */
 export function renderNav(nav, current) {
@@ -44,6 +44,7 @@ export function renderNav(nav, current) {
 
   nav.innerHTML = `
     <a class="tab" href="./"${here(current === "train")}>Train</a>
+    <a class="tab" href="basics.html"${here(current === "basics")}>Basics</a>
     <a class="tab" href="${verbs.href}"${here(onVerbPage)}>Verbs</a>`;
 
   // On a verb page, a second row with all verb pages, right under the navigation.

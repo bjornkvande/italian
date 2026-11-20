@@ -83,3 +83,19 @@ tbody th { font-weight: 600; }
   color: #000;
   opacity: 0.5;
 }
+
+/* ---------------------------------------------------------------- Basics page */
+
+.contents { padding-left: 20px; columns: 2; column-gap: 32px; }
+.contents li { margin-bottom: 4px; }
+.contents a { color: #000; }
+
+h2[id] { scroll-margin-top: 16px; }
+
+.words td { white-space: normal; vertical-align: top; }
+.words td.it { font-weight: 600; white-space: nowrap; width: 40%; }
+.row-note { margin-top: 2px; font-size: 0.85rem; opacity: 0.7; }
+
+@media (max-width: 460px) {
+  .contents { columns: 1; }
+}

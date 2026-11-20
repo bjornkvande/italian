@@ -11,10 +11,11 @@ export default defineConfig(({ command, isPreview }) => ({
     strictPort: true, // fail instead of silently moving to another port
   },
   build: {
-    // One HTML page per tab: the flash cards and the four verb references.
+    // One HTML page per tab: the flash cards, the Basics and the four verb references.
     rollupOptions: {
       input: {
         index: "index.html",
+        basics: "basics.html",
         are: "are.html",
         ere: "ere.html",
         ire: "ire.html",

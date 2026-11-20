@@ -3,6 +3,7 @@ import { describe, it, expect } from "vitest";
 import { LEVELS, DEFAULT_LEVEL, STORAGE_KEY, cardsForLevel, loadLevel, saveLevel } from "../src/levels.js";
 import { verbs } from "../src/csv.js";
 import { cardsFor } from "../src/conjugate.js";
+import { basicsCards } from "../src/basics.js";
 
 const all = verbs.flatMap(cardsFor);
 const tensesIn = (cards) => [...new Set(cards.map((c) => c.tenseKey))].sort();
@@ -34,12 +35,22 @@ describe("cards per level", () => {
     expect(tensesIn(all)).toEqual(["condizionale", "futuro", "imperativo", "imperfetto", "infinito", "passato", "presente"]);
   });
 
-  it("each level includes the one below it", () => {
-    for (let i = 1; i < LEVELS.length; i++) {
-      const lower = new Set(cardsForLevel(all, LEVELS[i - 1].id).map((c) => c.id));
-      const higher = new Set(cardsForLevel(all, LEVELS[i].id).map((c) => c.id));
-      for (const id of lower) expect(higher.has(id), `${id} missing from ${LEVELS[i].id}`).toBe(true);
+  it("each verb level includes the one below it", () => {
+    const verbLevels = LEVELS.filter((l) => !l.deck);
+    expect(verbLevels.map((l) => l.id)).toEqual(["beginner", "intermediate", "advanced"]);
+    for (let i = 1; i < verbLevels.length; i++) {
+      const lower = new Set(cardsForLevel(all, verbLevels[i - 1].id).map((c) => c.id));
+      const higher = new Set(cardsForLevel(all, verbLevels[i].id).map((c) => c.id));
+      for (const id of lower) expect(higher.has(id), `${id} missing from ${verbLevels[i].id}`).toBe(true);
     }
+  });
+
+  it("basics: only the Basics cards, and they come first in the menu", () => {
+    const basics = basicsCards();
+    expect(cardsForLevel(all, "basics", basics)).toBe(basics);
+    expect(LEVELS[0].id).toBe("basics");
+    // The verb levels don't change when Basics cards are passed in.
+    expect(cardsForLevel(all, "beginner", basics)).toEqual(cardsForLevel(all, "beginner"));
   });
 
   it("irregular verbs appear at every level, with the right tenses", () => {
