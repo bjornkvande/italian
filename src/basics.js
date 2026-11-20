@@ -26,7 +26,12 @@ export const TOPICS = [
   { id: "demonstratives", title: "This and that" },
   { id: "connectors", title: "Small connecting words" },
   { id: "time", title: "Time words" },
+  { id: "time-units", title: "Units of time" },
   { id: "numbers", title: "Numbers" },
+  { id: "ordinals", title: "Ordinal numbers" },
+  { id: "days", title: "Days of the week" },
+  { id: "months", title: "Months" },
+  { id: "seasons", title: "Seasons" },
   { id: "greetings", title: "Greetings and courtesy" },
 ];
 
@@ -39,8 +44,8 @@ export const BASICS_PAGES = [
   { id: "avere", label: "Avere", topics: ["avere"] },
   { id: "prepositions", label: "Prepositions", topics: ["prepositions", "articulated"] },
   { id: "questions", label: "Questions", topics: ["questions"] },
-  { id: "small-words", label: "Small words", topics: ["demonstratives", "connectors", "time"] },
-  { id: "numbers", label: "Numbers", topics: ["numbers"] },
+  { id: "small-words", label: "Small words", topics: ["demonstratives", "connectors", "time", "time-units"] },
+  { id: "numbers", label: "Numbers & dates", topics: ["numbers", "ordinals", "days", "months", "seasons"] },
 ];
 
 export const BASICS_CSV = basicsCSV;

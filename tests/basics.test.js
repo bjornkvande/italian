@@ -76,9 +76,31 @@ describe("Basics cards", () => {
     expect(form("in + le")).toBe("nelle");
   });
 
-  it("numbers have digits on the other side", () => {
+  it("days of the week and months, in order", () => {
+    expect(pair("days").slice(0, 7)).toEqual([
+      "lunedì = Monday", "martedì = Tuesday", "mercoledì = Wednesday", "giovedì = Thursday",
+      "venerdì = Friday", "sabato = Saturday", "domenica = Sunday",
+    ]);
+    expect(pair("months").map((p) => p.split(" = ")[1])).toEqual([
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December",
+    ]);
+  });
+
+  it("numbers have digits on the other side, from zero to a million", () => {
     for (const r of basicsRows.filter((x) => x.topic === "numbers")) expect(r.english).toMatch(/^\d+$/);
     expect(pair("numbers")).toContain("diciassette = 17");
+    const values = basicsRows.filter((x) => x.topic === "numbers").map((r) => Number(r.english));
+    expect(values).toEqual([...values].sort((a, b) => a - b)); // in ascending order
+    expect(pair("numbers").at(-1)).toBe("un milione = 1000000");
+  });
+
+  it("ordinal numbers, seasons and units of time", () => {
+    expect(pair("ordinals").slice(0, 3)).toEqual(["primo = first (1st)", "secondo = second (2nd)", "terzo = third (3rd)"]);
+    expect(pair("ordinals")).toContain("undicesimo = eleventh (11th)");
+    expect(pair("seasons")).toEqual(["la primavera = spring", "l'estate = summer", "l'autunno = autumn", "l'inverno = winter"]);
+    expect(pair("time-units")).toContain("fa = ago");
+    expect(pair("time-units")).toContain("la settimana = week");
   });
 });
 

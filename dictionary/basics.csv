@@ -153,7 +153,14 @@ numbers,settanta,70,
 numbers,ottanta,80,
 numbers,novanta,90,
 numbers,cento,100,
+numbers,duecento,200,"Hundreds and thousands join straight on: *trecento*, *centocinquanta*, *duemilaventisei*."
+numbers,trecento,300,
+numbers,cinquecento,500,
 numbers,mille,1000,"Plural *-mila*: *duemila*, *tremila*."
+numbers,duemila,2000,
+numbers,diecimila,10000,
+numbers,centomila,100000,
+numbers,un milione,1000000,Followed by *di*: *un milione di euro*. Plural *due milioni*.
 greetings,ciao,"hi, bye (informal)",
 greetings,buongiorno,"good morning, hello",
 greetings,buonasera,good evening,
@@ -172,3 +179,54 @@ greetings,piacere,nice to meet you,
 greetings,come stai?,how are you? (informal),
 greetings,come sta?,how are you? (polite),
 greetings,"bene, grazie","fine, thanks",
+days,lunedì,Monday,Days and months are written with a small letter. *Lunedì* = on Monday (this one); *il lunedì* = on Mondays.
+days,martedì,Tuesday,
+days,mercoledì,Wednesday,
+days,giovedì,Thursday,
+days,venerdì,Friday,
+days,sabato,Saturday,
+days,domenica,Sunday,"The only feminine day: *la domenica*, the others are masculine (*il lunedì*)."
+days,il fine settimana,the weekend,Also *il weekend*.
+months,gennaio,January,"Dates use the plain number: *il 5 maggio*, except the first: *il primo maggio*."
+months,febbraio,February,
+months,marzo,March,
+months,aprile,April,
+months,maggio,May,
+months,giugno,June,
+months,luglio,July,
+months,agosto,August,
+months,settembre,September,
+months,ottobre,October,
+months,novembre,November,
+months,dicembre,December,
+ordinals,primo,first (1st),"They agree like adjectives: *il primo giorno*, *la prima volta*, *i primi giorni*."
+ordinals,secondo,second (2nd),
+ordinals,terzo,third (3rd),*al terzo piano* = on the third floor
+ordinals,quarto,fourth (4th),Also *a quarter*: *un quarto d'ora*.
+ordinals,quinto,fifth (5th),
+ordinals,sesto,sixth (6th),
+ordinals,settimo,seventh (7th),
+ordinals,ottavo,eighth (8th),
+ordinals,nono,ninth (9th),
+ordinals,decimo,tenth (10th),
+ordinals,undicesimo,eleventh (11th),"From 11 on: drop the last vowel and add *-esimo*: *undici → undicesimo*, *venti → ventesimo*."
+ordinals,ventesimo,twentieth (20th),
+ordinals,centesimo,hundredth (100th),
+ordinals,ultimo,last,*l'ultima volta* = the last time
+seasons,la primavera,spring,
+seasons,l'estate,summer,*in estate* or *d'estate* = in summer; the same for the other seasons.
+seasons,l'autunno,autumn,
+seasons,l'inverno,winter,
+time-units,il secondo,second (time),
+time-units,il minuto,minute,
+time-units,l'ora,hour,Also *time* on the clock: *Che ora è?*
+time-units,il giorno,day,
+time-units,la giornata,day (the whole day),*Buona giornata!* = Have a nice day!
+time-units,la settimana,week,
+time-units,il mese,month,
+time-units,l'anno,year,
+time-units,la mattina,morning,*di mattina* / *la mattina* = in the morning
+time-units,il pomeriggio,afternoon,
+time-units,la sera,evening,
+time-units,la notte,night,
+time-units,fa,ago,After the time: *due giorni fa* = two days ago.
