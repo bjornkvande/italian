@@ -1,8 +1,16 @@
 // Renders the Basics page from dictionary/basics.csv (and essere/avere from the verbs).
 // One subpage at a time, picked by the address: basics.html#prepositions.
 import "./pwa.js";
-import { TOPICS, BASICS_PAGES, basicsRows, presenteCards } from "./basics.js";
+import { TOPICS, BASICS_PAGES, basicsRows, presenteCards, basicsCardId } from "./basics.js";
 import { renderNav, lastPage } from "./nav.js";
+import { currentLevels, ratingClass, legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
+
+// Colour level per card id (1–5) from your ratings; refreshed on every render.
+let levels = new Map();
+const colour = (cardId) => {
+  const cls = ratingClass(levels, cardId);
+  return cls ? ` class="${cls}"` : "";
+};
 
 const escape = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 
@@ -11,25 +19,30 @@ const md = (s) => escape(s)
   .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
   .replace(/\*(.+?)\*/g, "<em>$1</em>");
 
+// rows: arrays of cells, or { attrs, cells } to give the row attributes (a colour).
 const table = (cls, head, rows) => `
   <div class="table-wrap"><table class="${cls}">
     ${head ? `<thead><tr>${head.map((h) => `<th>${h}</th>`).join("")}</tr></thead>` : ""}
-    <tbody>${rows.map((r) => `<tr>${r.join("")}</tr>`).join("")}</tbody>
+    <tbody>${rows.map((r) => (Array.isArray(r) ? `<tr>${r.join("")}</tr>` : `<tr${r.attrs}>${r.cells.join("")}</tr>`)).join("")}</tbody>
   </table></div>`;
 
 // Italian | English, with the note (if any) in small type under the English.
 function wordTable(rows) {
-  return table("words", ["Italian", "English"], rows.map((r) => [
-    `<td class="it">${escape(r.italian)}</td>`,
-    `<td>${escape(r.english)}${r.note ? `<div class="row-note">${md(r.note)}</div>` : ""}</td>`,
-  ]));
+  return table("words", ["Italian", "English"], rows.map((r) => ({
+    attrs: colour(basicsCardId(r.topic, r.italian)),
+    cells: [
+      `<td class="it">${escape(r.italian)}</td>`,
+      `<td>${escape(r.english)}${r.note ? `<div class="row-note">${md(r.note)}</div>` : ""}</td>`,
+    ],
+  })));
 }
 
 // io sono | I am, from the verb dictionary.
 function presenteTable(infinitive) {
-  return table("words", ["Presente", "English"], presenteCards(infinitive).map((c) => [
-    `<td class="it">${escape(c.it)}</td>`, `<td>${escape(c.en)}</td>`,
-  ]));
+  return table("words", ["Presente", "English"], presenteCards(infinitive).map((c) => ({
+    attrs: colour(c.id),
+    cells: [`<td class="it">${escape(c.it)}</td>`, `<td>${escape(c.en)}</td>`],
+  })));
 }
 
 // Prepositions + article as a grid: rows di, a, da, in, su; columns il, lo, l', ...
@@ -37,10 +50,11 @@ function articulatedTable(rows) {
   const parts = rows.map((r) => ({ form: r.italian, prep: r.english.split(" + ")[0], art: r.english.split(" + ")[1] }));
   const preps = [...new Set(parts.map((p) => p.prep))];
   const arts = [...new Set(parts.map((p) => p.art))];
-  const cell = (prep, art) => parts.find((p) => p.prep === prep && p.art === art)?.form ?? "—";
-  return table("conj", ["", ...arts], preps.map((prep) => [
-    `<th>${prep}</th>`, ...arts.map((art) => `<td>${escape(cell(prep, art))}</td>`),
-  ]));
+  const cell = (prep, art) => {
+    const form = parts.find((p) => p.prep === prep && p.art === art)?.form;
+    return form ? `<td${colour(basicsCardId("articulated", form))}>${escape(form)}</td>` : "<td>—</td>";
+  };
+  return table("conj", ["", ...arts], preps.map((prep) => [`<th>${prep}</th>`, ...arts.map((art) => cell(prep, art))]));
 }
 
 const topicById = (id) => TOPICS.find((t) => t.id === id);
@@ -65,6 +79,7 @@ function currentPage() {
 }
 
 function render() {
+  levels = currentLevels();
   const page = currentPage();
   renderNav(document.getElementById("nav"), "basics", page.id);
   // A subpage with one topic uses that topic's title as the page heading
@@ -72,12 +87,12 @@ function render() {
   const single = page.topics.length === 1;
   const heading = single ? topicById(page.topics[0]).title : page.label;
   document.getElementById("content").innerHTML =
-    `<h1>Basics: ${heading}</h1>` +
+    `<h1>Basics: ${heading}</h1>${legendHTML()}` +
     page.topics.map((id) => topicSection(topicById(id), !single)).join("");
   document.title = `Basics – ${page.label}`;
-  window.scrollTo(0, 0);
 }
 
 // Switching subpage only changes the #part of the address.
-window.addEventListener("hashchange", render);
+window.addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });
 render();
+rerenderOnRatingChanges(render);

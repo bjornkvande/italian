@@ -4,8 +4,17 @@ import "./pwa.js";
 import { verbs } from "./csv.js";
 import {
   ENDINGS, PARTICIPLE_ENDING, TENSES, PRONOUNS, AVERE,
-  form, participle, gerund, passatoProssimo, spellingNote,
+  form, participle, gerund, passatoProssimo, spellingNote, cardsFor, verbCardId,
 } from "./conjugate.js";
+import { currentLevels, ratingClass, legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
+
+// Colour level per card id (1–5) from your ratings; refreshed on every render.
+let levels = new Map();
+// ` class="r3"` for a rated card, "" otherwise.
+const colour = (cardId, extra = "") => {
+  const cls = [extra, ratingClass(levels, cardId)].filter(Boolean).join(" ");
+  return cls ? ` class="${cls}"` : "";
+};
 import { PAGES } from "./pages.js";
 import { renderNav } from "./nav.js";
 
@@ -39,7 +48,7 @@ function patternTable(group) {
 function indexTable(list, start) {
   const rows = list.map((v, i) => [
     `<td>${start + i}</td>`,
-    `<td><a href="#${v.infinitive}">${v.infinitive}</a></td>`,
+    `<td${colour(verbCardId(v.infinitive, "infinito"))}><a href="#${v.infinitive}">${v.infinitive}</a></td>`,
     `<td>${escape(v.english)}</td>`,
     `<td>${passatoProssimo(v, 0)}</td>`,
   ]);
@@ -48,10 +57,13 @@ function indexTable(list, start) {
 
 function verbSection(v, n) {
   const spelling = spellingNote(v);
-  const rows = PRONOUNS.map((p, i) => [
-    `<th>${p}</th>`,
-    ...TENSES.map(([tense]) => `<td>${form(v, tense, i) ?? "—"}</td>`),
-  ]);
+  // Only forms that are flash cards get a colour (not e.g. the Loro imperativo).
+  const cardIds = new Set(cardsFor(v).map((c) => c.id));
+  const cell = (tense, i) => {
+    const id = verbCardId(v.infinitive, tense, i);
+    return `<td${cardIds.has(id) ? colour(id) : ""}>${form(v, tense, i) ?? "—"}</td>`;
+  };
+  const rows = PRONOUNS.map((p, i) => [`<th>${p}</th>`, ...TENSES.map(([tense]) => cell(tense, i))]);
   return `
     <h3 id="${v.infinitive}">${n}. ${v.infinitive} — <em>${escape(v.english)}</em></h3>
     <p class="info"><strong>Participio:</strong> ${participle(v)} · <strong>Gerundio:</strong> ${gerund(v)} · <strong>Ausiliare:</strong> ${v.auxiliary}</p>
@@ -74,13 +86,14 @@ function tensesList(e) {
   </ul>`;
 }
 
-function render(page) {
+function render(page, firstTime = false) {
+  levels = currentLevels();
   const groupsOf = (s) => verbs.filter((v) => s.groups.includes(v.group));
   const all = page.sections.flatMap(groupsOf);
   const n = all.length;
   const titled = page.sections.length > 1;
 
-  let html = `<h1>${page.title(n)}</h1>`;
+  let html = `<h1>${page.title(n)}</h1>${legendHTML()}`;
   html += page.intro.map((p) => `<p>${md(p)}</p>`).join("");
   html += `<h2>The tenses</h2>${tensesList(page.examples)}`;
 
@@ -113,8 +126,10 @@ function render(page) {
   document.title = page.documentTitle;
 
   // innerHTML arrives after the browser looked for #verb in the URL, so jump now.
-  if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
+  if (firstTime && location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
 }
 
 renderNav(document.getElementById("nav"), "verbs", document.body.dataset.page);
-render(PAGES[document.body.dataset.page]);
+const page = PAGES[document.body.dataset.page];
+render(page, true);
+rerenderOnRatingChanges(() => render(page));

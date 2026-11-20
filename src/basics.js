@@ -51,6 +51,11 @@ export const BASICS_PAGES = [
 export const BASICS_CSV = basicsCSV;
 export const basicsRows = parseCSV(basicsCSV);
 
+/** The id of a Basics card: "basics.pronouns.io". The Basics page uses it to colour rows. */
+export function basicsCardId(topicId, italian) {
+  return `basics.${topicId}.${italian}`;
+}
+
 /** The presente cards of a verb (io sono = I am, ...). */
 export function presenteCards(infinitive, allVerbs = verbs) {
   const verb = allVerbs.find((v) => v.infinitive === infinitive);
@@ -64,7 +69,7 @@ export function topicCards(topic, rows = basicsRows, allVerbs = verbs) {
   const fromRows = rows
     .filter((r) => r.topic === topic.id)
     .map((r) => ({
-      id: `basics.${topic.id}.${r.italian}`,
+      id: basicsCardId(topic.id, r.italian),
       tenseKey: "basics",
       tense: topic.title,
       it: r.italian,
