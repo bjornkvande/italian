@@ -3,7 +3,8 @@
 import verbsCSV from "../dictionary/verbs.csv?raw";
 
 // Minimal CSV parser: handles quoted fields, commas and "" inside quotes.
-export function parseCSV(text) {
+// Returns the rows as arrays of fields, skipping empty lines.
+export function parseRows(text) {
   const rows = [];
   let row = [], field = "", inQuotes = false;
   for (let i = 0; i < text.length; i++) {
@@ -20,7 +21,12 @@ export function parseCSV(text) {
     } else field += c;
   }
   if (field || row.length) { row.push(field); rows.push(row); }
-  const [header, ...data] = rows.filter(r => r.some(f => f.trim()));
+  return rows.filter(r => r.some(f => f.trim()));
+}
+
+// Rows as objects keyed by the header line.
+export function parseCSV(text) {
+  const [header, ...data] = parseRows(text);
   return data.map(r => Object.fromEntries(header.map((h, i) => [h, r[i] ?? ""])));
 }
 
