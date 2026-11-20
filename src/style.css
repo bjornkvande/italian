@@ -146,3 +146,70 @@ html, body { overscroll-behavior: none; }
   background: #000;
   color: #fff;
 }
+
+/* Difficulty level: a button in the top-left corner with a small menu. */
+.level {
+  position: fixed;
+  top: 12px;
+  top: max(12px, env(safe-area-inset-top));
+  left: 16px;
+  z-index: 2;
+}
+
+.level-button {
+  padding: 8px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.level-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 210px;
+  padding: 6px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.level-menu[hidden] { display: none; }
+
+.level-menu button {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #000;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.level-menu button:hover { background: #f2f2f2; }
+.level-menu button[aria-pressed="true"] { background: #000; color: #fff; }
+.level-name { font-weight: 600; }
+.level-description { font-size: 0.8rem; opacity: 0.65; }
+
+/* On narrow phones, move the tabs to the right so they don't run into the level button. */
+@media (max-width: 600px) {
+  .nav { justify-content: flex-end; }
+}
+
+/* On small phones, make the tabs and level button more compact so both fit on one line. */
+@media (max-width: 420px) {
+  .nav { gap: 0; padding-right: 8px; }
+  .nav a { padding: 7px 9px; font-size: 0.9rem; }
+  .level { left: 8px; }
+  .level-button { padding: 7px 10px; font-size: 0.85rem; }
+}

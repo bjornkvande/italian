@@ -164,14 +164,15 @@ describe("passato prossimo: auxiliary and agreement", () => {
 });
 
 describe("flash cards", () => {
-  it("every regular verb has 5 tenses × 6 persons + 4 imperativo cards", () => {
+  it("every regular verb has 1 infinitive + 5 tenses × 6 persons + 4 imperativo cards", () => {
     for (const v of verbs.filter((x) => !x.impersonal)) {
-      expect(cardsFor(v), v.infinitive).toHaveLength(34);
+      expect(cardsFor(v), v.infinitive).toHaveLength(35);
     }
   });
 
   it("piovere only has 'it' cards, without imperativo", () => {
     expect(cardsOf("piovere").map((c) => [c.it, c.en])).toEqual([
+      ["piovere", "to rain"],
       ["piove", "it rains"],
       ["ha piovuto / è piovuto", "it rained"],
       ["pioveva", "it used to rain"],
@@ -190,13 +191,19 @@ describe("flash cards", () => {
   });
 
   it("Italian side has the pronoun, English side the translation, per tense", () => {
-    expect(card("parlare", "io parlo")).toEqual({ id: "parlare.presente.0", tense: "Presente", it: "io parlo", en: "I speak" });
+    expect(card("parlare", "io parlo")).toEqual({ id: "parlare.presente.0", tenseKey: "presente", tense: "Presente", it: "io parlo", en: "I speak" });
     expect(card("parlare", "noi abbiamo parlato").en).toBe("we spoke");
     expect(card("parlare", "loro parlavano").en).toBe("they used to speak");
     expect(card("parlare", "voi parlerete").en).toBe("you all will speak");
     expect(card("parlare", "tu parleresti").en).toBe("you would speak");
     expect(card("arrivare", "lui/lei è arrivato/a").en).toBe("he/she arrived");
     expect(card("finire", "io ho finito / sono finito/a").en).toBe("I finished");
+  });
+
+  it("infinitive cards pair the verb with 'to' + its English base", () => {
+    expect(card("parlare", "parlare")).toEqual({ id: "parlare.infinito", tenseKey: "infinito", tense: "Infinito", it: "parlare", en: "to speak" });
+    expect(card("crescere", "crescere").en).toBe("to grow up");
+    expect(card("capire", "capire").en).toBe("to understand");
   });
 
   it("imperativo cards cover tu, Lei, noi and voi", () => {

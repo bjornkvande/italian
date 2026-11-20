@@ -2,13 +2,17 @@
 import { verbs } from "./csv.js";
 import { cardsFor } from "./conjugate.js";
 import { createRatings } from "./ratings.js";
+import { LEVELS, cardsForLevel, loadLevel, saveLevel } from "./levels.js";
 
 const card = document.getElementById("card");
 const el = (id) => document.getElementById(id);
 const ratingButtons = [...document.querySelectorAll("[data-rating]")];
 
-// Every verb in every tense and person, as { id, tense, it, en }.
-const cards = verbs.flatMap(cardsFor);
+// Every verb in every tense and person, as { id, tenseKey, tense, it, en }.
+const allCards = verbs.flatMap(cardsFor);
+// The cards for the chosen difficulty level.
+let level = loadLevel();
+let cards = cardsForLevel(allCards, level);
 const ratings = createRatings();
 let current = null;
 let direction = "it-en"; // it-en: Italian shown first, en-it: English shown first
@@ -97,8 +101,51 @@ function handleClick(e) {
   else card.classList.add("flipped");
 }
 
+// ---------------------------------------------------------------- difficulty level
+
+const levelButton = el("level-button");
+const levelMenu = el("level-menu");
+
+levelMenu.innerHTML = LEVELS.map((l) => `
+  <button type="button" data-level="${l.id}" aria-pressed="false">
+    <span class="level-name">${l.name}</span>
+    <span class="level-description">${l.description}</span>
+  </button>`).join("");
+
+function showLevel() {
+  levelButton.innerHTML = `${LEVELS.find((l) => l.id === level).name}<span aria-hidden="true"> ▾</span>`;
+  for (const b of levelMenu.querySelectorAll("[data-level]")) {
+    b.setAttribute("aria-pressed", String(b.dataset.level === level));
+  }
+}
+
+function toggleMenu(open = levelMenu.hidden) {
+  levelMenu.hidden = !open;
+  levelButton.setAttribute("aria-expanded", String(open));
+}
+
+levelButton.addEventListener("click", () => toggleMenu());
+levelMenu.addEventListener("click", (e) => {
+  const choice = e.target.closest("[data-level]");
+  if (!choice) return;
+  toggleMenu(false);
+  if (choice.dataset.level === level) return;
+  level = choice.dataset.level;
+  saveLevel(level);
+  cards = cardsForLevel(allCards, level);
+  showLevel();
+  if (!busy) nextCard(); // straight to a card from the new level
+});
+// Close the menu when tapping elsewhere or pressing Escape.
+document.addEventListener("click", (e) => { if (!e.target.closest("#level")) toggleMenu(false); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") toggleMenu(false); });
+showLevel();
+
+// ---------------------------------------------------------------- input
+
 scene.addEventListener("click", handleClick);
 document.addEventListener("keydown", (e) => {
+  if (e.target.closest?.("#level")) return; // keys on the level menu shouldn't flip the card
   if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); }
   else if (/^[1-5]$/.test(e.key)) rate(Number(e.key));
 });

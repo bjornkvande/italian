@@ -44,7 +44,7 @@ export const TENSES = [
   ["condizionale", "Condizionale"],
   ["imperativo", "Imperativo"],
 ];
-const TENSE_NAME = Object.fromEntries(TENSES);
+const TENSE_NAME = { infinito: "Infinito", ...Object.fromEntries(TENSES) };
 
 export const PRONOUNS = ["io", "tu", "lui/lei", "noi", "voi", "loro"];
 const EN_PRONOUNS = ["I", "you", "he/she", "we", "you all", "they"];
@@ -143,30 +143,30 @@ function english(verb, tense, person) {
   }
 }
 
-// Every card for one verb: { id, tense, it, en }.
+// Every card for one verb: { id, tenseKey, tense, it, en }.
 // The id ("parlare.presente.1") stays the same as long as the verb, tense and
 // person do, so stored ratings keep pointing at the right card.
+// tenseKey (infinito, presente, passato, ...) is what the difficulty levels filter on.
 export function cardsFor(verb) {
   const cards = [];
+  const add = (id, tenseKey, it, en) =>
+    cards.push({ id: `${verb.infinitive}.${id}`, tenseKey, tense: TENSE_NAME[tenseKey], it, en });
+
+  add("infinito", "infinito", verb.infinitive, `to ${verb.en_base}`);
+
   // Impersonal verbs (piovere) only use the lui/lei form, without a pronoun.
   const persons = verb.impersonal ? [2] : [0, 1, 2, 3, 4, 5];
-
   for (const tense of ["presente", "passato", "imperfetto", "futuro", "condizionale"]) {
     for (const p of persons) {
       const f = tense === "passato" ? passatoProssimo(verb, p, " / ") : form(verb, tense, p);
       const it = verb.impersonal ? f : `${PRONOUNS[p]} ${f}`;
-      cards.push({ id: `${verb.infinitive}.${tense}.${p}`, tense: TENSE_NAME[tense], it, en: english(verb, tense, p) });
+      add(`${tense}.${p}`, tense, it, english(verb, tense, p));
     }
   }
 
   if (!verb.impersonal) {
     for (const { index, it, en } of IMPERATIVO_PERSONS) {
-      cards.push({
-        id: `${verb.infinitive}.imperativo.${index}`,
-        tense: TENSE_NAME.imperativo,
-        it: `${it} ${form(verb, "imperativo", index)}!`,
-        en: en(verb.en_base),
-      });
+      add(`imperativo.${index}`, "imperativo", `${it} ${form(verb, "imperativo", index)}!`, en(verb.en_base));
     }
   }
   return cards;

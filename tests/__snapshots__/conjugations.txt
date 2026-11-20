@@ -5,6 +5,7 @@ Imperfetto: parlavo, parlavi, parlava, parlavamo, parlavate, parlavano
 Futuro: parlerò, parlerai, parlerà, parleremo, parlerete, parleranno
 Condizionale: parlerei, parleresti, parlerebbe, parleremmo, parlereste, parlerebbero
 Imperativo: —, parla, parli, parliamo, parlate, parlino
+card [Infinito] parlare = to speak
 card [Presente] io parlo = I speak
 card [Presente] tu parli = you speak
 card [Presente] lui/lei parla = he/she speaks
@@ -47,6 +48,7 @@ Imperfetto: pensavo, pensavi, pensava, pensavamo, pensavate, pensavano
 Futuro: penserò, penserai, penserà, penseremo, penserete, penseranno
 Condizionale: penserei, penseresti, penserebbe, penseremmo, pensereste, penserebbero
 Imperativo: —, pensa, pensi, pensiamo, pensate, pensino
+card [Infinito] pensare = to think
 card [Presente] io penso = I think
 card [Presente] tu pensi = you think
 card [Presente] lui/lei pensa = he/she thinks
@@ -89,6 +91,7 @@ Imperfetto: trovavo, trovavi, trovava, trovavamo, trovavate, trovavano
 Futuro: troverò, troverai, troverà, troveremo, troverete, troveranno
 Condizionale: troverei, troveresti, troverebbe, troveremmo, trovereste, troverebbero
 Imperativo: —, trova, trovi, troviamo, trovate, trovino
+card [Infinito] trovare = to find
 card [Presente] io trovo = I find
 card [Presente] tu trovi = you find
 card [Presente] lui/lei trova = he/she finds
@@ -131,6 +134,7 @@ Imperfetto: lasciavo, lasciavi, lasciava, lasciavamo, lasciavate, lasciavano
 Futuro: lascerò, lascerai, lascerà, lasceremo, lascerete, lasceranno
 Condizionale: lascerei, lasceresti, lascerebbe, lasceremmo, lascereste, lascerebbero
 Imperativo: —, lascia, lasci, lasciamo, lasciate, lascino
+card [Infinito] lasciare = to leave
 card [Presente] io lascio = I leave
 card [Presente] tu lasci = you leave
 card [Presente] lui/lei lascia = he/she leaves
@@ -173,6 +177,7 @@ Imperfetto: portavo, portavi, portava, portavamo, portavate, portavano
 Futuro: porterò, porterai, porterà, porteremo, porterete, porteranno
 Condizionale: porterei, porteresti, porterebbe, porteremmo, portereste, porterebbero
 Imperativo: —, porta, porti, portiamo, portate, portino
+card [Infinito] portare = to bring
 card [Presente] io porto = I bring
 card [Presente] tu porti = you bring
 card [Presente] lui/lei porta = he/she brings
@@ -215,6 +220,7 @@ Imperfetto: chiamavo, chiamavi, chiamava, chiamavamo, chiamavate, chiamavano
 Futuro: chiamerò, chiamerai, chiamerà, chiameremo, chiamerete, chiameranno
 Condizionale: chiamerei, chiameresti, chiamerebbe, chiameremmo, chiamereste, chiamerebbero
 Imperativo: —, chiama, chiami, chiamiamo, chiamate, chiamino
+card [Infinito] chiamare = to call
 card [Presente] io chiamo = I call
 card [Presente] tu chiami = you call
 card [Presente] lui/lei chiama = he/she calls
@@ -257,6 +263,7 @@ Imperfetto: guardavo, guardavi, guardava, guardavamo, guardavate, guardavano
 Futuro: guarderò, guarderai, guarderà, guarderemo, guarderete, guarderanno
 Condizionale: guarderei, guarderesti, guarderebbe, guarderemmo, guardereste, guarderebbero
 Imperativo: —, guarda, guardi, guardiamo, guardate, guardino
+card [Infinito] guardare = to watch
 card [Presente] io guardo = I watch
 card [Presente] tu guardi = you watch
 card [Presente] lui/lei guarda = he/she watches
@@ -299,6 +306,7 @@ Imperfetto: passavo, passavi, passava, passavamo, passavate, passavano
 Futuro: passerò, passerai, passerà, passeremo, passerete, passeranno
 Condizionale: passerei, passeresti, passerebbe, passeremmo, passereste, passerebbero
 Imperativo: —, passa, passi, passiamo, passate, passino
+card [Infinito] passare = to pass
 card [Presente] io passo = I pass
 card [Presente] tu passi = you pass
 card [Presente] lui/lei passa = he/she passes
@@ -341,6 +349,7 @@ Imperfetto: arrivavo, arrivavi, arrivava, arrivavamo, arrivavate, arrivavano
 Futuro: arriverò, arriverai, arriverà, arriveremo, arriverete, arriveranno
 Condizionale: arriverei, arriveresti, arriverebbe, arriveremmo, arrivereste, arriverebbero
 Imperativo: —, arriva, arrivi, arriviamo, arrivate, arrivino
+card [Infinito] arrivare = to arrive
 card [Presente] io arrivo = I arrive
 card [Presente] tu arrivi = you arrive
 card [Presente] lui/lei arriva = he/she arrives
@@ -383,6 +392,7 @@ Imperfetto: tornavo, tornavi, tornava, tornavamo, tornavate, tornavano
 Futuro: tornerò, tornerai, tornerà, torneremo, tornerete, torneranno
 Condizionale: tornerei, torneresti, tornerebbe, torneremmo, tornereste, tornerebbero
 Imperativo: —, torna, torni, torniamo, tornate, tornino
+card [Infinito] tornare = to come back
 card [Presente] io torno = I come back
 card [Presente] tu torni = you come back
 card [Presente] lui/lei torna = he/she comes back
@@ -425,6 +435,7 @@ Imperfetto: entravo, entravi, entrava, entravamo, entravate, entravano
 Futuro: entrerò, entrerai, entrerà, entreremo, entrerete, entreranno
 Condizionale: entrerei, entreresti, entrerebbe, entreremmo, entrereste, entrerebbero
 Imperativo: —, entra, entri, entriamo, entrate, entrino
+card [Infinito] entrare = to enter
 card [Presente] io entro = I enter
 card [Presente] tu entri = you enter
 card [Presente] lui/lei entra = he/she enters
@@ -467,6 +478,7 @@ Imperfetto: cercavo, cercavi, cercava, cercavamo, cercavate, cercavano
 Futuro: cercherò, cercherai, cercherà, cercheremo, cercherete, cercheranno
 Condizionale: cercherei, cercheresti, cercherebbe, cercheremmo, cerchereste, cercherebbero
 Imperativo: —, cerca, cerchi, cerchiamo, cercate, cerchino
+card [Infinito] cercare = to look for
 card [Presente] io cerco = I look for
 card [Presente] tu cerchi = you look for
 card [Presente] lui/lei cerca = he/she looks for
@@ -509,6 +521,7 @@ Imperfetto: lavoravo, lavoravi, lavorava, lavoravamo, lavoravate, lavoravano
 Futuro: lavorerò, lavorerai, lavorerà, lavoreremo, lavorerete, lavoreranno
 Condizionale: lavorerei, lavoreresti, lavorerebbe, lavoreremmo, lavorereste, lavorerebbero
 Imperativo: —, lavora, lavori, lavoriamo, lavorate, lavorino
+card [Infinito] lavorare = to work
 card [Presente] io lavoro = I work
 card [Presente] tu lavori = you work
 card [Presente] lui/lei lavora = he/she works
@@ -551,6 +564,7 @@ Imperfetto: sembravo, sembravi, sembrava, sembravamo, sembravate, sembravano
 Futuro: sembrerò, sembrerai, sembrerà, sembreremo, sembrerete, sembreranno
 Condizionale: sembrerei, sembreresti, sembrerebbe, sembreremmo, sembrereste, sembrerebbero
 Imperativo: —, sembra, sembri, sembriamo, sembrate, sembrino
+card [Infinito] sembrare = to seem
 card [Presente] io sembro = I seem
 card [Presente] tu sembri = you seem
 card [Presente] lui/lei sembra = he/she seems
@@ -593,6 +607,7 @@ Imperfetto: restavo, restavi, restava, restavamo, restavate, restavano
 Futuro: resterò, resterai, resterà, resteremo, resterete, resteranno
 Condizionale: resterei, resteresti, resterebbe, resteremmo, restereste, resterebbero
 Imperativo: —, resta, resti, restiamo, restate, restino
+card [Infinito] restare = to stay
 card [Presente] io resto = I stay
 card [Presente] tu resti = you stay
 card [Presente] lui/lei resta = he/she stays
@@ -635,6 +650,7 @@ Imperfetto: aspettavo, aspettavi, aspettava, aspettavamo, aspettavate, aspettava
 Futuro: aspetterò, aspetterai, aspetterà, aspetteremo, aspetterete, aspetteranno
 Condizionale: aspetterei, aspetteresti, aspetterebbe, aspetteremmo, aspettereste, aspetterebbero
 Imperativo: —, aspetta, aspetti, aspettiamo, aspettate, aspettino
+card [Infinito] aspettare = to wait
 card [Presente] io aspetto = I wait
 card [Presente] tu aspetti = you wait
 card [Presente] lui/lei aspetta = he/she waits
@@ -677,6 +693,7 @@ Imperfetto: ricordavo, ricordavi, ricordava, ricordavamo, ricordavate, ricordava
 Futuro: ricorderò, ricorderai, ricorderà, ricorderemo, ricorderete, ricorderanno
 Condizionale: ricorderei, ricorderesti, ricorderebbe, ricorderemmo, ricordereste, ricorderebbero
 Imperativo: —, ricorda, ricordi, ricordiamo, ricordate, ricordino
+card [Infinito] ricordare = to remember
 card [Presente] io ricordo = I remember
 card [Presente] tu ricordi = you remember
 card [Presente] lui/lei ricorda = he/she remembers
@@ -719,6 +736,7 @@ Imperfetto: continuavo, continuavi, continuava, continuavamo, continuavate, cont
 Futuro: continuerò, continuerai, continuerà, continueremo, continuerete, continueranno
 Condizionale: continuerei, continueresti, continuerebbe, continueremmo, continuereste, continuerebbero
 Imperativo: —, continua, continui, continuiamo, continuate, continuino
+card [Infinito] continuare = to continue
 card [Presente] io continuo = I continue
 card [Presente] tu continui = you continue
 card [Presente] lui/lei continua = he/she continues
@@ -761,6 +779,7 @@ Imperfetto: diventavo, diventavi, diventava, diventavamo, diventavate, diventava
 Futuro: diventerò, diventerai, diventerà, diventeremo, diventerete, diventeranno
 Condizionale: diventerei, diventeresti, diventerebbe, diventeremmo, diventereste, diventerebbero
 Imperativo: —, diventa, diventi, diventiamo, diventate, diventino
+card [Infinito] diventare = to become
 card [Presente] io divento = I become
 card [Presente] tu diventi = you become
 card [Presente] lui/lei diventa = he/she becomes
@@ -803,6 +822,7 @@ Imperfetto: cominciavo, cominciavi, cominciava, cominciavamo, cominciavate, comi
 Futuro: comincerò, comincerai, comincerà, cominceremo, comincerete, cominceranno
 Condizionale: comincerei, cominceresti, comincerebbe, cominceremmo, comincereste, comincerebbero
 Imperativo: —, comincia, cominci, cominciamo, cominciate, comincino
+card [Infinito] cominciare = to begin
 card [Presente] io comincio = I begin
 card [Presente] tu cominci = you begin
 card [Presente] lui/lei comincia = he/she begins
@@ -845,6 +865,7 @@ Imperfetto: cambiavo, cambiavi, cambiava, cambiavamo, cambiavate, cambiavano
 Futuro: cambierò, cambierai, cambierà, cambieremo, cambierete, cambieranno
 Condizionale: cambierei, cambieresti, cambierebbe, cambieremmo, cambiereste, cambierebbero
 Imperativo: —, cambia, cambi, cambiamo, cambiate, cambino
+card [Infinito] cambiare = to change
 card [Presente] io cambio = I change
 card [Presente] tu cambi = you change
 card [Presente] lui/lei cambia = he/she changes
@@ -887,6 +908,7 @@ Imperfetto: mangiavo, mangiavi, mangiava, mangiavamo, mangiavate, mangiavano
 Futuro: mangerò, mangerai, mangerà, mangeremo, mangerete, mangeranno
 Condizionale: mangerei, mangeresti, mangerebbe, mangeremmo, mangereste, mangerebbero
 Imperativo: —, mangia, mangi, mangiamo, mangiate, mangino
+card [Infinito] mangiare = to eat
 card [Presente] io mangio = I eat
 card [Presente] tu mangi = you eat
 card [Presente] lui/lei mangia = he/she eats
@@ -929,6 +951,7 @@ Imperfetto: pagavo, pagavi, pagava, pagavamo, pagavate, pagavano
 Futuro: pagherò, pagherai, pagherà, pagheremo, pagherete, pagheranno
 Condizionale: pagherei, pagheresti, pagherebbe, pagheremmo, paghereste, pagherebbero
 Imperativo: —, paga, paghi, paghiamo, pagate, paghino
+card [Infinito] pagare = to pay
 card [Presente] io pago = I pay
 card [Presente] tu paghi = you pay
 card [Presente] lui/lei paga = he/she pays
@@ -971,6 +994,7 @@ Imperfetto: giocavo, giocavi, giocava, giocavamo, giocavate, giocavano
 Futuro: giocherò, giocherai, giocherà, giocheremo, giocherete, giocheranno
 Condizionale: giocherei, giocheresti, giocherebbe, giocheremmo, giochereste, giocherebbero
 Imperativo: —, gioca, giochi, giochiamo, giocate, giochino
+card [Infinito] giocare = to play
 card [Presente] io gioco = I play
 card [Presente] tu giochi = you play
 card [Presente] lui/lei gioca = he/she plays
@@ -1013,6 +1037,7 @@ Imperfetto: compravo, compravi, comprava, compravamo, compravate, compravano
 Futuro: comprerò, comprerai, comprerà, compreremo, comprerete, compreranno
 Condizionale: comprerei, compreresti, comprerebbe, compreremmo, comprereste, comprerebbero
 Imperativo: —, compra, compri, compriamo, comprate, comprino
+card [Infinito] comprare = to buy
 card [Presente] io compro = I buy
 card [Presente] tu compri = you buy
 card [Presente] lui/lei compra = he/she buys
@@ -1055,6 +1080,7 @@ Imperfetto: mandavo, mandavi, mandava, mandavamo, mandavate, mandavano
 Futuro: manderò, manderai, manderà, manderemo, manderete, manderanno
 Condizionale: manderei, manderesti, manderebbe, manderemmo, mandereste, manderebbero
 Imperativo: —, manda, mandi, mandiamo, mandate, mandino
+card [Infinito] mandare = to send
 card [Presente] io mando = I send
 card [Presente] tu mandi = you send
 card [Presente] lui/lei manda = he/she sends
@@ -1097,6 +1123,7 @@ Imperfetto: amavo, amavi, amava, amavamo, amavate, amavano
 Futuro: amerò, amerai, amerà, ameremo, amerete, ameranno
 Condizionale: amerei, ameresti, amerebbe, ameremmo, amereste, amerebbero
 Imperativo: —, ama, ami, amiamo, amate, amino
+card [Infinito] amare = to love
 card [Presente] io amo = I love
 card [Presente] tu ami = you love
 card [Presente] lui/lei ama = he/she loves
@@ -1139,6 +1166,7 @@ Imperfetto: provavo, provavi, provava, provavamo, provavate, provavano
 Futuro: proverò, proverai, proverà, proveremo, proverete, proveranno
 Condizionale: proverei, proveresti, proverebbe, proveremmo, provereste, proverebbero
 Imperativo: —, prova, provi, proviamo, provate, provino
+card [Infinito] provare = to try
 card [Presente] io provo = I try
 card [Presente] tu provi = you try
 card [Presente] lui/lei prova = he/she tries
@@ -1181,6 +1209,7 @@ Imperfetto: usavo, usavi, usava, usavamo, usavate, usavano
 Futuro: userò, userai, userà, useremo, userete, useranno
 Condizionale: userei, useresti, userebbe, useremmo, usereste, userebbero
 Imperativo: —, usa, usi, usiamo, usate, usino
+card [Infinito] usare = to use
 card [Presente] io uso = I use
 card [Presente] tu usi = you use
 card [Presente] lui/lei usa = he/she uses
@@ -1223,6 +1252,7 @@ Imperfetto: mostravo, mostravi, mostrava, mostravamo, mostravate, mostravano
 Futuro: mostrerò, mostrerai, mostrerà, mostreremo, mostrerete, mostreranno
 Condizionale: mostrerei, mostreresti, mostrerebbe, mostreremmo, mostrereste, mostrerebbero
 Imperativo: —, mostra, mostri, mostriamo, mostrate, mostrino
+card [Infinito] mostrare = to show
 card [Presente] io mostro = I show
 card [Presente] tu mostri = you show
 card [Presente] lui/lei mostra = he/she shows
@@ -1265,6 +1295,7 @@ Imperfetto: incontravo, incontravi, incontrava, incontravamo, incontravate, inco
 Futuro: incontrerò, incontrerai, incontrerà, incontreremo, incontrerete, incontreranno
 Condizionale: incontrerei, incontreresti, incontrerebbe, incontreremmo, incontrereste, incontrerebbero
 Imperativo: —, incontra, incontri, incontriamo, incontrate, incontrino
+card [Infinito] incontrare = to meet
 card [Presente] io incontro = I meet
 card [Presente] tu incontri = you meet
 card [Presente] lui/lei incontra = he/she meets
@@ -1307,6 +1338,7 @@ Imperfetto: ascoltavo, ascoltavi, ascoltava, ascoltavamo, ascoltavate, ascoltava
 Futuro: ascolterò, ascolterai, ascolterà, ascolteremo, ascolterete, ascolteranno
 Condizionale: ascolterei, ascolteresti, ascolterebbe, ascolteremmo, ascoltereste, ascolterebbero
 Imperativo: —, ascolta, ascolti, ascoltiamo, ascoltate, ascoltino
+card [Infinito] ascoltare = to listen
 card [Presente] io ascolto = I listen
 card [Presente] tu ascolti = you listen
 card [Presente] lui/lei ascolta = he/she listens
@@ -1349,6 +1381,7 @@ Imperfetto: aiutavo, aiutavi, aiutava, aiutavamo, aiutavate, aiutavano
 Futuro: aiuterò, aiuterai, aiuterà, aiuteremo, aiuterete, aiuteranno
 Condizionale: aiuterei, aiuteresti, aiuterebbe, aiuteremmo, aiutereste, aiuterebbero
 Imperativo: —, aiuta, aiuti, aiutiamo, aiutate, aiutino
+card [Infinito] aiutare = to help
 card [Presente] io aiuto = I help
 card [Presente] tu aiuti = you help
 card [Presente] lui/lei aiuta = he/she helps
@@ -1391,6 +1424,7 @@ Imperfetto: presentavo, presentavi, presentava, presentavamo, presentavate, pres
 Futuro: presenterò, presenterai, presenterà, presenteremo, presenterete, presenteranno
 Condizionale: presenterei, presenteresti, presenterebbe, presenteremmo, presentereste, presenterebbero
 Imperativo: —, presenta, presenti, presentiamo, presentate, presentino
+card [Infinito] presentare = to present
 card [Presente] io presento = I present
 card [Presente] tu presenti = you present
 card [Presente] lui/lei presenta = he/she presents
@@ -1433,6 +1467,7 @@ Imperfetto: consideravo, consideravi, considerava, consideravamo, consideravate,
 Futuro: considererò, considererai, considererà, considereremo, considererete, considereranno
 Condizionale: considererei, considereresti, considererebbe, considereremmo, considerereste, considererebbero
 Imperativo: —, considera, consideri, consideriamo, considerate, considerino
+card [Infinito] considerare = to consider
 card [Presente] io considero = I consider
 card [Presente] tu consideri = you consider
 card [Presente] lui/lei considera = he/she considers
@@ -1475,6 +1510,7 @@ Imperfetto: spiegavo, spiegavi, spiegava, spiegavamo, spiegavate, spiegavano
 Futuro: spiegherò, spiegherai, spiegherà, spiegheremo, spiegherete, spiegheranno
 Condizionale: spiegherei, spiegheresti, spiegherebbe, spiegheremmo, spieghereste, spiegherebbero
 Imperativo: —, spiega, spieghi, spieghiamo, spiegate, spieghino
+card [Infinito] spiegare = to explain
 card [Presente] io spiego = I explain
 card [Presente] tu spieghi = you explain
 card [Presente] lui/lei spiega = he/she explains
@@ -1517,6 +1553,7 @@ Imperfetto: studiavo, studiavi, studiava, studiavamo, studiavate, studiavano
 Futuro: studierò, studierai, studierà, studieremo, studierete, studieranno
 Condizionale: studierei, studieresti, studierebbe, studieremmo, studiereste, studierebbero
 Imperativo: —, studia, studi, studiamo, studiate, studino
+card [Infinito] studiare = to study
 card [Presente] io studio = I study
 card [Presente] tu studi = you study
 card [Presente] lui/lei studia = he/she studies
@@ -1559,6 +1596,7 @@ Imperfetto: toccavo, toccavi, toccava, toccavamo, toccavate, toccavano
 Futuro: toccherò, toccherai, toccherà, toccheremo, toccherete, toccheranno
 Condizionale: toccherei, toccheresti, toccherebbe, toccheremmo, tocchereste, toccherebbero
 Imperativo: —, tocca, tocchi, tocchiamo, toccate, tocchino
+card [Infinito] toccare = to touch
 card [Presente] io tocco = I touch
 card [Presente] tu tocchi = you touch
 card [Presente] lui/lei tocca = he/she touches
@@ -1601,6 +1639,7 @@ Imperfetto: raccontavo, raccontavi, raccontava, raccontavamo, raccontavate, racc
 Futuro: racconterò, racconterai, racconterà, racconteremo, racconterete, racconteranno
 Condizionale: racconterei, racconteresti, racconterebbe, racconteremmo, raccontereste, racconterebbero
 Imperativo: —, racconta, racconti, raccontiamo, raccontate, raccontino
+card [Infinito] raccontare = to tell
 card [Presente] io racconto = I tell
 card [Presente] tu racconti = you tell
 card [Presente] lui/lei racconta = he/she tells
@@ -1643,6 +1682,7 @@ Imperfetto: iniziavo, iniziavi, iniziava, iniziavamo, iniziavate, iniziavano
 Futuro: inizierò, inizierai, inizierà, inizieremo, inizierete, inizieranno
 Condizionale: inizierei, inizieresti, inizierebbe, inizieremmo, iniziereste, inizierebbero
 Imperativo: —, inizia, inizi, iniziamo, iniziate, inizino
+card [Infinito] iniziare = to start
 card [Presente] io inizio = I start
 card [Presente] tu inizi = you start
 card [Presente] lui/lei inizia = he/she starts
@@ -1685,6 +1725,7 @@ Imperfetto: preparavo, preparavi, preparava, preparavamo, preparavate, preparava
 Futuro: preparerò, preparerai, preparerà, prepareremo, preparerete, prepareranno
 Condizionale: preparerei, prepareresti, preparerebbe, prepareremmo, preparereste, preparerebbero
 Imperativo: —, prepara, prepari, prepariamo, preparate, preparino
+card [Infinito] preparare = to prepare
 card [Presente] io preparo = I prepare
 card [Presente] tu prepari = you prepare
 card [Presente] lui/lei prepara = he/she prepares
@@ -1727,6 +1768,7 @@ Imperfetto: speravo, speravi, sperava, speravamo, speravate, speravano
 Futuro: spererò, spererai, spererà, spereremo, spererete, spereranno
 Condizionale: spererei, spereresti, spererebbe, spereremmo, sperereste, spererebbero
 Imperativo: —, spera, speri, speriamo, sperate, sperino
+card [Infinito] sperare = to hope
 card [Presente] io spero = I hope
 card [Presente] tu speri = you hope
 card [Presente] lui/lei spera = he/she hopes
@@ -1769,6 +1811,7 @@ Imperfetto: dimenticavo, dimenticavi, dimenticava, dimenticavamo, dimenticavate,
 Futuro: dimenticherò, dimenticherai, dimenticherà, dimenticheremo, dimenticherete, dimenticheranno
 Condizionale: dimenticherei, dimenticheresti, dimenticherebbe, dimenticheremmo, dimentichereste, dimenticherebbero
 Imperativo: —, dimentica, dimentichi, dimentichiamo, dimenticate, dimentichino
+card [Infinito] dimenticare = to forget
 card [Presente] io dimentico = I forget
 card [Presente] tu dimentichi = you forget
 card [Presente] lui/lei dimentica = he/she forgets
@@ -1811,6 +1854,7 @@ Imperfetto: immaginavo, immaginavi, immaginava, immaginavamo, immaginavate, imma
 Futuro: immaginerò, immaginerai, immaginerà, immagineremo, immaginerete, immagineranno
 Condizionale: immaginerei, immagineresti, immaginerebbe, immagineremmo, immaginereste, immaginerebbero
 Imperativo: —, immagina, immagini, immaginiamo, immaginate, immaginino
+card [Infinito] immaginare = to imagine
 card [Presente] io immagino = I imagine
 card [Presente] tu immagini = you imagine
 card [Presente] lui/lei immagina = he/she imagines
@@ -1853,6 +1897,7 @@ Imperfetto: creavo, creavi, creava, creavamo, creavate, creavano
 Futuro: creerò, creerai, creerà, creeremo, creerete, creeranno
 Condizionale: creerei, creeresti, creerebbe, creeremmo, creereste, creerebbero
 Imperativo: —, crea, crei, creiamo, create, creino
+card [Infinito] creare = to create
 card [Presente] io creo = I create
 card [Presente] tu crei = you create
 card [Presente] lui/lei crea = he/she creates
@@ -1895,6 +1940,7 @@ Imperfetto: accettavo, accettavi, accettava, accettavamo, accettavate, accettava
 Futuro: accetterò, accetterai, accetterà, accetteremo, accetterete, accetteranno
 Condizionale: accetterei, accetteresti, accetterebbe, accetteremmo, accettereste, accetterebbero
 Imperativo: —, accetta, accetti, accettiamo, accettate, accettino
+card [Infinito] accettare = to accept
 card [Presente] io accetto = I accept
 card [Presente] tu accetti = you accept
 card [Presente] lui/lei accetta = he/she accepts
@@ -1937,6 +1983,7 @@ Imperfetto: abitavo, abitavi, abitava, abitavamo, abitavate, abitavano
 Futuro: abiterò, abiterai, abiterà, abiteremo, abiterete, abiteranno
 Condizionale: abiterei, abiteresti, abiterebbe, abiteremmo, abitereste, abiterebbero
 Imperativo: —, abita, abiti, abitiamo, abitate, abitino
+card [Infinito] abitare = to live
 card [Presente] io abito = I live
 card [Presente] tu abiti = you live
 card [Presente] lui/lei abita = he/she lives
@@ -1979,6 +2026,7 @@ Imperfetto: domandavo, domandavi, domandava, domandavamo, domandavate, domandava
 Futuro: domanderò, domanderai, domanderà, domanderemo, domanderete, domanderanno
 Condizionale: domanderei, domanderesti, domanderebbe, domanderemmo, domandereste, domanderebbero
 Imperativo: —, domanda, domandi, domandiamo, domandate, domandino
+card [Infinito] domandare = to ask
 card [Presente] io domando = I ask
 card [Presente] tu domandi = you ask
 card [Presente] lui/lei domanda = he/she asks
@@ -2021,6 +2069,7 @@ Imperfetto: viaggiavo, viaggiavi, viaggiava, viaggiavamo, viaggiavate, viaggiava
 Futuro: viaggerò, viaggerai, viaggerà, viaggeremo, viaggerete, viaggeranno
 Condizionale: viaggerei, viaggeresti, viaggerebbe, viaggeremmo, viaggereste, viaggerebbero
 Imperativo: —, viaggia, viaggi, viaggiamo, viaggiate, viaggino
+card [Infinito] viaggiare = to travel
 card [Presente] io viaggio = I travel
 card [Presente] tu viaggi = you travel
 card [Presente] lui/lei viaggia = he/she travels
@@ -2063,6 +2112,7 @@ Imperfetto: insegnavo, insegnavi, insegnava, insegnavamo, insegnavate, insegnava
 Futuro: insegnerò, insegnerai, insegnerà, insegneremo, insegnerete, insegneranno
 Condizionale: insegnerei, insegneresti, insegnerebbe, insegneremmo, insegnereste, insegnerebbero
 Imperativo: —, insegna, insegni, insegniamo, insegnate, insegnino
+card [Infinito] insegnare = to teach
 card [Presente] io insegno = I teach
 card [Presente] tu insegni = you teach
 card [Presente] lui/lei insegna = he/she teaches
@@ -2105,6 +2155,7 @@ Imperfetto: credevo, credevi, credeva, credevamo, credevate, credevano
 Futuro: crederò, crederai, crederà, crederemo, crederete, crederanno
 Condizionale: crederei, crederesti, crederebbe, crederemmo, credereste, crederebbero
 Imperativo: —, credi, creda, crediamo, credete, credano
+card [Infinito] credere = to believe
 card [Presente] io credo = I believe
 card [Presente] tu credi = you believe
 card [Presente] lui/lei crede = he/she believes
@@ -2147,6 +2198,7 @@ Imperfetto: conoscevo, conoscevi, conosceva, conoscevamo, conoscevate, conosceva
 Futuro: conoscerò, conoscerai, conoscerà, conosceremo, conoscerete, conosceranno
 Condizionale: conoscerei, conosceresti, conoscerebbe, conosceremmo, conoscereste, conoscerebbero
 Imperativo: —, conosci, conosca, conosciamo, conoscete, conoscano
+card [Infinito] conoscere = to know
 card [Presente] io conosco = I know
 card [Presente] tu conosci = you know
 card [Presente] lui/lei conosce = he/she knows
@@ -2189,6 +2241,7 @@ Imperfetto: ricevevo, ricevevi, riceveva, ricevevamo, ricevevate, ricevevano
 Futuro: riceverò, riceverai, riceverà, riceveremo, riceverete, riceveranno
 Condizionale: riceverei, riceveresti, riceverebbe, riceveremmo, ricevereste, riceverebbero
 Imperativo: —, ricevi, riceva, riceviamo, ricevete, ricevano
+card [Infinito] ricevere = to receive
 card [Presente] io ricevo = I receive
 card [Presente] tu ricevi = you receive
 card [Presente] lui/lei riceve = he/she receives
@@ -2231,6 +2284,7 @@ Imperfetto: vendevo, vendevi, vendeva, vendevamo, vendevate, vendevano
 Futuro: venderò, venderai, venderà, venderemo, venderete, venderanno
 Condizionale: venderei, venderesti, venderebbe, venderemmo, vendereste, venderebbero
 Imperativo: —, vendi, venda, vendiamo, vendete, vendano
+card [Infinito] vendere = to sell
 card [Presente] io vendo = I sell
 card [Presente] tu vendi = you sell
 card [Presente] lui/lei vende = he/she sells
@@ -2273,6 +2327,7 @@ Imperfetto: ripetevo, ripetevi, ripeteva, ripetevamo, ripetevate, ripetevano
 Futuro: ripeterò, ripeterai, ripeterà, ripeteremo, ripeterete, ripeteranno
 Condizionale: ripeterei, ripeteresti, ripeterebbe, ripeteremmo, ripetereste, ripeterebbero
 Imperativo: —, ripeti, ripeta, ripetiamo, ripetete, ripetano
+card [Infinito] ripetere = to repeat
 card [Presente] io ripeto = I repeat
 card [Presente] tu ripeti = you repeat
 card [Presente] lui/lei ripete = he/she repeats
@@ -2315,6 +2370,7 @@ Imperfetto: crescevo, crescevi, cresceva, crescevamo, crescevate, crescevano
 Futuro: crescerò, crescerai, crescerà, cresceremo, crescerete, cresceranno
 Condizionale: crescerei, cresceresti, crescerebbe, cresceremmo, crescereste, crescerebbero
 Imperativo: —, cresci, cresca, cresciamo, crescete, crescano
+card [Infinito] crescere = to grow up
 card [Presente] io cresco = I grow up
 card [Presente] tu cresci = you grow up
 card [Presente] lui/lei cresce = he/she grows up
@@ -2357,6 +2413,7 @@ Imperfetto: insistevo, insistevi, insisteva, insistevamo, insistevate, insisteva
 Futuro: insisterò, insisterai, insisterà, insisteremo, insisterete, insisteranno
 Condizionale: insisterei, insisteresti, insisterebbe, insisteremmo, insistereste, insisterebbero
 Imperativo: —, insisti, insista, insistiamo, insistete, insistano
+card [Infinito] insistere = to insist
 card [Presente] io insisto = I insist
 card [Presente] tu insisti = you insist
 card [Presente] lui/lei insiste = he/she insists
@@ -2399,6 +2456,7 @@ Imperfetto: riflettevo, riflettevi, rifletteva, riflettevamo, riflettevate, rifl
 Futuro: rifletterò, rifletterai, rifletterà, rifletteremo, rifletterete, rifletteranno
 Condizionale: rifletterei, rifletteresti, rifletterebbe, rifletteremmo, riflettereste, rifletterebbero
 Imperativo: —, rifletti, rifletta, riflettiamo, riflettete, riflettano
+card [Infinito] riflettere = to think it over
 card [Presente] io rifletto = I think it over
 card [Presente] tu rifletti = you think it over
 card [Presente] lui/lei riflette = he/she thinks it over
@@ -2441,6 +2499,7 @@ Imperfetto: battevo, battevi, batteva, battevamo, battevate, battevano
 Futuro: batterò, batterai, batterà, batteremo, batterete, batteranno
 Condizionale: batterei, batteresti, batterebbe, batteremmo, battereste, batterebbero
 Imperativo: —, batti, batta, battiamo, battete, battano
+card [Infinito] battere = to beat
 card [Presente] io batto = I beat
 card [Presente] tu batti = you beat
 card [Presente] lui/lei batte = he/she beats
@@ -2483,6 +2542,7 @@ Imperfetto: riconoscevo, riconoscevi, riconosceva, riconoscevamo, riconoscevate,
 Futuro: riconoscerò, riconoscerai, riconoscerà, riconosceremo, riconoscerete, riconosceranno
 Condizionale: riconoscerei, riconosceresti, riconoscerebbe, riconosceremmo, riconoscereste, riconoscerebbero
 Imperativo: —, riconosci, riconosca, riconosciamo, riconoscete, riconoscano
+card [Infinito] riconoscere = to recognize
 card [Presente] io riconosco = I recognize
 card [Presente] tu riconosci = you recognize
 card [Presente] lui/lei riconosce = he/she recognizes
@@ -2525,6 +2585,7 @@ Imperfetto: piovevo, piovevi, pioveva, piovevamo, piovevate, piovevano
 Futuro: pioverò, pioverai, pioverà, pioveremo, pioverete, pioveranno
 Condizionale: pioverei, pioveresti, pioverebbe, pioveremmo, piovereste, pioverebbero
 Imperativo: —, piovi, piova, pioviamo, piovete, piovano
+card [Infinito] piovere = to rain
 card [Presente] piove = it rains
 card [Passato prossimo] ha piovuto / è piovuto = it rained
 card [Imperfetto] pioveva = it used to rain
@@ -2538,6 +2599,7 @@ Imperfetto: combattevo, combattevi, combatteva, combattevamo, combattevate, comb
 Futuro: combatterò, combatterai, combatterà, combatteremo, combatterete, combatteranno
 Condizionale: combatterei, combatteresti, combatterebbe, combatteremmo, combattereste, combatterebbero
 Imperativo: —, combatti, combatta, combattiamo, combattete, combattano
+card [Infinito] combattere = to fight
 card [Presente] io combatto = I fight
 card [Presente] tu combatti = you fight
 card [Presente] lui/lei combatte = he/she fights
@@ -2580,6 +2642,7 @@ Imperfetto: procedevo, procedevi, procedeva, procedevamo, procedevate, procedeva
 Futuro: procederò, procederai, procederà, procederemo, procederete, procederanno
 Condizionale: procederei, procederesti, procederebbe, procederemmo, procedereste, procederebbero
 Imperativo: —, procedi, proceda, procediamo, procedete, procedano
+card [Infinito] procedere = to proceed
 card [Presente] io procedo = I proceed
 card [Presente] tu procedi = you proceed
 card [Presente] lui/lei procede = he/she proceeds
@@ -2622,6 +2685,7 @@ Imperfetto: precedevo, precedevi, precedeva, precedevamo, precedevate, precedeva
 Futuro: precederò, precederai, precederà, precederemo, precederete, precederanno
 Condizionale: precederei, precederesti, precederebbe, precederemmo, precedereste, precederebbero
 Imperativo: —, precedi, preceda, precediamo, precedete, precedano
+card [Infinito] precedere = to precede
 card [Presente] io precedo = I precede
 card [Presente] tu precedi = you precede
 card [Presente] lui/lei precede = he/she precedes
@@ -2664,6 +2728,7 @@ Imperfetto: spremevo, spremevi, spremeva, spremevamo, spremevate, spremevano
 Futuro: spremerò, spremerai, spremerà, spremeremo, spremerete, spremeranno
 Condizionale: spremerei, spremeresti, spremerebbe, spremeremmo, spremereste, spremerebbero
 Imperativo: —, spremi, sprema, spremiamo, spremete, spremano
+card [Infinito] spremere = to squeeze
 card [Presente] io spremo = I squeeze
 card [Presente] tu spremi = you squeeze
 card [Presente] lui/lei spreme = he/she squeezes
@@ -2706,6 +2771,7 @@ Imperfetto: dormivo, dormivi, dormiva, dormivamo, dormivate, dormivano
 Futuro: dormirò, dormirai, dormirà, dormiremo, dormirete, dormiranno
 Condizionale: dormirei, dormiresti, dormirebbe, dormiremmo, dormireste, dormirebbero
 Imperativo: —, dormi, dorma, dormiamo, dormite, dormano
+card [Infinito] dormire = to sleep
 card [Presente] io dormo = I sleep
 card [Presente] tu dormi = you sleep
 card [Presente] lui/lei dorme = he/she sleeps
@@ -2748,6 +2814,7 @@ Imperfetto: partivo, partivi, partiva, partivamo, partivate, partivano
 Futuro: partirò, partirai, partirà, partiremo, partirete, partiranno
 Condizionale: partirei, partiresti, partirebbe, partiremmo, partireste, partirebbero
 Imperativo: —, parti, parta, partiamo, partite, partano
+card [Infinito] partire = to depart
 card [Presente] io parto = I depart
 card [Presente] tu parti = you depart
 card [Presente] lui/lei parte = he/she departs
@@ -2790,6 +2857,7 @@ Imperfetto: sentivo, sentivi, sentiva, sentivamo, sentivate, sentivano
 Futuro: sentirò, sentirai, sentirà, sentiremo, sentirete, sentiranno
 Condizionale: sentirei, sentiresti, sentirebbe, sentiremmo, sentireste, sentirebbero
 Imperativo: —, senti, senta, sentiamo, sentite, sentano
+card [Infinito] sentire = to hear
 card [Presente] io sento = I hear
 card [Presente] tu senti = you hear
 card [Presente] lui/lei sente = he/she hears
@@ -2832,6 +2900,7 @@ Imperfetto: servivo, servivi, serviva, servivamo, servivate, servivano
 Futuro: servirò, servirai, servirà, serviremo, servirete, serviranno
 Condizionale: servirei, serviresti, servirebbe, serviremmo, servireste, servirebbero
 Imperativo: —, servi, serva, serviamo, servite, servano
+card [Infinito] servire = to serve
 card [Presente] io servo = I serve
 card [Presente] tu servi = you serve
 card [Presente] lui/lei serve = he/she serves
@@ -2874,6 +2943,7 @@ Imperfetto: seguivo, seguivi, seguiva, seguivamo, seguivate, seguivano
 Futuro: seguirò, seguirai, seguirà, seguiremo, seguirete, seguiranno
 Condizionale: seguirei, seguiresti, seguirebbe, seguiremmo, seguireste, seguirebbero
 Imperativo: —, segui, segua, seguiamo, seguite, seguano
+card [Infinito] seguire = to follow
 card [Presente] io seguo = I follow
 card [Presente] tu segui = you follow
 card [Presente] lui/lei segue = he/she follows
@@ -2916,6 +2986,7 @@ Imperfetto: vestivo, vestivi, vestiva, vestivamo, vestivate, vestivano
 Futuro: vestirò, vestirai, vestirà, vestiremo, vestirete, vestiranno
 Condizionale: vestirei, vestiresti, vestirebbe, vestiremmo, vestireste, vestirebbero
 Imperativo: —, vesti, vesta, vestiamo, vestite, vestano
+card [Infinito] vestire = to dress
 card [Presente] io vesto = I dress
 card [Presente] tu vesti = you dress
 card [Presente] lui/lei veste = he/she dresses
@@ -2958,6 +3029,7 @@ Imperfetto: divertivo, divertivi, divertiva, divertivamo, divertivate, divertiva
 Futuro: divertirò, divertirai, divertirà, divertiremo, divertirete, divertiranno
 Condizionale: divertirei, divertiresti, divertirebbe, divertiremmo, divertireste, divertirebbero
 Imperativo: —, diverti, diverta, divertiamo, divertite, divertano
+card [Infinito] divertire = to amuse
 card [Presente] io diverto = I amuse
 card [Presente] tu diverti = you amuse
 card [Presente] lui/lei diverte = he/she amuses
@@ -3000,6 +3072,7 @@ Imperfetto: avvertivo, avvertivi, avvertiva, avvertivamo, avvertivate, avvertiva
 Futuro: avvertirò, avvertirai, avvertirà, avvertiremo, avvertirete, avvertiranno
 Condizionale: avvertirei, avvertiresti, avvertirebbe, avvertiremmo, avvertireste, avvertirebbero
 Imperativo: —, avverti, avverta, avvertiamo, avvertite, avvertano
+card [Infinito] avvertire = to warn
 card [Presente] io avverto = I warn
 card [Presente] tu avverti = you warn
 card [Presente] lui/lei avverte = he/she warns
@@ -3042,6 +3115,7 @@ Imperfetto: capivo, capivi, capiva, capivamo, capivate, capivano
 Futuro: capirò, capirai, capirà, capiremo, capirete, capiranno
 Condizionale: capirei, capiresti, capirebbe, capiremmo, capireste, capirebbero
 Imperativo: —, capisci, capisca, capiamo, capite, capiscano
+card [Infinito] capire = to understand
 card [Presente] io capisco = I understand
 card [Presente] tu capisci = you understand
 card [Presente] lui/lei capisce = he/she understands
@@ -3084,6 +3158,7 @@ Imperfetto: finivo, finivi, finiva, finivamo, finivate, finivano
 Futuro: finirò, finirai, finirà, finiremo, finirete, finiranno
 Condizionale: finirei, finiresti, finirebbe, finiremmo, finireste, finirebbero
 Imperativo: —, finisci, finisca, finiamo, finite, finiscano
+card [Infinito] finire = to finish
 card [Presente] io finisco = I finish
 card [Presente] tu finisci = you finish
 card [Presente] lui/lei finisce = he/she finishes
@@ -3126,6 +3201,7 @@ Imperfetto: preferivo, preferivi, preferiva, preferivamo, preferivate, preferiva
 Futuro: preferirò, preferirai, preferirà, preferiremo, preferirete, preferiranno
 Condizionale: preferirei, preferiresti, preferirebbe, preferiremmo, preferireste, preferirebbero
 Imperativo: —, preferisci, preferisca, preferiamo, preferite, preferiscano
+card [Infinito] preferire = to prefer
 card [Presente] io preferisco = I prefer
 card [Presente] tu preferisci = you prefer
 card [Presente] lui/lei preferisce = he/she prefers
@@ -3168,6 +3244,7 @@ Imperfetto: pulivo, pulivi, puliva, pulivamo, pulivate, pulivano
 Futuro: pulirò, pulirai, pulirà, puliremo, pulirete, puliranno
 Condizionale: pulirei, puliresti, pulirebbe, puliremmo, pulireste, pulirebbero
 Imperativo: —, pulisci, pulisca, puliamo, pulite, puliscano
+card [Infinito] pulire = to clean
 card [Presente] io pulisco = I clean
 card [Presente] tu pulisci = you clean
 card [Presente] lui/lei pulisce = he/she cleans
@@ -3210,6 +3287,7 @@ Imperfetto: costruivo, costruivi, costruiva, costruivamo, costruivate, costruiva
 Futuro: costruirò, costruirai, costruirà, costruiremo, costruirete, costruiranno
 Condizionale: costruirei, costruiresti, costruirebbe, costruiremmo, costruireste, costruirebbero
 Imperativo: —, costruisci, costruisca, costruiamo, costruite, costruiscano
+card [Infinito] costruire = to build
 card [Presente] io costruisco = I build
 card [Presente] tu costruisci = you build
 card [Presente] lui/lei costruisce = he/she builds
@@ -3252,6 +3330,7 @@ Imperfetto: suggerivo, suggerivi, suggeriva, suggerivamo, suggerivate, suggeriva
 Futuro: suggerirò, suggerirai, suggerirà, suggeriremo, suggerirete, suggeriranno
 Condizionale: suggerirei, suggeriresti, suggerirebbe, suggeriremmo, suggerireste, suggerirebbero
 Imperativo: —, suggerisci, suggerisca, suggeriamo, suggerite, suggeriscano
+card [Infinito] suggerire = to suggest
 card [Presente] io suggerisco = I suggest
 card [Presente] tu suggerisci = you suggest
 card [Presente] lui/lei suggerisce = he/she suggests
@@ -3294,6 +3373,7 @@ Imperfetto: sparivo, sparivi, spariva, sparivamo, sparivate, sparivano
 Futuro: sparirò, sparirai, sparirà, spariremo, sparirete, spariranno
 Condizionale: sparirei, spariresti, sparirebbe, spariremmo, sparireste, sparirebbero
 Imperativo: —, sparisci, sparisca, spariamo, sparite, spariscano
+card [Infinito] sparire = to disappear
 card [Presente] io sparisco = I disappear
 card [Presente] tu sparisci = you disappear
 card [Presente] lui/lei sparisce = he/she disappears
@@ -3336,6 +3416,7 @@ Imperfetto: spedivo, spedivi, spediva, spedivamo, spedivate, spedivano
 Futuro: spedirò, spedirai, spedirà, spediremo, spedirete, spediranno
 Condizionale: spedirei, spediresti, spedirebbe, spediremmo, spedireste, spedirebbero
 Imperativo: —, spedisci, spedisca, spediamo, spedite, spediscano
+card [Infinito] spedire = to post
 card [Presente] io spedisco = I post
 card [Presente] tu spedisci = you post
 card [Presente] lui/lei spedisce = he/she posts
@@ -3378,6 +3459,7 @@ Imperfetto: guarivo, guarivi, guariva, guarivamo, guarivate, guarivano
 Futuro: guarirò, guarirai, guarirà, guariremo, guarirete, guariranno
 Condizionale: guarirei, guariresti, guarirebbe, guariremmo, guarireste, guarirebbero
 Imperativo: —, guarisci, guarisca, guariamo, guarite, guariscano
+card [Infinito] guarire = to recover
 card [Presente] io guarisco = I recover
 card [Presente] tu guarisci = you recover
 card [Presente] lui/lei guarisce = he/she recovers
@@ -3420,6 +3502,7 @@ Imperfetto: restituivo, restituivi, restituiva, restituivamo, restituivate, rest
 Futuro: restituirò, restituirai, restituirà, restituiremo, restituirete, restituiranno
 Condizionale: restituirei, restituiresti, restituirebbe, restituiremmo, restituireste, restituirebbero
 Imperativo: —, restituisci, restituisca, restituiamo, restituite, restituiscano
+card [Infinito] restituire = to give back
 card [Presente] io restituisco = I give back
 card [Presente] tu restituisci = you give back
 card [Presente] lui/lei restituisce = he/she gives back
@@ -3462,6 +3545,7 @@ Imperfetto: impedivo, impedivi, impediva, impedivamo, impedivate, impedivano
 Futuro: impedirò, impedirai, impedirà, impediremo, impedirete, impediranno
 Condizionale: impedirei, impediresti, impedirebbe, impediremmo, impedireste, impedirebbero
 Imperativo: —, impedisci, impedisca, impediamo, impedite, impediscano
+card [Infinito] impedire = to prevent
 card [Presente] io impedisco = I prevent
 card [Presente] tu impedisci = you prevent
 card [Presente] lui/lei impedisce = he/she prevents
@@ -3504,6 +3588,7 @@ Imperfetto: colpivo, colpivi, colpiva, colpivamo, colpivate, colpivano
 Futuro: colpirò, colpirai, colpirà, colpiremo, colpirete, colpiranno
 Condizionale: colpirei, colpiresti, colpirebbe, colpiremmo, colpireste, colpirebbero
 Imperativo: —, colpisci, colpisca, colpiamo, colpite, colpiscano
+card [Infinito] colpire = to hit
 card [Presente] io colpisco = I hit
 card [Presente] tu colpisci = you hit
 card [Presente] lui/lei colpisce = he/she hits
@@ -3546,6 +3631,7 @@ Imperfetto: gestivo, gestivi, gestiva, gestivamo, gestivate, gestivano
 Futuro: gestirò, gestirai, gestirà, gestiremo, gestirete, gestiranno
 Condizionale: gestirei, gestiresti, gestirebbe, gestiremmo, gestireste, gestirebbero
 Imperativo: —, gestisci, gestisca, gestiamo, gestite, gestiscano
+card [Infinito] gestire = to manage
 card [Presente] io gestisco = I manage
 card [Presente] tu gestisci = you manage
 card [Presente] lui/lei gestisce = he/she manages
@@ -3588,6 +3674,7 @@ Imperfetto: garantivo, garantivi, garantiva, garantivamo, garantivate, garantiva
 Futuro: garantirò, garantirai, garantirà, garantiremo, garantirete, garantiranno
 Condizionale: garantirei, garantiresti, garantirebbe, garantiremmo, garantireste, garantirebbero
 Imperativo: —, garantisci, garantisca, garantiamo, garantite, garantiscano
+card [Infinito] garantire = to guarantee
 card [Presente] io garantisco = I guarantee
 card [Presente] tu garantisci = you guarantee
 card [Presente] lui/lei garantisce = he/she guarantees
@@ -3630,6 +3717,7 @@ Imperfetto: fornivo, fornivi, forniva, fornivamo, fornivate, fornivano
 Futuro: fornirò, fornirai, fornirà, forniremo, fornirete, forniranno
 Condizionale: fornirei, forniresti, fornirebbe, forniremmo, fornireste, fornirebbero
 Imperativo: —, fornisci, fornisca, forniamo, fornite, forniscano
+card [Infinito] fornire = to provide
 card [Presente] io fornisco = I provide
 card [Presente] tu fornisci = you provide
 card [Presente] lui/lei fornisce = he/she provides
@@ -3672,6 +3760,7 @@ Imperfetto: reagivo, reagivi, reagiva, reagivamo, reagivate, reagivano
 Futuro: reagirò, reagirai, reagirà, reagiremo, reagirete, reagiranno
 Condizionale: reagirei, reagiresti, reagirebbe, reagiremmo, reagireste, reagirebbero
 Imperativo: —, reagisci, reagisca, reagiamo, reagite, reagiscano
+card [Infinito] reagire = to react
 card [Presente] io reagisco = I react
 card [Presente] tu reagisci = you react
 card [Presente] lui/lei reagisce = he/she reacts
@@ -3714,6 +3803,7 @@ Imperfetto: trasferivo, trasferivi, trasferiva, trasferivamo, trasferivate, tras
 Futuro: trasferirò, trasferirai, trasferirà, trasferiremo, trasferirete, trasferiranno
 Condizionale: trasferirei, trasferiresti, trasferirebbe, trasferiremmo, trasferireste, trasferirebbero
 Imperativo: —, trasferisci, trasferisca, trasferiamo, trasferite, trasferiscano
+card [Infinito] trasferire = to transfer
 card [Presente] io trasferisco = I transfer
 card [Presente] tu trasferisci = you transfer
 card [Presente] lui/lei trasferisce = he/she transfers
