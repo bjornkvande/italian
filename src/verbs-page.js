@@ -116,5 +116,5 @@ function render(page) {
   if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
 }
 
-renderNav(document.getElementById("nav"), document.body.dataset.page);
+renderNav(document.getElementById("nav"), "verbs", document.body.dataset.page);
 render(PAGES[document.body.dataset.page]);

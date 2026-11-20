@@ -30,6 +30,19 @@ export const TOPICS = [
   { id: "greetings", title: "Greetings and courtesy" },
 ];
 
+// The subpages of the Basics page (basics.html#id), each with its topics.
+// Every topic belongs to exactly one subpage.
+export const BASICS_PAGES = [
+  { id: "pronouns", label: "Pronouns", topics: ["pronouns", "possessives"] },
+  { id: "greetings", label: "Greetings", topics: ["greetings"] },
+  { id: "essere", label: "Essere", topics: ["essere"] },
+  { id: "avere", label: "Avere", topics: ["avere"] },
+  { id: "prepositions", label: "Prepositions", topics: ["prepositions", "articulated"] },
+  { id: "questions", label: "Questions", topics: ["questions"] },
+  { id: "small-words", label: "Small words", topics: ["demonstratives", "connectors", "time"] },
+  { id: "numbers", label: "Numbers", topics: ["numbers"] },
+];
+
 export const BASICS_CSV = basicsCSV;
 export const basicsRows = parseCSV(basicsCSV);
 

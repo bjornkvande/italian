@@ -36,6 +36,9 @@ export default defineConfig(({ command, isPreview }) => ({
         // A new version takes over open pages straight away (then src/pwa.js reloads them).
         skipWaiting: true,
         clientsClaim: true,
+        // Ignore ?query parts when looking up a cached page, so basics.html?x
+        // still opens basics.html instead of falling back to the start page.
+        ignoreURLParametersMatching: [/.*/],
       },
       includeAssets: ["favicon.ico", "apple-touch-icon-180x180.png", "icon.svg"],
       manifest: {

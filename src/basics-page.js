@@ -1,7 +1,8 @@
 // Renders the Basics page from dictionary/basics.csv (and essere/avere from the verbs).
+// One subpage at a time, picked by the address: basics.html#prepositions.
 import "./pwa.js";
-import { TOPICS, basicsRows, presenteCards } from "./basics.js";
-import { renderNav } from "./nav.js";
+import { TOPICS, BASICS_PAGES, basicsRows, presenteCards } from "./basics.js";
+import { renderNav, lastPage } from "./nav.js";
 
 const escape = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 
@@ -42,29 +43,41 @@ function articulatedTable(rows) {
   ]));
 }
 
-function render() {
-  let html = `<h1 id="top">Basics</h1>
-    <p>The small words you need in every sentence: pronouns, <em>essere</em> and <em>avere</em>,
-    prepositions, question words, numbers and everyday phrases. Practise them on the Train page
-    with the <strong>Basics</strong> level.</p>
-    <ul class="contents">${TOPICS.map((t) => `<li><a href="#${t.id}">${t.title}</a></li>`).join("")}</ul>`;
+const topicById = (id) => TOPICS.find((t) => t.id === id);
 
-  for (const topic of TOPICS) {
-    const rows = basicsRows.filter((r) => r.topic === topic.id);
-    html += `<h2 id="${topic.id}">${topic.title}</h2>`;
-    if (topic.verb) html += presenteTable(topic.verb);
-    if (topic.id === "articulated") {
-      html += `<p>The prepositions <em>di, a, da, in, su</em> merge with the article that follows: <em>di + il → del</em>.</p>`;
-      html += articulatedTable(rows);
-    } else if (rows.length) {
-      html += wordTable(rows);
-    }
-    html += `<a class="back-to-top" href="#top">↑ Contents</a>`;
+function topicSection(topic, withHeading) {
+  const rows = basicsRows.filter((r) => r.topic === topic.id);
+  let html = withHeading ? `<h2>${topic.title}</h2>` : "";
+  if (topic.verb) html += presenteTable(topic.verb);
+  if (topic.id === "articulated") {
+    html += `<p>The prepositions <em>di, a, da, in, su</em> merge with the article that follows: <em>di + il → del</em>.</p>`;
+    html += articulatedTable(rows);
+  } else if (rows.length) {
+    html += wordTable(rows);
   }
-
-  document.getElementById("content").innerHTML = html;
-  if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
+  return html;
 }
 
-renderNav(document.getElementById("nav"), "basics");
+// The subpage named in the address, or the one used last.
+function currentPage() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  return BASICS_PAGES.find((p) => p.id === id) ?? BASICS_PAGES.find((p) => p.id === lastPage("basics").id);
+}
+
+function render() {
+  const page = currentPage();
+  renderNav(document.getElementById("nav"), "basics", page.id);
+  // A subpage with one topic uses that topic's title as the page heading
+  // ("Essere – to be") instead of repeating it below.
+  const single = page.topics.length === 1;
+  const heading = single ? topicById(page.topics[0]).title : page.label;
+  document.getElementById("content").innerHTML =
+    `<h1>Basics: ${heading}</h1>` +
+    page.topics.map((id) => topicSection(topicById(id), !single)).join("");
+  document.title = `Basics – ${page.label}`;
+  window.scrollTo(0, 0);
+}
+
+// Switching subpage only changes the #part of the address.
+window.addEventListener("hashchange", render);
 render();

@@ -1,6 +1,6 @@
 // Tests for the Basics (dictionary/basics.csv and src/basics.js).
 import { describe, it, expect } from "vitest";
-import { TOPICS, BASICS_CSV, basicsRows, basicsCards, topicCards } from "../src/basics.js";
+import { TOPICS, BASICS_PAGES, BASICS_CSV, basicsRows, basicsCards, topicCards } from "../src/basics.js";
 import { parseRows, verbs } from "../src/csv.js";
 import { cardsFor } from "../src/conjugate.js";
 
@@ -79,5 +79,21 @@ describe("Basics cards", () => {
   it("numbers have digits on the other side", () => {
     for (const r of basicsRows.filter((x) => x.topic === "numbers")) expect(r.english).toMatch(/^\d+$/);
     expect(pair("numbers")).toContain("diciassette = 17");
+  });
+});
+
+describe("Basics subpages", () => {
+  it("every topic is on exactly one subpage", () => {
+    const placed = BASICS_PAGES.flatMap((p) => p.topics);
+    expect([...placed].sort()).toEqual(TOPICS.map((t) => t.id).sort());
+  });
+
+  it("have unique ids that work in an address, and a label", () => {
+    const ids = BASICS_PAGES.map((p) => p.id);
+    expect(new Set(ids).size).toBe(ids.length);
+    for (const p of BASICS_PAGES) {
+      expect(p.id).toMatch(/^[a-z-]+$/);
+      expect(p.label).toMatch(/\S/);
+    }
   });
 });

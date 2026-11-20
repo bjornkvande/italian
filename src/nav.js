@@ -1,6 +1,8 @@
-// The navigation at the top of every page: "Train", "Basics" and "Verbs" tabs. "Verbs"
-// opens the verb page you used last; on the verb pages a second row of tabs
-// links to all of them. Add new word groups (or tabs) here.
+// The navigation at the top of every page: "Train", "Basics" and "Verbs" tabs.
+// Basics and Verbs have subpages: the tab opens the subpage you used last, and
+// on those pages a second row of tabs links to all subpages.
+// Add new word groups (or tabs) here.
+import { BASICS_PAGES } from "./basics.js";
 
 export const VERB_PAGES = [
   { id: "are", href: "are.html", label: "-are" },
@@ -9,50 +11,69 @@ export const VERB_PAGES = [
   { id: "irregular", href: "irregular.html", label: "Irregular" },
 ];
 
-export const STORAGE_KEY = "verbi.verbPage";
-const byId = (id) => VERB_PAGES.find((p) => p.id === id);
+// Sections with subpages. `key` is where the last used subpage is remembered.
+export const SECTIONS = {
+  basics: {
+    name: "Basics",
+    key: "verbi.basicsPage",
+    pages: BASICS_PAGES.map((p) => ({ id: p.id, href: `basics.html#${p.id}`, label: p.label })),
+  },
+  verbs: {
+    name: "Verbs",
+    key: "verbi.verbPage",
+    pages: VERB_PAGES,
+  },
+};
 
-/** The verb page used last, or the first one. */
-export function lastVerbPage(storage = globalThis.localStorage) {
+const pageIn = (section, id) => SECTIONS[section].pages.find((p) => p.id === id);
+
+/** The subpage of a section used last, or its first subpage. */
+export function lastPage(section, storage = globalThis.localStorage) {
   try {
-    const saved = byId(storage.getItem(STORAGE_KEY));
+    const saved = pageIn(section, storage.getItem(SECTIONS[section].key));
     if (saved) return saved;
   } catch {
     // Blocked storage: use the first page.
   }
-  return VERB_PAGES[0];
+  return SECTIONS[section].pages[0];
 }
 
-export function rememberVerbPage(id, storage = globalThis.localStorage) {
-  if (!byId(id)) throw new Error(`Unknown verb page: ${id}`);
+export function rememberPage(section, id, storage = globalThis.localStorage) {
+  if (!pageIn(section, id)) throw new Error(`Unknown ${section} page: ${id}`);
   try {
-    storage.setItem(STORAGE_KEY, id);
+    storage.setItem(SECTIONS[section].key, id);
   } catch {
     // Blocked storage: just not remembered.
   }
 }
 
 /**
- * Fill <nav id="nav"> for the current page: "train", "basics" or a verb page id.
- * On a verb page, that page is remembered as the one "Verbs" opens next time.
+ * Fill <nav id="nav"> for the current page. `section` is "train", "basics" or
+ * "verbs"; `pageId` is the subpage, which is remembered for next time.
+ * Safe to call again when the subpage changes.
  */
-export function renderNav(nav, current) {
-  if (byId(current)) rememberVerbPage(current);
-  const verbs = lastVerbPage();
-  const onVerbPage = Boolean(byId(current));
+export function renderNav(nav, section, pageId) {
+  if (SECTIONS[section] && pageId) rememberPage(section, pageId);
   const here = (yes) => (yes ? ' aria-current="page"' : "");
 
   nav.innerHTML = `
-    <a class="tab" href="./"${here(current === "train")}>Train</a>
-    <a class="tab" href="basics.html"${here(current === "basics")}>Basics</a>
-    <a class="tab" href="${verbs.href}"${here(onVerbPage)}>Verbs</a>`;
+    <a class="tab" href="./"${here(section === "train")}>Train</a>
+    ${Object.entries(SECTIONS).map(([id, s]) =>
+      `<a class="tab" href="${lastPage(id).href}"${here(section === id)}>${s.name}</a>`).join("")}`;
 
-  // On a verb page, a second row with all verb pages, right under the navigation.
-  if (onVerbPage) {
+  // On a page with subpages, a second row with all of them, right under the navigation.
+  nav.nextElementSibling?.classList.contains("subnav") && nav.nextElementSibling.remove();
+  if (SECTIONS[section]) {
     const sub = document.createElement("nav");
     sub.className = "subnav";
-    sub.setAttribute("aria-label", "Verb groups");
-    sub.innerHTML = VERB_PAGES.map((p) => `<a href="${p.href}"${here(p.id === current)}>${p.label}</a>`).join("");
+    sub.setAttribute("aria-label", SECTIONS[section].name);
+    sub.innerHTML = SECTIONS[section].pages
+      .map((p) => `<a href="${p.href}"${here(p.id === pageId)}>${p.label}</a>`).join("");
     nav.after(sub);
+    // On a narrow phone the row scrolls sideways: bring the current tab into view.
+    const current = sub.querySelector('[aria-current="page"]');
+    if (current && sub.scrollWidth > sub.clientWidth) {
+      sub.scrollLeft = current.offsetLeft - (sub.clientWidth - current.offsetWidth) / 2;
+    }
   }
 }

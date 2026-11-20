@@ -1,6 +1,6 @@
-// Tests for remembering which verb page "Verbs" opens (src/nav.js).
+// Tests for the navigation sections and remembering subpages (src/nav.js).
 import { describe, it, expect } from "vitest";
-import { VERB_PAGES, STORAGE_KEY, lastVerbPage, rememberVerbPage } from "../src/nav.js";
+import { SECTIONS, VERB_PAGES, lastPage, rememberPage } from "../src/nav.js";
 import { PAGES } from "../src/pages.js";
 
 function fakeStorage(initial = {}) {
@@ -8,41 +8,47 @@ function fakeStorage(initial = {}) {
   return { items, getItem: (k) => (k in items ? items[k] : null), setItem: (k, v) => { items[k] = String(v); } };
 }
 
-describe("verb pages", () => {
-  it("each has a page config and an HTML file name", () => {
+describe("sections", () => {
+  it("verb pages each have a page config and an HTML file", () => {
     for (const p of VERB_PAGES) {
       expect(PAGES[p.id], `no page config for ${p.id}`).toBeDefined();
       expect(p.href).toBe(`${p.id}.html`);
     }
+    expect(VERB_PAGES.map((p) => p.label)).toEqual(["-are", "-ere", "-ire", "Irregular"]);
+  });
+
+  it("basics subpages live on basics.html with their id after #", () => {
+    for (const p of SECTIONS.basics.pages) expect(p.href).toBe(`basics.html#${p.id}`);
+  });
+
+  it("each section remembers its subpage under its own key", () => {
+    const keys = Object.values(SECTIONS).map((s) => s.key);
+    expect(new Set(keys).size).toBe(keys.length);
   });
 });
 
-describe("remembering the verb page", () => {
-  it("opens -are the first time", () => {
-    expect(lastVerbPage(fakeStorage()).id).toBe("are");
+describe.each(Object.keys(SECTIONS))("remembering the %s subpage", (section) => {
+  const [first, second] = SECTIONS[section].pages;
+
+  it("opens the first subpage the first time", () => {
+    expect(lastPage(section, fakeStorage()).id).toBe(first.id);
   });
 
-  it("opens the page used last", () => {
+  it("opens the subpage used last", () => {
     const storage = fakeStorage();
-    rememberVerbPage("irregular", storage);
-    expect(storage.items[STORAGE_KEY]).toBe("irregular");
-    expect(lastVerbPage(storage).href).toBe("irregular.html");
+    rememberPage(section, second.id, storage);
+    expect(storage.items[SECTIONS[section].key]).toBe(second.id);
+    expect(lastPage(section, storage).href).toBe(second.href);
   });
 
-  it("ignores an unknown saved page and refuses to save one", () => {
-    expect(lastVerbPage(fakeStorage({ [STORAGE_KEY]: "nouns" })).id).toBe("are");
-    expect(() => rememberVerbPage("nouns", fakeStorage())).toThrow();
+  it("ignores an unknown saved subpage and refuses to save one", () => {
+    expect(lastPage(section, fakeStorage({ [SECTIONS[section].key]: "nouns" })).id).toBe(first.id);
+    expect(() => rememberPage(section, "nouns", fakeStorage())).toThrow();
   });
 
   it("works when storage is blocked", () => {
     const blocked = { getItem: () => { throw new Error(); }, setItem: () => { throw new Error(); } };
-    expect(lastVerbPage(blocked).id).toBe("are");
-    expect(() => rememberVerbPage("ere", blocked)).not.toThrow();
-  });
-});
-
-describe("verb page tabs", () => {
-  it("every verb page has a label for the row of tabs", () => {
-    expect(VERB_PAGES.map((p) => p.label)).toEqual(["-are", "-ere", "-ire", "Irregular"]);
+    expect(lastPage(section, blocked).id).toBe(first.id);
+    expect(() => rememberPage(section, second.id, blocked)).not.toThrow();
   });
 });
