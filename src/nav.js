@@ -26,6 +26,15 @@ export function rememberPage(groupId, id, storage = globalThis.localStorage) {
 }
 
 /**
+ * For a group whose subpages are #parts of one page (basics.html#essere):
+ * the subpage id named in the address, or else the one used last.
+ */
+export function subpageFromHash(groupId) {
+  const id = decodeURIComponent(location.hash.slice(1));
+  return pageIn(groupId, id)?.id ?? lastPage(groupId).id;
+}
+
+/**
  * Fill <nav id="nav"> for the current page. `section` is "train" or a group id;
  * `pageId` is the group's subpage, which is remembered for next time.
  * Safe to call again when the subpage changes.

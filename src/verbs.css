@@ -123,3 +123,9 @@ td.r5, tr.r5 > td { background: var(--r5); }
 .legend .r4 { background: var(--r4); }
 .legend .r5 { background: var(--r5); }
 .legend .unrated { background: #fff; border: 1px solid #ddd; }
+
+/* ---------------------------------------------------------------- Adjectives page */
+
+.adjectives td { vertical-align: top; }
+.adjectives td.it { font-weight: 600; }
+.adjectives td.en { white-space: normal; min-width: 180px; }

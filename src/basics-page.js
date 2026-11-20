@@ -2,7 +2,7 @@
 // One subpage at a time, picked by the address: basics.html#prepositions.
 import "./pwa.js";
 import { TOPICS, BASICS_PAGES, basicsRows, presenteCards, basicsCardId } from "./basics.js";
-import { renderNav, lastPage } from "./nav.js";
+import { renderNav, subpageFromHash } from "./nav.js";
 import { legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
 import { escape, md, table, ratingColours } from "./page-helpers.js";
 
@@ -57,10 +57,7 @@ function topicSection(topic, withHeading) {
 }
 
 // The subpage named in the address, or the one used last.
-function currentPage() {
-  const id = decodeURIComponent(location.hash.slice(1));
-  return BASICS_PAGES.find((p) => p.id === id) ?? BASICS_PAGES.find((p) => p.id === lastPage("basics").id);
-}
+const currentPage = () => BASICS_PAGES.find((p) => p.id === subpageFromHash("basics"));
 
 function render() {
   colours.refresh();

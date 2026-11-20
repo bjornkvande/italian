@@ -4,6 +4,7 @@
 
 export const LEVELS = [
   { id: "basics", name: "Basics", description: "Pronouns, essere, avere, prepositions, numbers…", group: "basics" },
+  { id: "adjectives", name: "Adjectives", description: "Base form, feminine and plural", group: "adjectives" },
   { id: "beginner", name: "Beginner", description: "Infinitives", group: "verbs", tenses: ["infinito"] },
   { id: "intermediate", name: "Intermediate", description: "Infinitives + presente", group: "verbs", tenses: ["infinito", "presente"] },
   { id: "advanced", name: "Advanced", description: "All tenses", group: "verbs" }, // every verb card

@@ -19,6 +19,7 @@
 import { verbs } from "./csv.js";
 import { cardsFor } from "./conjugate.js";
 import { BASICS_PAGES, basicsCards } from "./basics.js";
+import { ADJECTIVE_PAGES, allAdjectiveCards } from "./adjectives.js";
 
 export const GROUPS = [
   {
@@ -27,6 +28,13 @@ export const GROUPS = [
     storageKey: "verbi.basicsPage",
     pages: BASICS_PAGES.map((p) => ({ id: p.id, href: `basics.html#${p.id}`, label: p.label })),
     cards: () => basicsCards(),
+  },
+  {
+    id: "adjectives",
+    name: "Adjectives",
+    storageKey: "verbi.adjectivesPage",
+    pages: ADJECTIVE_PAGES.map((p) => ({ id: p.id, href: `adjectives.html#${p.id}`, label: p.label })),
+    cards: () => allAdjectiveCards(),
   },
   {
     id: "verbs",

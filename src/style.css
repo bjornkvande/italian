@@ -175,15 +175,21 @@ html, body { overscroll-behavior: none; }
 .level-name { font-weight: 600; }
 .level-description { font-size: 0.8rem; opacity: 0.65; }
 
-/* On narrow phones, move the tabs to the right so they don't run into the level button. */
-@media (max-width: 600px) {
-  .nav { justify-content: flex-end; }
+/* On phones there isn't room for the level button and the tabs on one line:
+   the tabs get the top row (centred) and the level button sits centred below. */
+@media (max-width: 700px) {
+  .level {
+    top: 60px;
+    top: calc(max(12px, env(safe-area-inset-top)) + 48px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .level-menu { left: 50%; transform: translateX(-50%); }
 }
 
-/* On small phones, make the tabs and level button more compact. */
+/* On small phones, make the tabs and level button a little more compact. */
 @media (max-width: 460px) {
-  .nav { gap: 0; padding-right: 8px; }
+  .nav { gap: 0; padding-left: 8px; padding-right: 8px; }
   .tab { padding: 7px 10px; font-size: 0.9rem; }
-  .level { left: 8px; }
-  .level-button { padding: 7px 10px; font-size: 0.85rem; }
+  .level-button { padding: 7px 12px; font-size: 0.85rem; }
 }
