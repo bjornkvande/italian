@@ -90,7 +90,7 @@ questions,perché,why,Also means *because*: *Perché? Perché sì.*
 questions,quanto / quanta,how much,
 questions,quanti / quante,how many,
 questions,quale / quali,which,*Qual è…?* without an apostrophe.
-possessives,il mio,my (m. sing.),"With one family member, no article: *mia madre*, *mio fratello* (but *i miei fratelli*)."
+possessives,il mio,my (m. sing.),"With one family member, no article: *mia madre*, *mio fratello* (but *i miei fratelli*). The article stays with *loro* (*il loro padre*), *mamma/papà* (*la mia mamma*) and when there's an adjective (*la mia cara madre*)."
 possessives,la mia,my (f. sing.),
 possessives,i miei,my (m. pl.),
 possessives,le mie,my (f. pl.),
@@ -125,7 +125,7 @@ demonstratives,quelle,those (f.),
 indefinites,qualcosa,"something, anything",*Vuoi qualcosa da bere?* = Do you want something to drink?
 indefinites,niente / nulla,nothing,After the verb it needs *non*: *Non vedo niente.* At the start it doesn't: *Niente è impossibile.*
 indefinites,qualcuno,"someone, anyone",*C'è qualcuno?* = Is anyone there?
-indefinites,nessuno,"nobody, no one","*Non c'è nessuno.* Before a noun it works like an article: *nessun problema*, *nessuna idea*."
+indefinites,nessuno,"nobody, no one","*Non c'è nessuno.* Before a noun it changes like *uno*: *nessun problema*, *nessuno studente*, *nessuna casa*, *nessun'idea*."
 indefinites,tutto,"everything, all",*Tutto bene?* = Is everything OK? *Tutto il giorno* = all day.
 indefinites,tutti / tutte,"everyone, all (pl.)",*Tutti i giorni* = every day. *Ciao a tutti!* = Hi everyone!
 indefinites,ogni,"every, each","Never changes and takes a singular noun: *ogni giorno*, *ogni settimana*."
@@ -135,7 +135,7 @@ indefinites,alcuni / alcune,"some, a few (pl.)","With a plural noun: *alcuni ami
 indefinites,altro,"other, another, else",*un altro caffè* = another coffee. *Qualcos'altro?* = Anything else?
 indefinites,stesso,same,*la stessa cosa* = the same thing. *Lo stesso* = the same / all the same.
 indefinites,chiunque,"anyone (at all), whoever",*Chiunque può farlo* = anyone can do it.
-connectors,e,and,Often *ed* before a vowel: *io ed Elena*.
+connectors,e,and,*ed* before a word starting with *e*: *io ed Elena*. Before other vowels it's optional.
 connectors,ma,but,
 connectors,o,or,
 connectors,anche,"also, too",
@@ -243,7 +243,7 @@ ordinals,settimo,seventh (7th),
 ordinals,ottavo,eighth (8th),
 ordinals,nono,ninth (9th),
 ordinals,decimo,tenth (10th),
-ordinals,undicesimo,eleventh (11th),"From 11 on: drop the last vowel and add *-esimo*: *undici → undicesimo*, *venti → ventesimo*."
+ordinals,undicesimo,eleventh (11th),"From 11 on: drop the last vowel and add *-esimo*: *undici → undicesimo*, *venti → ventesimo*. Numbers ending in *-tré* and *-sei* keep the vowel: *ventitreesimo*, *ventiseiesimo*."
 ordinals,ventesimo,twentieth (20th),
 ordinals,centesimo,hundredth (100th),
 ordinals,ultimo,last,*l'ultima volta* = the last time

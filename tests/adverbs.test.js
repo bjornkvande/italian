@@ -12,6 +12,8 @@ describe("-mente adverbs", () => {
     expect(menteFrom("facile")).toBe("facilmente");
     expect(menteFrom("regolare")).toBe("regolarmente");
     expect(menteFrom("probabile")).toBe("probabilmente");
+    expect(menteFrom("folle")).toBe("follemente"); // a consonant before -le keeps the e
+    expect(menteFrom("acre")).toBe("acremente");
   });
 
   it("every adverb with a `from` adjective follows the rule", () => {

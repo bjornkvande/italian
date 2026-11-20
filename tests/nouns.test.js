@@ -32,6 +32,19 @@ describe("Italian plurals by the rules", () => {
   });
 });
 
+// The -cia/-gia plural depends on whether the i is stressed, which the rules
+// can't see. Every such noun in the dictionary must be checked by hand here.
+describe("-cia/-gia nouns, checked by hand", () => {
+  const CHECKED = { arancia: "arance", farmacia: "farmacie" };
+
+  it("every -cia/-gia noun in the dictionary is in the checked list", () => {
+    for (const n of nouns.filter((x) => /[cg]ia$/.test(x.noun))) {
+      expect(CHECKED, `${n.noun}: check its plural (stressed i → -ie) and add it here`).toHaveProperty(n.noun);
+      expect(nounForms(n).plural.split(" ").at(-1)).toBe(CHECKED[n.noun]);
+    }
+  });
+});
+
 describe("English plurals by the rules", () => {
   it.each([
     ["book", "books"], ["day", "days"], ["city", "cities"], ["party", "parties"],

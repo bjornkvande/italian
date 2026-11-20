@@ -182,7 +182,7 @@ export function cardsFor(verb) {
     }
   }
 
-  // Verbs without an imperativo in use (potere, volere, dovere, sapere) leave it out.
+  // Verbs whose imperativo is rarely used (potere, volere, dovere, sapere: sappi is rare) leave it out.
   const hasImperativo = verb.group !== "irregular" || verb.imperativo;
   if (!verb.impersonal && hasImperativo) {
     for (const { index, it, en } of IMPERATIVO_PERSONS) {

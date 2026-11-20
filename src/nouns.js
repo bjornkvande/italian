@@ -40,7 +40,10 @@ const VOWELS = "aeiouàèéìòù";
  *     dictionary says otherwise (amico → amici); -io → -i (negozio → negozi)
  *   -a: masculine → -i (problema → problemi); feminine → -e (casa → case),
  *     -ca/-ga → -che/-ghe (banca → banche), -cia/-gia → -ce/-ge after a
- *     consonant (arancia → arance), -cie/-gie after a vowel (camicia → camicie)
+ *     consonant (arancia → arance), -cie/-gie after a vowel (camicia → camicie).
+ *     A stressed i always stays (farmacìa → farmacie, allergìa → allergie);
+ *     the code can't see stress, so such nouns after a consonant need the
+ *     plural column (tests/nouns.test.js lists the checked -cia/-gia nouns).
  *   -e → -i (chiave → chiavi)
  */
 export function pluralOf(noun, gender) {

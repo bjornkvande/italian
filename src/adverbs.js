@@ -28,12 +28,13 @@ export const LEVELS = ["beginner", "intermediate", "advanced"];
 
 /**
  * The -mente adverb made from an adjective: the feminine form + -mente
- * (lento → lentamente), but adjectives in -le/-re drop the e (facile →
- * facilmente, regolare → regolarmente).
+ * (lento → lentamente), but -le/-re after a vowel drop the e (facile →
+ * facilmente, regolare → regolarmente). A few are irregular (leggero →
+ * leggermente, altro → altrimenti); the tests catch them if they're added.
  */
 export function menteFrom(adjective) {
   if (adjective.endsWith("o")) return adjective.slice(0, -1) + "amente";
-  if (/[lr]e$/.test(adjective)) return adjective.slice(0, -1) + "mente";
+  if (/[aeiou][lr]e$/.test(adjective)) return adjective.slice(0, -1) + "mente";
   return adjective + "mente";
 }
 
