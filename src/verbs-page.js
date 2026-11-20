@@ -1,5 +1,6 @@
-// Renders an -are / -ere / -ire reference page from dictionary/verbs.csv.
+// Renders an -are / -ere / -ire reference page from the CSV files in dictionary/.
 // Which page to build comes from <body data-page="are|ere|ire">.
+import "./pwa.js";
 import { verbs } from "./csv.js";
 import {
   ENDINGS, PARTICIPLE_ENDING, TENSES, PRONOUNS, AVERE,

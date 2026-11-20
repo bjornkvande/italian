@@ -25,11 +25,15 @@ export default defineConfig(({ command, isPreview }) => ({
     VitePWA({
       // Install a new version automatically when the app is rebuilt and redeployed.
       registerType: "autoUpdate",
-      injectRegister: "auto",
+      // Registered from src/pwa.js, which also checks for updates and reloads.
+      injectRegister: false,
       // Everything the app needs (HTML, JS with the verbs bundled in, CSS, icons)
       // is precached, so it works fully offline once installed.
       workbox: {
         globPatterns: ["**/*.{html,js,css,svg,png,ico}"],
+        // A new version takes over open pages straight away (then src/pwa.js reloads them).
+        skipWaiting: true,
+        clientsClaim: true,
       },
       includeAssets: ["favicon.ico", "apple-touch-icon-180x180.png", "icon.svg"],
       manifest: {

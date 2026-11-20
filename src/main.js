@@ -1,4 +1,5 @@
 // Flash cards: every verb in every tense and person, Italian <-> English.
+import "./pwa.js";
 import { verbs } from "./csv.js";
 import { cardsFor } from "./conjugate.js";
 import { createRatings } from "./ratings.js";
