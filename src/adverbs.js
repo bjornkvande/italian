@@ -40,14 +40,14 @@ export function menteFrom(adjective) {
 /** The card id of an adverb: "adverbs.bene". The page uses it to colour rows. */
 export const adverbCardId = (adv) => `adverbs.${adv.adverb}`;
 
-/** All adverb cards, in subpage order. tenseKey is the level it belongs to. */
+/** All adverb cards, in subpage order. `form` is the level it belongs to. */
 export function adverbCards(rows = adverbs) {
   const label = (a) => ADVERB_PAGES.find((p) => p.id === a.topic).label.toLowerCase();
   return ADVERB_PAGES.flatMap((p) => rows.filter((a) => a.topic === p.id)).map((a) => ({
     id: adverbCardId(a),
-    tenseKey: a.level,
+    form: a.level,
     kind: "Adverb",
-    tense: `Adverb · ${label(a)}`,
+    heading: `Adverb · ${label(a)}`,
     it: a.adverb,
     en: a.english,
   }));

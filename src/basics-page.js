@@ -1,14 +1,8 @@
 // Renders the Basics page from dictionary/basics.csv (and essere/avere from the verbs).
 // One subpage at a time, picked by the address: basics.html#prepositions.
-import "./pwa.js";
 import { TOPICS, BASICS_PAGES, basicsRows, presenteCards, basicsCardId } from "./basics.js";
-import { renderGrammarNav, subpageFromHash } from "./nav.js";
-import { legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
-import { escape, md, table, ratingColours } from "./page-helpers.js";
-
-const colours = ratingColours();
-const colour = colours.colour;
-
+import { grammarPage, colour } from "./grammar-page.js";
+import { escape, md, table } from "./page-helpers.js";
 
 // Italian | English, with the note (if any) in small type under the English.
 function wordTable(rows) {
@@ -85,24 +79,13 @@ function topicSection(topic, withHeading) {
   return html;
 }
 
-// The subpage named in the address, or the one used last.
-const currentPage = () => BASICS_PAGES.find((p) => p.id === subpageFromHash("basics"));
-
-function render() {
-  colours.refresh();
-  const page = currentPage();
-  renderGrammarNav(document.getElementById("nav"), "basics", page.id);
+grammarPage("basics", BASICS_PAGES, (page) => {
   // A subpage with one topic uses that topic's title as the page heading
   // ("Essere – to be") instead of repeating it below.
   const single = page.topics.length === 1;
-  const heading = single ? topicById(page.topics[0]).title : page.label;
-  document.getElementById("content").innerHTML =
-    `<h1>Basics: ${heading}</h1>${legendHTML()}` +
-    page.topics.map((id) => topicSection(topicById(id), !single)).join("");
-  document.title = `Italiano – ${page.label}`;
-}
-
-// Switching subpage only changes the #part of the address.
-window.addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });
-render();
-rerenderOnRatingChanges(render);
+  return {
+    heading: `Basics: ${single ? topicById(page.topics[0]).title : page.label}`,
+    html: page.topics.map((id) => topicSection(topicById(id), !single)).join(""),
+    title: page.label,
+  };
+});

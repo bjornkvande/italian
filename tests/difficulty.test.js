@@ -1,22 +1,18 @@
-// Tests for the difficulties per word group (src/levels.js and the
+// Tests for the difficulties per word group (src/difficulty.js and the
 // `difficulties` in src/groups.js).
 import { describe, it, expect } from "vitest";
 import {
   DIFFICULTIES, DEFAULT_DIFFICULTY, STORAGE_KEY,
   cardsForDifficulty, loadDifficulty, saveDifficulty, migrateOldLevel,
-} from "../src/levels.js";
+} from "../src/difficulty.js";
 import { GROUPS, groupById, cardsByGroup } from "../src/groups.js";
 import { verbs } from "../src/csv.js";
+import { fakeStorage } from "./helpers.js";
 
 const decks = cardsByGroup();
 const at = (groupId, difficulty) => cardsForDifficulty(decks[groupId], groupById(groupId), difficulty);
-const keysIn = (cards) => [...new Set(cards.map((c) => c.tenseKey))].sort();
+const keysIn = (cards) => [...new Set(cards.map((c) => c.form))].sort();
 const topicsIn = (cards) => [...new Set(cards.map((c) => (c.id.startsWith("basics.") ? c.id.split(".")[1] : c.id.split(".")[0])))].sort();
-
-function fakeStorage(initial = {}) {
-  const items = { ...initial };
-  return { items, getItem: (k) => (k in items ? items[k] : null), setItem: (k, v) => { items[k] = String(v); } };
-}
 
 describe("every word group", () => {
   it.each(GROUPS.map((g) => [g.id]))("%s: each difficulty includes the one below, and Advanced is everything", (groupId) => {

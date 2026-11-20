@@ -105,7 +105,7 @@ export function basicsCardId(topicId, italian) {
 export function presenteCards(infinitive, allVerbs = verbs) {
   const verb = allVerbs.find((v) => v.infinitive === infinitive);
   if (!verb) throw new Error(`${infinitive} is not in the verb dictionary`);
-  return cardsFor(verb).filter((c) => c.tenseKey === "presente");
+  return cardsFor(verb).filter((c) => c.form === "presente");
 }
 
 /** The cards of one topic, in order. */
@@ -115,9 +115,9 @@ export function topicCards(topic, rows = basicsRows, allVerbs = verbs) {
     .filter((r) => r.topic === topic.id)
     .map((r) => ({
       id: basicsCardId(topic.id, r.italian),
-      tenseKey: "basics",
+      form: "basics",
       kind: topic.kind,
-      tense: topic.heading,
+      heading: topic.heading,
       it: r.italian,
       en: r.english,
     }));

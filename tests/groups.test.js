@@ -4,8 +4,8 @@ import { describe, it, expect } from "vitest";
 import { existsSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { GROUPS, cardsByGroup } from "../src/groups.js";
-import { DIFFICULTIES } from "../src/levels.js";
-import { PAGES } from "../src/pages.js";
+import { DIFFICULTIES } from "../src/difficulty.js";
+import { PAGES } from "../src/verb-pages.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const decks = cardsByGroup();
@@ -31,9 +31,9 @@ describe("word groups", () => {
     const cards = decks[id];
     expect(cards.length).toBeGreaterThan(0);
     for (const c of cards) {
-      for (const key of ["id", "tenseKey", "kind", "tense", "it", "en"]) expect(c[key], `${c.id}.${key}`).toMatch(/\S/);
+      for (const key of ["id", "form", "kind", "heading", "it", "en"]) expect(c[key], `${c.id}.${key}`).toMatch(/\S/);
       // The English-side heading starts with the word class shown on the Italian side.
-      expect(c.tense.startsWith(c.kind), `${c.id}: "${c.tense}" vs "${c.kind}"`).toBe(true);
+      expect(c.heading.startsWith(c.kind), `${c.id}: "${c.heading}" vs "${c.kind}"`).toBe(true);
     }
     const ids = cards.map((c) => c.id);
     expect(ids.filter((x, i) => ids.indexOf(x) !== i)).toEqual([]);

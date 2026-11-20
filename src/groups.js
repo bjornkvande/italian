@@ -7,8 +7,9 @@
 //   description one line for the "what to practise" menu on the Train screen
 //   storageKey  where the subpage you used last is remembered
 //   pages       its subpages: { id, href, label } (label = tab in the second row)
-//   cards()     all its flash cards, as { id, tenseKey, kind, tense, it, en }
-//               (kind: heading on the Italian side, tense: on the English side)
+//   cards()     all its flash cards, as { id, form, kind, heading, it, en }
+//               form: what the difficulties filter on (a tense, sg/pl, a level…);
+//               kind: the heading on the Italian side, heading: on the English side
 //   difficulties  for beginner / intermediate / advanced: a description for the
 //               level menu and which cards it includes (include: null = all)
 //
@@ -28,7 +29,7 @@ import { ADVERB_PAGES, adverbCards } from "./adverbs.js";
 import { NOUN_PAGES, nounCards } from "./nouns.js";
 
 // Card filters for the difficulties.
-const formIn = (keys) => (card) => keys.includes(card.tenseKey);
+const formIn = (forms) => (card) => forms.includes(card.form);
 const inTopics = (difficulty) => (card) => BASICS_DIFFICULTY_TOPICS[difficulty].includes(basicsTopicOf(card));
 
 export const GROUPS = [
@@ -79,8 +80,8 @@ export const GROUPS = [
     pages: NOUN_PAGES.map((p) => ({ id: p.id, href: `nouns.html#${p.id}`, label: p.label })),
     cards: () => nounCards(),
     difficulties: {
-      beginner: { description: "The most common, singular (il libro)", include: (c) => c.tenseKey === "sg" && c.level === "beginner" },
-      intermediate: { description: "All singulars, + regular plurals (i libri)", include: (c) => c.tenseKey === "sg" || !c.irregular },
+      beginner: { description: "The most common, singular (il libro)", include: (c) => c.form === "sg" && c.level === "beginner" },
+      intermediate: { description: "All singulars, + regular plurals (i libri)", include: (c) => c.form === "sg" || !c.irregular },
       advanced: { description: "+ irregular plurals (gli uomini, le uova)", include: null },
     },
   },

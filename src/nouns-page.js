@@ -1,13 +1,8 @@
 // Renders the Nouns page from dictionary/nouns.csv: one theme at a time
 // (nouns.html#food), singular and plural with their articles, coloured by your ratings.
-import "./pwa.js";
 import { nouns, NOUN_PAGES, nounForms, nounCardId } from "./nouns.js";
-import { renderGrammarNav, subpageFromHash } from "./nav.js";
-import { legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
-import { escape, md, table, ratingColours } from "./page-helpers.js";
-
-const colours = ratingColours();
-const colour = colours.colour;
+import { grammarPage, colour } from "./grammar-page.js";
+import { escape, md, table } from "./page-helpers.js";
 
 function nounTable(rows) {
   return table("conj nouns", ["Singular", "Plural", "English"], rows.map((n) => {
@@ -26,16 +21,8 @@ const INTRO = `<p>Every noun is masculine or feminine; the article shows which (
   accented last vowel or ending in a consonant never change (<em>la città, il bar</em>).
   A dash means the noun is normally not used in the plural.</p>`;
 
-function render() {
-  colours.refresh();
-  const page = NOUN_PAGES.find((p) => p.id === subpageFromHash("nouns"));
-  renderGrammarNav(document.getElementById("nav"), "nouns", page.id);
-  document.getElementById("content").innerHTML =
-    `<h1>Nouns: ${page.title}</h1>${legendHTML()}${INTRO}` + nounTable(nouns.filter((n) => n.topic === page.id));
-  document.title = `Italiano – ${page.title}`;
-}
-
-// Switching subpage only changes the #part of the address.
-window.addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });
-render();
-rerenderOnRatingChanges(render);
+grammarPage("nouns", NOUN_PAGES, (page) => ({
+  heading: `Nouns: ${page.title}`,
+  html: INTRO + nounTable(nouns.filter((n) => n.topic === page.id)),
+  title: page.title,
+}));

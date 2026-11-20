@@ -1,13 +1,8 @@
 // Renders the Adverbs page from dictionary/adverbs.csv: one subpage at a time
-// (adverbs.html#place), each adverb coloured by your ratings.
-import "./pwa.js";
+// (adverbs.html#when), each adverb coloured by your ratings.
 import { adverbs, ADVERB_PAGES, adverbCardId } from "./adverbs.js";
-import { renderGrammarNav, subpageFromHash } from "./nav.js";
-import { legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
-import { escape, md, table, ratingColours } from "./page-helpers.js";
-
-const colours = ratingColours();
-const colour = colours.colour;
+import { grammarPage, colour } from "./grammar-page.js";
+import { escape, md, table } from "./page-helpers.js";
 
 function adverbTable(rows) {
   return table("words", ["Italian", "English"], rows.map((a) => ({
@@ -26,17 +21,8 @@ const INTRO = `<p>Adverbs never change form. Many are made from an adjective wit
   Place words (<em>qui, sopra, davanti…</em>) are in the
   <a href="basics.html#prepositions">Basics: Prepositions &amp; place</a>.</p>`;
 
-function render() {
-  colours.refresh();
-  const page = ADVERB_PAGES.find((p) => p.id === subpageFromHash("adverbs"));
-  renderGrammarNav(document.getElementById("nav"), "adverbs", page.id);
-  document.getElementById("content").innerHTML =
-    `<h1>Adverbs: ${page.title}</h1>${legendHTML()}${INTRO}` +
-    adverbTable(adverbs.filter((a) => a.topic === page.id));
-  document.title = `Italiano – ${page.title}`;
-}
-
-// Switching subpage only changes the #part of the address.
-window.addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });
-render();
-rerenderOnRatingChanges(render);
+grammarPage("adverbs", ADVERB_PAGES, (page) => ({
+  heading: `Adverbs: ${page.title}`,
+  html: INTRO + adverbTable(adverbs.filter((a) => a.topic === page.id)),
+  title: page.title,
+}));

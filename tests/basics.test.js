@@ -1,17 +1,16 @@
 // Tests for the Basics (dictionary/basics.csv and src/basics.js).
 import { describe, it, expect } from "vitest";
 import { TOPICS, BASICS_PAGES, BASICS_CSV, PRONOUNS_CSV, basicsRows, pronounRows, basicsCards, topicCards } from "../src/basics.js";
-import { parseRows, verbs } from "../src/csv.js";
+import { verbs } from "../src/csv.js";
 import { cardsFor } from "../src/conjugate.js";
+import { expectCsvShape, expectNoteMarkdown } from "./helpers.js";
 
 const topic = (id) => TOPICS.find((t) => t.id === id);
 const pair = (id) => topicCards(topic(id)).map((c) => `${c.it} = ${c.en}`);
 
 describe("dictionary/basics.csv", () => {
   it("has the columns topic, italian, english, note and one field per column", () => {
-    const [header, ...rows] = parseRows(BASICS_CSV);
-    expect(header).toEqual(["topic", "italian", "english", "note"]);
-    for (const r of rows) expect(r.length, `row "${r[1]}" has ${r.length} fields`).toBe(4);
+    expectCsvShape(BASICS_CSV, ["topic", "italian", "english", "note"]);
   });
 
   it.each(basicsRows.map((r) => [`${r.topic}: ${r.italian}`, r]))("%s is valid", (_, r) => {
@@ -19,9 +18,7 @@ describe("dictionary/basics.csv", () => {
     expect(r.italian.trim()).not.toBe("");
     expect(r.english.trim()).not.toBe("");
     expect(r.italian).toBe(r.italian.trim());
-    const singles = r.note.replace(/\*\*/g, "").split("*").length - 1;
-    expect(r.note.split("**").length % 2, "unbalanced ** in note").toBe(1);
-    expect(singles % 2, "unbalanced * in note").toBe(0);
+    expectNoteMarkdown(r.note);
   });
 
   it("has no duplicate Italian words or phrases within a topic", () => {
@@ -43,7 +40,7 @@ describe("Basics cards", () => {
   });
 
   it("come in the topic order", () => {
-    const order = [...new Set(cards.map((c) => (c.tenseKey === "presente" ? c.id.split(".")[0] : c.id.split(".")[1])))];
+    const order = [...new Set(cards.map((c) => (c.form === "presente" ? c.id.split(".")[0] : c.id.split(".")[1])))];
     expect(order).toEqual(TOPICS.map((t) => t.id));
   });
 
@@ -64,9 +61,9 @@ describe("Basics cards", () => {
       expect(t.heading.startsWith(t.kind), t.id).toBe(true);
     }
     const lunedi = topicCards(topic("days"))[0];
-    expect([lunedi.kind, lunedi.tense]).toEqual(["Day", "Day of the week"]);
+    expect([lunedi.kind, lunedi.heading]).toEqual(["Day", "Day of the week"]);
     const loVedo = topicCards(topic("direct")).find((c) => c.it === "lo vedo");
-    expect([loVedo.kind, loVedo.tense]).toEqual(["Pronoun", "Pronoun · direct object"]);
+    expect([loVedo.kind, loVedo.heading]).toEqual(["Pronoun", "Pronoun · direct object"]);
   });
 
   it("pronouns", () => {
@@ -151,9 +148,7 @@ describe("dictionary/pronouns.csv", () => {
   const COLUMNS = ["topic", "pronoun", "meaning", "italian", "english", "note"];
 
   it("has the expected columns and one field per column", () => {
-    const [header, ...rows] = parseRows(PRONOUNS_CSV);
-    expect(header).toEqual(COLUMNS);
-    for (const r of rows) expect(r.length, `row "${r[3]}" has ${r.length} fields`).toBe(COLUMNS.length);
+    expectCsvShape(PRONOUNS_CSV, COLUMNS);
   });
 
   it("uses only pronoun topics, and every pronoun row has a pronoun and its meaning", () => {

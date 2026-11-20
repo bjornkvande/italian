@@ -8,7 +8,7 @@ import {
 } from "./conjugate.js";
 import { legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
 import { escape, md, table, ratingColours } from "./page-helpers.js";
-import { PAGES } from "./pages.js";
+import { PAGES } from "./verb-pages.js";
 import { renderGrammarNav } from "./nav.js";
 
 const colours = ratingColours();

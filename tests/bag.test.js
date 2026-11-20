@@ -1,11 +1,8 @@
 // Tests for the shuffle bag (src/bag.js).
 import { describe, it, expect } from "vitest";
 import { createBag, shuffle, STORAGE_KEY } from "../src/bag.js";
+import { fakeStorage } from "./helpers.js";
 
-function fakeStorage(initial = {}) {
-  const items = { ...initial };
-  return { items, getItem: (k) => (k in items ? items[k] : null), setItem: (k, v) => { items[k] = String(v); } };
-}
 const cards = (n) => Array.from({ length: n }, (_, i) => ({ id: `c${i}` }));
 const draw = (bag, n) => Array.from({ length: n }, () => bag.next().id);
 

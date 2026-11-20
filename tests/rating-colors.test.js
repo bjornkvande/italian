@@ -5,11 +5,8 @@ import { createRatings } from "../src/ratings.js";
 import { verbs } from "../src/csv.js";
 import { cardsFor, verbCardId, TENSES } from "../src/conjugate.js";
 import { basicsCards, basicsRows, basicsCardId, TOPICS, BASICS_PAGES } from "../src/basics.js";
+import { fakeStorage } from "./helpers.js";
 
-function fakeStorage() {
-  const items = {};
-  return { getItem: (k) => (k in items ? items[k] : null), setItem: (k, v) => { items[k] = String(v); } };
-}
 const record = (last) => ({ last, at: 1, count: 1, history: [[last, 1]] });
 
 describe("colour level of a card", () => {

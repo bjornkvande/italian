@@ -2,11 +2,7 @@
 import { describe, it, expect } from "vitest";
 import { lastPage, rememberPage, sectionById, grammarHref } from "../src/nav.js";
 import { GROUPS } from "../src/groups.js";
-
-function fakeStorage(initial = {}) {
-  const items = { ...initial };
-  return { items, getItem: (k) => (k in items ? items[k] : null), setItem: (k, v) => { items[k] = String(v); } };
-}
+import { fakeStorage } from "./helpers.js";
 
 describe("Train and grammar", () => {
   it("training remembers the word group, kept on the start page after #", () => {

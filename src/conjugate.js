@@ -157,18 +157,18 @@ function english(verb, tense, person) {
  * It stays the same as long as the verb, tense and person do, so stored ratings
  * keep pointing at the right card. The reference pages use it to colour forms.
  */
-export function verbCardId(infinitive, tenseKey, person = null) {
-  return person === null ? `${infinitive}.${tenseKey}` : `${infinitive}.${tenseKey}.${person}`;
+export function verbCardId(infinitive, tense, person = null) {
+  return person === null ? `${infinitive}.${tense}` : `${infinitive}.${tense}.${person}`;
 }
 
-// Every card for one verb: { id, tenseKey, kind, tense, it, en }.
-// kind is the heading on the Italian side ("Verb"), tense the heading on the
+// Every card for one verb: { id, form, kind, heading, it, en }.
+// kind is the heading on the Italian side ("Verb"), heading the one on the
 // English side ("Verb · Presente"), so you know which form to answer with.
-// tenseKey (infinito, presente, passato, ...) is what the difficulty levels filter on.
+// form is the tense (infinito, presente, passato, ...), which the difficulties filter on.
 export function cardsFor(verb) {
   const cards = [];
-  const add = (tenseKey, person, it, en) =>
-    cards.push({ id: verbCardId(verb.infinitive, tenseKey, person), tenseKey, kind: "Verb", tense: `Verb · ${TENSE_NAME[tenseKey]}`, it, en });
+  const add = (tense, person, it, en) =>
+    cards.push({ id: verbCardId(verb.infinitive, tense, person), form: tense, kind: "Verb", heading: `Verb · ${TENSE_NAME[tense]}`, it, en });
 
   add("infinito", null, verb.infinitive, `to ${verb.en_base}`);
 

@@ -103,9 +103,9 @@ const LABEL = { fsg: "f. sing.", mpl: "m. pl.", fpl: "f. pl." };
 /** The cards of one adjective: the base form, then each different form. */
 export function adjectiveCards(adj) {
   const forms = adjectiveForms(adj);
-  // tenseKey: "base", "fsg", "mpl", "fpl", or "pl" (the shared plural of -e adjectives).
+  // form: "base", "fsg", "mpl", "fpl", or "pl" (the shared plural of -e adjectives).
   const card = (form, it, en, key = form === "msg" ? "base" : form) =>
-    ({ id: adjectiveCardId(adj, form), tenseKey: key, kind: "Adjective", tense: "Adjective", it, en });
+    ({ id: adjectiveCardId(adj, form), form: key, kind: "Adjective", heading: "Adjective", it, en });
   const cards = [card("msg", forms.msg, adj.english)];
   const type = adjectiveType(adj);
   if (type === "two") cards.push(card("mpl", forms.mpl, `${adj.english} (pl.)`, "pl"));
@@ -129,7 +129,7 @@ export const comparisonCardId = (row) => `adjectives.comparison.${row.italian}`;
 /** The comparison cards (più alto di = taller than, ...). */
 export function comparisonCards(rows = comparisons) {
   return COMPARISON_TOPICS.flatMap((t) => rows.filter((r) => r.topic === t.id)).map((r) => ({
-    id: comparisonCardId(r), tenseKey: "comparison", kind: "Adjective", tense: "Adjective · comparison", it: r.italian, en: r.english,
+    id: comparisonCardId(r), form: "comparison", kind: "Adjective", heading: "Adjective · comparison", it: r.italian, en: r.english,
   }));
 }
 

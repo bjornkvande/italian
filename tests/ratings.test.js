@@ -3,17 +3,9 @@ import { describe, it, expect } from "vitest";
 import { createRatings, STORAGE_KEY } from "../src/ratings.js";
 import { verbs } from "../src/csv.js";
 import { cardsFor } from "../src/conjugate.js";
+import { fakeStorage } from "./helpers.js";
 
 // A stand-in for the browser's localStorage.
-function fakeStorage(initial = {}) {
-  const items = { ...initial };
-  return {
-    items,
-    getItem: (k) => (k in items ? items[k] : null),
-    setItem: (k, v) => { items[k] = String(v); },
-  };
-}
-
 describe("card ids", () => {
   const cards = verbs.flatMap(cardsFor);
 

@@ -2,7 +2,7 @@
 import { describe, it, expect } from "vitest";
 import { ADVERBS_CSV, ADVERB_PAGES, LEVELS, adverbs, adverbCards, menteFrom } from "../src/adverbs.js";
 import { basicsRows } from "../src/basics.js";
-import { parseRows } from "../src/csv.js";
+import { expectCsvShape, expectNoteMarkdown } from "./helpers.js";
 
 describe("-mente adverbs", () => {
   it("are made from the feminine form, or drop the e after -le/-re (written from the rule)", () => {
@@ -29,7 +29,7 @@ describe("cards", () => {
   it("one card per adverb, Italian ↔ English, in subpage order", () => {
     const cards = adverbCards();
     expect(cards).toHaveLength(adverbs.length);
-    expect(cards[0]).toEqual({ id: "adverbs.bene", tenseKey: "beginner", kind: "Adverb", tense: "Adverb · how", it: "bene", en: "well" });
+    expect(cards[0]).toEqual({ id: "adverbs.bene", form: "beginner", kind: "Adverb", heading: "Adverb · how", it: "bene", en: "well" });
     const ids = cards.map((c) => c.id);
     expect(ids.filter((x, i) => ids.indexOf(x) !== i)).toEqual([]);
   });
@@ -39,9 +39,7 @@ describe("dictionary/adverbs.csv", () => {
   const COLUMNS = ["topic", "adverb", "english", "level", "from", "note"];
 
   it("has the expected columns and one field per column", () => {
-    const [header, ...rows] = parseRows(ADVERBS_CSV);
-    expect(header).toEqual(COLUMNS);
-    for (const r of rows) expect(r.length, `row "${r[1]}" has ${r.length} fields`).toBe(COLUMNS.length);
+    expectCsvShape(ADVERBS_CSV, COLUMNS);
   });
 
   it.each(adverbs.map((a) => [a.adverb, a]))("%s is valid", (_, a) => {
@@ -49,9 +47,7 @@ describe("dictionary/adverbs.csv", () => {
     expect(LEVELS, `unknown level "${a.level}"`).toContain(a.level);
     expect(a.adverb).toMatch(/^[a-zàèéìòù' /]+$/);
     expect(a.english.trim()).not.toBe("");
-    const singles = a.note.replace(/\*\*/g, "").split("*").length - 1;
-    expect(a.note.split("**").length % 2, "unbalanced ** in note").toBe(1);
-    expect(singles % 2, "unbalanced * in note").toBe(0);
+    expectNoteMarkdown(a.note);
   });
 
   it("has no duplicate adverbs or English meanings", () => {

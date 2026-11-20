@@ -93,14 +93,14 @@ export const nounCardId = (n, plural = false) => `nouns.${n.noun}${plural ? ".pl
 
 /**
  * Cards: the singular with its article, and the plural as its own card.
- * tenseKey is "sg" or "pl"; `level` and `irregular` decide the difficulty.
+ * form is "sg" or "pl"; with `level` and `irregular` it decides the difficulty.
  */
 export function nounCards(rows = nouns) {
   const label = (n) => NOUN_PAGES.find((p) => p.id === n.topic).label;
   return NOUN_PAGES.flatMap((p) => rows.filter((n) => n.topic === p.id)).flatMap((n) => {
     const f = nounForms(n);
     const card = (plural, it, en) => ({
-      id: nounCardId(n, plural), tenseKey: plural ? "pl" : "sg", kind: "Noun", tense: `Noun · ${label(n)}`,
+      id: nounCardId(n, plural), form: plural ? "pl" : "sg", kind: "Noun", heading: `Noun · ${label(n)}`,
       it, en, level: n.level, irregular: plural && f.irregular,
     });
     return f.plural ? [card(false, f.singular, f.enSingular), card(true, f.plural, f.enPlural)] : [card(false, f.singular, f.enSingular)];

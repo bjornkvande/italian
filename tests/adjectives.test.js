@@ -5,7 +5,7 @@ import {
   ADJECTIVES_CSV, ADJECTIVE_PAGES, COMPARISON_CSV, COMPARISON_TOPICS, adjectives, comparisons,
   adjectiveForms, adjectiveCards, adjectiveCardId, allAdjectiveCards, comparisonCardId, comparisonCards, superlativeOf,
 } from "../src/adjectives.js";
-import { parseRows } from "../src/csv.js";
+import { expectCsvShape, expectNoteMarkdown } from "./helpers.js";
 
 const adj = (base) => {
   const a = adjectives.find((x) => x.adjective === base);
@@ -91,9 +91,7 @@ describe("dictionary/adjectives.csv", () => {
   const COLUMNS = ["topic", "adjective", "english", "invariable", "m_pl", "f_pl", "note"];
 
   it("has the expected columns and one field per column", () => {
-    const [header, ...rows] = parseRows(ADJECTIVES_CSV);
-    expect(header).toEqual(COLUMNS);
-    for (const r of rows) expect(r.length, `row "${r[1]}" has ${r.length} fields`).toBe(COLUMNS.length);
+    expectCsvShape(ADJECTIVES_CSV, COLUMNS);
   });
 
   it.each(adjectives.map((a) => [a.adjective, a]))("%s is valid", (_, a) => {
@@ -103,9 +101,7 @@ describe("dictionary/adjectives.csv", () => {
     expect(["", "yes"]).toContain(a.invariable);
     if (a.invariable !== "yes") expect(a.adjective, "must end in -o or -e, or be invariable").toMatch(/[oe]$/);
     for (const col of ["m_pl", "f_pl"]) if (a[col]) expect(a[col]).toMatch(/^[a-z]+$/);
-    const singles = a.note.replace(/\*\*/g, "").split("*").length - 1;
-    expect(a.note.split("**").length % 2, "unbalanced ** in note").toBe(1);
-    expect(singles % 2, "unbalanced * in note").toBe(0);
+    expectNoteMarkdown(a.note);
   });
 
   it("has no duplicate adjectives or English meanings", () => {
@@ -143,15 +139,13 @@ describe("comparison", () => {
     expect(cards).toHaveLength(comparisons.length);
     expect(cards.map((c) => `${c.it} = ${c.en}`)).toContain("più alto di = taller than");
     expect(cards.map((c) => `${c.it} = ${c.en}`)).toContain("migliore = better");
-    expect(cards.every((c) => c.tenseKey === "comparison")).toBe(true);
+    expect(cards.every((c) => c.form === "comparison")).toBe(true);
     expect(ADJECTIVE_PAGES.map((p) => p.id)).toContain("comparison");
   });
 
   it("dictionary/comparison.csv has the expected columns, valid topics and no duplicates", () => {
     const COLUMNS = ["topic", "italian", "english", "from", "note"];
-    const [header, ...rows] = parseRows(COMPARISON_CSV);
-    expect(header).toEqual(COLUMNS);
-    for (const r of rows) expect(r.length, `row "${r[1]}" has ${r.length} fields`).toBe(COLUMNS.length);
+    expectCsvShape(COMPARISON_CSV, COLUMNS);
     for (const r of comparisons) expect(COMPARISON_TOPICS.map((t) => t.id), r.italian).toContain(r.topic);
     for (const t of COMPARISON_TOPICS) expect(comparisons.some((r) => r.topic === t.id), t.id).toBe(true);
     for (const key of ["italian", "english"]) {

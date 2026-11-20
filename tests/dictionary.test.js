@@ -2,6 +2,7 @@
 // fails here instead of producing wrong forms in the app.
 import { describe, it, expect } from "vitest";
 import { DICTIONARY_FILES, parseCSV, parseRows, verbs } from "../src/csv.js";
+import { expectNoteMarkdown } from "./helpers.js";
 
 const COMMON = ["infinitive", "english", "auxiliary", "participle", "en_base", "en_past", "impersonal", "note"];
 const COLUMNS_PER_FILE = {
@@ -76,9 +77,7 @@ describe.each(Object.entries(DICTIONARY_FILES))("dictionary/%s", (file, { text }
     }
 
     // Markdown in notes: ** and * must come in pairs, or the page shows stray asterisks.
-    const singles = v.note.replace(/\*\*/g, "").split("*").length - 1;
-    expect(v.note.split("**").length % 2, "unbalanced ** in note").toBe(1);
-    expect(singles % 2, "unbalanced * in note").toBe(0);
+    expectNoteMarkdown(v.note);
   });
 });
 

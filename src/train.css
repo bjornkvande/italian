@@ -2,7 +2,7 @@
    middle of the space that's left. */
 html, body { overscroll-behavior: none; }
 
-/* The whole screen is a tap target for the card (see handleClick in main.js). */
+/* The whole screen is a tap target for the card (see handleClick in train.js). */
 .train { cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 
 .train {
@@ -62,7 +62,7 @@ html, body { overscroll-behavior: none; }
   -webkit-backface-visibility: hidden;
 }
 
-.tense {
+.heading {
   position: absolute;
   top: 18px;
   left: 0;

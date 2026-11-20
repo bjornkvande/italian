@@ -2,7 +2,7 @@
 // Expected plurals and articles are written from grammar, not copied from the code.
 import { describe, it, expect } from "vitest";
 import { NOUNS_CSV, NOUN_PAGES, nouns, pluralOf, englishPlural, nounForms, nounCards } from "../src/nouns.js";
-import { parseRows } from "../src/csv.js";
+import { expectCsvShape, expectNoteMarkdown } from "./helpers.js";
 
 const noun = (n) => {
   const row = nouns.find((x) => x.noun === n);
@@ -91,7 +91,7 @@ describe("cards", () => {
     const ids = cards.map((c) => c.id);
     expect(ids.filter((x, i) => ids.indexOf(x) !== i)).toEqual([]);
     const uova = cards.find((c) => c.id === "nouns.uovo.pl");
-    expect([uova.kind, uova.tense, uova.irregular]).toEqual(["Noun", "Noun · Food & drink", true]);
+    expect([uova.kind, uova.heading, uova.irregular]).toEqual(["Noun", "Noun · Food & drink", true]);
     expect(cards.find((c) => c.id === "nouns.libro.pl").irregular).toBe(false);
   });
 });
@@ -100,9 +100,7 @@ describe("dictionary/nouns.csv", () => {
   const COLUMNS = ["topic", "noun", "gender", "english", "plural", "plural_gender", "en_plural", "level", "note"];
 
   it("has the expected columns and one field per column", () => {
-    const [header, ...rows] = parseRows(NOUNS_CSV);
-    expect(header).toEqual(COLUMNS);
-    for (const r of rows) expect(r.length, `row "${r[1]}" has ${r.length} fields`).toBe(COLUMNS.length);
+    expectCsvShape(NOUNS_CSV, COLUMNS);
   });
 
   it.each(nouns.map((n) => [n.noun, n]))("%s is valid", (_, n) => {
@@ -115,9 +113,7 @@ describe("dictionary/nouns.csv", () => {
     expect(n.english, "without 'the'").not.toMatch(/^the /);
     if (n.plural && n.plural !== "-") expect(n.plural).toMatch(/^[a-zàèéìòù]+$/);
     if (n.plural === "-") expect(n.en_plural, "no English plural without an Italian one").toBe("");
-    const singles = n.note.replace(/\*\*/g, "").split("*").length - 1;
-    expect(n.note.split("**").length % 2, "unbalanced ** in note").toBe(1);
-    expect(singles % 2, "unbalanced * in note").toBe(0);
+    expectNoteMarkdown(n.note);
   });
 
   it("an exception column is only used where the rules get it wrong", () => {

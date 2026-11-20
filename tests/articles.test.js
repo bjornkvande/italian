@@ -3,7 +3,7 @@
 import { describe, it, expect } from "vitest";
 import { definiteArticle, indefiniteArticle, partitiveArticle, withArticle } from "../src/articles.js";
 import { ARTICLES_CSV, articleRows, BASICS_PAGES, topicCards, TOPICS } from "../src/basics.js";
-import { parseRows } from "../src/csv.js";
+import { expectCsvShape } from "./helpers.js";
 
 describe("the: il, lo, l', la, i, gli, le", () => {
   it.each([
@@ -49,9 +49,7 @@ describe("dictionary/articles.csv", () => {
   const ARTICLE = { definite: definiteArticle, indefinite: indefiniteArticle, partitive: partitiveArticle };
 
   it("has the expected columns and one field per column", () => {
-    const [header, ...rows] = parseRows(ARTICLES_CSV);
-    expect(header).toEqual(COLUMNS);
-    for (const r of rows) expect(r.length, `row "${r[1]}" has ${r.length} fields`).toBe(COLUMNS.length);
+    expectCsvShape(ARTICLES_CSV, COLUMNS);
   });
 
   it.each(articleRows.map((r) => [r.italian, r]))("%s has the right article by the rules", (_, r) => {
@@ -69,6 +67,6 @@ describe("dictionary/articles.csv", () => {
       expect([t.kind, t.intro.length > 0]).toEqual(["Article", true]);
     }
     const card = topicCards(TOPICS.find((t) => t.id === "definite")).find((c) => c.it === "lo zaino");
-    expect([card.en, card.kind, card.tense]).toEqual(["the backpack", "Article", "Article · the"]);
+    expect([card.en, card.kind, card.heading]).toEqual(["the backpack", "Article", "Article · the"]);
   });
 });

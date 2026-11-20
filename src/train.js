@@ -4,7 +4,7 @@
 // level is remembered per group. The 📖 button opens the group's grammar.
 import "./pwa.js";
 import { createRatings } from "./ratings.js";
-import { DIFFICULTIES, cardsForDifficulty, loadDifficulty, saveDifficulty, migrateOldLevel } from "./levels.js";
+import { DIFFICULTIES, cardsForDifficulty, loadDifficulty, saveDifficulty, migrateOldLevel } from "./difficulty.js";
 import { subpageFromHash, rememberPage, grammarHref } from "./nav.js";
 import { GROUPS, cardsByGroup, groupById } from "./groups.js";
 import { dropdown } from "./menu.js";
@@ -17,7 +17,7 @@ const el = (id) => document.getElementById(id);
 const ratingButtons = [...document.querySelectorAll("[data-rating]")];
 
 // The cards of every word group ({ basics: [...], verbs: [...] }), all as
-// { id, tenseKey, kind, tense, it, en }.
+// { id, form, kind, heading, it, en }.
 const decks = cardsByGroup();
 // What you practise and how hard; `cards` are the cards in play.
 let groupId = subpageFromHash("train");
@@ -40,7 +40,7 @@ let ratedNow = null; // the rating given to the current card during this visit
 navigator.storage?.persist?.().catch(() => {});
 
 const scene = el("scene");
-const SLIDE_MS = 250; // keep in sync with the .scene transition in style.css
+const SLIDE_MS = 250; // keep in sync with the .scene transition in train.css
 let busy = false;
 
 // Take the next card from the bag and show a random side.
@@ -57,8 +57,8 @@ function showRandomCard() {
 
   // Italian side: the word class ("Verb"); English side: the word class and
   // the detail needed to answer ("Verb · Presente").
-  el("front-tense").textContent = italianFirst ? current.kind : current.tense;
-  el("back-tense").textContent = italianFirst ? current.tense : current.kind;
+  el("front-heading").textContent = italianFirst ? current.kind : current.heading;
+  el("back-heading").textContent = italianFirst ? current.heading : current.kind;
   el("front-word").textContent = italianFirst ? current.it : current.en;
   el("back-word").textContent = italianFirst ? current.en : current.it;
 
