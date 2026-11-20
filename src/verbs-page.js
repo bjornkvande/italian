@@ -7,6 +7,7 @@ import {
   form, participle, gerund, passatoProssimo, spellingNote,
 } from "./conjugate.js";
 import { PAGES } from "./pages.js";
+import { renderNav } from "./nav.js";
 
 const escape = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 
@@ -115,4 +116,5 @@ function render(page) {
   if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
 }
 
+renderNav(document.getElementById("nav"), document.body.dataset.page);
 render(PAGES[document.body.dataset.page]);

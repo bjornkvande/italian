@@ -4,6 +4,10 @@ import { verbs } from "./csv.js";
 import { cardsFor } from "./conjugate.js";
 import { createRatings } from "./ratings.js";
 import { LEVELS, cardsForLevel, loadLevel, saveLevel } from "./levels.js";
+import { renderNav } from "./nav.js";
+import { dropdown } from "./menu.js";
+
+renderNav(document.getElementById("nav"), "train");
 
 const card = document.getElementById("card");
 const el = (id) => document.getElementById(id);
@@ -120,16 +124,12 @@ function showLevel() {
   }
 }
 
-function toggleMenu(open = levelMenu.hidden) {
-  levelMenu.hidden = !open;
-  levelButton.setAttribute("aria-expanded", String(open));
-}
+const levelDropdown = dropdown(el("level"), levelButton, levelMenu);
 
-levelButton.addEventListener("click", () => toggleMenu());
 levelMenu.addEventListener("click", (e) => {
   const choice = e.target.closest("[data-level]");
   if (!choice) return;
-  toggleMenu(false);
+  levelDropdown.close();
   if (choice.dataset.level === level) return;
   level = choice.dataset.level;
   saveLevel(level);
@@ -137,16 +137,14 @@ levelMenu.addEventListener("click", (e) => {
   showLevel();
   if (!busy) nextCard(); // straight to a card from the new level
 });
-// Close the menu when tapping elsewhere or pressing Escape.
-document.addEventListener("click", (e) => { if (!e.target.closest("#level")) toggleMenu(false); });
-document.addEventListener("keydown", (e) => { if (e.key === "Escape") toggleMenu(false); });
 showLevel();
 
 // ---------------------------------------------------------------- input
 
 scene.addEventListener("click", handleClick);
 document.addEventListener("keydown", (e) => {
-  if (e.target.closest?.("#level")) return; // keys on the level menu shouldn't flip the card
+  // Keys on the level menu or the navigation links shouldn't flip the card.
+  if (e.target.closest?.("#level, #nav")) return;
   if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); }
   else if (/^[1-5]$/.test(e.key)) rate(Number(e.key));
 });
