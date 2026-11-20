@@ -23,6 +23,7 @@ import { verbs } from "./csv.js";
 import { cardsFor } from "./conjugate.js";
 import { BASICS_PAGES, BASICS_DIFFICULTY_TOPICS, basicsCards, basicsTopicOf } from "./basics.js";
 import { ADJECTIVE_PAGES, allAdjectiveCards } from "./adjectives.js";
+import { ADVERB_PAGES, adverbCards } from "./adverbs.js";
 
 // Card filters for the difficulties.
 const formIn = (keys) => (card) => keys.includes(card.tenseKey);
@@ -53,6 +54,19 @@ export const GROUPS = [
       beginner: { description: "Base form (rosso)", include: formIn(["base"]) },
       intermediate: { description: "+ feminine singular (rossa)", include: formIn(["base", "fsg"]) },
       advanced: { description: "All forms, + plurals (rossi, rosse)", include: null },
+    },
+  },
+  {
+    id: "adverbs",
+    name: "Adverbs",
+    description: "Common adverbs: how, how much, where, when",
+    storageKey: "verbi.adverbsPage",
+    pages: ADVERB_PAGES.map((p) => ({ id: p.id, href: `adverbs.html#${p.id}`, label: p.label })),
+    cards: () => adverbCards(),
+    difficulties: {
+      beginner: { description: "The most common (bene, molto, qui, subito…)", include: formIn(["beginner"]) },
+      intermediate: { description: "+ more common ones (-mente, di solito, purtroppo…)", include: formIn(["beginner", "intermediate"]) },
+      advanced: { description: "All of them (ormai, eppure, apposta…)", include: null },
     },
   },
   {

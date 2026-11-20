@@ -1,0 +1,68 @@
+topic,adverb,english,level,from,note
+manner,bene,well,beginner,,*Sto bene* = I'm fine. The opposite is *male*.
+manner,male,badly,beginner,,*Mi sento male* = I feel ill.
+manner,così,"like this, so",beginner,,*Così così* = so-so. *È così bello!* = It's so beautiful!
+manner,insieme,together,beginner,,
+manner,piano,"quietly, slowly",intermediate,,*Parla piano!* = Speak quietly! / Speak slowly!
+manner,forte,"loudly, hard",intermediate,,*Parla più forte* = speak louder. Also an adjective: *strong*.
+manner,volentieri,gladly,intermediate,,The usual answer to an invitation: *Volentieri!* = I'd love to!
+manner,lentamente,slowly,intermediate,lento,
+manner,velocemente,quickly,intermediate,veloce,
+manner,facilmente,easily,intermediate,facile,
+manner,bene o male,more or less,advanced,,"Literally *well or badly*: *Bene o male, ce l'ho fatta.*"
+manner,apposta,on purpose,advanced,,*Non l'ho fatto apposta!* = I didn't do it on purpose!
+degree,molto,"very, a lot",beginner,,As an adverb it never changes: *molto belle*. As an adjective it does: *molte case*.
+degree,poco,"not very, little",beginner,,*Poco caro* = not very expensive. *Un po'* = a bit.
+degree,troppo,"too, too much",beginner,,
+degree,più,more,beginner,,*Più tardi* = later. *Non più* = no longer.
+degree,meno,less,beginner,,
+degree,solo,"only, just",beginner,,Same meaning as *solamente* and *soltanto*.
+degree,tanto,"so much, a lot",intermediate,,
+degree,abbastanza,"enough, quite",intermediate,,*Abbastanza bene* = quite well.
+degree,quasi,almost,intermediate,,
+degree,circa,"about, roughly",intermediate,,*Circa cento persone* = about a hundred people.
+degree,almeno,at least,intermediate,,
+degree,appena,"only just, barely",advanced,,"Also *as soon as*: *Appena arrivo, ti chiamo.*"
+degree,piuttosto,rather,advanced,,*Piuttosto caro* = rather expensive.
+place,qui / qua,here,beginner,,*Qui* and *qua* mean the same.
+place,lì / là,there,beginner,,"Note the accent: *lì, là* (there), not *li, la* (them, her)."
+place,fuori,"outside, out",beginner,,
+place,vicino,"near, nearby",beginner,,*Vicino a casa* = near home.
+place,lontano,"far, far away",beginner,,*Lontano da qui* = far from here.
+place,dentro,"inside, in",intermediate,,
+place,sopra,"above, upstairs",intermediate,,
+place,sotto,"below, downstairs",intermediate,,
+place,davanti,in front,intermediate,,*Davanti alla stazione* = in front of the station.
+place,dietro,behind,intermediate,,
+place,giù,"down, downstairs",intermediate,,*Su e giù* = up and down.
+place,dappertutto,everywhere,advanced,,
+place,altrove,elsewhere,advanced,,
+when,subito,"immediately, right away",beginner,,*Arrivo subito!* = I'm coming right away!
+when,poi,"then, afterwards",beginner,,
+when,di solito,usually,intermediate,,
+when,ogni tanto,every now and then,intermediate,,
+when,una volta,once,intermediate,,*C'era una volta…* = Once upon a time…
+when,fra poco,"soon, shortly",intermediate,,Also *tra poco*.
+when,alla fine,in the end,intermediate,,
+when,finalmente,"finally, at last",intermediate,finale,
+when,ormai,"by now, by then",advanced,,*Ormai è tardi* = It's too late now.
+when,intanto,meanwhile,advanced,,
+when,prima o poi,sooner or later,advanced,,
+opinion,non,not,beginner,,"Before the verb: *Non parlo inglese.* With *mai, niente, nessuno* it stays: *non vedo niente*."
+opinion,certo,"of course, sure",beginner,,
+opinion,forse,"maybe, perhaps",beginner,,
+opinion,davvero,really,beginner,,*Davvero?* = Really?
+opinion,magari,maybe; I wish!,intermediate,,*Magari domani* = maybe tomorrow. On its own: *Magari!* = I wish!
+opinion,proprio,"really, exactly, just",intermediate,,*Proprio così!* = Exactly!
+opinion,infatti,"indeed, in fact",intermediate,,
+opinion,purtroppo,unfortunately,intermediate,,
+opinion,comunque,"anyway, however",intermediate,,
+opinion,invece,"instead, on the other hand",intermediate,,
+opinion,neanche / nemmeno,"not even, neither",intermediate,,*Neanche io* = me neither.
+opinion,veramente,"truly, actually",intermediate,vero,
+opinion,sicuramente,"surely, certainly",intermediate,sicuro,
+opinion,probabilmente,probably,intermediate,probabile,
+opinion,assolutamente,absolutely,intermediate,assoluto,
+opinion,specialmente,especially,advanced,speciale,
+opinion,anzi,"on the contrary, actually",advanced,,"Corrects what was just said: *Non è caro, anzi!*"
+opinion,eppure,and yet,advanced,,
