@@ -103,19 +103,3 @@ body {
 .subnav a:hover { border-color: #000; }
 .subnav a[aria-current="page"] { background: #000; border-color: #000; color: #fff; }
 
-/* On phones, keep the row on one line and let it scroll sideways instead of
-   wrapping onto several lines (the current tab is scrolled into view). */
-@media (max-width: 600px) {
-  .subnav {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-  .subnav::-webkit-scrollbar { display: none; }
-  .subnav a { flex: none; }
-  /* Center the row when it fits (e.g. the four verb tabs). */
-  .subnav a:first-child { margin-left: auto; }
-  .subnav a:last-child { margin-right: auto; }
-}

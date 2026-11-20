@@ -48,10 +48,5 @@ export function renderNav(nav, section, pageId) {
     sub.innerHTML = group.pages
       .map((p) => `<a href="${p.href}"${here(p.id === pageId)}>${p.label}</a>`).join("");
     nav.after(sub);
-    // On a narrow phone the row scrolls sideways: bring the current tab into view.
-    const current = sub.querySelector('[aria-current="page"]');
-    if (current && sub.scrollWidth > sub.clientWidth) {
-      sub.scrollLeft = current.offsetLeft - (sub.clientWidth - current.offsetWidth) / 2;
-    }
   }
 }
