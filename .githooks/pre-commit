@@ -1,0 +1,17 @@
+#!/bin/sh
+# Block commits that contain secrets (API keys, tokens, passwords).
+# Turned on by `npm install` (the "prepare" script sets core.hooksPath).
+# Skip once with: git commit --no-verify
+
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "pre-commit: gitleaks is not installed, so staged changes were NOT checked for secrets."
+  echo "            Install it with: brew install gitleaks"
+  exit 0
+fi
+
+if ! gitleaks git --staged --redact --no-banner --verbose --log-level warn .; then
+  echo ""
+  echo "pre-commit: gitleaks found what looks like a secret in the staged changes (see above)."
+  echo "            Remove it and stage again. If it's a false alarm: git commit --no-verify"
+  exit 1
+fi
