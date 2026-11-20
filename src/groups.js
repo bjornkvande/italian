@@ -25,6 +25,7 @@ import { cardsFor } from "./conjugate.js";
 import { BASICS_PAGES, BASICS_DIFFICULTY_TOPICS, basicsCards, basicsTopicOf } from "./basics.js";
 import { ADJECTIVE_PAGES, allAdjectiveCards } from "./adjectives.js";
 import { ADVERB_PAGES, adverbCards } from "./adverbs.js";
+import { NOUN_PAGES, nounCards } from "./nouns.js";
 
 // Card filters for the difficulties.
 const formIn = (keys) => (card) => keys.includes(card.tenseKey);
@@ -68,6 +69,19 @@ export const GROUPS = [
       beginner: { description: "The most common (bene, molto, subito, forse…)", include: formIn(["beginner"]) },
       intermediate: { description: "+ more common ones (-mente, di solito, purtroppo…)", include: formIn(["beginner", "intermediate"]) },
       advanced: { description: "All of them (ormai, eppure, apposta…)", include: null },
+    },
+  },
+  {
+    id: "nouns",
+    name: "Nouns",
+    description: "Everyday nouns with their article, by theme",
+    storageKey: "verbi.nounsPage",
+    pages: NOUN_PAGES.map((p) => ({ id: p.id, href: `nouns.html#${p.id}`, label: p.label })),
+    cards: () => nounCards(),
+    difficulties: {
+      beginner: { description: "The most common, singular (il libro)", include: (c) => c.tenseKey === "sg" && c.level === "beginner" },
+      intermediate: { description: "All singulars, + regular plurals (i libri)", include: (c) => c.tenseKey === "sg" || !c.irregular },
+      advanced: { description: "+ irregular plurals (gli uomini, le uova)", include: null },
     },
   },
   {

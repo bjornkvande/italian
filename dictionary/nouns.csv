@@ -1,0 +1,151 @@
+topic,noun,gender,english,plural,plural_gender,en_plural,level,note
+everyday,tempo,m,time,,,,beginner,Also *the weather*: *Che tempo fa?* = What's the weather like?
+everyday,giorno,m,day,,,,beginner,
+everyday,anno,m,year,,,,beginner,
+everyday,cosa,f,thing,,,,beginner,
+everyday,volta,f,time (occasion),,,times (occasions),beginner,"*una volta* = once, *due volte* = twice."
+everyday,persona,f,person,,,people,beginner,
+everyday,vita,f,life,,,lives,beginner,
+everyday,lavoro,m,job,,,,beginner,Also *work*: *vado al lavoro* = I'm going to work.
+everyday,problema,m,problem,,,,beginner,"Masculine despite the *-a*, like *il sistema, il programma*: plural *-i*."
+everyday,casa,f,house,,,,beginner,Also *home*: *a casa* = at home.
+everyday,parte,f,part,,,,intermediate,
+everyday,modo,m,way,,,,intermediate,*in questo modo* = in this way.
+everyday,mondo,m,world,,,,intermediate,
+everyday,paese,m,country,,,,intermediate,Also *village*.
+everyday,città,f,city,,,,beginner,An accented last vowel never changes: *le città*.
+everyday,ora,f,hour,,,,beginner,
+everyday,settimana,f,week,,,,beginner,
+everyday,mese,m,month,,,,beginner,
+everyday,sera,f,evening,,,,intermediate,
+everyday,notte,f,night,,,,beginner,
+everyday,mattina,f,morning,,,,intermediate,
+everyday,nome,m,name,,,,beginner,
+everyday,numero,m,number,,,,intermediate,
+everyday,domanda,f,question,,,,intermediate,
+everyday,risposta,f,answer,,,,intermediate,
+everyday,idea,f,idea,,,,beginner,
+everyday,storia,f,story,,,,intermediate,Also *history*.
+everyday,lingua,f,language,,,,intermediate,Also *tongue*.
+everyday,parola,f,word,,,,beginner,
+everyday,libro,m,book,,,,beginner,
+everyday,telefono,m,phone,,,,beginner,
+everyday,macchina,f,car,,,,beginner,
+everyday,lettera,f,letter,,,,intermediate,
+everyday,viaggio,m,trip,,,,intermediate,*Buon viaggio!* = Have a good trip!
+everyday,vacanza,f,holiday,,,,intermediate,*in vacanza* = on holiday.
+everyday,festa,f,party,,,,intermediate,
+everyday,musica,f,music,-,,,intermediate,
+everyday,film,m,film,,,,beginner,"Ends in a consonant, so it never changes: *i film*."
+everyday,foto,f,photo,,,,beginner,"Short for *fotografia*, so it never changes: *le foto*."
+everyday,regalo,m,present,,,,intermediate,Also *gift*.
+everyday,scuola,f,school,,,,beginner,
+everyday,ufficio,m,office,,,,intermediate,
+everyday,medico,m,doctor,medici,,,intermediate,Soft plural: *medici*.
+everyday,esempio,m,example,,,,intermediate,*per esempio* = for example.
+everyday,fine,f,end,-,,,intermediate,*la fine* = the end; *il fine settimana* = the weekend.
+everyday,inizio,m,beginning,,,,intermediate,
+everyday,momento,m,moment,,,,beginner,*Un momento!* = Just a moment!
+everyday,colore,m,colour,,,,intermediate,
+everyday,tipo,m,type,,,,intermediate,Also *guy*: *un tipo simpatico*.
+everyday,verità,f,truth,,,,intermediate,
+people,uomo,m,man,uomini,,men,beginner,Irregular: *l'uomo → gli uomini*.
+people,donna,f,woman,,,women,beginner,
+people,bambino,m,child,,,children,beginner,*la bambina* = little girl.
+people,ragazzo,m,boy,,,,intermediate,Also *young man* and *boyfriend*.
+people,ragazza,f,girl,,,,intermediate,Also *young woman* and *girlfriend*.
+people,amico,m,friend (m.),amici,,friends (m.),beginner,"Soft plural: *amici*, but *amiche*."
+people,amica,f,friend (f.),,,friends (f.),beginner,
+people,padre,m,father,,,,beginner,
+people,madre,f,mother,,,,beginner,
+people,genitore,m,parent,,,,intermediate,*i genitori* = the parents.
+people,figlio,m,son,,,,beginner,
+people,figlia,f,daughter,,,,beginner,
+people,fratello,m,brother,,,,beginner,
+people,sorella,f,sister,,,,beginner,
+people,marito,m,husband,,,,beginner,
+people,moglie,f,wife,mogli,,wives,beginner,Plural *le mogli*.
+people,nonno,m,grandfather,,,,intermediate,
+people,nonna,f,grandmother,,,,intermediate,
+people,zio,m,uncle,zii,,,intermediate,"The *i* is stressed, so the plural keeps it: *gli zii*."
+people,zia,f,aunt,,,,intermediate,
+people,cugino,m,cousin (m.),,,cousins (m.),intermediate,
+people,famiglia,f,family,,,,intermediate,
+people,signore,m,gentleman,,,gentlemen,intermediate,Also *Mr*: *il signor Rossi* (no *e* before a name).
+people,signora,f,lady,,,,intermediate,Also *Mrs*: *la signora Rossi*.
+people,gente,f,people (in general),-,,,intermediate,Singular in Italian: *la gente è simpatica* = people are nice.
+home,camera,f,bedroom,,,,beginner,"*camera da letto*; in a hotel, *una camera* = a room."
+home,stanza,f,room,,,,intermediate,
+home,cucina,f,kitchen,,,,beginner,Also *cooking*: *la cucina italiana*.
+home,bagno,m,bathroom,,,,beginner,
+home,soggiorno,m,living room,,,,intermediate,
+home,letto,m,bed,,,,beginner,
+home,tavolo,m,table,,,,beginner,
+home,sedia,f,chair,,,,beginner,
+home,divano,m,sofa,,,,intermediate,
+home,porta,f,door,,,,beginner,
+home,finestra,f,window,,,,beginner,
+home,chiave,f,key,,,,beginner,
+home,armadio,m,wardrobe,,,,intermediate,
+home,specchio,m,mirror,,,,intermediate,
+home,lampada,f,lamp,,,,intermediate,
+home,giardino,m,garden,,,,intermediate,
+home,piano,m,floor,,,,intermediate,A storey: *al primo piano* = on the first floor.
+home,scala,f,staircase,,,,intermediate,*le scale* = the stairs.
+home,muro,m,wall,,,,intermediate,
+home,tetto,m,roof,,,,intermediate,
+home,cassetto,m,drawer,,,,intermediate,
+home,frigorifero,m,fridge,,,,intermediate,Often *il frigo*.
+home,televisione,f,television,,,,intermediate,Often *la tv*.
+home,computer,m,computer,,,,beginner,
+home,appartamento,m,flat,,,,beginner,Also *apartment*.
+food,pane,m,bread,-,,,beginner,
+food,acqua,f,water,-,,,beginner,
+food,vino,m,wine,,,,beginner,
+food,caffè,m,coffee,,,,beginner,"Accented, so it never changes: *due caffè*."
+food,latte,m,milk,-,,,beginner,
+food,birra,f,beer,,,,beginner,
+food,tè,m,tea,,,,intermediate,
+food,succo,m,juice,,,,intermediate,
+food,carne,f,meat,-,,,beginner,
+food,pesce,m,fish,,,fish,beginner,
+food,pollo,m,chicken,,,,intermediate,
+food,formaggio,m,cheese,,,,intermediate,
+food,uovo,m,egg,uova,f,,beginner,"Irregular: *l'uovo → le uova*, feminine in the plural."
+food,frutta,f,fruit,-,,,beginner,*la frutta* = fruit in general; one piece of fruit is *un frutto*.
+food,verdura,f,vegetables,-,,,intermediate,*la verdura* = vegetables in general.
+food,mela,f,apple,,,,beginner,
+food,arancia,f,orange,,,,intermediate,
+food,patata,f,potato,,,potatoes,intermediate,
+food,pomodoro,m,tomato,,,tomatoes,intermediate,
+food,pasta,f,pasta,-,,,beginner,
+food,zucchero,m,sugar,-,,,intermediate,
+food,sale,m,salt,-,,,intermediate,
+food,colazione,f,breakfast,,,,intermediate,*fare colazione* = to have breakfast.
+food,pranzo,m,lunch,,,,intermediate,
+food,cena,f,dinner,,,,beginner,
+city,strada,f,road,,,,beginner,Also *street*.
+city,piazza,f,square,,,,beginner,
+city,via,f,street,,,,intermediate,Used in addresses: *via Roma 10*.
+city,negozio,m,shop,,,,beginner,
+city,mercato,m,market,,,,intermediate,
+city,banca,f,bank,,,,beginner,
+city,chiesa,f,church,,,,intermediate,
+city,museo,m,museum,,,,intermediate,
+city,ristorante,m,restaurant,,,,beginner,
+city,bar,m,café,,,,beginner,An Italian *bar* is a café: coffee and a *cornetto* in the morning.
+city,albergo,m,hotel,,,,beginner,Also *l'hotel*.
+city,stazione,f,station,,,,beginner,
+city,treno,m,train,,,,beginner,
+city,autobus,m,bus,,,,beginner,"Ends in a consonant, so it never changes: *gli autobus*."
+city,aereo,m,plane,,,,intermediate,
+city,aeroporto,m,airport,,,,intermediate,
+city,bicicletta,f,bicycle,,,,intermediate,"Often *la bici*, which never changes: *le bici*."
+city,biglietto,m,ticket,,,,beginner,
+city,mappa,f,map,,,,intermediate,
+city,ponte,m,bridge,,,,intermediate,
+city,parco,m,park,,,,intermediate,
+city,ospedale,m,hospital,,,,intermediate,
+city,farmacia,f,pharmacy,,,,intermediate,
+city,centro,m,centre,,,,beginner,*in centro* = in the town centre.
+city,fermata,f,stop,,,,intermediate,*la fermata dell'autobus* = the bus stop.

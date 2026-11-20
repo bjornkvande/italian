@@ -133,3 +133,8 @@ td.r5, tr.r5 > td { background: var(--r5); }
 /* Pronoun tables: four columns that share the width. */
 .pronouns td.it { width: auto; }
 .pronouns td { min-width: 70px; }
+
+/* Nouns page: singular, plural, English (with notes). */
+.nouns td { vertical-align: top; }
+.nouns td.it { font-weight: 600; }
+.nouns td.en { white-space: normal; min-width: 180px; }

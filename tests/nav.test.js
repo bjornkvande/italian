@@ -35,8 +35,8 @@ describe.each(SECTIONS)("remembering the %s subpage", (groupId, group) => {
   });
 
   it("ignores an unknown saved subpage and refuses to save one", () => {
-    expect(lastPage(groupId, fakeStorage({ [group.storageKey]: "nouns" })).id).toBe(first.id);
-    expect(() => rememberPage(groupId, "nouns", fakeStorage())).toThrow();
+    expect(lastPage(groupId, fakeStorage({ [group.storageKey]: "xyz" })).id).toBe(first.id);
+    expect(() => rememberPage(groupId, "xyz", fakeStorage())).toThrow();
   });
 
   it("works when storage is blocked", () => {
