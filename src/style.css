@@ -207,9 +207,16 @@ html, body { overscroll-behavior: none; }
 }
 
 /* On small phones, make the tabs and level button more compact so both fit on one line. */
-@media (max-width: 420px) {
+@media (max-width: 460px) {
   .nav { gap: 0; padding-right: 8px; }
   .nav a { padding: 7px 9px; font-size: 0.9rem; }
   .level { left: 8px; }
   .level-button { padding: 7px 10px; font-size: 0.85rem; }
+}
+
+/* Very small phones (e.g. 320px wide): squeeze a little more. */
+@media (max-width: 350px) {
+  .nav a { padding: 6px 6px; font-size: 0.85rem; }
+  .level { left: 6px; }
+  .level-button { padding: 6px 8px; font-size: 0.8rem; }
 }

@@ -3,6 +3,7 @@
 
 export const PAGES = {
   are: {
+    documentTitle: "Verbi -are",
     title: (n) => `The ${n} Most Common Regular -are Verbs`,
     intro: [
       "A conjugation reference for the most frequently used **regular** Italian verbs ending in *-are*.",
@@ -26,6 +27,7 @@ export const PAGES = {
   },
 
   ere: {
+    documentTitle: "Verbi -ere",
     title: (n) => `${n} Common Regular -ere Verbs`,
     intro: [
       "A conjugation reference for common Italian verbs ending in *-ere* that are **regular in every tense** shown here (only *insistere* has a small twist in the participle).",
@@ -51,6 +53,7 @@ export const PAGES = {
   },
 
   ire: {
+    documentTitle: "Verbi -ire",
     title: (n) => `${n} Common Regular -ire Verbs`,
     intro: [
       "A conjugation reference for common Italian verbs ending in *-ire* that are **regular in every tense** shown here. Fully irregular verbs (*venire, dire, uscire, salire, morire*) and verbs with an irregular participle (*aprire → aperto, offrire → offerto, soffrire → sofferto, coprire → coperto*) are left out.",
@@ -80,5 +83,28 @@ export const PAGES = {
       { heading: "dormire type", groups: ["ire-dormire"] },
       { heading: "finire type (-isc-)", groups: ["ire-finire"] },
     ],
+  },
+
+  irregular: {
+    documentTitle: "Verbi irregolari",
+    title: (n) => `${n} Common Irregular Verbs`,
+    intro: [
+      "The most common Italian verbs are irregular: their forms don't follow the *-are*, *-ere* or *-ire* patterns, so each one has to be learnt on its own.",
+      "The passato prossimo is still built the usual way, with *avere* or *essere* + the participle, but the participle itself is often irregular (*fatto*, *detto*, *stato*).",
+    ],
+    examples: {
+      presente: "*Sono stanco.* · *Vado al lavoro in bici.* · *Domani faccio la spesa.*",
+      agreement: "*sono andato/andata*, *siamo venuti/venute*",
+      passato: "*Ieri ho fatto una passeggiata.* · *Siamo stati a Roma.*",
+      imperfetto: "*Da bambino andavo al mare ogni estate.* · *Mentre facevo la doccia, è arrivato Marco.*",
+      futuro: "*Domani sarò a casa.* · *Che ore sono? Saranno le otto.*",
+      condizionale: "*Vorrei un caffè, per favore.* · *Dovresti venire anche tu.*",
+      negative: "*non andare!*",
+      imperativo: "*Vieni qui!* · *Mi dica.* · *Andiamo!*",
+    },
+    patternsHeading: "",
+    patterns: [],
+    afterPatterns: [],
+    sections: [{ groups: ["irregular"] }],
   },
 };

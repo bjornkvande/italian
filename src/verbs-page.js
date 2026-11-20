@@ -65,7 +65,7 @@ function tensesList(e) {
     `<li><strong>${name}</strong> — ${md(text)}<span class="examples">${md(examples)}</span></li>`;
   return `<ul class="tenses">
     ${item("Presente", "the present. What happens now, habits, and often the near future.", e.presente)}
-    ${item("Passato prossimo", `the everyday past for completed actions. Formed with *avere* or *essere* + participle. With *essere* the participle agrees with the subject: ${e.agreement}. Some verbs take both, shown as ${e.both}.`, e.passato)}
+    ${item("Passato prossimo", `the everyday past for completed actions. Formed with *avere* or *essere* + participle. With *essere* the participle agrees with the subject: ${e.agreement}.${e.both ? ` Some verbs take both, shown as ${e.both}.` : ""}`, e.passato)}
     ${item("Imperfetto", 'the past for background, descriptions, habits and ongoing actions ("used to", "was …ing").', e.imperfetto)}
     ${item("Futuro", "the future, and also guesses about the present.", e.futuro)}
     ${item("Condizionale", '"would": polite requests, wishes and hypothetical situations.', e.condizionale)}
@@ -83,12 +83,15 @@ function render(page) {
   html += page.intro.map((p) => `<p>${md(p)}</p>`).join("");
   html += `<h2>The tenses</h2>${tensesList(page.examples)}`;
 
-  html += `<h2>${page.patternsHeading}</h2>`;
-  for (const pat of page.patterns) {
-    if (pat.heading) html += `<h3>${pat.heading}</h3>`;
-    html += `<p>${md(pat.text(n))}</p>${patternTable(pat.group)}`;
+  // Regular verbs share endings; irregular ones don't, so their page has no pattern section.
+  if (page.patterns.length) {
+    html += `<h2>${page.patternsHeading}</h2>`;
+    for (const pat of page.patterns) {
+      if (pat.heading) html += `<h3>${pat.heading}</h3>`;
+      html += `<p>${md(pat.text(n))}</p>${patternTable(pat.group)}`;
+    }
+    html += page.afterPatterns.map((p) => `<p>${md(p)}</p>`).join("");
   }
-  html += page.afterPatterns.map((p) => `<p>${md(p)}</p>`).join("");
 
   html += `<h2 id="top">Index</h2>`;
   let start = 1;
@@ -106,7 +109,7 @@ function render(page) {
   }
 
   document.getElementById("content").innerHTML = html;
-  document.title = `Verbi -${document.body.dataset.page}`;
+  document.title = page.documentTitle;
 
   // innerHTML arrives after the browser looked for #verb in the URL, so jump now.
   if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
