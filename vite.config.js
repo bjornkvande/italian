@@ -2,9 +2,10 @@ import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
 // GitHub Pages serves the app from https://bjornkvande.github.io/italian/,
-// so production builds live under /italian/. The dev server stays at /.
-export default defineConfig(({ command }) => ({
-  base: command === "build" ? "/italian/" : "/",
+// so production builds (and `vite preview` of them) live under /italian/.
+// The dev server stays at /.
+export default defineConfig(({ command, isPreview }) => ({
+  base: command === "build" || isPreview ? "/italian/" : "/",
   server: {
     port: 5173,
     strictPort: true, // fail instead of silently moving to another port

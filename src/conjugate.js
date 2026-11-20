@@ -143,7 +143,9 @@ function english(verb, tense, person) {
   }
 }
 
-// Every card for one verb: { tense, it, en }.
+// Every card for one verb: { id, tense, it, en }.
+// The id ("parlare.presente.1") stays the same as long as the verb, tense and
+// person do, so stored ratings keep pointing at the right card.
 export function cardsFor(verb) {
   const cards = [];
   // Impersonal verbs (piovere) only use the lui/lei form, without a pronoun.
@@ -153,13 +155,14 @@ export function cardsFor(verb) {
     for (const p of persons) {
       const f = tense === "passato" ? passatoProssimo(verb, p, " / ") : form(verb, tense, p);
       const it = verb.impersonal ? f : `${PRONOUNS[p]} ${f}`;
-      cards.push({ tense: TENSE_NAME[tense], it, en: english(verb, tense, p) });
+      cards.push({ id: `${verb.infinitive}.${tense}.${p}`, tense: TENSE_NAME[tense], it, en: english(verb, tense, p) });
     }
   }
 
   if (!verb.impersonal) {
     for (const { index, it, en } of IMPERATIVO_PERSONS) {
       cards.push({
+        id: `${verb.infinitive}.imperativo.${index}`,
         tense: TENSE_NAME.imperativo,
         it: `${it} ${form(verb, "imperativo", index)}!`,
         en: en(verb.en_base),

@@ -190,7 +190,7 @@ describe("flash cards", () => {
   });
 
   it("Italian side has the pronoun, English side the translation, per tense", () => {
-    expect(card("parlare", "io parlo")).toEqual({ tense: "Presente", it: "io parlo", en: "I speak" });
+    expect(card("parlare", "io parlo")).toEqual({ id: "parlare.presente.0", tense: "Presente", it: "io parlo", en: "I speak" });
     expect(card("parlare", "noi abbiamo parlato").en).toBe("we spoke");
     expect(card("parlare", "loro parlavano").en).toBe("they used to speak");
     expect(card("parlare", "voi parlerete").en).toBe("you all will speak");

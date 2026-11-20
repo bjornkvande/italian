@@ -87,6 +87,59 @@ html, body { overscroll-behavior: none; }
   line-height: 1.25;
 }
 
+/* Rating buttons along the bottom of the answer side. */
+.rating {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.rating-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.rating-buttons { display: flex; gap: 8px; }
+
+.rating button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.rating button:hover { border-color: #fff; }
+
+/* The card's current rating in this direction. */
+.rating button.selected { background: #fff; color: #000; border-color: #fff; }
+
+/* Only usable once the card shows its answer side. */
+.card:not(.flipped) .rating { pointer-events: none; }
+
+/* Keep the word clear of the buttons. */
+.back .word { margin-bottom: 52px; }
+
+/* On narrow phones, make the card taller so a long answer still fits above the buttons. */
+@media (max-width: 480px) {
+  .scene { aspect-ratio: 4 / 3; }
+}
+
 /* The answer side is black with white text. */
 .back {
   transform: rotateY(180deg);
