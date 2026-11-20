@@ -2,7 +2,7 @@
 // One subpage at a time, picked by the address: basics.html#prepositions.
 import "./pwa.js";
 import { TOPICS, BASICS_PAGES, basicsRows, presenteCards, basicsCardId } from "./basics.js";
-import { renderNav, subpageFromHash } from "./nav.js";
+import { renderGrammarNav, subpageFromHash } from "./nav.js";
 import { legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
 import { escape, md, table, ratingColours } from "./page-helpers.js";
 
@@ -62,7 +62,7 @@ const currentPage = () => BASICS_PAGES.find((p) => p.id === subpageFromHash("bas
 function render() {
   colours.refresh();
   const page = currentPage();
-  renderNav(document.getElementById("nav"), "basics", page.id);
+  renderGrammarNav(document.getElementById("nav"), "basics", page.id);
   // A subpage with one topic uses that topic's title as the page heading
   // ("Essere – to be") instead of repeating it below.
   const single = page.topics.length === 1;

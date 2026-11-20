@@ -16,31 +16,42 @@ body {
 
 /* ---------------------------------------------------------------- navigation */
 
+/* Grammar pages: "← Train on Verbs", then the row of subpage tabs (below). */
 .nav {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 4px;
-  min-height: 60px; /* filled in by src/nav.js; keeps the page from jumping */
-  padding: 12px 16px;
+  gap: 8px;
+  padding: 12px 12px 4px;
   padding-top: max(12px, env(safe-area-inset-top));
 }
 
-/* The "Train" and "Verbs" tabs. */
-.tab {
-  padding: 8px 14px;
+.train-link {
+  padding: 8px 16px;
   border-radius: 999px;
-  color: #000;
+  background: #000;
+  color: #fff;
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
-  opacity: 0.6;
   -webkit-tap-highlight-color: transparent;
 }
 
-.tab:hover { opacity: 1; }
+.control { position: relative; }
 
-.tab[aria-current="page"] { background: #000; color: #fff; opacity: 1; }
+/* A button that opens a menu (the Train screen's "Verbs · Beginner ▾"). */
+.select-button {
+  padding: 8px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
 
 /* ---------------------------------------------------------------- dropdown menus */
 
@@ -74,18 +85,28 @@ body {
 }
 
 .menu a:hover, .menu button:hover { background: #f2f2f2; }
+.menu-name { font-weight: 600; }
+.menu-description { font-size: 0.8rem; font-weight: 400; opacity: 0.65; }
+.menu-heading {
+  padding: 8px 12px 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
 .menu [aria-current="page"], .menu [aria-pressed="true"] { background: #000; color: #fff; }
 .menu [aria-current="page"]:hover, .menu [aria-pressed="true"]:hover { background: #000; }
 
-/* ---------------------------------------------------------------- verb page tabs */
+/* ---------------------------------------------------------------- grammar subpage tabs */
 
-/* Second row on the verb pages: -are · -ere · -ire · Irregular. */
+/* Second row in Grammar mode: the group's subpages (-are · -ere · -ire · Irregular). */
 .subnav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 6px;
-  padding: 0 16px 4px;
+  padding: 0 4px;
 }
 
 .subnav a {

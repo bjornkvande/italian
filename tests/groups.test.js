@@ -4,7 +4,7 @@ import { describe, it, expect } from "vitest";
 import { existsSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { GROUPS, cardsByGroup } from "../src/groups.js";
-import { LEVELS } from "../src/levels.js";
+import { DIFFICULTIES } from "../src/levels.js";
 import { PAGES } from "../src/pages.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
@@ -47,9 +47,19 @@ describe("word groups", () => {
     }
   });
 
-  it("every group can be practised at some level, and every level uses a known group", () => {
-    for (const g of GROUPS) expect(LEVELS.some((l) => l.group === g.id), `no level for ${g.id}`).toBe(true);
-    for (const l of LEVELS) expect(GROUPS.map((g) => g.id), `level ${l.id}`).toContain(l.group);
+  it("every group has a one-line description for the 'what to practise' menu", () => {
+    for (const g of GROUPS) expect(g.description, g.id).toMatch(/\S/);
+  });
+
+  it("every group describes each difficulty for the menu", () => {
+    for (const g of GROUPS) {
+      expect(Object.keys(g.difficulties).sort(), g.id).toEqual(DIFFICULTIES.map((d) => d.id).sort());
+      for (const d of DIFFICULTIES) {
+        expect(g.difficulties[d.id].description, `${g.id} ${d.id}`).toMatch(/\S/);
+        const include = g.difficulties[d.id].include;
+        expect(include === null || typeof include === "function", `${g.id} ${d.id} include`).toBe(true);
+      }
+    }
   });
 
   it("every HTML page is the start page or belongs to a group", () => {

@@ -1,6 +1,6 @@
 // Tests for remembering each word group's subpage (src/nav.js).
 import { describe, it, expect } from "vitest";
-import { lastPage, rememberPage } from "../src/nav.js";
+import { lastPage, rememberPage, sectionById, grammarHref } from "../src/nav.js";
 import { GROUPS } from "../src/groups.js";
 
 function fakeStorage(initial = {}) {
@@ -8,7 +8,19 @@ function fakeStorage(initial = {}) {
   return { items, getItem: (k) => (k in items ? items[k] : null), setItem: (k, v) => { items[k] = String(v); } };
 }
 
-describe.each(GROUPS.map((g) => [g.id, g]))("remembering the %s subpage", (groupId, group) => {
+describe("Train and grammar", () => {
+  it("training remembers the word group, kept on the start page after #", () => {
+    expect(sectionById("train").pages.map((p) => p.href)).toEqual(GROUPS.map((g) => `./#${g.id}`));
+  });
+
+  it("📖 leads to the group's grammar page used last (the first one by default)", () => {
+    for (const g of GROUPS) expect(grammarHref(g.id)).toBe(lastPage(g.id).href);
+  });
+});
+
+const SECTIONS = ["train", ...GROUPS.map((g) => g.id)].map((id) => [id, sectionById(id)]);
+
+describe.each(SECTIONS)("remembering the %s subpage", (groupId, group) => {
   const [first, second] = group.pages;
 
   it("opens the first subpage the first time", () => {

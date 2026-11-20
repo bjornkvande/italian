@@ -86,10 +86,12 @@ const LABEL = { fsg: "f. sing.", mpl: "m. pl.", fpl: "f. pl." };
 /** The cards of one adjective: the base form, then each different form. */
 export function adjectiveCards(adj) {
   const forms = adjectiveForms(adj);
-  const card = (form, it, en) => ({ id: adjectiveCardId(adj, form), tenseKey: form === "msg" ? "base" : "form", tense: "Adjective", it, en });
+  // tenseKey: "base", "fsg", "mpl", "fpl", or "pl" (the shared plural of -e adjectives).
+  const card = (form, it, en, key = form === "msg" ? "base" : form) =>
+    ({ id: adjectiveCardId(adj, form), tenseKey: key, tense: "Adjective", it, en });
   const cards = [card("msg", forms.msg, adj.english)];
   const type = adjectiveType(adj);
-  if (type === "two") cards.push(card("mpl", forms.mpl, `${adj.english} (pl.)`));
+  if (type === "two") cards.push(card("mpl", forms.mpl, `${adj.english} (pl.)`, "pl"));
   if (type === "four") for (const f of ["fsg", "mpl", "fpl"]) cards.push(card(f, forms[f], `${adj.english} (${LABEL[f]})`));
   return cards;
 }

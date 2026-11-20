@@ -1,61 +1,67 @@
-// The navigation at the top of every page: "Train" and one tab per word group
-// (src/groups.js). A group's tab opens the subpage you used last; on the
-// group's pages a second row of tabs links to all its subpages.
+// Navigation between the two parts of the app:
+//   Train (the main page, index.html#verbs): the word group you practise is kept
+//     in the address and remembered; a 📖 button opens that group's grammar.
+//   Grammar & dictionary (the reference pages): a "← Train on Verbs" button back
+//     to training with that group, and a row of tabs with the group's subpages.
+// Each group remembers its last grammar subpage. Word groups: src/groups.js.
 import { GROUPS, groupById } from "./groups.js";
 
-const pageIn = (groupId, id) => groupById(groupId).pages.find((p) => p.id === id);
+const TRAIN = {
+  id: "train",
+  name: "Train",
+  storageKey: "verbi.trainGroup",
+  pages: GROUPS.map((g) => ({ id: g.id, href: `./#${g.id}`, label: g.name })),
+};
 
-/** The subpage of a group used last, or its first subpage. */
-export function lastPage(groupId, storage = globalThis.localStorage) {
+/** Train or a word group: { id, name, storageKey, pages }. */
+export const sectionById = (id) => (id === "train" ? TRAIN : groupById(id));
+
+const pageIn = (sectionId, id) => sectionById(sectionId).pages.find((p) => p.id === id);
+
+/** The subpage of a section (Train or a group) used last, or its first subpage. */
+export function lastPage(sectionId, storage = globalThis.localStorage) {
   try {
-    const saved = pageIn(groupId, storage.getItem(groupById(groupId).storageKey));
+    const saved = pageIn(sectionId, storage.getItem(sectionById(sectionId).storageKey));
     if (saved) return saved;
   } catch {
     // Blocked storage: use the first page.
   }
-  return groupById(groupId).pages[0];
+  return sectionById(sectionId).pages[0];
 }
 
-export function rememberPage(groupId, id, storage = globalThis.localStorage) {
-  if (!pageIn(groupId, id)) throw new Error(`Unknown ${groupId} page: ${id}`);
+export function rememberPage(sectionId, id, storage = globalThis.localStorage) {
+  if (!pageIn(sectionId, id)) throw new Error(`Unknown ${sectionId} page: ${id}`);
   try {
-    storage.setItem(groupById(groupId).storageKey, id);
+    storage.setItem(sectionById(sectionId).storageKey, id);
   } catch {
     // Blocked storage: just not remembered.
   }
 }
 
 /**
- * For a group whose subpages are #parts of one page (basics.html#essere):
- * the subpage id named in the address, or else the one used last.
+ * For a section whose subpages are #parts of one page (index.html#verbs,
+ * basics.html#essere): the subpage id in the address, or else the one used last.
  */
-export function subpageFromHash(groupId) {
+export function subpageFromHash(sectionId) {
   const id = decodeURIComponent(location.hash.slice(1));
-  return pageIn(groupId, id)?.id ?? lastPage(groupId).id;
+  return pageIn(sectionId, id)?.id ?? lastPage(sectionId).id;
 }
 
+/** Where the 📖 button on the Train screen leads: the group's last grammar subpage. */
+export const grammarHref = (groupId) => lastPage(groupId).href;
+
 /**
- * Fill <nav id="nav"> for the current page. `section` is "train" or a group id;
- * `pageId` is the group's subpage, which is remembered for next time.
+ * Fill <nav id="nav"> on a grammar page: "← Train on Verbs" and a row of tabs
+ * with the group's subpages. `pageId` is remembered as the group's last subpage.
  * Safe to call again when the subpage changes.
  */
-export function renderNav(nav, section, pageId) {
-  const group = groupById(section);
-  if (group && pageId) rememberPage(section, pageId);
+export function renderGrammarNav(nav, groupId, pageId) {
+  rememberPage(groupId, pageId);
+  const group = groupById(groupId);
   const here = (yes) => (yes ? ' aria-current="page"' : "");
-
   nav.innerHTML = `
-    <a class="tab" href="./"${here(section === "train")}>Train</a>
-    ${GROUPS.map((g) => `<a class="tab" href="${lastPage(g.id).href}"${here(section === g.id)}>${g.name}</a>`).join("")}`;
-
-  // On a group's page, a second row with all its subpages, right under the navigation.
-  nav.nextElementSibling?.classList.contains("subnav") && nav.nextElementSibling.remove();
-  if (group) {
-    const sub = document.createElement("nav");
-    sub.className = "subnav";
-    sub.setAttribute("aria-label", group.name);
-    sub.innerHTML = group.pages
-      .map((p) => `<a href="${p.href}"${here(p.id === pageId)}>${p.label}</a>`).join("");
-    nav.after(sub);
-  }
+    <a class="train-link" href="./#${group.id}">← Train on ${group.name}</a>
+    <div class="subnav" aria-label="${group.name}">
+      ${group.pages.map((p) => `<a href="${p.href}"${here(p.id === pageId)}>${p.label}</a>`).join("")}
+    </div>`;
 }

@@ -1,98 +1,131 @@
-// Tests for the difficulty levels (src/levels.js).
+// Tests for the difficulties per word group (src/levels.js and the
+// `difficulties` in src/groups.js).
 import { describe, it, expect } from "vitest";
-import { LEVELS, DEFAULT_LEVEL, STORAGE_KEY, cardsForLevel, loadLevel, saveLevel } from "../src/levels.js";
+import {
+  DIFFICULTIES, DEFAULT_DIFFICULTY, STORAGE_KEY,
+  cardsForDifficulty, loadDifficulty, saveDifficulty, migrateOldLevel,
+} from "../src/levels.js";
+import { GROUPS, groupById, cardsByGroup } from "../src/groups.js";
 import { verbs } from "../src/csv.js";
-import { cardsFor } from "../src/conjugate.js";
-import { basicsCards } from "../src/basics.js";
 
-const all = verbs.flatMap(cardsFor);
-const basics = basicsCards();
-const decks = { verbs: all, basics };
-const tensesIn = (cards) => [...new Set(cards.map((c) => c.tenseKey))].sort();
+const decks = cardsByGroup();
+const at = (groupId, difficulty) => cardsForDifficulty(decks[groupId], groupById(groupId), difficulty);
+const keysIn = (cards) => [...new Set(cards.map((c) => c.tenseKey))].sort();
+const topicsIn = (cards) => [...new Set(cards.map((c) => (c.id.startsWith("basics.") ? c.id.split(".")[1] : c.id.split(".")[0])))].sort();
 
 function fakeStorage(initial = {}) {
   const items = { ...initial };
   return { items, getItem: (k) => (k in items ? items[k] : null), setItem: (k, v) => { items[k] = String(v); } };
 }
 
-describe("cards per level", () => {
-  it("beginner: only infinitives, one per verb", () => {
-    const cards = cardsForLevel(decks, "beginner");
-    expect(tensesIn(cards)).toEqual(["infinito"]);
-    expect(cards).toHaveLength(verbs.length);
-    expect(cards.find((c) => c.it === "parlare").en).toBe("to speak");
-  });
-
-  it("intermediate: infinitives and presente for every person", () => {
-    const cards = cardsForLevel(decks, "intermediate");
-    expect(tensesIn(cards)).toEqual(["infinito", "presente"]);
-    const parlare = cards.filter((c) => c.id.startsWith("parlare."));
-    expect(parlare.map((c) => c.it)).toEqual([
-      "parlare", "io parlo", "tu parli", "lui/lei parla", "noi parliamo", "voi parlate", "loro parlano",
-    ]);
-  });
-
-  it("advanced: every card", () => {
-    expect(cardsForLevel(decks, "advanced")).toEqual(all);
-    expect(tensesIn(all)).toEqual(["condizionale", "futuro", "imperativo", "imperfetto", "infinito", "passato", "presente"]);
-  });
-
-  it("each verb level includes the one below it", () => {
-    const verbLevels = LEVELS.filter((l) => l.group === "verbs");
-    expect(verbLevels.map((l) => l.id)).toEqual(["beginner", "intermediate", "advanced"]);
-    for (let i = 1; i < verbLevels.length; i++) {
-      const lower = new Set(cardsForLevel(decks, verbLevels[i - 1].id).map((c) => c.id));
-      const higher = new Set(cardsForLevel(decks, verbLevels[i].id).map((c) => c.id));
-      for (const id of lower) expect(higher.has(id), `${id} missing from ${verbLevels[i].id}`).toBe(true);
+describe("every word group", () => {
+  it.each(GROUPS.map((g) => [g.id]))("%s: each difficulty includes the one below, and Advanced is everything", (groupId) => {
+    for (let i = 1; i < DIFFICULTIES.length; i++) {
+      const lower = new Set(at(groupId, DIFFICULTIES[i - 1].id).map((c) => c.id));
+      const higher = new Set(at(groupId, DIFFICULTIES[i].id).map((c) => c.id));
+      expect(lower.size, `${groupId} ${DIFFICULTIES[i - 1].id} is empty`).toBeGreaterThan(0);
+      expect(higher.size, `${groupId} ${DIFFICULTIES[i].id} adds nothing`).toBeGreaterThan(lower.size);
+      for (const id of lower) expect(higher.has(id), `${id} missing from ${DIFFICULTIES[i].id}`).toBe(true);
     }
-  });
-
-  it("basics: only the Basics cards, and they come first in the menu", () => {
-    expect(cardsForLevel(decks, "basics")).toBe(basics);
-    expect(LEVELS[0].id).toBe("basics");
-  });
-
-  it("irregular verbs appear at every level, with the right tenses", () => {
-    const irregular = (level) => cardsForLevel(decks, level).filter((c) => c.id.split(".")[0] === "essere" || c.id.startsWith("andare."));
-    expect(irregular("beginner").map((c) => `${c.it} = ${c.en}`)).toEqual(["essere = to be", "andare = to go"]);
-    expect(irregular("intermediate").map((c) => c.it)).toEqual([
-      "essere", "io sono", "tu sei", "lui/lei è", "noi siamo", "voi siete", "loro sono",
-      "andare", "io vado", "tu vai", "lui/lei va", "noi andiamo", "voi andate", "loro vanno",
-    ]);
-    expect(tensesIn(irregular("advanced"))).toEqual(tensesIn(all));
-
-    const irregularVerbs = verbs.filter((v) => v.group === "irregular").map((v) => v.infinitive);
-    for (const level of ["beginner", "intermediate", "advanced"]) {
-      const verbsInLevel = new Set(cardsForLevel(decks, level).map((c) => c.id.split(".")[0]));
-      for (const v of irregularVerbs) expect(verbsInLevel.has(v), `${v} missing from ${level}`).toBe(true);
-    }
-  });
-
-  it("an unknown level falls back to the default", () => {
-    expect(cardsForLevel(decks, "expert")).toEqual(cardsForLevel(decks, DEFAULT_LEVEL));
+    expect(at(groupId, "advanced")).toEqual(decks[groupId]);
   });
 });
 
-describe("remembering the level", () => {
-  it("starts at the default level", () => {
-    expect(loadLevel(fakeStorage())).toBe("beginner");
+describe("verbs", () => {
+  it("beginner: only infinitives, one per verb", () => {
+    expect(keysIn(at("verbs", "beginner"))).toEqual(["infinito"]);
+    expect(at("verbs", "beginner")).toHaveLength(verbs.length);
   });
 
-  it("saves and loads the chosen level", () => {
+  it("intermediate: infinitives and presente for every person", () => {
+    expect(keysIn(at("verbs", "intermediate"))).toEqual(["infinito", "presente"]);
+    expect(at("verbs", "intermediate").filter((c) => c.id.startsWith("andare.")).map((c) => c.it)).toEqual([
+      "andare", "io vado", "tu vai", "lui/lei va", "noi andiamo", "voi andate", "loro vanno",
+    ]);
+  });
+
+  it("advanced: all tenses", () => {
+    expect(keysIn(at("verbs", "advanced"))).toEqual(["condizionale", "futuro", "imperativo", "imperfetto", "infinito", "passato", "presente"]);
+  });
+});
+
+describe("basics", () => {
+  it("beginner: pronouns, greetings, essere, avere, numbers, days", () => {
+    expect(topicsIn(at("basics", "beginner"))).toEqual(["avere", "days", "essere", "greetings", "numbers", "pronouns"]);
+    expect(at("basics", "beginner").map((c) => c.it)).toContain("io sono");
+  });
+
+  it("intermediate adds questions, prepositions, possessives, small words, months, seasons", () => {
+    const added = topicsIn(at("basics", "intermediate")).filter((t) => !topicsIn(at("basics", "beginner")).includes(t));
+    expect(added).toEqual(["connectors", "demonstratives", "months", "possessives", "prepositions", "questions", "seasons", "time"]);
+  });
+
+  it("advanced adds the rest: prepositions + article, ordinals, units of time", () => {
+    const added = topicsIn(at("basics", "advanced")).filter((t) => !topicsIn(at("basics", "intermediate")).includes(t));
+    expect(added).toEqual(["articulated", "ordinals", "time-units"]);
+  });
+});
+
+describe("adjectives", () => {
+  it("beginner: base forms; intermediate: + feminine singular; advanced: + plurals", () => {
+    expect(keysIn(at("adjectives", "beginner"))).toEqual(["base"]);
+    expect(keysIn(at("adjectives", "intermediate"))).toEqual(["base", "fsg"]);
+    expect(keysIn(at("adjectives", "advanced"))).toEqual(["base", "fpl", "fsg", "mpl", "pl"]);
+    expect(at("adjectives", "intermediate").map((c) => c.it)).toContain("rossa");
+  });
+});
+
+describe("remembering the difficulty", () => {
+  it("starts at the default for every group", () => {
+    for (const g of GROUPS) expect(loadDifficulty(g.id, fakeStorage())).toBe(DEFAULT_DIFFICULTY);
+  });
+
+  it("is remembered per group", () => {
     const storage = fakeStorage();
-    saveLevel("intermediate", storage);
-    expect(storage.items[STORAGE_KEY]).toBe("intermediate");
-    expect(loadLevel(storage)).toBe("intermediate");
+    saveDifficulty("verbs", "advanced", storage);
+    saveDifficulty("basics", "intermediate", storage);
+    expect(loadDifficulty("verbs", storage)).toBe("advanced");
+    expect(loadDifficulty("basics", storage)).toBe("intermediate");
+    expect(loadDifficulty("adjectives", storage)).toBe("beginner");
+    expect(JSON.parse(storage.items[STORAGE_KEY])).toEqual({ verbs: "advanced", basics: "intermediate" });
   });
 
-  it("ignores an unknown saved level and refuses to save one", () => {
-    expect(loadLevel(fakeStorage({ [STORAGE_KEY]: "expert" }))).toBe(DEFAULT_LEVEL);
-    expect(() => saveLevel("expert", fakeStorage())).toThrow();
+  it("ignores unknown or broken saved values and refuses to save an unknown difficulty", () => {
+    expect(loadDifficulty("verbs", fakeStorage({ [STORAGE_KEY]: '{"verbs":"expert"}' }))).toBe(DEFAULT_DIFFICULTY);
+    expect(loadDifficulty("verbs", fakeStorage({ [STORAGE_KEY]: "{not json" }))).toBe(DEFAULT_DIFFICULTY);
+    expect(() => saveDifficulty("verbs", "expert", fakeStorage())).toThrow();
+    expect(at("verbs", "expert")).toEqual(at("verbs", DEFAULT_DIFFICULTY));
   });
 
   it("works when storage is blocked", () => {
     const blocked = { getItem: () => { throw new Error(); }, setItem: () => { throw new Error(); } };
-    expect(loadLevel(blocked)).toBe(DEFAULT_LEVEL);
-    expect(() => saveLevel("advanced", blocked)).not.toThrow();
+    expect(loadDifficulty("verbs", blocked)).toBe(DEFAULT_DIFFICULTY);
+    expect(() => saveDifficulty("verbs", "advanced", blocked)).not.toThrow();
+    expect(() => migrateOldLevel(blocked)).not.toThrow();
+  });
+});
+
+describe("carrying over the old single level", () => {
+  it("Basics or Adjectives become what you practise", () => {
+    const storage = fakeStorage({ "verbi.level": "adjectives" });
+    migrateOldLevel(storage);
+    expect(storage.items["verbi.trainGroup"]).toBe("adjectives");
+  });
+
+  it("a verb level becomes Verbs at that difficulty", () => {
+    const storage = fakeStorage({ "verbi.level": "advanced" });
+    migrateOldLevel(storage);
+    expect(storage.items["verbi.trainGroup"]).toBe("verbs");
+    expect(loadDifficulty("verbs", storage)).toBe("advanced");
+  });
+
+  it("does nothing once the new settings exist, or without an old level", () => {
+    const storage = fakeStorage({ "verbi.level": "advanced", "verbi.trainGroup": "basics" });
+    migrateOldLevel(storage);
+    expect(storage.items["verbi.trainGroup"]).toBe("basics");
+    expect(storage.items[STORAGE_KEY]).toBeUndefined();
+    const empty = fakeStorage();
+    migrateOldLevel(empty);
+    expect(empty.items).toEqual({});
   });
 });

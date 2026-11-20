@@ -48,6 +48,21 @@ export const BASICS_PAGES = [
   { id: "numbers", label: "Numbers & dates", topics: ["numbers", "ordinals", "days", "months", "seasons"] },
 ];
 
+// Which topics each difficulty practises (null = all of them).
+const BEGINNER_TOPICS = ["pronouns", "greetings", "essere", "avere", "numbers", "days"];
+export const BASICS_DIFFICULTY_TOPICS = {
+  beginner: BEGINNER_TOPICS,
+  intermediate: [...BEGINNER_TOPICS, "questions", "prepositions", "possessives", "demonstratives",
+    "connectors", "time", "months", "seasons"],
+  advanced: null,
+};
+
+/** The topic a Basics card belongs to: "basics.days.lunedì" → days; "essere.presente.0" → essere. */
+export function basicsTopicOf(card) {
+  const [first, second] = card.id.split(".");
+  return first === "basics" ? second : first;
+}
+
 export const BASICS_CSV = basicsCSV;
 export const basicsRows = parseCSV(basicsCSV);
 

@@ -9,7 +9,7 @@ import {
 import { legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
 import { escape, md, table, ratingColours } from "./page-helpers.js";
 import { PAGES } from "./pages.js";
-import { renderNav } from "./nav.js";
+import { renderGrammarNav } from "./nav.js";
 
 const colours = ratingColours();
 const colour = colours.colour;
@@ -112,7 +112,7 @@ function render(page, firstTime = false) {
   if (firstTime && location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
 }
 
-renderNav(document.getElementById("nav"), "verbs", document.body.dataset.page);
+renderGrammarNav(document.getElementById("nav"), "verbs", document.body.dataset.page);
 const page = PAGES[document.body.dataset.page];
 render(page, true);
 rerenderOnRatingChanges(() => render(page));

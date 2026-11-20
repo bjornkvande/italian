@@ -1,19 +1,9 @@
-/* The flash card page. The navigation floats on top, so the card stays
-   centred on the whole screen. */
+/* The Train screen: [Verbs ▾] [Beginner ▾] [📖] at the top, the card in the
+   middle of the space that's left. */
 html, body { overscroll-behavior: none; }
-
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-}
 
 .train {
   flex: 1;
-  min-height: 100vh;
-  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,49 +137,38 @@ html, body { overscroll-behavior: none; }
   color: #fff;
 }
 
-/* Difficulty level: a button in the top-left corner with a small menu. */
-.level {
-  position: fixed;
-  top: 12px;
-  top: max(12px, env(safe-area-inset-top));
-  left: 16px;
-  z-index: 2;
+.train-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 12px 0;
+  padding-top: max(12px, env(safe-area-inset-top));
 }
 
-.level-button {
-  padding: 8px 14px;
+/* The menus (shared .menu styles in base.css): the left one opens to the right,
+   the level menu centred under its button, so both stay on screen. */
+.group-menu { left: 0; min-width: 240px; }
+.level-menu { left: 50%; transform: translateX(-50%); min-width: 240px; }
+
+/* Small phones: slightly more compact buttons so all three fit on one line. */
+@media (max-width: 380px) {
+  .train-header { gap: 6px; padding-left: 8px; padding-right: 8px; }
+  .train-header .select-button { padding: 7px 12px; font-size: 0.9rem; }
+}
+
+/* 📖: the grammar and dictionary for what you practise. */
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 999px;
+  border-radius: 50%;
   background: #fff;
   color: #000;
-  font: inherit;
-  font-size: 0.95rem;
-  font-weight: 500;
-  cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* The level menu uses the shared .menu styles (base.css), opening to the right. */
-.level-menu { left: 0; min-width: 210px; }
-
-.level-name { font-weight: 600; }
-.level-description { font-size: 0.8rem; opacity: 0.65; }
-
-/* On phones there isn't room for the level button and the tabs on one line:
-   the tabs get the top row (centred) and the level button sits centred below. */
-@media (max-width: 700px) {
-  .level {
-    top: 60px;
-    top: calc(max(12px, env(safe-area-inset-top)) + 48px);
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .level-menu { left: 50%; transform: translateX(-50%); }
-}
-
-/* On small phones, make the tabs and level button a little more compact. */
-@media (max-width: 460px) {
-  .nav { gap: 0; padding-left: 8px; padding-right: 8px; }
-  .tab { padding: 7px 10px; font-size: 0.9rem; }
-  .level-button { padding: 7px 12px; font-size: 0.85rem; }
-}
+.icon-button:hover { border-color: #000; }

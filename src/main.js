@@ -1,12 +1,15 @@
-// Flash cards for every word group, Italian <-> English, by level.
+// The Train screen (the main page): flash cards, Italian <-> English.
+// Two buttons choose what to practise and the level ([Verbs ▾] [Beginner ▾]);
+// the word group is kept in the address (index.html#verbs) and remembered, the
+// level is remembered per group. The 📖 button opens the group's grammar.
 import "./pwa.js";
 import { createRatings } from "./ratings.js";
-import { LEVELS, cardsForLevel, loadLevel, saveLevel } from "./levels.js";
-import { renderNav } from "./nav.js";
-import { cardsByGroup } from "./groups.js";
+import { DIFFICULTIES, cardsForDifficulty, loadDifficulty, saveDifficulty, migrateOldLevel } from "./levels.js";
+import { subpageFromHash, rememberPage, grammarHref } from "./nav.js";
+import { GROUPS, cardsByGroup, groupById } from "./groups.js";
 import { dropdown } from "./menu.js";
 
-renderNav(document.getElementById("nav"), "train");
+migrateOldLevel(); // carry over the old single level setting, once
 
 const card = document.getElementById("card");
 const el = (id) => document.getElementById(id);
@@ -15,9 +18,15 @@ const ratingButtons = [...document.querySelectorAll("[data-rating]")];
 // The cards of every word group ({ basics: [...], verbs: [...] }), all as
 // { id, tenseKey, tense, it, en }.
 const decks = cardsByGroup();
-// The cards for the chosen level.
-let level = loadLevel();
-let cards = cardsForLevel(decks, level);
+// What you practise and how hard; `cards` are the cards in play.
+let groupId = subpageFromHash("train");
+let difficulty = loadDifficulty(groupId);
+let cards = [];
+const pickCards = () => {
+  cards = cardsForDifficulty(decks[groupId], groupById(groupId), difficulty);
+};
+pickCards();
+rememberPage("train", groupId);
 const ratings = createRatings();
 let current = null;
 let direction = "it-en"; // it-en: Italian shown first, en-it: English shown first
@@ -106,45 +115,77 @@ function handleClick(e) {
   else card.classList.add("flipped");
 }
 
-// ---------------------------------------------------------------- difficulty level
+// ---------------------------------------------------------------- what to practise and level
 
+const groupButton = el("group-button");
+const groupMenu = el("group-menu");
 const levelButton = el("level-button");
 const levelMenu = el("level-menu");
+const grammarLink = el("grammar-link");
 
-levelMenu.innerHTML = LEVELS.map((l) => `
-  <button type="button" data-level="${l.id}" aria-pressed="false">
-    <span class="level-name">${l.name}</span>
-    <span class="level-description">${l.description}</span>
-  </button>`).join("");
-
-function showLevel() {
-  levelButton.innerHTML = `${LEVELS.find((l) => l.id === level).name}<span aria-hidden="true"> ▾</span>`;
-  for (const b of levelMenu.querySelectorAll("[data-level]")) {
-    b.setAttribute("aria-pressed", String(b.dataset.level === level));
-  }
+// [Verbs ▾] [Advanced ▾] [📖]: the level menu describes the levels of the chosen
+// group, and 📖 leads to its grammar.
+function showSettings() {
+  const group = groupById(groupId);
+  groupButton.innerHTML = `${group.name}<span aria-hidden="true"> ▾</span>`;
+  groupMenu.innerHTML = GROUPS.map((g) => `
+    <button type="button" data-group="${g.id}" aria-pressed="${g.id === groupId}">
+      <span class="menu-name">${g.name}</span>
+      <span class="menu-description">${g.description}</span>
+    </button>`).join("");
+  levelButton.innerHTML = `${DIFFICULTIES.find((d) => d.id === difficulty).name}<span aria-hidden="true"> ▾</span>`;
+  levelMenu.innerHTML = DIFFICULTIES.map((d) => `
+    <button type="button" data-level="${d.id}" aria-pressed="${d.id === difficulty}">
+      <span class="menu-name">${d.name}</span>
+      <span class="menu-description">${group.difficulties[d.id].description}</span>
+    </button>`).join("");
+  grammarLink.href = grammarHref(groupId);
+  grammarLink.title = `${group.name}: grammar and dictionary`;
+  grammarLink.setAttribute("aria-label", grammarLink.title);
 }
 
+const groupDropdown = dropdown(el("group"), groupButton, groupMenu);
 const levelDropdown = dropdown(el("level"), levelButton, levelMenu);
+
+// Choosing a group changes the address; the hashchange below does the rest.
+groupMenu.addEventListener("click", (e) => {
+  const choice = e.target.closest("[data-group]");
+  if (!choice) return;
+  groupDropdown.close();
+  if (choice.dataset.group !== groupId) location.hash = choice.dataset.group;
+});
 
 levelMenu.addEventListener("click", (e) => {
   const choice = e.target.closest("[data-level]");
   if (!choice) return;
   levelDropdown.close();
-  if (choice.dataset.level === level) return;
-  level = choice.dataset.level;
-  saveLevel(level);
-  cards = cardsForLevel(decks, level);
-  showLevel();
-  if (!busy) nextCard(); // straight to a card from the new level
+  if (choice.dataset.level === difficulty) return;
+  difficulty = choice.dataset.level;
+  saveDifficulty(groupId, difficulty);
+  pickCards();
+  showSettings();
+  if (!busy) nextCard(); // straight to a card at the new level
 });
-showLevel();
+showSettings();
+
+// A new word group (from the menu, the address or "Train on …"): its cards at its level.
+window.addEventListener("hashchange", () => {
+  const chosen = subpageFromHash("train");
+  if (chosen === groupId) return;
+  groupId = chosen;
+  rememberPage("train", groupId);
+  difficulty = loadDifficulty(groupId);
+  pickCards();
+  showSettings();
+  if (!busy) nextCard();
+});
 
 // ---------------------------------------------------------------- input
 
 scene.addEventListener("click", handleClick);
 document.addEventListener("keydown", (e) => {
-  // Keys on the level menu or the navigation links shouldn't flip the card.
-  if (e.target.closest?.("#level, #nav")) return;
+  // Keys on the menu or the 📖 link shouldn't flip the card.
+  if (e.target.closest?.(".train-header")) return;
   if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); }
   else if (/^[1-5]$/.test(e.key)) rate(Number(e.key));
 });
