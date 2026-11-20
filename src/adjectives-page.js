@@ -32,7 +32,7 @@ function render() {
   document.getElementById("content").innerHTML =
     `<h1>Adjectives: ${page.title}</h1>${legendHTML()}${INTRO}` +
     adjectiveTable(adjectives.filter((a) => a.topic === page.id));
-  document.title = `Adjectives – ${page.label}`;
+  document.title = `Italiano – ${page.title}`;
 }
 
 // Switching subpage only changes the #part of the address.

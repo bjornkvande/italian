@@ -39,9 +39,9 @@ export default defineConfig(({ command, isPreview }) => ({
       },
       includeAssets: ["favicon.ico", "apple-touch-icon-180x180.png", "icon.svg"],
       manifest: {
-        name: "Verbi italiani",
-        short_name: "Verbi",
-        description: "Flash cards for Italian verbs in every tense and person.",
+        name: "Italiano",
+        short_name: "Italiano",
+        description: "Flash cards and reference pages for learning Italian: the basics, adjectives and verbs.",
         lang: "it",
         // start_url and scope default to the base path (/italian/).
         display: "standalone",

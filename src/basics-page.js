@@ -70,7 +70,7 @@ function render() {
   document.getElementById("content").innerHTML =
     `<h1>Basics: ${heading}</h1>${legendHTML()}` +
     page.topics.map((id) => topicSection(topicById(id), !single)).join("");
-  document.title = `Basics – ${page.label}`;
+  document.title = `Italiano – ${page.label}`;
 }
 
 // Switching subpage only changes the #part of the address.

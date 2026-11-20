@@ -3,7 +3,7 @@
 
 export const PAGES = {
   are: {
-    documentTitle: "Verbi -are",
+    documentTitle: "Italiano – -are verbs",
     title: (n) => `The ${n} Most Common Regular -are Verbs`,
     intro: [
       "A conjugation reference for the most frequently used **regular** Italian verbs ending in *-are*.",
@@ -27,7 +27,7 @@ export const PAGES = {
   },
 
   ere: {
-    documentTitle: "Verbi -ere",
+    documentTitle: "Italiano – -ere verbs",
     title: (n) => `${n} Common Regular -ere Verbs`,
     intro: [
       "A conjugation reference for common Italian verbs ending in *-ere* that are **regular in every tense** shown here (only *insistere* has a small twist in the participle).",
@@ -53,7 +53,7 @@ export const PAGES = {
   },
 
   ire: {
-    documentTitle: "Verbi -ire",
+    documentTitle: "Italiano – -ire verbs",
     title: (n) => `${n} Common Regular -ire Verbs`,
     intro: [
       "A conjugation reference for common Italian verbs ending in *-ire* that are **regular in every tense** shown here. Fully irregular verbs (*venire, dire, uscire, salire, morire*) and verbs with an irregular participle (*aprire → aperto, offrire → offerto, soffrire → sofferto, coprire → coperto*) are left out.",
@@ -86,7 +86,7 @@ export const PAGES = {
   },
 
   irregular: {
-    documentTitle: "Verbi irregolari",
+    documentTitle: "Italiano – irregular verbs",
     title: (n) => `${n} Common Irregular Verbs`,
     intro: [
       "The most common Italian verbs are irregular: their forms don't follow the *-are*, *-ere* or *-ire* patterns, so each one has to be learnt on its own.",
