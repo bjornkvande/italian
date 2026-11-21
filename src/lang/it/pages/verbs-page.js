@@ -10,6 +10,7 @@ import { legendHTML, rerenderOnRatingChanges } from "../../../pages/rating-color
 import { escape, md, table, ratingColours } from "../../../pages/page-helpers.js";
 import { PAGES } from "../verb-pages.js";
 import { renderGrammarNav } from "../../../core/nav.js";
+import { addFooter } from "../../../pages/footer.js";
 
 const colours = ratingColours();
 const colour = colours.colour;
@@ -115,4 +116,5 @@ function render(page, firstTime = false) {
 renderGrammarNav(document.getElementById("nav"), "verbs", document.body.dataset.page);
 const page = PAGES[document.body.dataset.page];
 render(page, true);
+addFooter();
 rerenderOnRatingChanges(() => render(page));

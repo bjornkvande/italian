@@ -7,6 +7,7 @@ import "../core/pwa.js";
 import { renderGrammarNav, subpageFromHash } from "../core/nav.js";
 import { legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
 import { ratingColours } from "./page-helpers.js";
+import { addFooter } from "./footer.js";
 
 const colours = ratingColours();
 
@@ -34,5 +35,6 @@ export function grammarPage(groupId, pages, render) {
   // Switching subpage only changes the #part of the address.
   window.addEventListener("hashchange", () => { draw(); window.scrollTo(0, 0); });
   draw();
+  addFooter();
   rerenderOnRatingChanges(draw);
 }

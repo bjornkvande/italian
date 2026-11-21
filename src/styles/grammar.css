@@ -138,3 +138,12 @@ td.r5, tr.r5 > td { background: var(--r5); }
 .nouns td { vertical-align: top; }
 .nouns td.it { font-weight: 600; }
 .nouns td.en { white-space: normal; min-width: 180px; }
+
+/* Copyright and version at the bottom of every grammar page (src/pages/footer.js). */
+.page-footer {
+  padding: 24px 16px;
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.5;
+}

@@ -1,4 +1,5 @@
 import { readdirSync } from "node:fs";
+import { execSync } from "node:child_process";
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
@@ -7,6 +8,13 @@ import { VitePWA } from "vite-plugin-pwa";
 // The dev server stays at /.
 export default defineConfig(({ command, isPreview }) => ({
   base: command === "build" || isPreview ? "/italian/" : "/",
+  // For the grammar pages' footer (src/pages/footer.js): the build number is
+  // the number of commits (the deploy checks out the full history), the date
+  // is the day of the build, i.e. the deploy.
+  define: {
+    __BUILD_NUMBER__: JSON.stringify(execSync("git rev-list --count HEAD").toString().trim()),
+    __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
+  },
   server: {
     port: 5173,
     strictPort: true, // fail instead of silently moving to another port
