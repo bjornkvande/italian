@@ -49,6 +49,21 @@ describe("word groups", () => {
     }
   });
 
+  it("a word is a card in one group only (no two ratings for il giorno)", () => {
+    // Allowed: the article examples (they practise the article: il libro), and
+    // verb forms, which Basics shares with Verbs as the same card. Inside one
+    // group a word may have two roles (perché: why / because).
+    const groupOf = new Map();
+    for (const g of GROUPS) {
+      for (const c of decks[g.id]) {
+        if (c.kind === "Article" || c.kind === "Verb") continue;
+        const other = groupOf.get(c.it);
+        if (other && other !== g.id) expect.fail(`"${c.it}" is a card in both ${other} and ${g.id}`);
+        groupOf.set(c.it, g.id);
+      }
+    }
+  });
+
   it("every group has a one-line description for the 'what to practise' menu", () => {
     for (const g of GROUPS) expect(g.description, g.id).toMatch(/\S/);
   });

@@ -26,6 +26,15 @@ describe("dictionary/basics.csv", () => {
     expect(keys.filter((k, i) => keys.indexOf(k) !== i)).toEqual([]);
   });
 
+  it("a word in two topics with different meanings mentions the other meaning in its note", () => {
+    for (const r of basicsRows) {
+      for (const other of basicsRows.filter((o) => o.italian === r.italian && o.english !== r.english)) {
+        const meaning = other.english.split(",")[0];
+        expect(r.note, `${r.topic}: ${r.italian} should mention *${meaning}* (${other.topic})`).toContain(meaning);
+      }
+    }
+  });
+
   it("uses every topic, from the file or from a verb", () => {
     for (const t of TOPICS) expect(topicCards(t).length, t.id).toBeGreaterThan(0);
   });

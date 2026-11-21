@@ -139,7 +139,7 @@ describe("dictionary/nouns.csv", () => {
     const names = nouns.map((n) => n.noun);
     expect(names.filter((x, i) => names.indexOf(x) !== i)).toEqual([]);
     const count = (t) => nouns.filter((n) => n.topic === t).length;
-    expect(count("everyday")).toBe(50);
+    expect(count("everyday")).toBe(42); // the time words are in Basics: Units of time
     for (const t of ["people", "home", "food", "city"]) expect(count(t), t).toBeGreaterThanOrEqual(20);
     for (const l of ["beginner", "intermediate"]) expect(nouns.some((n) => n.level === l), l).toBe(true);
   });

@@ -22,7 +22,7 @@ prepositions,a,"to, at, in (cities)",*Vado a Roma.* · *a casa* · *alle otto*
 prepositions,da,"from, since, at (someone's place)",*Vengo da Milano.* · *da Marco* · *da ieri*
 prepositions,in,"in, to (countries, regions), by (transport)",*in Italia* · *in Toscana* · *in macchina*
 prepositions,con,with,
-prepositions,su,"on, about",
+prepositions,su,"on, about",*sul tavolo* = on the table. Also an adverb meaning *up*: *Vieni su!*
 prepositions,per,"for, through, in order to",*per te* · *per Roma* · *per imparare*
 prepositions,tra / fra,"between, among, in (time)",*tra due giorni* = in two days. *Tra* and *fra* mean the same.
 articulated,del,di + il = of the,
@@ -139,7 +139,7 @@ connectors,e,and,*ed* before a word starting with *e*: *io ed Elena*. Before oth
 connectors,ma,but,
 connectors,o,or,
 connectors,anche,"also, too",
-connectors,perché,because,
+connectors,perché,because,Also means *why*: *Perché? Perché sì.*
 connectors,se,if,
 connectors,quando,when,
 connectors,però,however,

@@ -1,7 +1,5 @@
 topic,noun,gender,english,plural,plural_gender,en_plural,level,note
 everyday,tempo,m,time,,,,beginner,Also *the weather*: *Che tempo fa?* = What's the weather like?
-everyday,giorno,m,day,,,,beginner,
-everyday,anno,m,year,,,,beginner,
 everyday,cosa,f,thing,,,,beginner,
 everyday,volta,f,time (occasion),,,times (occasions),beginner,"*una volta* = once, *due volte* = twice."
 everyday,persona,f,person,,,people,beginner,
@@ -14,12 +12,6 @@ everyday,modo,m,way,,,,intermediate,*in questo modo* = in this way.
 everyday,mondo,m,world,,,,intermediate,
 everyday,paese,m,country,,,,intermediate,Also *village*.
 everyday,città,f,city,,,,beginner,An accented last vowel never changes: *le città*.
-everyday,ora,f,hour,,,,beginner,
-everyday,settimana,f,week,,,,beginner,
-everyday,mese,m,month,,,,beginner,
-everyday,sera,f,evening,,,,intermediate,
-everyday,notte,f,night,,,,beginner,
-everyday,mattina,f,morning,,,,intermediate,
 everyday,nome,m,name,,,,beginner,
 everyday,numero,m,number,,,,intermediate,
 everyday,domanda,f,question,,,,intermediate,
