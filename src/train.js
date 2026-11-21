@@ -114,29 +114,37 @@ function rate(value) {
   showSelected(value);
 }
 
-// First click flips the card. On the answer side, a rating button rates;
-// clicking anywhere else moves on to the next card.
 // A tap anywhere on the screen: a rating number rates; anything else flips the
 // card (question side) or moves on to the next card (answer side).
 function handleClick(e) {
   if (busy) return;
-  if (e?.target.closest(".speak")) return speak(current.it);
   const button = e?.target.closest("[data-rating]");
   if (button) return rate(Number(button.dataset.rating));
   if (isFlipped()) nextCard();
   else card.classList.add("flipped");
 }
 
+// Taps are handled on pointerup rather than click: iOS Safari sometimes drops
+// the click of a tap right after another one nearby (taken as a double tap),
+// so a tap next to the rating you just gave didn't move on.
 // Taps on the buttons at the top (word group, level, 📖) or in their menus aren't
-// card taps, and neither is a tap that only closes an open menu.
+// card taps, and neither is a tap that only closes an open menu or a drag.
 let menuWasOpen = false;
-document.addEventListener("pointerdown", () => {
+let down = null; // where the current tap started
+document.addEventListener("pointerdown", (e) => {
   menuWasOpen = Boolean(document.querySelector(".menu:not([hidden])"));
+  down = e.isPrimary && e.button === 0 ? { id: e.pointerId, x: e.clientX, y: e.clientY } : null;
 }, true);
-document.addEventListener("click", (e) => {
-  if (e.target.closest(".train-header") || menuWasOpen) return;
+document.addEventListener("pointerup", (e) => {
+  const tap = down && down.id === e.pointerId && Math.hypot(e.clientX - down.x, e.clientY - down.y) < 12;
+  down = null;
+  if (!tap || menuWasOpen || e.target.closest(".train-header, .speak")) return;
   handleClick(e);
 });
+document.addEventListener("pointercancel", () => { down = null; });
+
+// The speaker button keeps using click: browsers only allow speech from a click.
+for (const id of ["front-speak", "back-speak"]) el(id).addEventListener("click", () => speak(current.it));
 
 // ---------------------------------------------------------------- what to practise and level
 
