@@ -1,0 +1,344 @@
+topic,french,english,note
+pronouns,je,I,"Becomes *j'* before a vowel or a silent *h*: *j'ai, j'habite*."
+pronouns,tu,you (informal),"For family, friends and children. Polite: *vous*."
+pronouns,il,he,Also *it* for masculine nouns: *le livre → il*.
+pronouns,elle,she,Also *it* for feminine nouns: *la table → elle*. The same word means *her* after a preposition: *avec elle*.
+pronouns,on,"we (informal), one",In speech *on* usually means *we*: *On y va ?* = Shall we go? It takes the *il* form.
+pronouns,nous,we,The same word is also *us*: *avec nous*.
+pronouns,vous,"you (plural, formal)",Both *you all* and the polite *you*: *Vous êtes prêt ?*
+pronouns,ils,they (m.),"For men, or a mixed group."
+pronouns,elles,they (f.),"Only for women, or feminine nouns."
+stressed,avec moi,with me,"*moi, toi, lui, elle, nous, vous, eux, elles*: after prepositions and on their own: *Moi ?*"
+stressed,pour toi,for you (informal),
+stressed,chez lui,at his place,
+stressed,avec elle,with her,
+stressed,chez nous,"at our place, at home",
+stressed,pour vous,"for you (plural, formal)",
+stressed,sans eux,without them,
+stressed,Moi aussi.,me too.,
+stressed,Moi non plus.,me neither.,
+stressed,C'est à moi.,it's mine.,"*à moi, à toi, à lui…* = mine, yours, his…"
+direct,Je te vois.,I see you.,*te* = you (informal); the object pronoun goes before the verb.
+direct,Il me connaît.,he knows me.,*me* = me; *m'* before a vowel: *Il m'aime.*
+direct,Je le connais.,I know him.,"*le* = him, or *it* for a masculine noun."
+direct,Je la prends.,I'll take it (f.).,"*la* = her, or *it* for a feminine noun."
+direct,Je l'aime.,I love him (her).,*le* and *la* become *l'* before a vowel.
+direct,Je les aime.,I love them.,*les* = them.
+direct,Elle nous attend.,she's waiting for us.,*nous* = us.
+direct,Je vous remercie.,thank you (formal).,*vous* = you.
+indirect,Je lui parle.,I'm talking to him (her).,*lui* = to him and to her.
+indirect,Tu me donnes ça ?,will you give me that?,*me* = (to) me.
+indirect,Je te téléphone demain.,I'll call you tomorrow.,*te* = (to) you (informal).
+indirect,Je leur écris.,I'm writing to them.,*leur* = to them.
+indirect,Ça vous plaît ?,do you like it?,Literally *does it please you*.
+indirect,Il nous a dit la vérité.,he told us the truth.,*nous* = (to) us.
+y-en,J'y vais.,I'm going (there).,"*y* = there, or *to it*: *J'y pense.* = I'm thinking about it."
+y-en,On y va !,let's go!,
+y-en,Il y a un problème.,there's a problem.,"*il y a* = there is, there are. With a time it means *ago*: *il y a deux jours*."
+y-en,J'en veux.,I want some.,"*en* = some, of it, of them."
+y-en,J'en ai deux.,I have two (of them).,
+y-en,Je n'en sais rien.,I have no idea.,
+reflexive,Je me lève.,I get up.,"*me, te, se, nous, vous, se*: *se lever* = to get up."
+reflexive,Tu te souviens ?,do you remember?,*se souvenir* = to remember.
+reflexive,Il se lave.,he washes (himself).,
+reflexive,On se voit demain.,see you tomorrow.,Literally *we see each other tomorrow*.
+reflexive,Vous vous amusez ?,are you having fun?,
+reflexive,Ils se marient.,they're getting married.,
+reflexive,Ne t'inquiète pas.,don't worry.,*s'inquiéter* = to worry; *se* becomes *s'* before a vowel.
+possessives,mon,my (m.),"Agrees with the thing owned: *mon père, ma mère, mes parents*. *mon* also before a feminine word with a vowel: *mon amie*."
+possessives,ma,my (f.),
+possessives,mes,my (pl.),
+possessives,ton,"your (m., informal)",
+possessives,ta,"your (f., informal)",
+possessives,tes,"your (pl., informal)",
+possessives,son,"his, her (m.)","His or her, depending on the thing owned: *son père* = his father or her father."
+possessives,sa,"his, her (f.)",
+possessives,ses,"his, her (pl.)",
+possessives,notre,our,
+possessives,nos,our (pl.),
+possessives,votre,"your (plural, formal)",
+possessives,vos,"your (pl., plural, formal)",
+possessives,leur,their,The same word is also the pronoun *to them*: *Je leur écris.*
+possessives,leurs,their (pl.),
+greetings,Bonjour,"hello, good morning",The everyday greeting until the evening; always say it when you enter a shop.
+greetings,Merci,thanks,
+greetings,Salut,hi; bye,"Informal, for hello and goodbye."
+greetings,S'il vous plaît,please (formal),Informal: *s'il te plaît*.
+greetings,S'il te plaît,please (informal),
+greetings,Au revoir,goodbye,
+greetings,Bonsoir,good evening,
+greetings,Bonne nuit,good night,
+greetings,Merci beaucoup,thank you very much,
+greetings,De rien,you're welcome,
+greetings,Excusez-moi,excuse me (formal),Informal: *Excuse-moi*.
+greetings,Pardon,sorry; pardon?,
+greetings,Désolé,sorry,*Je suis désolé* (*désolée* for a woman) = I'm sorry.
+greetings,Ça va ?,how are you?,Answer: *Ça va (bien).* Longer: *Comment ça va ?*
+greetings,Comment allez-vous ?,how are you? (formal),
+greetings,"Ça va bien, merci.","fine, thanks.",
+greetings,Et toi ?,and you? (informal),Polite: *Et vous ?*
+greetings,Je m'appelle …,my name is …,Literally *I call myself*.
+greetings,Comment tu t'appelles ?,what's your name? (informal),Polite: *Comment vous appelez-vous ?*
+greetings,Enchanté,nice to meet you,A woman writes *enchantée*; it sounds the same.
+greetings,Bienvenue,welcome,
+greetings,À bientôt,see you soon,
+greetings,À plus tard,see you later,"Informal: *À plus !*, written *A+*."
+greetings,À demain,see you tomorrow,
+greetings,Bonne journée,have a nice day,
+greetings,Bon appétit,enjoy your meal,
+greetings,Santé !,cheers!,Also *À la vôtre !* / *À la tienne !*
+greetings,À vos souhaits !,bless you!,
+greetings,Bon anniversaire !,happy birthday!,
+greetings,Félicitations !,congratulations!,
+greetings,Bonne chance !,good luck!,
+yes-no,oui,yes,
+yes-no,non,no,
+yes-no,si,yes (to a negative question),"Contradicts a *no*: *Tu ne viens pas ? – Si !* = Aren't you coming? – Yes, I am! The same word is also *if*."
+yes-no,ne … pas,not,Around the verb: *Je ne sais pas.* In speech the *ne* is often dropped: *Je sais pas.*
+yes-no,ne … jamais,never,*Je ne fume jamais.*
+yes-no,ne … rien,nothing,*Je ne vois rien.* Alone: *Rien.*
+yes-no,ne … plus,"no longer, not any more",
+yes-no,ne … personne,nobody,*Je ne connais personne.*
+yes-no,pas encore,not yet,
+yes-no,pas du tout,not at all,
+etre-phrases,C'est bon.,it's good; that's fine.,
+etre-phrases,C'est combien ?,how much is it?,
+etre-phrases,Où est … ?,where is …?,
+etre-phrases,Je suis fatigué.,I'm tired.,A woman says *fatiguée*: adjectives agree with the speaker.
+etre-phrases,Je suis d'accord.,I agree.,
+etre-phrases,C'est vrai ?,really?,Literally *is it true?*
+etre-phrases,Il est tard.,it's late.,
+etre-phrases,Ce n'est pas grave.,it doesn't matter.,
+etre-phrases,Je suis de Paris.,I'm from Paris.,
+etre-phrases,Je suis en retard.,I'm late.,
+etre-phrases,Tu es sûr ?,are you sure?,
+etre-phrases,C'est ça.,that's right.,
+avoir-phrases,J'ai faim.,I'm hungry.,Literally *I have hunger*.
+avoir-phrases,J'ai soif.,I'm thirsty.,
+avoir-phrases,J'ai besoin de …,I need …,*J'ai besoin d'aide.* = I need help.
+avoir-phrases,J'ai froid.,I'm cold.,
+avoir-phrases,J'ai chaud.,I'm hot.,
+avoir-phrases,Tu as raison.,you're right.,
+avoir-phrases,J'ai 30 ans.,I'm 30 years old.,Age with *avoir*: *Tu as quel âge ?*
+avoir-phrases,J'ai envie de …,I feel like …,*J'ai envie d'une glace.* = I feel like an ice cream.
+avoir-phrases,J'ai peur.,I'm afraid.,
+avoir-phrases,J'ai sommeil.,I'm sleepy.,
+avoir-phrases,J'ai mal à la tête.,I have a headache.,*avoir mal à* = to hurt: *J'ai mal au dos.*
+avoir-phrases,J'ai tort.,I'm wrong.,
+avoir-phrases,Qu'est-ce que tu as ?,what's wrong?,
+definite,le livre,the book,*le*: masculine.
+definite,la table,the table,*la*: feminine.
+definite,l'ami,the friend (m.),"*l'* before a vowel or a silent *h*, masculine and feminine: *l'ami, l'amie, l'hôtel*."
+definite,l'amie,the friend (f.),
+definite,les livres,the books,*les*: every plural. Before a vowel its *s* is pronounced: *les amis* [lez-ami].
+definite,les tables,the tables,
+indefinite,un livre,a book,*un*: masculine.
+indefinite,une table,a table,*une*: feminine.
+indefinite,des livres,(some) books,*des*: the plural of *un* and *une*; English often has no word for it.
+indefinite,un ami,a friend (m.),
+indefinite,une amie,a friend (f.),
+partitive,du pain,(some) bread,*du* = *de* + *le*: for amounts of something you don't count.
+partitive,de la confiture,(some) jam,
+partitive,de l'eau,(some) water,
+partitive,des pâtes,(some) pasta,
+partitive,pas de pain,no bread,"After a negative *du, de la, des* become *de*: *Je n'ai pas de pain.*"
+contractions,au,"à + le = to the, at the","*au cinéma*, *au restaurant*. *à la* and *à l'* don't merge."
+contractions,aux,à + les = to the (pl.),*aux États-Unis*.
+contractions,du,"de + le = of the, from the",*le livre du professeur* = the teacher's book.
+contractions,des,de + les = of the (pl.),
+prepositions,à,"to, at, in (a town)","*à Paris*, *à la gare*, *à huit heures*."
+prepositions,de,"of, from",*de Paris*; *un verre de vin* = a glass of wine. *d'* before a vowel.
+prepositions,en,"in (countries, months), by","*en France*, *en juin*, *en train*."
+prepositions,dans,"in, inside",*dans la boîte*; *dans deux jours* = in two days.
+prepositions,avec,with,
+prepositions,pour,for,
+prepositions,sans,without,
+prepositions,chez,at (someone's place),*chez moi* = at my place; *chez le médecin* = at the doctor's.
+prepositions,sur,on,
+prepositions,sous,under,
+prepositions,entre,between,
+prepositions,par,"by, through",*par la fenêtre*; *deux fois par jour* = twice a day.
+prepositions,vers,"towards, around (time)",*vers huit heures* = around eight.
+prepositions,depuis,"since, for (time)",*depuis deux ans* = for two years (and still going).
+prepositions,pendant,"during, for (time)",*pendant deux heures* = for two hours.
+prepositions,avant,before,
+prepositions,après,after,
+place,ici,here,
+place,là,there; here,In speech often *here*: *Je suis là.* = I'm here.
+place,là-bas,over there,
+place,à gauche,(on the) left,
+place,à droite,(on the) right,
+place,tout droit,straight ahead,
+place,devant,in front (of),
+place,derrière,behind,
+place,à côté (de),next (to),
+place,près (de),near,
+place,loin (de),far (from),
+place,en face (de),opposite,
+place,en haut,"up, upstairs",
+place,en bas,"down, downstairs",
+place,dedans,inside,
+place,dehors,outside,
+place,partout,everywhere,
+place,quelque part,somewhere,
+place,nulle part,nowhere,
+questions,qu'est-ce que,what,The everyday *what* at the start: *Qu'est-ce que tu fais ?* After a verb or a preposition: *quoi* (*C'est quoi ?*).
+questions,quoi,what (after a verb),
+questions,qui,who,
+questions,où,where,With an accent; *ou* without one is *or*.
+questions,quand,when,"The same word is also *when* (connecting): *Quand il pleut, je reste à la maison.*"
+questions,comment,how,
+questions,pourquoi,why,Answer: *parce que* = because.
+questions,combien,"how much, how many",*C'est combien ?* = How much is it?
+questions,quel,"which, what","Agrees: *quel, quelle, quels, quelles*: *Quelle heure est-il ?*"
+questions,est-ce que,(yes/no question),Turns a sentence into a question: *Est-ce que tu viens ?* In speech a rising voice is enough: *Tu viens ?*
+questions,d'où,where from,*Tu viens d'où ?* = Where are you from?
+questions,lequel,which one,"*lequel, laquelle, lesquels, lesquelles*."
+demonstratives,ça,"that, this","The everyday *that*: *Ça va ?*, *J'aime ça.*"
+demonstratives,c'est,"it is, that is",*C'est bon.* Plural: *ce sont*.
+demonstratives,ce,"this, that (m.)",*cet* before a vowel: *cet homme*. *-ci* and *-là* make it *this* or *that*: *ce livre-ci*.
+demonstratives,cette,"this, that (f.)",
+demonstratives,ces,"these, those",
+demonstratives,voilà,there is; there you go,Also *that's it*: *Voilà !*
+demonstratives,voici,here is,
+demonstratives,celui-ci,this one (m.),"*celui-ci, celle-ci, ceux-ci, celles-ci*; with *-là*: that one."
+indefinites,tout,"everything, all",*tous les jours* = every day.
+indefinites,quelque chose,something,
+indefinites,tout le monde,everybody,
+indefinites,quelqu'un,someone,
+indefinites,beaucoup (de),a lot (of),*beaucoup de monde* = a lot of people.
+indefinites,un peu,a little,
+indefinites,peu (de),"little, not much",
+indefinites,trop (de),"too much, too many",
+indefinites,assez (de),enough,
+indefinites,plus (de),more,
+indefinites,moins (de),less,
+indefinites,chaque,"each, every",
+indefinites,plusieurs,several,
+indefinites,quelques,"a few, some",
+indefinites,autre,other,*un autre café* = another coffee; *l'autre jour* = the other day.
+indefinites,même,same; even,*la même chose* = the same thing; *même moi* = even me.
+connectors,et,and,
+connectors,mais,but,
+connectors,ou,or,Without an accent; *où* is *where*.
+connectors,parce que,because,*parce qu'* before a vowel.
+connectors,donc,"so, therefore",
+connectors,alors,"so, then","*Alors, on y va ?* = So, shall we go?"
+connectors,si,if,*s'il* before *il/ils*: *s'il pleut* = if it rains. The same word is also *yes* to a negative question.
+connectors,aussi,"also, too",
+connectors,comme,"like, as","*comme toi* = like you; *Comme il pleut, …* = As it's raining, …"
+connectors,puis,then,
+connectors,pourtant,"yet, however",
+time,maintenant,now,
+time,aujourd'hui,today,
+time,demain,tomorrow,
+time,hier,yesterday,
+time,déjà,already,
+time,encore,still; again,*encore une fois* = once more; *pas encore* = not yet.
+time,toujours,always; still,*Il est toujours là.* = He's still here.
+time,souvent,often,
+time,parfois,sometimes,
+time,bientôt,soon,
+time,tout de suite,right away,
+time,tôt,early,
+time,tard,late,
+time,plus tard,later,
+time,d'abord,first,
+time,ensuite,"next, after that",
+time,tout à l'heure,in a moment; a moment ago,*À tout à l'heure !* = See you soon!
+time,longtemps,(for) a long time,
+time,après-demain,the day after tomorrow,
+time,avant-hier,the day before yesterday,
+time-units,la seconde,second (time),
+time-units,la minute,minute,
+time-units,l'heure,hour,Also *o'clock*: *Il est trois heures.*
+time-units,le jour,day,
+time-units,la journée,day (the whole day),*Bonne journée !* = Have a nice day!
+time-units,la semaine,week,
+time-units,le week-end,weekend,
+time-units,le mois,month,
+time-units,l'an,year,With numbers: *trois ans*; *l'année* for a whole year or with an adjective: *toute l'année*.
+time-units,le matin,morning,
+time-units,l'après-midi,afternoon,
+time-units,le soir,evening,
+time-units,la nuit,night,
+clock,Quelle heure est-il ?,what time is it?,In speech also *Il est quelle heure ?*
+clock,Il est trois heures.,it's three o'clock.,
+clock,à trois heures,at three o'clock,
+clock,trois heures et quart,quarter past three (3:15),
+clock,trois heures et demie,half past three (3:30),
+clock,quatre heures moins le quart,quarter to four (3:45),
+clock,trois heures dix,ten past three (3:10),
+clock,quatre heures moins dix,ten to four (3:50),
+clock,midi,noon,
+clock,minuit,midnight,
+clock,quinze heures,3 p.m. (15:00),The 24-hour clock is common: *le train de quinze heures*.
+numbers,zéro,0,
+numbers,un,1,*une* before a feminine noun: *une heure*.
+numbers,deux,2,
+numbers,trois,3,
+numbers,quatre,4,
+numbers,cinq,5,
+numbers,six,6,
+numbers,sept,7,
+numbers,huit,8,
+numbers,neuf,9,
+numbers,dix,10,
+numbers,onze,11,
+numbers,douze,12,
+numbers,treize,13,
+numbers,quatorze,14,
+numbers,quinze,15,
+numbers,seize,16,
+numbers,dix-sept,17,
+numbers,dix-huit,18,
+numbers,dix-neuf,19,
+numbers,vingt,20,
+numbers,vingt et un,21,"*et* only with *un*: *vingt et un, trente et un*; otherwise a hyphen: *vingt-deux*."
+numbers,vingt-deux,22,
+numbers,trente,30,
+numbers,quarante,40,
+numbers,cinquante,50,
+numbers,soixante,60,
+numbers,soixante-dix,70,Sixty-ten. In Belgium and Switzerland: *septante*.
+numbers,soixante et onze,71,
+numbers,quatre-vingts,80,Four twenties. The *s* goes when another number follows: *quatre-vingt-un*. In Switzerland also *huitante*.
+numbers,quatre-vingt-dix,90,Four twenties and ten. In Belgium and Switzerland: *nonante*.
+numbers,cent,100,
+numbers,mille,1000,Never takes an *s*: *deux mille*.
+numbers,un million,1000000,Followed by *de*: *un million d'euros*.
+ordinals,premier,first (1st),"Feminine *première*; written *1er*, *1re*. Dates use plain numbers except the first: *le premier mai*, *le deux mai*."
+ordinals,deuxième,second (2nd),"The number + *-ième*, without its final *e*: *quatre → quatrième*."
+ordinals,troisième,third (3rd),
+ordinals,quatrième,fourth (4th),
+ordinals,cinquième,fifth (5th),*cinq* adds a *u*: *cinquième*.
+ordinals,sixième,sixth (6th),
+ordinals,septième,seventh (7th),
+ordinals,huitième,eighth (8th),
+ordinals,neuvième,ninth (9th),*neuf* → *neuvième*: the *f* becomes *v*.
+ordinals,dixième,tenth (10th),
+ordinals,vingtième,twentieth (20th),
+ordinals,centième,hundredth (100th),
+days,lundi,Monday,Days are masculine and written in lower case: *lundi* = on Monday; *le lundi* = on Mondays.
+days,mardi,Tuesday,
+days,mercredi,Wednesday,
+days,jeudi,Thursday,
+days,vendredi,Friday,
+days,samedi,Saturday,
+days,dimanche,Sunday,
+months,janvier,January,Months are written in lower case: *en janvier* = in January.
+months,février,February,
+months,mars,March,
+months,avril,April,
+months,mai,May,
+months,juin,June,
+months,juillet,July,
+months,août,August,
+months,septembre,September,
+months,octobre,October,
+months,novembre,November,
+months,décembre,December,
+seasons,le printemps,spring,*au printemps* = in spring; for the others *en*: *en été*.
+seasons,l'été,summer,
+seasons,l'automne,autumn,
+seasons,l'hiver,winter,

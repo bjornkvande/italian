@@ -1,0 +1,157 @@
+topic,noun,gender,plural,english,en_plural,level,note
+everyday,temps,m,-,"time, weather",,beginner,*Je n'ai pas le temps.* = I don't have time. *Quel temps fait-il ?* = What's the weather like?
+everyday,argent,m,-,money,,beginner,Also *silver*.
+everyday,travail,m,travaux,"work, job",,beginner,*travaux* means roadworks or building work.
+everyday,chose,f,,thing,,beginner,
+everyday,question,f,,question,,beginner,
+everyday,problème,m,,problem,,beginner,"Masculine, though it ends in *-e*: *un problème*."
+everyday,nom,m,,name,,beginner,
+everyday,téléphone,m,,telephone,,beginner,
+everyday,portable,m,,mobile phone,,beginner,
+everyday,vie,f,,life,,beginner,
+everyday,idée,f,,idea,,beginner,
+everyday,mot,m,,word,,beginner,
+everyday,langue,f,,"language, tongue",,beginner,
+everyday,réponse,f,,answer,,beginner,
+everyday,monde,m,-,world,,beginner,*tout le monde* = everybody; *il y a du monde* = it's crowded.
+everyday,musique,f,-,music,,beginner,
+everyday,film,m,,film,,beginner,
+everyday,photo,f,,photo,,beginner,
+everyday,cadeau,m,,present,,beginner,*-eau* adds an *x* in the plural: *cadeaux*.
+everyday,fête,f,,"party, celebration",,beginner,
+everyday,ordinateur,m,,computer,,intermediate,
+everyday,lettre,f,,letter,,intermediate,
+everyday,numéro,m,,number,,intermediate,"A phone, house or room number; a number in maths is *le nombre*."
+everyday,rendez-vous,m,,"appointment, date","appointments, dates",intermediate,Doesn't change in the plural.
+everyday,moment,m,,moment,,intermediate,
+everyday,fin,f,,end,,intermediate,
+everyday,début,m,,beginning,,intermediate,
+everyday,raison,f,,reason,,intermediate,*avoir raison* = to be right.
+everyday,jeu,m,,game,,intermediate,*-eu* adds an *x*: *jeux*.
+everyday,sac,m,,bag,,intermediate,
+everyday,couleur,f,,colour,,intermediate,
+everyday,soleil,m,-,sun,,intermediate,
+everyday,pluie,f,-,rain,,intermediate,
+everyday,aide,f,-,help,,intermediate,
+people,homme,m,,man,,beginner,A silent *h*: *l'homme*.
+people,femme,f,,"woman, wife","women, wives",beginner,Pronounced *fam*.
+people,enfant,m,,child,children,beginner,
+people,famille,f,,family,,beginner,
+people,mère,f,,mother,,beginner,In speech: *maman*.
+people,père,m,,father,,beginner,In speech: *papa*.
+people,fils,m,,son,,beginner,The *s* is pronounced. Doesn't change in the plural.
+people,fille,f,,"girl, daughter","girls, daughters",beginner,
+people,frère,m,,brother,,beginner,
+people,sœur,f,,sister,,beginner,
+people,garçon,m,,boy,,beginner,Also *waiter* (old-fashioned).
+people,copain,m,,"friend (m.), boyfriend","friends (m.), boyfriends",beginner,Feminine: *la copine*. *mon copain* = my boyfriend.
+people,mari,m,,husband,,beginner,
+people,parent,m,,parent,,beginner,"*mes parents* = my parents, or my relatives."
+people,personne,f,,person,,beginner,"Always feminine, also for men. *ne … personne* = nobody."
+people,bébé,m,,baby,,intermediate,
+people,grand-mère,f,grands-mères,grandmother,,intermediate,In speech: *mamie*.
+people,grand-père,m,grands-pères,grandfather,,intermediate,In speech: *papi*.
+people,médecin,m,,doctor,,intermediate,Also for women: *elle est médecin*.
+people,professeur,m,,teacher,,intermediate,In speech *le/la prof*.
+people,voisin,m,,neighbour (m.),neighbours (m.),intermediate,Feminine: *la voisine*.
+people,collègue,m,,colleague,,intermediate,The same word for a woman: *une collègue*.
+people,patron,m,,boss (m.),bosses (m.),intermediate,Feminine: *la patronne*.
+people,tête,f,,head,,intermediate,
+people,main,f,,hand,,intermediate,"Feminine, though it doesn't end in *-e*."
+people,œil,m,yeux,eye,,intermediate,Irregular plural: *les yeux*.
+people,pied,m,,foot,feet,intermediate,*à pied* = on foot.
+people,cœur,m,,heart,,intermediate,
+people,bras,m,,arm,,intermediate,Doesn't change in the plural: *les bras*.
+home,maison,f,,"house, home","houses, homes",beginner,*à la maison* = at home.
+home,appartement,m,,flat (apartment),flats (apartments),beginner,
+home,chambre,f,,bedroom,,beginner,*une chambre d'hôtel* = a hotel room.
+home,pièce,f,,room,,beginner,Also *coin* and *a play*.
+home,cuisine,f,,"kitchen, cooking",kitchens,beginner,*faire la cuisine* = to cook.
+home,salle de bains,f,salles de bains,bathroom,,beginner,
+home,lit,m,,bed,,beginner,
+home,porte,f,,door,,beginner,
+home,fenêtre,f,,window,,beginner,
+home,chaise,f,,chair,,beginner,
+home,clé,f,,key,,beginner,
+home,salon,m,,living room,,beginner,
+home,jardin,m,,garden,,beginner,
+home,canapé,m,,sofa,,beginner,
+home,lumière,f,,light,,intermediate,
+home,lampe,f,,lamp,,intermediate,
+home,frigo,m,,fridge,,intermediate,Short for *le réfrigérateur*.
+home,armoire,f,,wardrobe,,intermediate,
+home,escalier,m,,stairs,flights of stairs,intermediate,Singular in French: *dans l'escalier* = on the stairs.
+home,mur,m,,wall,,intermediate,
+home,sol,m,,floor,,intermediate,
+home,miroir,m,,mirror,,intermediate,
+home,douche,f,,shower,,intermediate,
+home,télé,f,,TV,,intermediate,Short for *la télévision*.
+home,balcon,m,,balcony,balconies,intermediate,
+home,tapis,m,,rug,,intermediate,Doesn't change in the plural.
+home,loyer,m,,rent,,intermediate,
+food,eau,f,-,water,,beginner,*une carafe d'eau* = a jug of tap water.
+food,café,m,,"coffee, café","coffees, cafés",beginner,*un café* = an espresso.
+food,pain,m,-,bread,,beginner,
+food,vin,m,,wine,,beginner,
+food,bière,f,,beer,,beginner,
+food,thé,m,,tea,,beginner,
+food,lait,m,-,milk,,beginner,
+food,fromage,m,,cheese,,beginner,
+food,viande,f,,meat,,beginner,
+food,poisson,m,,fish,fish,beginner,
+food,poulet,m,,chicken,,beginner,
+food,œuf,m,,egg,,beginner,In the plural the *f* is silent: *des œufs* [dé-zeu].
+food,légume,m,,vegetable,,beginner,
+food,fruit,m,,fruit,fruits,beginner,
+food,petit-déjeuner,m,petits-déjeuners,breakfast,,beginner,
+food,addition,f,,bill,,beginner,"*L'addition, s'il vous plaît !*"
+food,pomme,f,,apple,,intermediate,
+food,pomme de terre,f,pommes de terre,potato,potatoes,intermediate,Literally *apple of the earth*.
+food,tomate,f,,tomato,tomatoes,intermediate,
+food,salade,f,,salad,,intermediate,
+food,soupe,f,,soup,,intermediate,
+food,gâteau,m,,cake,,intermediate,
+food,beurre,m,-,butter,,intermediate,
+food,sucre,m,-,sugar,,intermediate,
+food,sel,m,-,salt,,intermediate,
+food,jus,m,,juice,,intermediate,*un jus d'orange*. Doesn't change in the plural.
+food,déjeuner,m,,lunch,lunches,intermediate,
+food,dîner,m,,dinner,,intermediate,
+food,carte,f,,menu,,intermediate,Also *map* and *card*: *la carte bancaire*.
+food,bouteille,f,,bottle,,intermediate,
+food,verre,m,,glass,,intermediate,*un verre de vin* = a glass of wine; *prendre un verre* = to have a drink.
+food,jambon,m,,ham,,intermediate,
+food,croissant,m,,croissant,,intermediate,
+city,ville,f,,"town, city","towns, cities",beginner,
+city,rue,f,,street,,beginner,
+city,voiture,f,,car,,beginner,
+city,gare,f,,station,,beginner,The railway station.
+city,train,m,,train,,beginner,
+city,bus,m,,bus,,beginner,
+city,pays,m,,country,countries,beginner,Doesn't change in the plural.
+city,magasin,m,,shop,,beginner,
+city,restaurant,m,,restaurant,,beginner,
+city,hôtel,m,,hotel,,beginner,A silent *h*: *l'hôtel*.
+city,école,f,,school,,beginner,
+city,vélo,m,,bicycle,,beginner,
+city,place,f,,square,,beginner,Also *seat* and *room*: *Il reste de la place ?* = Is there room left?
+city,avion,m,,plane,,beginner,
+city,billet,m,,ticket,,beginner,Also a banknote: *un billet de dix euros*.
+city,supermarché,m,,supermarket,,beginner,
+city,banque,f,,bank,,intermediate,
+city,pharmacie,f,,pharmacy,pharmacies,intermediate,
+city,hôpital,m,,hospital,,intermediate,*-al* becomes *-aux*: *hôpitaux*.
+city,aéroport,m,,airport,,intermediate,
+city,arrêt,m,,"stop (bus, tram)","stops (bus, tram)",intermediate,
+city,cinéma,m,,cinema,,intermediate,
+city,musée,m,,museum,,intermediate,"Masculine, though it ends in *-ée*."
+city,église,f,,church,,intermediate,
+city,parc,m,,park,,intermediate,
+city,marché,m,,market,,intermediate,
+city,université,f,,university,universities,intermediate,"Every noun in *-té* is feminine (except *le côté, l'été*)."
+city,coin,m,,corner,,intermediate,
+city,feu,m,,traffic light,,intermediate,Also *fire*. Plural with *x*: *les feux*.
+city,métro,m,,underground,,intermediate,
+city,plage,f,,beach,,intermediate,
+city,mer,f,,sea,,intermediate,
+city,poste,f,,post office,,intermediate,*le poste* (masculine) is a job or a position.

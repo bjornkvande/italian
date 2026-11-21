@@ -1,7 +1,7 @@
 # Italiano
 
-A flash card PWA for learning Italian, and now German (Vite, no framework, no
-backend), deployed to GitHub Pages: https://bjornkvande.github.io/italian/
+A flash card PWA for learning Italian, German and French (Vite, no framework,
+no backend), deployed to GitHub Pages: https://bjornkvande.github.io/italian/
 The app keeps the name "Italiano".
 
 ## Principles
@@ -39,8 +39,12 @@ Generic code is separate from each language's content.
   (all forms listed); tenses Präsens, Perfekt, Präteritum, Konjunktiv II,
   Imperativ. Noun plurals are listed (no reliable rule); tests check the
   patterns that hold. English comparatives/plurals/3rd person: `src/core/english.js`.
+- French (`fr`): prefix `fr.`, pages in `fr/`, the same five groups. Verbs:
+  -er (stem2 for achète/appelle/préfère/paie), -ir (finir), -re (vendre),
+  irregular (present, future stem and participle listed; imparfait from the
+  nous form); j' elision in `withPronoun`. A no-break space before ? and !.
 - Grammar pages: an HTML file per page + `src/lang/<code>/pages/<group>-page.js`.
-- `tests/` mirrors `src/`: `core/`, `pages/`, `it/`, `de/`.
+- `tests/` mirrors `src/`: `core/`, `pages/`, `it/`, `de/`, `fr/`.
 - Card ids must stay stable: ratings are stored by id.
 
 ## Working here

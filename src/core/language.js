@@ -10,8 +10,9 @@
 // current one. The Train screen uses the language chosen last (Italian at first).
 import { LANGUAGE as it } from "../lang/it/language.js";
 import { LANGUAGE as de } from "../lang/de/language.js";
+import { LANGUAGE as fr } from "../lang/fr/language.js";
 
-export const LANGUAGES = [it, de];
+export const LANGUAGES = [it, de, fr];
 export const LANGUAGE_KEY = "verbi.language"; // the language chosen last
 
 const byCode = (code) => LANGUAGES.find((l) => l.code === code);

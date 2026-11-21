@@ -10,7 +10,7 @@ import { sectionById } from "../../src/core/nav.js";
 import { fakeStorage } from "../helpers.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
-const [italian, german] = LANGUAGES;
+const [italian] = LANGUAGES;
 const page = (lang) => ({ body: { dataset: { lang } } });
 
 describe("which language is in use", () => {
@@ -57,7 +57,9 @@ describe("every language", () => {
   it("keeps its storage apart from the other languages", () => {
     const keysOf = (l) => [...["ratings", "bags", "difficulty", "trainGroup"].map((n) => storageKey(n, l)), ...l.groups.map((g) => g.storageKey)];
     for (const l of LANGUAGES) for (const k of keysOf(l)) expect(k.startsWith(l.prefix), k).toBe(true);
-    expect(keysOf(german).filter((k) => keysOf(italian).includes(k))).toEqual([]);
+    for (const a of LANGUAGES) for (const b of LANGUAGES.filter((x) => x !== a)) {
+      expect(keysOf(a).filter((k) => keysOf(b).includes(k)), `${a.code}/${b.code}`).toEqual([]);
+    }
   });
 
   it.each(LANGUAGES.map((l) => [l.code, l]))("%s: has a name, a speech language, a flag and grammar pages that exist", (_, l) => {
