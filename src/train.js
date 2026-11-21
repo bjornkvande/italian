@@ -116,14 +116,14 @@ function rate(value) {
   showProgress();
 }
 
-// Progress bars of cards known (rated 4+): under the card for this group and
+// Progress bars of card sides known (rated 4+): under the card for this group and
 // level, at the bottom of the screen for every card.
 const everyCard = Object.values(decks).flat();
 function showBar(id, p, label) {
   const bar = el(id);
   bar.querySelector(".fill").style.width = `${p.total ? (100 * p.known) / p.total : 0}%`;
   bar.querySelector(".count").textContent = fraction(p);
-  bar.title = `${fraction(p)} cards known ${label} (rated 4 or 5)`;
+  bar.title = `${fraction(p)} card sides known ${label} (rated 4 or 5, each direction counts)`;
 }
 function showProgress() {
   const records = ratings.all();

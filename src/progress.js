@@ -1,17 +1,19 @@
-// Progress on the Train screen: how many cards you know, out of how many.
-// A card counts as known at rating 4 or 5, judged like the page colours: the
-// weaker of its two directions (src/rating-colors.js).
-import { ratingLevels } from "./rating-colors.js";
+// Progress on the Train screen: how many card sides you know, out of how many.
+// Each card has two directions (Italian first, English first), counted
+// separately, so every rating of 4 or 5 on a side that wasn't known yet moves
+// the bar. (The page colours instead use a card's weaker direction.)
+import { DIRECTIONS } from "./ratings.js";
 
 export const KNOWN_FROM = 4;
 
-/** How many of `cards` are known, given the stored rating records. */
+/** How many directions of `cards` are known, given the stored rating records. */
 export function progress(cards, records) {
-  const levels = ratingLevels(records);
   const ids = new Set(cards.map((c) => c.id)); // a card shared by two groups counts once
   let known = 0;
-  for (const id of ids) if ((levels.get(id) ?? 0) >= KNOWN_FROM) known++;
-  return { known, total: ids.size };
+  for (const id of ids) {
+    for (const d of DIRECTIONS) if ((records[`${id}|${d}`]?.last ?? 0) >= KNOWN_FROM) known++;
+  }
+  return { known, total: ids.size * DIRECTIONS.length };
 }
 
 /** "47 / 312" with thousands separators. */
