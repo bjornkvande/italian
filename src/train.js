@@ -10,6 +10,7 @@ import { GROUPS, cardsByGroup, groupById } from "./groups.js";
 import { dropdown } from "./menu.js";
 import { createBag } from "./bag.js";
 import { canSpeak, speak, onVoice } from "./speech.js";
+import { progress, fraction } from "./progress.js";
 
 migrateOldLevel(); // carry over the old single level setting, once
 
@@ -112,6 +113,22 @@ function rate(value) {
   else ratings.correct(current.id, direction, value);
   ratedNow = value;
   showSelected(value);
+  showProgress();
+}
+
+// Progress bars of cards known (rated 4+): under the card for this group and
+// level, at the bottom of the screen for every card.
+const everyCard = Object.values(decks).flat();
+function showBar(id, p, label) {
+  const bar = el(id);
+  bar.querySelector(".fill").style.width = `${p.total ? (100 * p.known) / p.total : 0}%`;
+  bar.querySelector(".count").textContent = fraction(p);
+  bar.title = `${fraction(p)} cards known ${label} (rated 4 or 5)`;
+}
+function showProgress() {
+  const records = ratings.all();
+  showBar("level-progress", progress(cards, records), "at this level");
+  showBar("total-progress", progress(everyCard, records), "in all");
 }
 
 // A tap anywhere on the screen: a rating number rates; anything else flips the
@@ -195,6 +212,7 @@ levelMenu.addEventListener("click", (e) => {
   saveDifficulty(groupId, difficulty);
   pickCards();
   showSettings();
+  showProgress();
   if (!busy) nextCard(); // straight to a card at the new level
 });
 showSettings();
@@ -208,6 +226,7 @@ window.addEventListener("hashchange", () => {
   difficulty = loadDifficulty(groupId);
   pickCards();
   showSettings();
+  showProgress();
   if (!busy) nextCard();
 });
 
@@ -221,3 +240,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 showRandomCard();
+showProgress();
+// Ratings given in another tab or on another visit.
+window.addEventListener("storage", (e) => { if (e.key === null || e.key === "verbi.ratings") showProgress(); });
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") showProgress(); });
