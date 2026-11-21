@@ -14,7 +14,7 @@ function adverbTable(rows) {
   })));
 }
 
-const INTRO = `<p>Adverbs never change. Almost every adjective is also an adverb as it is:
+const INTRO = `<p>Adverbs take no endings (only <em>gern</em> has a comparison: <em>lieber, am liebsten</em>). Almost every adjective is also an adverb as it is:
   <em>Er spricht langsam.</em> = He speaks slowly (see <a href="adjectives.html#common">Adjectives</a>);
   the time words <em>heute, oft, nie, schon…</em> are in the <a href="basics.html#small-words">Basics</a>.
   Word order: time, then manner, then place: <em>Ich fahre morgen gern nach Berlin.</em></p>`;

@@ -90,7 +90,7 @@ home,Wand,f,Wände,wall,,intermediate,
 home,Boden,m,Böden,floor,,intermediate,
 home,Spiegel,m,Spiegel,mirror,,intermediate,
 home,Fernseher,m,Fernseher,TV,,intermediate,
-home,Heizung,f,Heizungen,heating,,intermediate,
+home,Heizung,f,Heizungen,heating,heaters,intermediate,
 home,Teppich,m,Teppiche,carpet,,intermediate,
 home,Miete,f,Mieten,rent,,intermediate,
 food,Essen,n,-,"food, meal",,beginner,Also the verb: *essen* = to eat.

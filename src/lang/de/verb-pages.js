@@ -25,7 +25,7 @@ export const PAGES = {
     title: (n) => `${n} Common Separable Verbs`,
     intro: [
       "Many verbs have a **separable prefix** (*an, auf, aus, ein, mit, zu, zurück…*), stressed in speech: *anrufen*. In a main clause the prefix goes to the end: *Ich rufe dich morgen an.*",
-      "In the participle *ge* goes between the prefix and the verb: *angerufen, eingekauft*. With *zu*, *würde* and the modal verbs the verb stays together: *Ich muss dich anrufen.*",
+      "In the participle *ge* goes between the prefix and the verb: *angerufen, eingekauft*. With *würde* and the modal verbs the verb stays together (*Ich muss dich anrufen*); *zu* goes between the prefix and the verb: *Vergiss nicht, mich anzurufen.*",
       "Otherwise they conjugate like the verb without the prefix: *anrufen* like *rufen*, *aufstehen* like *stehen*.",
     ],
     groups: ["separable"],

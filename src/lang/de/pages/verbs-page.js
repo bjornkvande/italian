@@ -22,7 +22,7 @@ function tensesList() {
     ${item("Präsens", "the present: what happens now, habits, and very often the future: *Morgen fahre ich nach Berlin.*")}
     ${item("Perfekt", "the everyday spoken past: *haben* or *sein* + participle. *sein* for movement and change (*gehen, kommen, fahren, bleiben, werden*), *haben* for the rest. *Ich habe Pizza gegessen.* · *Wir sind nach Hause gegangen.*")}
     ${item("Präteritum", "the written past, used in speech mainly for *sein*, *haben* and the modal verbs: *Ich war müde.* · *Ich musste arbeiten.*")}
-    ${item("Konjunktiv II", "*would*: wishes, polite requests and what isn't real. Most verbs use *würde* + infinitive: *Ich würde gern kommen.* *sein, haben* and the modals have their own forms: *wäre, hätte, könnte*.")}
+    ${item("Konjunktiv II", "*would*: wishes, polite requests and what isn't real. Most verbs use *würde* + infinitive: *Ich würde gern kommen.* *sein, haben* and the modals have their own forms: *wäre, hätte, könnte*. A few common verbs have short forms too, mostly in writing: *käme, ginge, es gäbe* (there would be).")}
     ${item("Imperativ", "commands and requests, for *du* (*Komm!*), *ihr* (*Kommt!*) and the polite *Sie* (*Kommen Sie!*). *bitte* makes it polite: *Komm bitte!*")}
   </ul>
   <p>The *sie* row is also the polite *Sie* (you): *Sie sprechen* = they speak / you speak.</p>`;

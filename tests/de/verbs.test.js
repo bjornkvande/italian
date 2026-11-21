@@ -93,6 +93,20 @@ describe("regular verbs", () => {
     expect(perfekt(verb("passieren"), 2)).toBe("ist passiert");
   });
 
+  // The rule drops ge- for verbs that start with be-, er-, ver-, ge-… or end in
+  // -ieren, but some verbs only look like that (beten → gebetet, erben → geerbt).
+  // So every verb the rule gives no ge- is checked here by hand.
+  it("every participle without ge- is checked by hand", () => {
+    const checked = {
+      bezahlen: "bezahlt", besuchen: "besucht", erzählen: "erzählt", erklären: "erklärt", versuchen: "versucht",
+      studieren: "studiert", gehören: "gehört", telefonieren: "telefoniert", benutzen: "benutzt", passieren: "passiert",
+    };
+    for (const v of verbs.filter((x) => x.group !== "modal" && !x.participle)) {
+      const stem = v.infinitive.slice((v.prefix ?? "").length).replace(/e?n$/, "");
+      if (!participle(v).startsWith(`${v.prefix ?? ""}ge${stem}`)) expect(checked, `${v.infinitive} → ${participle(v)}: check it and add it here`).toHaveProperty(v.infinitive, participle(v));
+    }
+  });
+
   it("impersonal verbs only have the es form", () => {
     const cards = cardsFor(verb("regnen")).map((c) => c.it);
     expect(cards).toEqual(["regnen", "es regnet", "es hat geregnet", "es regnete", "es würde regnen"]);

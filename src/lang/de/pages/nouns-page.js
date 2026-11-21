@@ -21,7 +21,8 @@ const INTRO = `<p>Every noun is masculine (<em>der</em>), feminine (<em>die</em>
   article is always <em>die</em>. A few endings tell the gender: <em>-ung, -heit, -keit, -ion, -tät</em>
   are feminine, <em>-chen</em> and <em>-lein</em> neuter. Common plurals: <em>-e</em> (Tisch → Tische),
   <em>-(e)n</em> (Frage → Fragen), <em>-er</em> with umlaut (Haus → Häuser), <em>-s</em> (Auto → Autos),
-  and no ending after <em>-er, -el, -en</em> (Zimmer → Zimmer), sometimes with umlaut (Vater → Väter).
+  and, for masculine and neuter nouns in <em>-er, -el, -en</em>, no ending (Zimmer → Zimmer), sometimes with umlaut
+  (Vater → Väter); feminine ones add <em>-n</em> (Schwester → Schwestern).
   A dash means the noun is normally not used in the plural.</p>`;
 
 grammarPage("nouns", NOUN_PAGES, (page) => ({
