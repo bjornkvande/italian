@@ -2,12 +2,14 @@
 //
 // Stored under one key as JSON:
 //   { version: 1, cards: { "<card id>|<direction>": { last, at, count, history } } }
-// where direction is "it-en" (Italian shown, English answered) or "en-it",
+// where direction is "it-en" (the language being learned shown, English
+// answered; named when Italian was the only language) or "en-it",
 // last is the latest rating 1–5, at its time (ms since 1970), count how many
 // times the card was rated, and history the latest ratings as [rating, time] pairs.
 // This is the data to use later for choosing cards more cleverly than at random.
 
-export const STORAGE_KEY = "verbi.ratings";
+import { storageKey } from "./language.js";
+export const STORAGE_KEY = storageKey("ratings"); // Italian: "verbi.ratings"
 const VERSION = 1;
 const HISTORY_LENGTH = 10;
 

@@ -1,0 +1,370 @@
+topic,german,english,note
+pronouns,ich,I,
+pronouns,du,you (informal),"For family, friends, children and people your age. Polite: *Sie*."
+pronouns,er,he,Also *it* for masculine nouns: *der Tisch → er*.
+pronouns,sie,she,Also *it* for feminine nouns: *die Tür → sie*. The same word means *they*; the verb shows which: *sie ist* / *sie sind*.
+pronouns,es,it,"For neuter nouns (*das Kind → es*) and in *es gibt* = there is, *es regnet* = it's raining."
+pronouns,wir,we,
+pronouns,ihr,"you (plural, informal)","The same word is also the possessive *her*, *their*: *ihr Auto*."
+pronouns,sie (pl.),they,"Written *sie*, like *she*; the verb form shows it's plural: *sie sind*."
+pronouns,Sie,you (formal),"The polite *you*, for one person or more. Always with a capital S, and with the *sie* (they) verb form: *Sind Sie müde?*"
+pronouns,man,"one, people, you (in general)",*Man sagt…* = People say… Uses the *er* form of the verb.
+greetings,Hallo,hello,
+greetings,Danke,thanks,
+greetings,Bitte,please; you're welcome,"Also *here you are* when handing something over, and *pardon?* when you didn't hear."
+greetings,Guten Morgen,good morning,
+greetings,Guten Tag,"good day, hello","The neutral greeting during the day, a bit formal."
+greetings,Guten Abend,good evening,
+greetings,Gute Nacht,good night,
+greetings,Tschüss,bye,Informal.
+greetings,Auf Wiedersehen,goodbye,Polite. On the phone: *Auf Wiederhören*.
+greetings,Bis später,see you later,
+greetings,Bis bald,see you soon,
+greetings,Bis morgen,see you tomorrow,
+greetings,Danke schön,thank you very much,
+greetings,Vielen Dank,many thanks,
+greetings,Bitte schön,you're welcome; here you are,
+greetings,Gern geschehen,you're welcome (my pleasure),
+greetings,Entschuldigung,excuse me; sorry,"To get attention, or for a small mistake."
+greetings,Es tut mir leid,I'm sorry,"For real regret: *Es tut mir leid, ich bin zu spät.*"
+greetings,Wie geht's?,how are you?,"Informal, short for *Wie geht es dir?*"
+greetings,Wie geht es Ihnen?,how are you? (formal),
+greetings,"Gut, danke.","fine, thanks.",
+greetings,Und dir?,and you? (informal),Polite: *Und Ihnen?*
+greetings,Ich heiße …,my name is …,Literally *I am called*. Also *Mein Name ist …*.
+greetings,Wie heißt du?,what's your name? (informal),Polite: *Wie heißen Sie?*
+greetings,Freut mich,nice to meet you,
+greetings,Willkommen,welcome,
+greetings,Guten Appetit,enjoy your meal,
+greetings,Prost,cheers,
+greetings,Gesundheit,bless you,"Literally *health*, said after a sneeze."
+greetings,Alles Gute,all the best,For birthdays: *Alles Gute zum Geburtstag!*
+greetings,Herzlichen Glückwunsch,congratulations,
+greetings,Grüß Gott,"hello (south Germany, Austria)","Common in Bavaria and Austria, where *Servus* is the informal hello and bye."
+greetings,Moin,hi (north Germany),
+yes-no,ja,yes,
+yes-no,nein,no,
+yes-no,nicht,not,"Negates verbs, adjectives and nouns with *der/die/das*: *Ich komme nicht.* A noun with *ein* or no article takes *kein* instead: *Ich habe keine Zeit.*"
+yes-no,doch,yes (to a negative question),"Contradicts a *no*: *Kommst du nicht? – Doch!* = Aren't you coming? – Yes, I am!"
+yes-no,nicht mehr,"no longer, not any more",
+yes-no,noch nicht,not yet,
+yes-no,gar nicht,not at all,
+yes-no,auch nicht,not … either,*Ich auch nicht.* = Me neither.
+sein,ich bin,I am,
+sein,du bist,you are,
+sein,er/sie/es ist,he/she/it is,
+sein,wir sind,we are,
+sein,ihr seid,you all are,
+sein,sie sind,they are,
+sein,Sie sind,you are (formal),
+sein-phrases,Ich bin müde.,I'm tired.,
+sein-phrases,Das ist gut.,that's good.,
+sein-phrases,Wo ist …?,where is …?,
+sein-phrases,Es ist spät.,it's late.,
+sein-phrases,Wie alt bist du?,how old are you?,
+sein-phrases,Ich bin 30 Jahre alt.,I'm 30 years old.,
+sein-phrases,Ich bin aus Berlin.,I'm from Berlin.,Also *Ich komme aus Berlin.*
+sein-phrases,Bist du sicher?,are you sure?,
+sein-phrases,Ich bin fertig.,I'm done; I'm ready.,
+sein-phrases,Das ist mir egal.,I don't mind; I don't care.,
+sein-phrases,Es ist kalt.,it's cold.,
+sein-phrases,Mir ist kalt.,I'm cold.,"For how you feel, German says *to me it is*: *Mir ist kalt / warm / schlecht.*"
+sein-phrases,Ich bin dran.,it's my turn.,
+haben,ich habe,I have,
+haben,du hast,you have,
+haben,er/sie/es hat,he/she/it has,
+haben,wir haben,we have,
+haben,ihr habt,you all have,
+haben,sie haben,they have,
+haben,Sie haben,you have (formal),
+haben-phrases,Ich habe Zeit.,I have time.,
+haben-phrases,Ich habe keine Zeit.,I don't have time.,"A noun with *ein* or no article is negated with *kein*, not *nicht*."
+haben-phrases,Ich habe Hunger.,I'm hungry.,Literally *I have hunger*.
+haben-phrases,Ich habe Durst.,I'm thirsty.,
+haben-phrases,Du hast recht.,you're right.,
+haben-phrases,Hast du Lust?,do you feel like it?,*Lust haben* = to feel like (doing) something: *Ich habe Lust auf Pizza.*
+haben-phrases,Ich habe Angst.,I'm afraid.,
+haben-phrases,Was hast du?,what's the matter?,
+haben-phrases,Wir haben Glück.,we're lucky.,
+haben-phrases,Ich habe Kopfschmerzen.,I have a headache.,
+haben-phrases,Ich habe Geburtstag.,it's my birthday.,
+haben-phrases,Ich habe frei.,I'm off (work).,
+definite,der Mann,the man,*der*: masculine.
+definite,die Frau,the woman,*die*: feminine.
+definite,das Kind,the child,*das*: neuter.
+definite,die Kinder,the children,*die*: every plural.
+definite,der Tisch,the table,"Things have a gender too, and it has to be learned with the word: *der Tisch, die Tür, das Buch*."
+definite,die Tür,the door,
+definite,das Buch,the book,
+definite,die Bücher,the books,
+indefinite,ein Mann,a man,*ein*: masculine and neuter.
+indefinite,eine Frau,a woman,*eine*: feminine.
+indefinite,ein Kind,a child,
+indefinite,kein Mann,no man,"*kein* = not a, no. It changes like *ein*, and has a plural: *keine Kinder*."
+indefinite,keine Frau,no woman,
+indefinite,keine Kinder,no children,
+accusative,den Mann,the man (accusative),*Ich sehe den Mann.* = I see the man.
+accusative,einen Mann,a man (accusative),*Ich habe einen Bruder.* = I have a brother.
+accusative,keinen Mann,no man (accusative),
+accusative,den Tisch,the table (accusative),
+accusative,einen Kaffee,a coffee (accusative),*Ich hätte gern einen Kaffee.* = I'd like a coffee.
+accusative,keinen Hunger,no hunger (accusative),*Ich habe keinen Hunger.* = I'm not hungry.
+dative,dem Mann,the man (dative),*Ich gebe dem Mann das Buch.* = I give the man the book.
+dative,der Frau,the woman (dative),*mit der Frau* = with the woman.
+dative,dem Kind,the child (dative),
+dative,den Kindern,the children (dative),"The plural adds *-n* in the dative, unless it already ends in *-n* or *-s*."
+dative,einem Mann,a man (dative),
+dative,einer Frau,a woman (dative),
+dative,einem Kind,a child (dative),
+accusative-pronouns,Er sieht mich.,he sees me.,*mich* = me.
+accusative-pronouns,Ich liebe dich.,I love you.,*dich* = you (informal).
+accusative-pronouns,Ich kenne ihn.,I know him.,"*ihn* = him, or *it* for a masculine noun."
+accusative-pronouns,Ich kenne sie.,I know her.,"*sie* = her, or *it* for a feminine noun; also *them*."
+accusative-pronouns,Ich nehme es.,I'll take it.,*es* = it (neuter).
+accusative-pronouns,Sie besucht uns.,she visits us.,*uns* = us.
+accusative-pronouns,Ich rufe euch an.,I'll call you (all).,"*euch* = you (plural, informal)."
+accusative-pronouns,Ich sehe sie morgen.,I'll see them tomorrow.,*sie* = them.
+accusative-pronouns,Ich verstehe Sie nicht.,I don't understand you (formal).,*Sie* = you (formal).
+dative-pronouns,Kannst du mir helfen?,can you help me?,*mir* = (to) me. *helfen* takes the dative.
+dative-pronouns,Ich gebe dir das Buch.,I'll give you the book.,*dir* = (to) you (informal).
+dative-pronouns,Wie geht es ihm?,how is he?,"*ihm* = (to) him, or to a masculine or neuter thing."
+dative-pronouns,Ich schreibe ihr.,I'm writing to her.,*ihr* = (to) her.
+dative-pronouns,Das gehört uns.,that belongs to us.,"*uns* = (to) us, the same as the accusative."
+dative-pronouns,Ich zeige euch die Stadt.,I'll show you (all) the town.,"*euch* = (to) you (plural, informal)."
+dative-pronouns,Ich danke ihnen.,I thank them.,*ihnen* = (to) them. *danken* takes the dative.
+dative-pronouns,Ich danke Ihnen.,thank you (formal).,*Ihnen* = (to) you (formal).
+dative-pronouns,Das gefällt mir.,I like that.,Literally *that pleases me*: *gefallen* takes the dative.
+reflexive,Ich freue mich.,I'm glad.,*mich* = myself. *sich freuen* = to be glad.
+reflexive,Setz dich!,sit down! (informal),*dich* = yourself.
+reflexive,Er wäscht sich.,he washes (himself).,"*sich* = himself, herself, itself, themselves, and yourself (formal)."
+reflexive,Wir treffen uns morgen.,we're meeting tomorrow.,"*uns* = ourselves, or each other."
+reflexive,Beeilt euch!,hurry up! (you all),*euch* = yourselves.
+reflexive,Interessierst du dich für Musik?,are you interested in music?,*sich interessieren für* = to be interested in.
+reflexive,Ich wasche mir die Hände.,I wash my hands.,"When there's another object, *mich* and *dich* become *mir* and *dir*; the body part takes *die*, not *my*."
+possessives,mein,my,"Changes like *ein*: *mein Bruder*, *meine Schwester*, *meine Eltern*."
+possessives,dein,your (informal),
+possessives,sein,"his, its",
+possessives,ihr,"her, their",The same word is also the pronoun *you* (plural): *ihr seid*.
+possessives,unser,our,
+possessives,euer,"your (plural, informal)",Drops the second *e* when it gets an ending: *eure Kinder*.
+possessives,Ihr,your (formal),With a capital I.
+possessives,meine Mutter,my mother,Feminine and plural add *-e*.
+possessives,mein Vater,my father,
+possessives,meine Eltern,my parents,
+prep-acc,für,for,*für dich* = for you.
+prep-acc,ohne,without,*ohne Zucker* = without sugar.
+prep-acc,durch,through,*durch den Park* = through the park.
+prep-acc,um,at (clock time); around,*um acht Uhr* = at eight o'clock; *um die Ecke* = around the corner.
+prep-acc,gegen,against; around (time),*gegen acht* = around eight.
+prep-acc,bis,until; as far as,*bis morgen* = until tomorrow; with an article it needs another preposition: *bis zum Bahnhof*.
+prep-dat,mit,with; by (transport),*mit mir* = with me; *mit dem Auto* = by car.
+prep-dat,von,from; of; by,*von Berlin nach Hamburg*; *ein Freund von mir* = a friend of mine.
+prep-dat,zu,to (a person or place),*zum Arzt* = to the doctor; *zu Hause* = at home.
+prep-dat,bei,at (someone's place); near,*bei mir* = at my place; *bei der Arbeit* = at work.
+prep-dat,nach,"to (towns, countries); after",*nach Berlin* = to Berlin; *nach dem Essen* = after the meal; *nach Hause* = home(wards).
+prep-dat,aus,from; out of,Where someone or something comes from: *Ich komme aus Spanien.*
+prep-dat,seit,since; for (time),*seit zwei Jahren* = for two years (and still going).
+prep-dat,gegenüber,opposite,Often after the noun: *dem Bahnhof gegenüber*.
+prep-two,in,in; into,*in der Küche* (where) / *in die Küche* (where to).
+prep-two,auf,on (top of); onto,*auf dem Tisch* = on the table; *auf den Tisch* = onto the table.
+prep-two,an,at; on (a side); to,*an der Wand* = on the wall; *an die Wand* = onto the wall.
+prep-two,über,"over, above; about",*über der Stadt* = above the town; *ein Buch über Rom* = a book about Rome.
+prep-two,unter,under; among,
+prep-two,vor,in front of; before; ago,*vor dem Haus* = in front of the house; *vor zwei Tagen* = two days ago.
+prep-two,hinter,behind,
+prep-two,neben,next to,
+prep-two,zwischen,between,
+contractions,im,in dem = in the,"*im Park*, *im Sommer*."
+contractions,am,"an dem = at the, on the",*am Montag* = on Monday; *am Bahnhof* = at the station.
+contractions,zum,zu dem = to the,*zum Bahnhof* = to the station.
+contractions,zur,zu der = to the,*zur Arbeit* = to work.
+contractions,ins,in das = into the,*ins Kino* = to the cinema.
+contractions,vom,von dem = from the,
+contractions,beim,bei dem = at the,*beim Arzt* = at the doctor's.
+contractions,ans,an das = to the,*ans Meer* = to the seaside.
+contractions,aufs,auf das = onto the,Mostly spoken: *aufs Land* = to the countryside.
+place,hier,here,
+place,da,there; here,Very common in speech for both: *Da ist er!* = There he is!
+place,dort,there,
+place,links,(on the) left,
+place,rechts,(on the) right,
+place,geradeaus,straight ahead,
+place,oben,"up, upstairs, above",
+place,unten,"down, downstairs, below",
+place,vorne,at the front,
+place,hinten,at the back,
+place,drinnen,inside,
+place,draußen,outside,
+place,in der Nähe,nearby,
+place,weit weg,far away,
+place,überall,everywhere,
+place,irgendwo,somewhere,
+place,nirgends,nowhere,
+place,her,here (towards me),*Komm her!* = Come here! *hin* is the opposite: *Geh hin!* = Go there!
+questions,was,what,
+questions,wie,how,
+questions,wer,who,"Changes with the case: *wen* (accusative), *wem* (dative)."
+questions,wo,where,Only for where something is. Where to: *wohin*; where from: *woher*.
+questions,wann,when,
+questions,warum,why,"Also *wieso* and *weshalb*, with the same meaning."
+questions,wie viel,how much,*Wie viel kostet das?* = How much is it?
+questions,wie viele,how many,
+questions,woher,where from,*Woher kommst du?* = Where are you from?
+questions,wohin,where (to),
+questions,welcher,which,"Changes like *der*: *welcher, welche, welches*."
+questions,wie lange,how long,
+questions,was für ein,what kind of,*Was für ein Auto hast du?*
+questions,wen,whom (accusative),
+questions,wem,(to) whom (dative),
+demonstratives,das,"that, this",The everyday way to point at something: *Das ist mein Bruder.* *Was ist das?*
+demonstratives,dieser,this (m.),"Changes like *der*: *dieser Mann, diese Frau, dieses Kind, diese Kinder*."
+demonstratives,diese,this (f.); these,
+demonstratives,dieses,this (n.),
+demonstratives,der da,that one (m.),"In speech, the article + *da*: *der da, die da, das da*."
+demonstratives,so,"like this, so",*So geht das.* = This is how it works.
+indefinites,alles,everything,
+indefinites,etwas,something,In speech often *was*: *Möchtest du was trinken?*
+indefinites,nichts,nothing,
+indefinites,alle,"all, everyone",
+indefinites,viel,"much, a lot",
+indefinites,viele,many,
+indefinites,ein bisschen,a little,
+indefinites,jemand,someone,
+indefinites,niemand,nobody,
+indefinites,ein paar,a few,Small *p*: *ein paar Tage* = a few days. *ein Paar* = a pair.
+indefinites,jeder,"every, everyone","Changes like *der*: *jeder Tag, jede Woche, jedes Jahr*."
+indefinites,mehr,more,
+indefinites,wenig,"little, not much",
+indefinites,einige,"some, several",
+indefinites,beide,both,
+indefinites,genug,enough,
+connectors,und,and,
+connectors,aber,but,
+connectors,oder,or,
+connectors,auch,"also, too",
+connectors,dann,then,
+connectors,also,"so, therefore","Not English *also*, which is *auch*."
+connectors,weil,because,Sends the verb to the end: *…weil ich müde bin.*
+connectors,dass,that,"Sends the verb to the end: *Ich glaube, dass er kommt.*"
+connectors,wenn,if; when(ever),"Sends the verb to the end: *Wenn du willst, …* = If you want, …"
+connectors,denn,because; then (in questions),Normal word order: *…denn ich bin müde.* In questions it softens: *Was ist denn los?*
+connectors,als,"when (once, in the past); than","*Als ich jung war, …* = When I was young, …; *größer als* = bigger than."
+connectors,ob,"whether, if","*Ich weiß nicht, ob er kommt.*"
+connectors,sondern,but (rather),"After a negative: *nicht heute, sondern morgen*."
+connectors,deshalb,"that's why, so",
+connectors,trotzdem,"anyway, still",
+time,jetzt,now,
+time,heute,today,
+time,morgen,tomorrow,*morgen früh* = tomorrow morning. *der Morgen* = the morning.
+time,gestern,yesterday,
+time,schon,already,
+time,noch,still; yet,
+time,immer,always,
+time,gleich,"in a moment, right away",
+time,bald,soon,
+time,später,later,
+time,oft,often,
+time,manchmal,sometimes,
+time,nie,never,
+time,wieder,again,
+time,gerade,just now; right now,*Ich esse gerade.* = I'm eating right now.
+time,früh,early,
+time,spät,late,
+time,zuerst,first,
+time,danach,after that,
+time,vorher,before(hand),
+time,übermorgen,the day after tomorrow,
+time,vorgestern,the day before yesterday,
+time-units,die Sekunde,second (time),
+time-units,die Minute,minute,
+time-units,die Stunde,hour,The clock and *o'clock* are *die Uhr*: *drei Uhr*.
+time-units,der Tag,day,
+time-units,die Woche,week,
+time-units,das Wochenende,weekend,
+time-units,der Monat,month,
+time-units,das Jahr,year,
+time-units,der Morgen,morning,
+time-units,der Vormittag,late morning (until noon),
+time-units,der Mittag,"noon, midday",
+time-units,der Nachmittag,afternoon,
+time-units,der Abend,evening,
+time-units,die Nacht,night,
+clock,Wie spät ist es?,what time is it?,Also *Wie viel Uhr ist es?*
+clock,Es ist drei Uhr.,it's three o'clock.,
+clock,um drei Uhr,at three o'clock,
+clock,Viertel nach drei,quarter past three (3:15),
+clock,halb vier,half past three (3:30),Careful: *halb vier* is half **to** four.
+clock,Viertel vor vier,quarter to four (3:45),
+clock,zehn nach drei,ten past three (3:10),
+clock,zehn vor vier,ten to four (3:50),
+clock,fünf vor halb vier,twenty-five past three (3:25),Counted from the half hour: five before half to four.
+clock,um Mitternacht,at midnight,
+numbers,null,0,
+numbers,eins,1,"Before a noun: *ein*, *eine*: *ein Kaffee*."
+numbers,zwei,2,"Often *zwo* on the phone, so it isn't mixed up with *drei*."
+numbers,drei,3,
+numbers,vier,4,
+numbers,fünf,5,
+numbers,sechs,6,
+numbers,sieben,7,
+numbers,acht,8,
+numbers,neun,9,
+numbers,zehn,10,
+numbers,elf,11,
+numbers,zwölf,12,
+numbers,dreizehn,13,
+numbers,vierzehn,14,
+numbers,fünfzehn,15,
+numbers,sechzehn,16,"*sechs* loses its *s*: *sechzehn, sechzig*."
+numbers,siebzehn,17,"*sieben* loses its *en*: *siebzehn, siebzig*."
+numbers,achtzehn,18,
+numbers,neunzehn,19,
+numbers,zwanzig,20,
+numbers,einundzwanzig,21,"The ones come first: *einundzwanzig* = one-and-twenty, *fünfundvierzig* = 45."
+numbers,zweiundzwanzig,22,
+numbers,dreißig,30,"With *ß*: *dreißig*, not *-zig*."
+numbers,vierzig,40,
+numbers,fünfzig,50,
+numbers,sechzig,60,
+numbers,siebzig,70,
+numbers,achtzig,80,
+numbers,neunzig,90,
+numbers,hundert,100,Also *einhundert*. Numbers are one word: *dreihundertfünfundvierzig* = 345.
+numbers,tausend,1000,Also *eintausend*. *zweitausendsechsundzwanzig* = 2026.
+numbers,eine Million,1000000,Written apart; plural *zwei Millionen*.
+ordinals,erste,first (1st),"Takes adjective endings: *der erste Tag*, *am ersten Mai*. In writing, a dot after the number: *1. Mai*."
+ordinals,zweite,second (2nd),
+ordinals,dritte,third (3rd),"Irregular: *dritte*, not *dreite*."
+ordinals,vierte,fourth (4th),
+ordinals,fünfte,fifth (5th),
+ordinals,sechste,sixth (6th),
+ordinals,siebte,seventh (7th),*sieben* → *siebte*.
+ordinals,achte,eighth (8th),Only one *t*: *achte*.
+ordinals,neunte,ninth (9th),
+ordinals,zehnte,tenth (10th),
+ordinals,elfte,eleventh (11th),Up to 19: number + *-te*.
+ordinals,zwanzigste,twentieth (20th),From 20 on: number + *-ste*.
+ordinals,hundertste,hundredth (100th),
+days,Montag,Monday,Days are masculine: *der Montag*; *am Montag* = on Monday; *montags* = on Mondays.
+days,Dienstag,Tuesday,
+days,Mittwoch,Wednesday,
+days,Donnerstag,Thursday,
+days,Freitag,Friday,
+days,Samstag,Saturday,In the north and east also *Sonnabend*.
+days,Sonntag,Sunday,
+months,Januar,January,Months are masculine: *im Januar* = in January. In Austria *Jänner*.
+months,Februar,February,
+months,März,March,
+months,April,April,
+months,Mai,May,
+months,Juni,June,"Often said *Juno* on the phone, so it isn't mixed up with *Juli*."
+months,Juli,July,
+months,August,August,
+months,September,September,
+months,Oktober,October,
+months,November,November,
+months,Dezember,December,
+seasons,der Frühling,spring,*im Frühling* = in spring.
+seasons,der Sommer,summer,
+seasons,der Herbst,autumn,
+seasons,der Winter,winter,

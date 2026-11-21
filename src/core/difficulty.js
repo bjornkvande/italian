@@ -1,7 +1,9 @@
 // Difficulty for the flash cards: Beginner, Intermediate or Advanced, chosen
 // per word group. What you practise is chosen in the Train tab's second row
 // (src/core/nav.js); each group says what the difficulties mean for its cards
-// (`difficulties` in src/lang/it/groups.js).
+// (`difficulties` in src/lang/<code>/groups.js).
+
+import { storageKey } from "./language.js";
 
 export const DIFFICULTIES = [
   { id: "beginner", name: "Beginner" },
@@ -10,13 +12,13 @@ export const DIFFICULTIES = [
 ];
 
 export const DEFAULT_DIFFICULTY = "beginner";
-export const STORAGE_KEY = "verbi.difficulty"; // { basics: "beginner", verbs: "advanced", ... }
-const OLD_LEVEL_KEY = "verbi.level"; // before what and how hard were split
-const TRAIN_GROUP_KEY = "verbi.trainGroup"; // what you practise (managed by src/core/nav.js)
+export const STORAGE_KEY = storageKey("difficulty"); // Italian: "verbi.difficulty"; { basics: "beginner", verbs: "advanced", ... }
+const OLD_LEVEL_KEY = storageKey("level"); // before what and how hard were split
+const TRAIN_GROUP_KEY = storageKey("trainGroup"); // what you practise (managed by src/core/nav.js)
 
 const isDifficulty = (id) => DIFFICULTIES.some((d) => d.id === id);
 
-/** The cards of a group at a difficulty. `group` is an entry of src/lang/it/groups.js. */
+/** The cards of a group at a difficulty. `group` is an entry of src/lang/<code>/groups.js. */
 export function cardsForDifficulty(cards, group, difficultyId) {
   const { include } = group.difficulties[isDifficulty(difficultyId) ? difficultyId : DEFAULT_DIFFICULTY];
   return include ? cards.filter(include) : cards;

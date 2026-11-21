@@ -3,13 +3,14 @@
 //     in the address and remembered; a 📖 button opens that group's grammar.
 //   Grammar & dictionary (the reference pages): a "← Train on Verbs" button back
 //     to training with that group, and a row of tabs with the group's subpages.
-// Each group remembers its last grammar subpage. Word groups: src/lang/it/groups.js.
-import { GROUPS, groupById } from "../lang/it/groups.js";
+// Each group remembers its last grammar subpage. Word groups: src/lang/<code>/groups.js,
+// of the current language (src/core/language.js).
+import { GROUPS, groupById, LANGUAGE, storageKey } from "./language.js";
 
 const TRAIN = {
   id: "train",
   name: "Train",
-  storageKey: "verbi.trainGroup",
+  storageKey: storageKey("trainGroup"), // Italian: "verbi.trainGroup"
   pages: GROUPS.map((g) => ({ id: g.id, href: `./#${g.id}`, label: g.name })),
 };
 
@@ -48,7 +49,10 @@ export function subpageFromHash(sectionId) {
 }
 
 /** Where the 📖 button on the Train screen leads: the group's last grammar subpage. */
-export const grammarHref = (groupId) => lastPage(groupId).href;
+export const grammarHref = (groupId) => LANGUAGE.dir + lastPage(groupId).href;
+
+// From a grammar page back to the Train screen (in the root).
+const trainHref = (groupId) => `${LANGUAGE.dir ? "../" : "./"}#${groupId}`;
 
 /**
  * Fill <nav id="nav"> on a grammar page: "← Train on Verbs" and a row of tabs
@@ -60,7 +64,7 @@ export function renderGrammarNav(nav, groupId, pageId) {
   const group = groupById(groupId);
   const here = (yes) => (yes ? ' aria-current="page"' : "");
   nav.innerHTML = `
-    <a class="train-link" href="./#${group.id}">← Train on ${group.name}</a>
+    <a class="train-link" href="${trainHref(group.id)}">← Train on ${group.name}</a>
     <div class="subnav" aria-label="${group.name}">
       ${group.pages.map((p) => `<a href="${p.href}"${here(p.id === pageId)}>${p.label}</a>`).join("")}
     </div>`;

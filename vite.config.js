@@ -1,4 +1,4 @@
-import { readdirSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 import { execSync } from "node:child_process";
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
@@ -20,11 +20,14 @@ export default defineConfig(({ command, isPreview }) => ({
     strictPort: true, // fail instead of silently moving to another port
   },
   build: {
-    // Every *.html file in the project folder is a page (the flash cards, Basics,
-    // the verb pages, ...), so a new page needs no change here.
+    // Every *.html file in the project folder is a page (the flash cards, the
+    // Italian grammar pages, ...), and so is every *.html in a language's folder
+    // (de/basics.html), so a new page needs no change here.
     rollupOptions: {
       input: Object.fromEntries(
-        readdirSync(".").filter((f) => f.endsWith(".html")).map((f) => [f.replace(/\.html$/, ""), f]),
+        [".", ...readdirSync("src/lang").filter((code) => existsSync(code))]
+          .flatMap((dir) => readdirSync(dir).filter((f) => f.endsWith(".html")).map((f) => (dir === "." ? f : `${dir}/${f}`)))
+          .map((f) => [f.replace(/\.html$/, "").replace("/", "-"), f]),
       ),
     },
   },

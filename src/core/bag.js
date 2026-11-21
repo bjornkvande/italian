@@ -5,7 +5,8 @@
 //
 // Stored under one key as JSON: { "<group>.<level>": [card ids left, ...] }
 
-export const STORAGE_KEY = "verbi.bags";
+import { storageKey } from "./language.js";
+export const STORAGE_KEY = storageKey("bags"); // Italian: "verbi.bags"
 
 /** A shuffled copy (Fisher–Yates). */
 export function shuffle(list, random = Math.random) {

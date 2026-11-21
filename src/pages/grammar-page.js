@@ -5,6 +5,7 @@
 // A page only says what its content is (see grammarPage below).
 import "../core/pwa.js";
 import { renderGrammarNav, subpageFromHash } from "../core/nav.js";
+import { LANGUAGE, chooseLanguage } from "../core/language.js";
 import { legendHTML, rerenderOnRatingChanges } from "./rating-colors.js";
 import { ratingColours } from "./page-helpers.js";
 import { addFooter } from "./footer.js";
@@ -20,6 +21,7 @@ export const colour = colours.colour;
  * content below the colour legend, and the browser title after "Italiano – ".
  */
 export function grammarPage(groupId, pages, render) {
+  chooseLanguage(LANGUAGE.code); // "Train on …" then trains this language
   const nav = document.getElementById("nav");
   const content = document.getElementById("content");
 
@@ -29,7 +31,7 @@ export function grammarPage(groupId, pages, render) {
     renderGrammarNav(nav, groupId, page.id);
     const { heading, html, title } = render(page);
     content.innerHTML = `<h1>${heading}</h1>${legendHTML()}${html}`;
-    document.title = `Italiano – ${title}`;
+    document.title = `${LANGUAGE.name} – ${title}`;
   }
 
   // Switching subpage only changes the #part of the address.

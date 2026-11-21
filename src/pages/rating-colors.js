@@ -2,7 +2,7 @@
 // A card's colour is the weaker of its two directions (Italian first / English
 // first): it only turns green when you know it both ways. If only one direction
 // is rated, that one counts. Not rated: no colour.
-import { createRatings, DIRECTIONS } from "../core/ratings.js";
+import { createRatings, DIRECTIONS, STORAGE_KEY } from "../core/ratings.js";
 
 /**
  * From all stored ratings ({ "<card id>|<direction>": { last, ... } }) to the
@@ -43,6 +43,6 @@ export function legendHTML() {
  */
 export function rerenderOnRatingChanges(render) {
   window.addEventListener("pageshow", (e) => { if (e.persisted) render(); });
-  window.addEventListener("storage", (e) => { if (e.key === null || e.key === "verbi.ratings") render(); });
+  window.addEventListener("storage", (e) => { if (e.key === null || e.key === STORAGE_KEY) render(); });
   document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") render(); });
 }

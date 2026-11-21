@@ -11,6 +11,7 @@ import { escape, md, table, ratingColours } from "../../../pages/page-helpers.js
 import { PAGES } from "../verb-pages.js";
 import { renderGrammarNav } from "../../../core/nav.js";
 import { addFooter } from "../../../pages/footer.js";
+import { chooseLanguage } from "../../../core/language.js";
 
 const colours = ratingColours();
 const colour = colours.colour;
@@ -115,6 +116,7 @@ function render(page, firstTime = false) {
 
 renderGrammarNav(document.getElementById("nav"), "verbs", document.body.dataset.page);
 const page = PAGES[document.body.dataset.page];
+chooseLanguage("it"); // "Train on Verbs" then trains Italian
 render(page, true);
 addFooter();
 rerenderOnRatingChanges(() => render(page));

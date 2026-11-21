@@ -1,12 +1,14 @@
-// The Train screen (the main page): flash cards, Italian <-> English.
+// The Train screen (the main page): flash cards, the language being learned <-> English.
+// "Italian" below and the card field `it` / direction "it-en" mean the language
+// being learned (Italian came first); the flag in the corner switches language.
 // Two buttons choose what to practise and the level ([Verbs ▾] [Beginner ▾]);
 // the word group is kept in the address (index.html#verbs) and remembered, the
 // level is remembered per group. The 📖 button opens the group's grammar.
 import "./pwa.js";
-import { createRatings } from "./ratings.js";
+import { createRatings, STORAGE_KEY as RATINGS_KEY } from "./ratings.js";
 import { DIFFICULTIES, cardsForDifficulty, loadDifficulty, saveDifficulty, migrateOldLevel } from "./difficulty.js";
 import { subpageFromHash, rememberPage, grammarHref } from "./nav.js";
-import { GROUPS, cardsByGroup, groupById } from "../lang/it/groups.js";
+import { GROUPS, cardsByGroup, groupById, LANGUAGE, LANGUAGES, chooseLanguage } from "./language.js";
 import { dropdown } from "./menu.js";
 import { createBag } from "./bag.js";
 import { canSpeak, speak, onVoice } from "./speech.js";
@@ -98,7 +100,8 @@ function nextCard() {
 
 // The speaker buttons say which voice reads aloud (hover to see it).
 onVoice((voice) => {
-  const title = voice ? `Say it in Italian (${voice.name})` : "Say it in Italian (no Italian voice found)";
+  const lang = LANGUAGE.englishName;
+  const title = voice ? `Say it in ${lang} (${voice.name})` : `Say it in ${lang} (no ${lang} voice found)`;
   for (const id of ["front-speak", "back-speak"]) el(id).title = title;
 });
 
@@ -193,6 +196,28 @@ function showSettings() {
 }
 
 const groupDropdown = dropdown(el("group"), groupButton, groupMenu);
+
+// The flag of the language being learned; its menu lists the other languages.
+// Choosing one reloads the Train screen in that language, with its own cards,
+// ratings and progress.
+const flagSVG = (lang) => `<svg class="flag" viewBox="0 0 3 2" aria-hidden="true">${lang.flag}</svg>`;
+const languageButton = el("language-button");
+const languageMenu = el("language-menu");
+document.documentElement.lang = LANGUAGE.code;
+languageButton.innerHTML = flagSVG(LANGUAGE);
+languageButton.title = `${LANGUAGE.name}: change language`;
+languageButton.setAttribute("aria-label", languageButton.title);
+languageMenu.innerHTML = LANGUAGES.filter((l) => l !== LANGUAGE).map((l) => `
+  <button type="button" data-language="${l.code}">${flagSVG(l)}<span class="menu-name">${l.name}</span></button>`).join("");
+dropdown(el("language"), languageButton, languageMenu);
+languageMenu.addEventListener("click", (e) => {
+  const choice = e.target.closest("[data-language]");
+  if (!choice) return;
+  chooseLanguage(choice.dataset.language);
+  // Reload without the word group in the address: each language has its own.
+  history.replaceState(null, "", location.pathname);
+  location.reload();
+});
 const levelDropdown = dropdown(el("level"), levelButton, levelMenu);
 
 // Choosing a group changes the address; the hashchange below does the rest.
@@ -242,5 +267,5 @@ document.addEventListener("keydown", (e) => {
 showRandomCard();
 showProgress();
 // Ratings given in another tab or on another visit.
-window.addEventListener("storage", (e) => { if (e.key === null || e.key === "verbi.ratings") showProgress(); });
+window.addEventListener("storage", (e) => { if (e.key === null || e.key === RATINGS_KEY) showProgress(); });
 document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") showProgress(); });

@@ -209,8 +209,9 @@ html, body { overscroll-behavior: none; }
 }
 
 .train-header {
-  display: flex;
-  justify-content: center;
+  /* The controls in the middle, the language flag in the right corner. */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 8px;
   padding: 12px 12px 0;
@@ -219,12 +220,14 @@ html, body { overscroll-behavior: none; }
 
 /* The menus (shared .menu styles in base.css): the left one opens to the right,
    the level menu centred under its button, so both stay on screen. */
+.header-controls { grid-column: 2; display: flex; align-items: center; gap: 8px; }
 .group-menu { left: 0; min-width: 240px; }
 .level-menu { left: 50%; transform: translateX(-50%); min-width: 240px; }
 
 /* Small phones: slightly more compact buttons so all three fit on one line. */
 @media (max-width: 380px) {
-  .train-header { gap: 6px; padding-left: 8px; padding-right: 8px; }
+  .train-header, .header-controls { gap: 6px; }
+  .train-header { padding-left: 8px; padding-right: 8px; }
   .train-header .select-button { padding: 7px 12px; font-size: 0.9rem; }
 }
 
@@ -243,3 +246,11 @@ html, body { overscroll-behavior: none; }
 }
 
 .icon-button:hover { border-color: #000; }
+
+/* The flag of the language being learned, in the top right corner; its menu
+   lists the other languages. */
+.language-control { grid-column: 3; justify-self: end; }
+.flag-button { width: 36px; height: 36px; cursor: pointer; padding: 0; }
+.flag { display: block; width: 22px; height: 15px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15); }
+.language-menu { right: 0; min-width: 160px; }
+.language-menu button { flex-direction: row; align-items: center; gap: 10px; }

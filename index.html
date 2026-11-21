@@ -18,19 +18,25 @@
 </head>
 <body>
   <header class="train-header">
-    <div class="control" id="group">
-      <button type="button" class="select-button" id="group-button" aria-haspopup="true" aria-expanded="false" aria-controls="group-menu"></button>
-      <div class="menu group-menu" id="group-menu" role="group" aria-label="What to practise" hidden></div>
+    <div class="header-controls">
+      <div class="control" id="group">
+        <button type="button" class="select-button" id="group-button" aria-haspopup="true" aria-expanded="false" aria-controls="group-menu"></button>
+        <div class="menu group-menu" id="group-menu" role="group" aria-label="What to practise" hidden></div>
+      </div>
+      <div class="control" id="level">
+        <button type="button" class="select-button" id="level-button" aria-haspopup="true" aria-expanded="false" aria-controls="level-menu"></button>
+        <div class="menu level-menu" id="level-menu" role="group" aria-label="Level" hidden></div>
+      </div>
+      <a class="icon-button" id="grammar-link" href="are.html" title="Grammar and dictionary" aria-label="Grammar and dictionary">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/>
+        </svg>
+      </a>
     </div>
-    <div class="control" id="level">
-      <button type="button" class="select-button" id="level-button" aria-haspopup="true" aria-expanded="false" aria-controls="level-menu"></button>
-      <div class="menu level-menu" id="level-menu" role="group" aria-label="Level" hidden></div>
+    <div class="control language-control" id="language">
+      <button type="button" class="icon-button flag-button" id="language-button" aria-haspopup="true" aria-expanded="false" aria-controls="language-menu"></button>
+      <div class="menu language-menu" id="language-menu" role="group" aria-label="Language" hidden></div>
     </div>
-    <a class="icon-button" id="grammar-link" href="are.html" title="Grammar and dictionary" aria-label="Grammar and dictionary">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/>
-      </svg>
-    </a>
   </header>
   <main class="train">
     <div class="scene" id="scene">
