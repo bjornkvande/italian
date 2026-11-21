@@ -15,6 +15,7 @@
 //   note           optional note on the page (*italic* and **bold** allowed)
 import nounsCSV from "../../../dictionary/it/nouns.csv?raw";
 import { parseCSV } from "../../core/csv.js";
+import { englishPlural } from "../../core/english.js";
 import { definiteArticle, withArticle } from "./articles.js";
 
 export const NOUNS_CSV = nounsCSV;
@@ -65,12 +66,8 @@ export function pluralOf(noun, gender) {
   return stem + "i"; // -e
 }
 
-/** The English plural by the rules: -es after s/x/z/ch/sh, -ies after a consonant + y, else -s. */
-export function englishPlural(word) {
-  if (/(s|x|z|ch|sh)$/.test(word)) return word + "es";
-  if (/[^aeiou]y$/.test(word)) return word.slice(0, -1) + "ies";
-  return word + "s";
-}
+// The English plural rule is shared by every language (src/core/english.js).
+export { englishPlural };
 
 /**
  * Everything a noun shows: { singular: "il formaggio", plural: "i formaggi" or

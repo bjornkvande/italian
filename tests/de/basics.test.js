@@ -1,7 +1,7 @@
 // Tests for the German Basics (dictionary/de/basics.csv, src/lang/de/basics.js).
 // Expected forms are written from German grammar, not copied from the code.
 import { describe, it, expect } from "vitest";
-import { BASICS_CSV, TOPICS, BASICS_PAGES, BASICS_DIFFICULTY_TOPICS, basicsRows, basicsCards } from "../../src/lang/de/basics.js";
+import { BASICS_CSV, TOPICS, BASICS_PAGES, BASICS_DIFFICULTY_TOPICS, basicsRows, basicsCards, topicCards } from "../../src/lang/de/basics.js";
 import { expectCsvShape, expectNoteMarkdown } from "../helpers.js";
 
 const rowsOf = (topic) => basicsRows.filter((r) => r.topic === topic);
@@ -38,9 +38,9 @@ describe("dictionary/de/basics.csv", () => {
 });
 
 describe("topics, subpages and difficulties", () => {
-  it("every topic has rows and is on exactly one subpage", () => {
+  it("every topic has cards and is on exactly one subpage", () => {
     for (const t of TOPICS) {
-      expect(rowsOf(t.id).length, t.id).toBeGreaterThan(0);
+      expect(topicCards(t).length, t.id).toBeGreaterThan(0);
       expect(BASICS_PAGES.filter((p) => p.topics.includes(t.id)).length, t.id).toBe(1);
     }
   });
@@ -54,7 +54,7 @@ describe("topics, subpages and difficulties", () => {
 
   it("cards follow the topics, with the German on the `it` side", () => {
     const cards = basicsCards();
-    expect(cards.length).toBe(basicsRows.length);
+    expect(cards.length).toBe(basicsRows.length + 12); // + the Präsens of sein and haben
     expect(cards[0]).toEqual({ id: "basics.pronouns.ich", form: "basics", kind: "Pronoun", heading: "Pronoun · subject", it: "ich", en: "I" });
   });
 });
@@ -64,9 +64,11 @@ describe("German grammar", () => {
     expect(german("pronouns")).toEqual(expect.arrayContaining(["ich", "du", "er", "sie", "es", "wir", "ihr", "Sie"]));
   });
 
-  it("sein and haben in the present", () => {
-    expect(german("sein")).toEqual(["ich bin", "du bist", "er/sie/es ist", "wir sind", "ihr seid", "sie sind", "Sie sind"]);
-    expect(german("haben")).toEqual(["ich habe", "du hast", "er/sie/es hat", "wir haben", "ihr habt", "sie haben", "Sie haben"]);
+  it("sein and haben in the present, shared with the verb cards", () => {
+    const forms = (verb) => topicCards(TOPICS.find((t) => t.id === verb)).map((c) => c.it);
+    expect(forms("sein")).toEqual(["ich bin", "du bist", "er/sie/es ist", "wir sind", "ihr seid", "sie sind"]);
+    expect(forms("haben")).toEqual(["ich habe", "du hast", "er/sie/es hat", "wir haben", "ihr habt", "sie haben"]);
+    expect(topicCards(TOPICS.find((t) => t.id === "sein"))[0].id).toBe("sein.praesens.0");
   });
 
   it("nominative articles: der (m), die (f), das (n), die (plural)", () => {

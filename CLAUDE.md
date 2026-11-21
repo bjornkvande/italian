@@ -34,8 +34,11 @@ Generic code is separate from each language's content.
   (named when Italian was the only one).
 - Italian (`it`): prefix `verbi.`, pages in the root (`basics.html`, `are.html`…),
   groups basics, adjectives, adverbs, nouns, verbs.
-- German (`de`): prefix `de.`, pages in `de/`. So far only the Basics; nouns,
-  verbs, adjectives and adverbs come next, in stages.
+- German (`de`): prefix `de.`, pages in `de/`, the same five groups. Verbs:
+  regular, irregular (stem2/past/participle listed), separable (prefix), modal
+  (all forms listed); tenses Präsens, Perfekt, Präteritum, Konjunktiv II,
+  Imperativ. Noun plurals are listed (no reliable rule); tests check the
+  patterns that hold. English comparatives/plurals/3rd person: `src/core/english.js`.
 - Grammar pages: an HTML file per page + `src/lang/<code>/pages/<group>-page.js`.
 - `tests/` mirrors `src/`: `core/`, `pages/`, `it/`, `de/`.
 - Card ids must stay stable: ratings are stored by id.

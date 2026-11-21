@@ -1,0 +1,160 @@
+topic,noun,gender,plural,english,en_plural,level,note
+everyday,Zeit,f,Zeiten,time,,beginner,"*Ich habe keine Zeit.* *Zeiten* = times (periods), not o'clock."
+everyday,Geld,n,-,money,,beginner,
+everyday,Arbeit,f,-,"work, job",,beginner,*Ich gehe zur Arbeit.* = I'm going to work.
+everyday,Problem,n,Probleme,problem,,beginner,*Kein Problem!* = No problem!
+everyday,Frage,f,Fragen,question,,beginner,
+everyday,Name,m,Namen,name,,beginner,"Adds *-n* in every case but the nominative: *den Namen*, *dem Namen*."
+everyday,Handy,n,Handys,mobile phone,,beginner,"Looks English, but isn't used in English."
+everyday,Wasser,n,-,water,,beginner,
+everyday,Uhr,f,Uhren,"clock, watch","clocks, watches",beginner,Also *o'clock*: *um drei Uhr*.
+everyday,Wetter,n,-,weather,,beginner,
+everyday,Ding,n,Dinge,thing,,beginner,
+everyday,Wort,n,Wörter,word,,beginner,*Wörter* for single words; *Worte* for words said: *ein paar Worte*.
+everyday,Sprache,f,Sprachen,language,,beginner,
+everyday,Leben,n,-,life,,beginner,
+everyday,Spaß,m,-,fun,,beginner,*Viel Spaß!* = Have fun!
+everyday,Hilfe,f,-,help,,beginner,*Hilfe!* = Help!
+everyday,Musik,f,-,music,,beginner,
+everyday,Foto,n,Fotos,photo,,beginner,
+everyday,Film,m,Filme,film,,beginner,
+everyday,Urlaub,m,Urlaube,holiday (vacation),holidays (vacations),beginner,*im Urlaub* = on holiday.
+everyday,Antwort,f,Antworten,answer,,intermediate,
+everyday,Idee,f,Ideen,idea,,intermediate,
+everyday,Glück,n,-,"luck, happiness",,intermediate,*Viel Glück!* = Good luck! *Glück haben* = to be lucky.
+everyday,Welt,f,Welten,world,,intermediate,
+everyday,Weg,m,Wege,"way, path","ways, paths",intermediate,
+everyday,Grund,m,Gründe,reason,,intermediate,
+everyday,Moment,m,Momente,moment,,intermediate,"*Moment, bitte!* = Just a moment, please!"
+everyday,Ende,n,Enden,end,,intermediate,*am Ende* = in the end; *Ende Mai* = at the end of May.
+everyday,Telefon,n,Telefone,telephone,,intermediate,
+everyday,Computer,m,Computer,computer,,intermediate,
+everyday,Nummer,f,Nummern,number,,intermediate,"A phone, house or room number; a number in maths is *die Zahl*."
+everyday,Termin,m,Termine,appointment,,intermediate,
+everyday,Brief,m,Briefe,letter,,intermediate,
+everyday,Geschenk,n,Geschenke,present,,intermediate,
+everyday,Spiel,n,Spiele,game,,intermediate,
+everyday,Party,f,Partys,party,,intermediate,
+everyday,Tasche,f,Taschen,bag,,intermediate,
+everyday,Farbe,f,Farben,colour,,intermediate,
+everyday,Sonne,f,-,sun,,intermediate,
+everyday,Regen,m,-,rain,,intermediate,
+people,Freund,m,Freunde,friend (m.),friends (m.),beginner,Also *boyfriend*: *mein Freund*.
+people,Freundin,f,Freundinnen,friend (f.),friends (f.),beginner,Also *girlfriend*. Feminine nouns in *-in* add *-nen* in the plural.
+people,Familie,f,Familien,family,,beginner,
+people,Mutter,f,Mütter,mother,,beginner,In speech: *Mama*.
+people,Vater,m,Väter,father,,beginner,In speech: *Papa*.
+people,Mensch,m,Menschen,human being,,beginner,"*die Menschen* = people; also *die Leute*, which has only a plural. Adds *-en* in every case but the nominative."
+people,Bruder,m,Brüder,brother,,beginner,
+people,Schwester,f,Schwestern,sister,,beginner,
+people,Sohn,m,Söhne,son,,beginner,
+people,Tochter,f,Töchter,daughter,,beginner,
+people,Junge,m,Jungen,boy,,beginner,
+people,Mädchen,n,Mädchen,girl,,beginner,"Neuter, like every word in *-chen*."
+people,Kopf,m,Köpfe,head,,beginner,
+people,Hand,f,Hände,hand,,beginner,
+people,Arzt,m,Ärzte,doctor (m.),doctors (m.),beginner,Feminine: *die Ärztin*.
+people,Herr,m,Herren,"gentleman, Mr",gentlemen,intermediate,*Herr Müller* = Mr Müller; *Frau Müller* = Mrs or Ms Müller.
+people,Auge,n,Augen,eye,,intermediate,
+people,Fuß,m,Füße,foot,feet,intermediate,*zu Fuß* = on foot.
+people,Herz,n,Herzen,heart,,intermediate,
+people,Baby,n,Babys,baby,,intermediate,
+people,Oma,f,Omas,grandma,,intermediate,Formal: *die Großmutter*.
+people,Opa,m,Opas,grandpa,,intermediate,Formal: *der Großvater*.
+people,Kollege,m,Kollegen,colleague (m.),colleagues (m.),intermediate,Feminine: *die Kollegin*.
+people,Chef,m,Chefs,boss (m.),bosses (m.),intermediate,Feminine: *die Chefin*.
+people,Lehrer,m,Lehrer,teacher (m.),teachers (m.),intermediate,Feminine *die Lehrerin*: most words for people add *-in* for a woman.
+people,Nachbar,m,Nachbarn,neighbour (m.),neighbours (m.),intermediate,Feminine: *die Nachbarin*.
+people,Gast,m,Gäste,guest,,intermediate,
+home,Haus,n,Häuser,house,,beginner,*zu Hause* = at home; *nach Hause* = home(wards).
+home,Wohnung,f,Wohnungen,flat (apartment),flats (apartments),beginner,Every noun in *-ung* is feminine.
+home,Zimmer,n,Zimmer,room,,beginner,
+home,Küche,f,Küchen,kitchen,,beginner,
+home,Bad,n,Bäder,bathroom,,beginner,
+home,Bett,n,Betten,bed,,beginner,*ins Bett gehen* = to go to bed.
+home,Fenster,n,Fenster,window,,beginner,
+home,Stuhl,m,Stühle,chair,,beginner,
+home,Schlüssel,m,Schlüssel,key,,beginner,
+home,Schlafzimmer,n,Schlafzimmer,bedroom,,beginner,
+home,Wohnzimmer,n,Wohnzimmer,living room,,beginner,
+home,Garten,m,Gärten,garden,,beginner,
+home,Toilette,f,Toiletten,toilet,,beginner,*Wo ist die Toilette?* Also *das WC*.
+home,Licht,n,Lichter,light,,beginner,
+home,Sofa,n,Sofas,sofa,,intermediate,
+home,Kühlschrank,m,Kühlschränke,fridge,,intermediate,
+home,Schrank,m,Schränke,"cupboard, wardrobe","cupboards, wardrobes",intermediate,
+home,Lampe,f,Lampen,lamp,,intermediate,
+home,Dusche,f,Duschen,shower,,intermediate,
+home,Treppe,f,Treppen,stairs,flights of stairs,intermediate,One flight of stairs is singular in German: *die Treppe hoch* = up the stairs.
+home,Wand,f,Wände,wall,,intermediate,
+home,Boden,m,Böden,floor,,intermediate,
+home,Spiegel,m,Spiegel,mirror,,intermediate,
+home,Fernseher,m,Fernseher,TV,,intermediate,
+home,Heizung,f,Heizungen,heating,,intermediate,
+home,Teppich,m,Teppiche,carpet,,intermediate,
+home,Miete,f,Mieten,rent,,intermediate,
+food,Essen,n,-,"food, meal",,beginner,Also the verb: *essen* = to eat.
+food,Kaffee,m,-,coffee,,beginner,"Ordering: *Zwei Kaffee, bitte.*"
+food,Brot,n,Brote,"bread, loaf",loaves,beginner,"*Brote* = loaves, or sandwiches."
+food,Bier,n,Biere,beer,,beginner,"Ordering uses the singular: *Zwei Bier, bitte.*"
+food,Tee,m,-,tea,,beginner,
+food,Milch,f,-,milk,,beginner,
+food,Wein,m,Weine,wine,,beginner,
+food,Frühstück,n,-,breakfast,,beginner,
+food,Fleisch,n,-,meat,,beginner,
+food,Fisch,m,Fische,fish,fish,beginner,
+food,Käse,m,-,cheese,,beginner,
+food,Ei,n,Eier,egg,,beginner,
+food,Obst,n,-,fruit,,beginner,"Fruit in general, always singular. One fruit: *eine Frucht*, or the fruit's name."
+food,Gemüse,n,-,vegetables,,beginner,Singular in German: *Gemüse ist gesund.*
+food,Apfel,m,Äpfel,apple,,beginner,
+food,Rechnung,f,Rechnungen,bill,,beginner,"*Die Rechnung, bitte!* In a café also *Zahlen, bitte!*"
+food,Brötchen,n,Brötchen,bread roll,,intermediate,
+food,Saft,m,Säfte,juice,,intermediate,
+food,Butter,f,-,butter,,intermediate,
+food,Wurst,f,Würste,sausage,,intermediate,*Das ist mir Wurst.* = I couldn't care less.
+food,Hähnchen,n,Hähnchen,chicken,,intermediate,
+food,Kartoffel,f,Kartoffeln,potato,potatoes,intermediate,
+food,Tomate,f,Tomaten,tomato,tomatoes,intermediate,
+food,Salat,m,Salate,salad,,intermediate,
+food,Suppe,f,Suppen,soup,,intermediate,
+food,Kuchen,m,Kuchen,cake,,intermediate,
+food,Zucker,m,-,sugar,,intermediate,
+food,Salz,n,-,salt,,intermediate,
+food,Mittagessen,n,-,lunch,,intermediate,
+food,Abendessen,n,-,dinner,,intermediate,
+food,Speisekarte,f,Speisekarten,menu,,intermediate,
+food,Flasche,f,Flaschen,bottle,,intermediate,
+food,Glas,n,Gläser,glass,,intermediate,"*ein Glas Wasser* = a glass of water, without *of*."
+city,Stadt,f,Städte,"town, city","towns, cities",beginner,*in die Stadt gehen* = to go into town.
+city,Straße,f,Straßen,"street, road","streets, roads",beginner,
+city,Auto,n,Autos,car,,beginner,
+city,Bahnhof,m,Bahnhöfe,station,,beginner,The railway station; *der Hauptbahnhof* is the main station.
+city,Zug,m,Züge,train,,beginner,
+city,Bus,m,Busse,bus,,beginner,
+city,Land,n,Länder,country,,beginner,*auf dem Land* = in the countryside.
+city,Laden,m,Läden,shop,,beginner,
+city,Restaurant,n,Restaurants,restaurant,,beginner,
+city,Hotel,n,Hotels,hotel,,beginner,
+city,Schule,f,Schulen,school,,beginner,
+city,Fahrrad,n,Fahrräder,bicycle,,beginner,In speech often *das Rad*.
+city,Platz,m,Plätze,square,,beginner,Also *seat* and *space*: *Ist hier noch Platz?* = Is there room here?
+city,Flughafen,m,Flughäfen,airport,,beginner,
+city,Fahrkarte,f,Fahrkarten,ticket,,beginner,For trains and buses; for the cinema or a concert: *die Karte*.
+city,Supermarkt,m,Supermärkte,supermarket,,beginner,
+city,Bank,f,Banken,bank,,intermediate,The plural *die Bänke* means benches.
+city,Apotheke,f,Apotheken,pharmacy,,intermediate,
+city,Krankenhaus,n,Krankenhäuser,hospital,,intermediate,
+city,Flugzeug,n,Flugzeuge,plane,,intermediate,
+city,Haltestelle,f,Haltestellen,"stop (bus, tram)","stops (bus, tram)",intermediate,
+city,Kino,n,Kinos,cinema,,intermediate,
+city,Museum,n,Museen,museum,,intermediate,
+city,Kirche,f,Kirchen,church,,intermediate,
+city,Park,m,Parks,park,,intermediate,
+city,Markt,m,Märkte,market,,intermediate,
+city,Geschäft,n,Geschäfte,business,,intermediate,Also a shop.
+city,Universität,f,Universitäten,university,,intermediate,Every noun in *-tät* is feminine. In speech: *die Uni*.
+city,Ecke,f,Ecken,corner,,intermediate,
+city,Ampel,f,Ampeln,traffic light,,intermediate,
+city,Polizei,f,-,police,,intermediate,Singular in German: *Die Polizei kommt.*
+city,Post,f,-,"post office, mail",,intermediate,*zur Post gehen* = to go to the post office.

@@ -1,6 +1,6 @@
 // Renders the German Basics page from dictionary/de/basics.csv, one subpage at
 // a time, picked by the address: de/basics.html#articles.
-import { TOPICS, BASICS_PAGES, basicsRows, basicsCardId } from "../basics.js";
+import { TOPICS, BASICS_PAGES, basicsRows, basicsCardId, presentCards } from "../basics.js";
 import { grammarPage, colour } from "../../../pages/grammar-page.js";
 import { escape, md, table } from "../../../pages/page-helpers.js";
 
@@ -15,11 +15,19 @@ function wordTable(rows) {
   })));
 }
 
+// ich bin | I am, from the verb dictionary.
+function presentTable(infinitive) {
+  return table("words", ["Präsens", "English"], presentCards(infinitive).map((c) => ({
+    attrs: colour(c.id),
+    cells: [`<td class="it" lang="de">${escape(c.it)}</td>`, `<td>${escape(c.en)}</td>`],
+  })));
+}
+
 function topicSection(topic, withHeading) {
   const rows = basicsRows.filter((r) => r.topic === topic.id);
   return (withHeading ? `<h2>${topic.title}</h2>` : "") +
     (topic.intro ? `<p>${md(topic.intro)}</p>` : "") +
-    wordTable(rows);
+    (topic.verb ? presentTable(topic.verb) : wordTable(rows));
 }
 
 const topicById = (id) => TOPICS.find((t) => t.id === id);

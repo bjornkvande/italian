@@ -10,8 +10,14 @@
 //
 // Card ids: "basics.<topic>.<german>" (basics.pronouns.ich). German ratings are
 // stored under their own keys (de.ratings), so they never mix with Italian.
+//
+// The Präsens of sein and haben isn't in basics.csv: it comes from the verbs
+// (topics with `verb`), so those forms exist once and share their ratings with
+// the verb cards.
 import basicsCSV from "../../../dictionary/de/basics.csv?raw";
 import { parseCSV } from "../../core/csv.js";
+import { verbs } from "./verbs.js";
+import { cardsFor } from "./conjugate.js";
 
 // Page and card order. kind: the heading on a card's German side; heading: on
 // its English side. intro: a short explanation above the topic's table.
@@ -26,9 +32,9 @@ export const TOPICS = [
   { id: "possessives", title: "Possessives", kind: "Possessive", heading: "Possessive" },
   { id: "greetings", title: "Greetings and courtesy", kind: "Greeting", heading: "Greeting · courtesy" },
   { id: "yes-no", title: "Yes, no and not", kind: "Small word", heading: "Small word · yes, no, not" },
-  { id: "sein", title: "Sein – to be", kind: "Verb", heading: "Verb · Präsens" },
+  { id: "sein", title: "Sein – to be", verb: "sein", kind: "Verb", heading: "Verb · Präsens" },
   { id: "sein-phrases", title: "Phrases with sein", kind: "Phrase", heading: "Phrase · with sein" },
-  { id: "haben", title: "Haben – to have", kind: "Verb", heading: "Verb · Präsens" },
+  { id: "haben", title: "Haben – to have", verb: "haben", kind: "Verb", heading: "Verb · Präsens" },
   { id: "haben-phrases", title: "Phrases with haben", kind: "Phrase", heading: "Phrase · with haben" },
   { id: "definite", title: "The: der, die, das", kind: "Article", heading: "Article · the",
     intro: "Every noun is masculine (*der*), feminine (*die*) or neuter (*das*), so learn the article with the noun. The plural is always *die*. These are the forms for the subject (the nominative); below, how they change with the case." },
@@ -95,11 +101,22 @@ export const basicsRows = parseCSV(basicsCSV);
 /** The id of a Basics card: "basics.pronouns.ich". The Basics page uses it to colour rows. */
 export const basicsCardId = (topicId, german) => `basics.${topicId}.${german}`;
 
-/** The topic of a Basics card: "basics.days.Montag" → days. */
-export const basicsTopicOf = (card) => card.id.split(".")[1];
+/** The topic of a Basics card: "basics.days.Montag" → days; "sein.praesens.0" → sein. */
+export function basicsTopicOf(card) {
+  const [first, second] = card.id.split(".");
+  return first === "basics" ? second : first;
+}
+
+/** The Präsens cards of a verb (ich bin = I am, ...). */
+export function presentCards(infinitive) {
+  const verb = verbs.find((v) => v.infinitive === infinitive);
+  if (!verb) throw new Error(`${infinitive} is not in the verb dictionary`);
+  return cardsFor(verb).filter((c) => c.form === "praesens");
+}
 
 /** The cards of one topic, in order. `it` is the German side (see src/core/train.js). */
 export function topicCards(topic, rows = basicsRows) {
+  if (topic.verb) return presentCards(topic.verb);
   return rows.filter((r) => r.topic === topic.id).map((r) => ({
     id: basicsCardId(topic.id, r.german),
     form: "basics",

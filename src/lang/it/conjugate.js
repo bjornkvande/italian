@@ -1,6 +1,8 @@
 // Italian conjugation rules and English translations.
 // Used by both the flash cards and the -are/-ere/-ire reference pages.
 
+import { thirdPerson } from "../../core/english.js";
+
 export const ENDINGS = {
   "are": {
     presente: ["o", "i", "a", "iamo", "ate", "ano"],
@@ -120,16 +122,6 @@ const IMPERATIVO_PERSONS = [
   { index: 3, it: "(noi)", en: (v) => `let's ${v}!` },
   { index: 4, it: "(voi)", en: (v) => `${v}! (you all)` },
 ];
-
-// English present: "he/she speaks", "grows up", "studies", "watches".
-function thirdPerson(base) {
-  const [first, ...rest] = base.split(" ");
-  let word;
-  if (/(s|sh|ch|x|z|o)$/.test(first)) word = first + "es";
-  else if (/[^aeiou]y$/.test(first)) word = first.slice(0, -1) + "ies";
-  else word = first + "s";
-  return [word, ...rest].join(" ");
-}
 
 function english(verb, tense, person) {
   const base = verb.en_base;
