@@ -24,13 +24,13 @@ export default defineConfig(({ command, isPreview }) => ({
     VitePWA({
       // Install a new version automatically when the app is rebuilt and redeployed.
       registerType: "autoUpdate",
-      // Registered from src/pwa.js, which also checks for updates and reloads.
+      // Registered from src/core/pwa.js, which also checks for updates and reloads.
       injectRegister: false,
       // Everything the app needs (HTML, JS with the verbs bundled in, CSS, icons)
       // is precached, so it works fully offline once installed.
       workbox: {
         globPatterns: ["**/*.{html,js,css,svg,png,ico}"],
-        // A new version takes over open pages straight away (then src/pwa.js reloads them).
+        // A new version takes over open pages straight away (then src/core/pwa.js reloads them).
         skipWaiting: true,
         clientsClaim: true,
         // Ignore ?query parts when looking up a cached page, so basics.html?x

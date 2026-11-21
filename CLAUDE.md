@@ -4,23 +4,32 @@ A flash card PWA for learning Italian (Vite, no framework, no backend), deployed
 to GitHub Pages: https://bjornkvande.github.io/italian/
 
 ## Principles
-- `dictionary/*.csv` is the single source of truth. Forms (conjugations,
-  plurals, articles, -mente adverbs…) come from rules in `src/`, with CSV
-  columns only for real exceptions.
-- Training (`index.html`, `src/train.js`) is the main screen. The grammar pages
+- `dictionary/it/*.csv` is the single source of truth. Forms (conjugations,
+  plurals, articles, -mente adverbs…) come from rules in `src/lang/it/`, with
+  CSV columns only for real exceptions.
+- Training (`index.html`, `src/core/train.js`) is the main screen. The grammar pages
   are reference, coloured by the user's ratings.
 - Keep the UI minimal: few buttons and choices.
 
 ## Layout
-- `src/groups.js`: the list of word groups (basics, adjectives, adverbs, nouns,
-  verbs). Navigation, training, difficulties and tests read from it. Its header
-  comment is the checklist for adding a group.
-- One module per group turns CSV rows into cards
-  `{ id, form, kind, heading, it, en }`: `src/basics.js`, `adjectives.js`,
-  `adverbs.js`, `nouns.js`, `conjugate.js` (verbs).
-- Grammar pages: `<group>.html` + `src/<group>-page.js`, built on
-  `src/grammar-page.js` (subpages, nav, colours) and `src/page-helpers.js`.
+Prepared for more languages: generic code is separate from Italian.
+- `src/core/`: generic app code: training screen, ratings, shuffle bag,
+  difficulties, progress, navigation, speech, CSV parser, PWA.
+- `src/pages/`: generic grammar page parts: `grammar-page.js` (subpages, nav,
+  colours), `page-helpers.js`, `rating-colors.js`.
+- `src/styles/`: CSS.
+- `src/lang/it/`: everything Italian. `groups.js` is the list of word groups
+  (basics, adjectives, adverbs, nouns, verbs) that navigation, training,
+  difficulties and tests read from; its header comment is the checklist for
+  adding a group. One module per group turns CSV rows into cards
+  `{ id, form, kind, heading, it, en }`: `basics.js`, `adjectives.js`,
+  `adverbs.js`, `nouns.js`, `conjugate.js` + `verbs.js` (verbs).
+- Grammar pages: `<group>.html` in the root + `src/lang/it/pages/<group>-page.js`.
+- `tests/` mirrors `src/`: `core/`, `pages/`, `it/`.
 - Card ids must stay stable: ratings in localStorage (`verbi.*` keys) are stored by id.
+- Not yet language-neutral (for when a second language comes): `core/train.js`
+  and `core/nav.js` import the Italian `groups.js`; card ids, storage keys,
+  root HTML pages and the app name/manifest are Italian-only.
 
 ## Working here
 - Node 26 via direnv: run commands as `source .envrc >/dev/null && npm test`.

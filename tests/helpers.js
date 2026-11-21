@@ -1,6 +1,6 @@
 // Shared helpers for the tests (not a test file itself).
 import { expect } from "vitest";
-import { parseRows } from "../src/csv.js";
+import { parseRows } from "../src/core/csv.js";
 
 /** A stand-in for the browser's localStorage; `items` shows what was saved. */
 export function fakeStorage(initial = {}) {
